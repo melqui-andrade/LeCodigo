@@ -46,6 +46,10 @@ Temporary Items
 # Eclipse Files
 # =========================
 .metadata
+LeCodigo/LeCodigo-business/target
+LeCodigo/LeCodigo-services/target
+LeCodigo/LeCodigo-domain/target
+LeCodigo/LeCodigo-presentation/target
 bin/
 tmp/
 *.tmp
