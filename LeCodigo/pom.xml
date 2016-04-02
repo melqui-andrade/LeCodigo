@@ -49,6 +49,16 @@
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8.2</version>
@@ -88,8 +98,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>2.3.2</version>
 					<configuration>
-						<source>1.6</source>
-						<target>1.6</target>
+						<source>1.8</source>
+						<target>1.8</target>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -100,7 +110,7 @@
 						<sourceEncoding>utf-8</sourceEncoding>
 						<outputEncoding>utf-8</outputEncoding>
 						<outputDirectory>target/site/pmd/</outputDirectory>
-						<targetJdk>1.6</targetJdk>
+						<targetJdk>1.8</targetJdk>
 						<rulesets>
 							<ruleset>code_analysis/pmd_rules.xml</ruleset>
 						</rulesets>
@@ -119,19 +129,7 @@
 						</executions>
 					</configuration>
 				</plugin>
-				<plugin>
-	                <groupId>org.apache.tomcat.maven</groupId>
-	                <artifactId>tomcat7-maven-plugin</artifactId>
-	                <version>2.2</version>
-	                <configuration>
-	                	<server>tomcatserver</server>
-	                    <path>/lecodigo</path>
-	                    <update>true</update>
-	                    <url>http://localhost:8080/manager/text</url>
-	                    <username>tomcat</username>
-	                    <password>tomcat</password>
-	                </configuration>
-            </plugin>
+
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -142,7 +140,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<modules>
 		<module>LeCodigo-domain</module>
 		<module>LeCodigo-business</module>
