@@ -7,5 +7,10 @@ public class QuestaoDAO {
 	public Questao buscarQuestao(int id_questao){
 		return null;
 	}
+
+	public Questao buscarQuestao(int fase, int etapa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
