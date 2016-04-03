@@ -12,5 +12,10 @@ public class QuestaoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Questao PulaQuestao(int fase, int etapa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

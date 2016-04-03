@@ -32,6 +32,28 @@ public class SessaoBusiness {
 			instance.vidas++;
 		}
 	}
+
+	public int getFase() {
+		return fase;
+	}
+
+	public int getEtapa() {
+		return etapa;
+	}
+
+	public int getBits() {
+		return bits;
+	}
+
+	public int getVidas() {
+		return vidas;
+	}
+
+	public int getPontuacao() {
+		return pontuacao;
+	}
 	
+	
+	//TODO atualizar documentação, novos métodos criados
 	//TODO método para perder vidas
 }
