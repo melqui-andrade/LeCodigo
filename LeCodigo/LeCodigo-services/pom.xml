@@ -10,6 +10,13 @@
 	<artifactId>LeCodigo-services</artifactId>
 	<name>LeCodigo-services</name>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.br.uepb</groupId>
+			<artifactId>LeCodigo-domain</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -35,11 +42,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>
-		<dependency>
-			<groupId>com.br.uepb</groupId>
-			<artifactId>LeCodigo-domain</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 </project>
