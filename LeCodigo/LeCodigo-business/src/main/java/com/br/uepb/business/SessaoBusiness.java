@@ -32,4 +32,6 @@ public class SessaoBusiness {
 			instance.vidas++;
 		}
 	}
+	
+	//TODO método para perder vidas
 }

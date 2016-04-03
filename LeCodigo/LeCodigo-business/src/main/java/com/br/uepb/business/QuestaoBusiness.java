@@ -11,9 +11,21 @@ public class QuestaoBusiness {
 		return questaoDAO.buscarQuestao(fase, etapa);
 	}
 	
-	public boolean verificarRespostar(String resposta){
-		//TODO Esse método precisa de mais um parâmetro, o ID da questão
-		return false;
+	public boolean verificarResposta(String resposta, int idQuestao){
+		//TODO Esse método precisa de mais um parâmetro, o ID da questão, atualizar doc
+		QuestaoDAO questaoDAO = new QuestaoDAO();
+		Questao questao = questaoDAO.buscarQuestao(idQuestao);
+		SessaoBusiness sessao;
+		
+		
+		if(questao.getResposta() == resposta){
+			//TODO aumentar bits
+			return true;
+		}
+		else{		
+			//TODO diminuir vida
+			return false;
+		}
 	}
 
 }
