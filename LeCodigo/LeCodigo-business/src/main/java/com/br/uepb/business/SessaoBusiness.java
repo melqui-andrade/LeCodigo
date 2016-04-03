@@ -19,17 +19,6 @@ public class SessaoBusiness {
 	}
 	
 	public void comprarVida(){
-		if(instance.bits >= 3 && instance.fase == 1){
-			instance.bits -= 3;
-			instance.vidas++;
-		}
-		else if(instance.bits >= 5 && instance.fase == 2){
-			instance.bits -= 5;
-			instance.vidas++;
-		}
-		else if(instance.bits >= 7 && instance.fase == 3){
-			instance.bits -= 7;
-			instance.vidas++;
-		}
+		
 	}
 }
