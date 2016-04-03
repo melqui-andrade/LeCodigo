@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.br.uepb.model.LoginModel;
+
 
 @Controller
 public class HomeController {
@@ -33,7 +33,6 @@ public class HomeController {
 		LOG.debug("Iniciada a execucao do metodo: loginGet");
 
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("model", new LoginModel());
 		request.getSession().removeAttribute("login");
 		request.getSession().removeAttribute("idSessao");
 
@@ -42,7 +41,7 @@ public class HomeController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/home/home.html", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/home/home.html", method = RequestMethod.POST)
 	public ModelAndView homePost(
 			@ModelAttribute("model") @Valid LoginModel model,
 			BindingResult bindingResult, HttpServletRequest request) {
@@ -60,7 +59,7 @@ public class HomeController {
 
 		LOG.debug("Finalizada a execucao do metodo: loginPost");
 		return new ModelAndView("redirect:/home/home.html");
-	}
+	}*/
 
 	
 	
