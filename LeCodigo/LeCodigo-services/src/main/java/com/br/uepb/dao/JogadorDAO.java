@@ -16,4 +16,9 @@ public class JogadorDAO {
 		return null;
 	}
 
+	public Jogador buscarJogador(String login) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
