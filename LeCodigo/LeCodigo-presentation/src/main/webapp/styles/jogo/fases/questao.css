@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+h1 {
+  
+  color: #fff;
+  text-align: left;
+      font-family: 'Montserrat', cursive;
+
+  font-size: 75px;
+}
+
+h2 {
+
+  color: #444;
+  text-align: center;
+     font-family: 'Montserrat', cursive;
+  font-size: 20px;
+}
+
+h3 {
+  
+  color: #fff;
+  text-align: center;
+     font-family: 'Montserrat', cursive;
+  font-size: 350%;
+}
+
+h5 {
+  
+  color: #fff;
+  text-align: center;
+     font-family: 'Montserrat', cursive;
+  font-size: 200%;
+}
+
+h6 {
+  
+  color: #444;
+  text-align: center;
+     font-family: 'Montserrat', cursive;
+  font-size: 100%;
+}
+
+
+a{
+     font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+}
+
+.direito-inferior {
+position:absolute;
+background-image:url(img/monster1.png);
+width:262px;
+height:261px; 
+float: right; 
+margin-bottom: 0;
+position: absolute; 
+right: 0px; 
+bottom: 0;
+}

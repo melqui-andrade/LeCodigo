@@ -12,7 +12,7 @@
 
 
 <!-- FlatUI -->
-<link href="../styles/flatUi/flat-ui.css" rel="stylesheet">
+<link href="../styles/flatUi/flat-ui.min.css" rel="stylesheet">
 
 <!-- Font awesome CSS -->
 <link href="../styles/font-awesome-4.3.0/css/font-awesome.min.css"
@@ -30,10 +30,19 @@
 <script src="../styles/bootflat/js/jquery.fs.selecter.min.js"></script>
 <script src="../styles/bootflat/js/jquery.fs.stepper.min.js"></script>
 
+<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+<script src="../js/jogo/vendor/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/jogo/vendor/video.js"></script>
+<script src="../js/jogo/flat-ui.min.js"></script>
+<script src="../js/jogo/site_.js"></script>
+<script src="../js/jogo/site.min.js"></script>
+
+<script src="../js/jogo/jogo.js" type="text/javascript" charset="utf-8"></script>
+
 <!-- Custom Fonts -->
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
 <link
 	href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
 	rel="stylesheet" type="text/css">
-	

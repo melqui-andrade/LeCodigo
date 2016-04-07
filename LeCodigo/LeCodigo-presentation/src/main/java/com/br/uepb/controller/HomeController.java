@@ -62,7 +62,50 @@ public class HomeController {
 		return new ModelAndView("redirect:/home/home.html");
 	}
 
+	@RequestMapping(value = "/home/transicaoFase.html", method = RequestMethod.GET)
+	public ModelAndView transicaoGet(HttpServletRequest request) {
+
+		LOG.debug("Iniciada a execucao do metodo: loginGet");
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("model", new LoginModel());
+		request.getSession().removeAttribute("login");
+		request.getSession().removeAttribute("idSessao");
+
+		LOG.debug("Finalizada a execucao do metodo: loginGet");
+
+		return modelAndView;
+	}
 	
+	@RequestMapping(value = "/home/fase.html", method = RequestMethod.GET)
+	public ModelAndView faseGet(HttpServletRequest request) {
+
+		LOG.debug("Iniciada a execucao do metodo: loginGet");
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("model", new LoginModel());
+		request.getSession().removeAttribute("login");
+		request.getSession().removeAttribute("idSessao");
+
+		LOG.debug("Finalizada a execucao do metodo: loginGet");
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/home/questao.html", method = RequestMethod.GET)
+	public ModelAndView questaoGet(HttpServletRequest request) {
+
+		LOG.debug("Iniciada a execucao do metodo: loginGet");
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("model", new LoginModel());
+		request.getSession().removeAttribute("login");
+		request.getSession().removeAttribute("idSessao");
+
+		LOG.debug("Finalizada a execucao do metodo: loginGet");
+
+		return modelAndView;
+	}
 	
 
 }

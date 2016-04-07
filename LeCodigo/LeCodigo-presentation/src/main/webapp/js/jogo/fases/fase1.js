@@ -1,5 +1,5 @@
 (function() 
 {
-    document.body.style.background = "#967BDC url('../images/background/grid.png')  repeat right top";
-  
+    document.body.style.background = "#F2BB82 url('img/background/grid.png')  repeat right top";
+
 })();

@@ -30,9 +30,9 @@
 }
 
 h1 {
-    padding-left: 25%;
+    padding-left: 10%;
      margin-top: 45%;
-  color: #eee;
+  color: #fff;
   text-align: left;
       font-family: 'Montserrat', cursive;
 
@@ -40,31 +40,41 @@ h1 {
 }
 
 h2 {
+     padding-left: 10%;
     margin-top: 0.5%;
-  color: #eee;
-  text-align: center;
+  color: #fff;
+  text-align: left;
      font-family: 'Montserrat', cursive;
   font-size: 20px;
 }
 
 h3 {
-    margin-top: 4%;
-  color: #eee;
+   
+  color: #fff;
   text-align: center;
      font-family: 'Montserrat', cursive;
-  font-size: 350%;
+  font-size: 325%;
+}
+
+
+h5 {
+  
+  color: #fff;
+  text-align: center;
+     font-family: 'Montserrat', cursive;
+  font-size: 200%;
 }
 
 .numeroDaFase{
-    color: #eee;
+    color: #fff;
   text-align: center;
      font-family: 'Montserrat', cursive;
   font-size: 380%;
 }
 
 .center-form {
-  width: 850px;
-  padding: 40px 30px;
+  width: 650px;
+  padding: 30px 30px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
  
@@ -174,4 +184,18 @@ left: 0;
   40% , 80% {
     left: -15px;
   }
+}
+
+.heart {
+  fill: #DA4453;
+  position: relative;
+  top: 5px;
+  width: 40px;
+  animation: pulse 1s ease infinite, 
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
 }
