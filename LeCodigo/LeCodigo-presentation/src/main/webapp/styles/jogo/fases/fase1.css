@@ -1,201 +1,277 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 * {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  font-family: arial;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-family: arial;
 }
 
-.cabecalho{
-    padding-top: 10px;
-    background: #eee;
-    color: #444;
-        font-weight: bold;
-
-    height: 70px;
-    font-size: 150%;
-    box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+.cabecalho {
+	padding-top: 10px;
+	background: #eee;
+	color: #444;
+	font-weight: bold;
+	height: 70px;
+	font-size: 150%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
-.time{
-    color:#fff;
+.time {
+	color: #fff;
 }
 
-.btn-cabecalho{
-    margin-top: 10%;
-    padding: 8%;
-    font-size: 100%;
+.btn-cabecalho {
+	margin-top: 10%;
+	padding: 8%;
+	font-size: 100%;
 }
 
 h1 {
-    padding-left: 10%;
-     margin-top: 45%;
-  color: #fff;
-  text-align: left;
-      font-family: 'Montserrat', cursive;
-
-  font-size: 100px;
+	padding-left: 10%;
+	margin-top: 45%;
+	color: #fff;
+	text-align: left;
+	font-family: 'Montserrat', cursive;
+	font-size: 100px;
 }
 
 h2 {
-     padding-left: 10%;
-    margin-top: 0.5%;
-  color: #fff;
-  text-align: left;
-     font-family: 'Montserrat', cursive;
-  font-size: 20px;
+	padding-left: 10%;
+	margin-top: 0.5%;
+	color: #fff;
+	text-align: left;
+	font-family: 'Montserrat', cursive;
+	font-size: 20px;
 }
 
 h3 {
-   
-  color: #fff;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 325%;
+	color: #fff;
+	text-align: center;
+	font-family: 'Montserrat', cursive;
+	font-size: 325%;
 }
-
 
 h5 {
-  
-  color: #fff;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 200%;
+	color: #fff;
+	text-align: center;
+	font-family: 'Montserrat', cursive;
+	font-size: 200%;
 }
 
-.numeroDaFase{
-    color: #fff;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 380%;
+.numeroDaFase {
+	color: #fff;
+	text-align: center;
+	font-family: 'Montserrat', cursive;
+	font-size: 380%;
 }
 
 .center-form {
-  width: 650px;
-  padding: 30px 30px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
- 
-  margin: auto;
-left: 0;
-  right: 0;
-  }
+	width: 650px;
+	padding: 30px 30px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
 
 .transicaoCentro {
-  width: 850px;
-  padding: 40px 30px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
- 
-  margin: auto;
-    position: absolute;
-  left: 0;
-  right: 0;
-  top: 25%;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+	width: 850px;
+	padding: 40px 30px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 25%;
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .form-group {
-  position: relative;
-  margin-bottom: 15px;
+	position: relative;
+	margin-bottom: 15px;
 }
 
-
-.form-control:focus, .form-control:focus + .fa {
-  border-color: #10CE88;
-  color: #10CE88;
+.form-control:focus, .form-control:focus+.fa {
+	border-color: #10CE88;
+	color: #10CE88;
 }
 
 .form-group .fa {
-  position: absolute;
-  right: 15px;
-  top: 17px;
-  color: #999;
+	position: absolute;
+	right: 15px;
+	top: 17px;
+	color: #999;
 }
 
 .log-status.wrong-entry {
-  -moz-animation: wrong-log 0.3s;
-  -webkit-animation: wrong-log 0.3s;
-  animation: wrong-log 0.3s;
+	-moz-animation: wrong-log 0.3s;
+	-webkit-animation: wrong-log 0.3s;
+	animation: wrong-log 0.3s;
 }
 
-.log-status.wrong-entry .form-control, .wrong-entry .form-control + .fa {
-  border-color: #ed1c24;
-  color: #ed1c24;
+.log-status.wrong-entry .form-control, .wrong-entry .form-control+.fa {
+	border-color: #ed1c24;
+	color: #ed1c24;
 }
 
 .btn {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .link {
-  text-decoration: none;
-  color: #C6C6C6;
-  float: right;
-  font-size: 12px;
-  margin-bottom: 15px;
+	text-decoration: none;
+	color: #C6C6C6;
+	float: right;
+	font-size: 12px;
+	margin-bottom: 15px;
 }
+
 .link:hover {
-  text-decoration: underline;
-  color: #8C918F;
+	text-decoration: underline;
+	color: #8C918F;
 }
 
 .alert {
-  display: none;
-  font-size: 12px;
-  color: #f00;
-  float: left;
+	display: none;
+	font-size: 12px;
+	color: #f00;
+	float: left;
 }
 
-@-moz-keyframes wrong-log {
-  0%, 100% {
-    left: 0px;
-  }
-  20% , 60% {
-    left: 15px;
-  }
-  40% , 80% {
-    left: -15px;
-  }
-}
-@-webkit-keyframes wrong-log {
-  0%, 100% {
-    left: 0px;
-  }
-  20% , 60% {
-    left: 15px;
-  }
-  40% , 80% {
-    left: -15px;
-  }
-}
-@keyframes wrong-log {
-  0%, 100% {
-    left: 0px;
-  }
-  20% , 60% {
-    left: 15px;
-  }
-  40% , 80% {
-    left: -15px;
-  }
+@
+-moz-keyframes wrong-log { 0%, 100% {
+	left: 0px;
 }
 
+20%
+,
+60%
+{
+left
+:
+ 
+15
+px
+;
+
+  
+}
+40%
+,
+80%
+{
+left
+:
+ 
+-15
+px
+;
+
+  
+}
+}
+@
+-webkit-keyframes wrong-log { 0%, 100% {
+	left: 0px;
+}
+
+20%
+,
+60%
+{
+left
+:
+ 
+15
+px
+;
+
+  
+}
+40%
+,
+80%
+{
+left
+:
+ 
+-15
+px
+;
+
+  
+}
+}
+@
+keyframes wrong-log { 0%, 100% {
+	left: 0px;
+}
+
+20%
+,
+60%
+{
+left
+:
+ 
+15
+px
+;
+
+  
+}
+40%
+,
+80%
+{
+left
+:
+ 
+-15
+px
+;
+
+  
+}
+}
 .heart {
-  fill: #DA4453;
-  position: relative;
-  top: 5px;
-  width: 40px;
-  animation: pulse 1s ease infinite, 
+	fill: #DA4453;
+	position: relative;
+	top: 5px;
+	width: 40px;
+	animation: pulse 1s ease infinite,
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.3); }
-  100% { transform: scale(1); }
+@
+keyframes pulse { 0% {
+	transform: scale(1);
+}
+50%
+{
+transform
+:
+ 
+scale
+(1
+.3
+);
+ 
+}
+100%
+{
+transform
+:
+ 
+scale
+(1);
+ 
+}
 }

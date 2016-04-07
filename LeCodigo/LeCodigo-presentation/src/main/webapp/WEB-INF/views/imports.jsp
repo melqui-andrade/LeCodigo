@@ -41,8 +41,4 @@
 <script src="../js/jogo/jogo.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom Fonts -->
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />

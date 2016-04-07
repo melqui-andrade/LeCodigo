@@ -15,26 +15,42 @@ body {
 }
 
 h1 {
-	margin-top: 10%;
+	
+	margin-top: 25%;
 	color: #fff;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
-	font-size: 500%;
-	font-size-adjust: 0.58;
+	font-size: 100px;
 }
-
-h2 {
-	margin-top: 50px;
-	color: #eee;
-	text-align: center;
-	font-family: 'Montserrat', cursive;
-	font-size: 20px;
-}
-
 h3 {
-	margin-top: 120px;
-	color: #eee;
-	text-align: center;
-	font-family: 'Montserrat', cursive;
-	font-size: 70px;
+	font-family: 'Open Sans';
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+p {
+	font-family: 'Open Sans';
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote {
+	font-family: 'Open Sans';
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: 'Open Sans';
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
 }

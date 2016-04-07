@@ -3,6 +3,7 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
 <link href="../styles/jogo/fases/fase0.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 <html>
 <body>
 

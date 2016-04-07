@@ -1,58 +1,112 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-h1 {
-  
-  color: #fff;
-  text-align: left;
-      font-family: 'Montserrat', cursive;
 
-  font-size: 75px;
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-family: arial;
 }
 
-h2 {
+body {
+	background-color: #47CEAC;
+	background-image: url('../images/background/grid.png');
+	background-repeat: repeat;
+	background-position: right top;
+}
 
-  color: #444;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 20px;
+h1 {
+	color: #fff;
+	text-align: left;
+	font-family: 'Montserrat', cursive;
+	font-size: 100px;
 }
 
 h3 {
-  
-  color: #fff;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 350%;
-}
-
-h5 {
-  
-  color: #fff;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 200%;
+	color: #fff;
+	text-align: center;
+	font-family: 'Montserrat', cursive;
+	font-size: 325%;
 }
 
 h6 {
-  
-  color: #444;
-  text-align: center;
-     font-family: 'Montserrat', cursive;
-  font-size: 100%;
+	color: #444;
 }
 
-
-a{
-     font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+a {
+	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter',
+		'Lucida Typewriter', monospace;
+		font-size: 10pt;
 }
 
-.direito-inferior {
-position:absolute;
-background-image:url(img/monster1.png);
-width:262px;
-height:261px; 
-float: right; 
-margin-bottom: 0;
-position: absolute; 
-right: 0px; 
-bottom: 0;
+p {
+	font-family: 'Open Sans';
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+blockquote {
+	font-family: 'Open Sans';
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+pre {
+	font-family: 'Open Sans';
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+.heart {
+	fill: #DA4453;
+	position: relative;
+	top: 5px;
+	width: 40px;
+	animation: pulse 1s ease infinite,
+}
+
+@
+keyframes pulse { 0% {
+	transform: scale(1);
+}
+50%
+{
+transform
+
+
+:
+
+ 
+
+scale
+
+
+(1
+.3
+
+
+);
+}
+100%
+{
+transform
+
+
+:
+
+ 
+
+scale
+
+
+(1);
+}
 }

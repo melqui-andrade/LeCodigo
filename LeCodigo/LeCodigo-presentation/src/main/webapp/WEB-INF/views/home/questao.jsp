@@ -2,7 +2,8 @@
 <%@ include file="/WEB-INF/views/imports.jsp"%>
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
-<link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
+
+<link href="../styles/jogo/fases/questao.css" rel="stylesheet">
 <html>
 <body>
 
@@ -48,7 +49,7 @@
 		</div>
 	</nav>
 	<div class="container">
-		<div class="row">
+		<div class="">
 			<h3>ETAPA 1 - Questão 1</h3>
 			<hr>
 
@@ -118,19 +119,21 @@
 					Algoritmo: Par ou Impar? <br> <br> início <br>
 					<div class="tile">
 						<div class="" style="text-align: left;">
-							<a href="#" class="list-group-item ">1-int numero; String
-								resposta; </a> <a href="#" class="list-group-item ">6-if(numero%2==0){
-							</a> <a href="#" class="list-group-item ">3-resposta = "O número
-								é par";} </a> <a href="#" class="list-group-item ">4-else{
+							<a href="#" class="list-group-item ">int numero; String
+								resposta; </a> <a href="#" class="list-group-item ">if(numero%2==0){
+							</a> <a href="#" class="list-group-item ">resposta = "O número
+								é par";} </a> <a href="#" class="list-group-item ">else{
 								resposta = "O número é impar";} </a>
 						</div>
 					</div>
 					<div class="col-md-4">fim</div>
 					<div class="col-md-4">
 						<button class="btn btn-danger btn-block">Limpar Código</button>
+						<br>
 					</div>
 					<div class="col-md-4">
 						<button class="btn btn-block btn-warning">Remover Linha</button>
+						<br>
 					</div>
 				</div>
 			</div>
