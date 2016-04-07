@@ -12,36 +12,19 @@
 
 			<div class="row" style="color: #eee; text-align: center;">
 				<div class="col-md-4">
-					<h5>Moeda: 0000</h5>
+					<h5>Bits: 0000</h5>
 				</div>
 				<div class="col-md-4">
 					<h5>Pontuação: 0000</h5>
 				</div>
 				<div class="col-md-4">
 					<h5>
-						Vida:
-
-						<svg class="heart" viewBox="0 0 32 29.6">
-  <path
-								d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-</svg>
-
-						<svg class="heart" viewBox="0 0 32 29.6">
-  <path
-								d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-</svg>
-
-
-						<svg class="heart" viewBox="0 0 32 29.6">
-  <path
-								d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-</svg>
-
-
+						Vida: 
+						<i class="fa fa-heart"></i>
+						 <i class="fa fa-heart"></i> 
+						 <i class="fa fa-heart"></i>
 					</h5>
+
 				</div>
 
 			</div>
@@ -68,7 +51,7 @@
 				<div class="panel-heading" style="background: #FAE6B3; color: #fff;">
 					<h6 class=" ">Linhas de código</h6>
 				</div>
-				<div class="panel-body" style="height: 450px;">
+				<div class="panel-body panel-body-questao">
 					<div class="title">
 						Use as linhas de códigos abaixo para montar o algoritmo para a
 						resposta. <br>
@@ -110,21 +93,24 @@
 
 		<div class="col-md-8">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="background: #eee; color: #fff;">
+				<div class="panel-heading"
+					style="background: #eee; color: #fff; padding: -1%;">
 					<h6 class="">Visualização do código</h6>
 
 				</div>
-				<div class="panel-body"
-					style="height: 450px; background: #444; color: #fff;">
+				<div class="panel-body panel-body-questao"
+					style="background: #444; color: #fff;">
 					Algoritmo: Par ou Impar? <br> <br> início <br>
-					<div class="tile">
+					<div class="col-md-12">
 						<div class="" style="text-align: left;">
 							<a href="#" class="list-group-item ">int numero; String
 								resposta; </a> <a href="#" class="list-group-item ">if(numero%2==0){
-							</a> <a href="#" class="list-group-item ">resposta = "O número
-								é par";} </a> <a href="#" class="list-group-item ">else{
-								resposta = "O número é impar";} </a>
+							</a> <a href="#" class="list-group-item ">resposta = "O número é
+								par";} </a> <a href="#" class="list-group-item ">else{ resposta
+								= "O número é impar";} </a>
 						</div>
+
+						<br>
 					</div>
 					<div class="col-md-4">fim</div>
 					<div class="col-md-4">
