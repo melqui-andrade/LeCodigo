@@ -21,4 +21,14 @@ public class JogadorDAO {
 		return null;
 	}
 
+	public boolean autenticarJogador(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public int buscarPontuacao(int idJogador) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

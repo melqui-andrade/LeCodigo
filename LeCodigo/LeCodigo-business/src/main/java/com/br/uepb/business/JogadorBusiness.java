@@ -15,15 +15,19 @@ public class JogadorBusiness {
 		return jogadorDAO.adicionarJogador(jogador);
 	}
 	
-	public Jogador buscaJogador(String login){
-		//TODO Esse é o método de autênticação do jogador? Só verifica o login?
+	public boolean autenticarJogador(String login, String senha){
+		JogadorDAO jogadorDAO = new JogadorDAO();
+		return jogadorDAO.autenticarJogador(login, senha);
+	}
+	
+	public Jogador buscaJogador(String login){		
 		JogadorDAO jogadorDAO = new JogadorDAO();
 		return jogadorDAO.buscarJogador(login);
 	}
 	
-	public int buscarPontuacao(){
-		//TODO Como ele acha essa pontuação? Necessário passar algum parâmeto? Pega da sessão?
-		return 1;
+	public int buscarPontuacao(int idJogador){
+		JogadorDAO jogadorDAO = new JogadorDAO();
+		return jogadorDAO.buscarPontuacao(idJogador);
 	}
 	
 }

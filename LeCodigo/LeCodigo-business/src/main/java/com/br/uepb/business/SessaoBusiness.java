@@ -63,8 +63,5 @@ public class SessaoBusiness {
 
 	public int getPontuacao() {
 		return pontuacao;
-	}	
-	
-	//TODO atualizar documentação, novos métodos criados
-	//TODO método para perder vidas
+	}
 }
