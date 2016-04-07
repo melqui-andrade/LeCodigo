@@ -2,13 +2,24 @@ package com.br.uepb.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Entity
+@Table (name="Questao")
 public class Questao {
-
+	@Id
+	@GeneratedValue
 	private int id;
 	private String descricao;
 	private String resposta;
 	private int fase;
 	private int tipo_questao;
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Bloco> blocos;
 	
 	public Questao(String descricao, String resposta, int fase, int tipo_questao, List<Bloco> blocos){
