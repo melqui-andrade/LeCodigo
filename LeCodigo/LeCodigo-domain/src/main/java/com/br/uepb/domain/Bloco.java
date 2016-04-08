@@ -13,9 +13,13 @@ public class Bloco {
 	@GeneratedValue
 	private int id;
 	private int id_questao;
-	private int descricao;
+	private String descricao;
 	
-	public Bloco(int id_questao, int descricao){
+	public Bloco() {
+		
+	}
+	
+	public Bloco(int id_questao, String descricao){
 		this.id_questao = id_questao;
 		this.descricao = descricao;
 	}
@@ -32,11 +36,11 @@ public class Bloco {
 		this.id_questao = id_questao;
 	}
 
-	public int getDescricao() {
+	public String getDescricao() {
 		return descricao;
 	}
 
-	public void setDescricao(int descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 }

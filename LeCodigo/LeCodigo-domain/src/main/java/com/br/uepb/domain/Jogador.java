@@ -25,6 +25,10 @@ public class Jogador {
 	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Partida> partidas;
 	
+	public Jogador() {
+		
+	}
+	
 	public Jogador(String nome, String login, String senha){
 		this.nome = nome;
 		this.login = login;
