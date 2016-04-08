@@ -19,35 +19,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.uepb.business.SessaoBusiness;
 import com.br.uepb.model.LoginModel;
 
 @Controller
 public class HomeController {
 
-	private static final Log LOG = LogFactory.getLog(HomeController.class);
+	//private static final Log LOG = LogFactory.getLog(HomeController.class);
 
 
 	@RequestMapping(value = "/home/home.html", method = RequestMethod.GET)
 	public ModelAndView homeGet(HttpServletRequest request) {
-
-		LOG.debug("Iniciada a execucao do metodo: loginGet");
 
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("model", new LoginModel());
 		request.getSession().removeAttribute("login");
 		request.getSession().removeAttribute("idSessao");
 
-		LOG.debug("Finalizada a execucao do metodo: loginGet");
 
 		return modelAndView;
 	}
 
 	@RequestMapping(value = "/home/home.html", method = RequestMethod.POST)
-	public ModelAndView homePost(
-			@ModelAttribute("model") @Valid LoginModel model,
-			BindingResult bindingResult, HttpServletRequest request) {
-
-		LOG.debug("Iniciada a execucao do metodo: loginPost");
+	public ModelAndView homePost(@ModelAttribute("model") @Valid LoginModel model,BindingResult bindingResult, HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("/home/apresentacao");
@@ -57,55 +51,18 @@ public class HomeController {
 			return modelAndView;
 		}
 
-
-		LOG.debug("Finalizada a execucao do metodo: loginPost");
 		return new ModelAndView("redirect:/home/home.html");
 	}
 
 	@RequestMapping(value = "/home/transicaoFase.html", method = RequestMethod.GET)
 	public ModelAndView transicaoGet(HttpServletRequest request) {
 
-		LOG.debug("Iniciada a execucao do metodo: loginGet");
-
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("model", new LoginModel());
 		request.getSession().removeAttribute("login");
 		request.getSession().removeAttribute("idSessao");
 
-		LOG.debug("Finalizada a execucao do metodo: loginGet");
-
 		return modelAndView;
 	}
-	
-	@RequestMapping(value = "/home/fase.html", method = RequestMethod.GET)
-	public ModelAndView faseGet(HttpServletRequest request) {
-
-		LOG.debug("Iniciada a execucao do metodo: loginGet");
-
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("model", new LoginModel());
-		request.getSession().removeAttribute("login");
-		request.getSession().removeAttribute("idSessao");
-
-		LOG.debug("Finalizada a execucao do metodo: loginGet");
-
-		return modelAndView;
-	}
-	
-	@RequestMapping(value = "/home/questao.html", method = RequestMethod.GET)
-	public ModelAndView questaoGet(HttpServletRequest request) {
-
-		LOG.debug("Iniciada a execucao do metodo: loginGet");
-
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("model", new LoginModel());
-		request.getSession().removeAttribute("login");
-		request.getSession().removeAttribute("idSessao");
-
-		LOG.debug("Finalizada a execucao do metodo: loginGet");
-
-		return modelAndView;
-	}
-	
 
 }
