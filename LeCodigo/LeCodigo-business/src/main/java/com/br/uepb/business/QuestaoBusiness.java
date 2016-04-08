@@ -2,13 +2,14 @@ package com.br.uepb.business;
 
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Questao;
+import com.br.uepb.domain.TipoQuestao_Enum;
 
 public class QuestaoBusiness {
 	 
 	public Questao buscarQuestao(int fase, int etapa){
 
-		QuestaoDAO questaoDAO = new QuestaoDAO();
-		return questaoDAO.buscarQuestao(fase, etapa);
+//		QuestaoDAO questaoDAO = new QuestaoDAO();
+		return null; //questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRICUICAO);
 	}
 	
 	public boolean verificarResposta(String resposta, int idQuestao){
@@ -30,10 +31,10 @@ public class QuestaoBusiness {
 	
 	public Questao pularQuestao(int fase, int etapa){
 		QuestaoDAO questaoDAO = new QuestaoDAO();
-		Questao questao = questaoDAO.buscarQuestao(fase, etapa);
+//		Questao questao = questaoDAO.buscarQuestao(fase, etapa);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
 		//TODO O que é preciso para pular uma questão?
-		return questaoDAO.PulaQuestao(fase, etapa);
+		return null; //questaoDAO.PulaQuestao(fase, etapa);
 		
 	}
 
