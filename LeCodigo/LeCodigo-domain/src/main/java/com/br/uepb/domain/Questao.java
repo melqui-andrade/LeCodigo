@@ -23,6 +23,10 @@ public class Questao {
 	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Bloco> blocos;
 	
+	public Questao() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Questao(String descricao, String resposta, int fase, TipoQuestao_Enum tipo_questao, List<Bloco> blocos){
 		this.descricao = descricao;
 		this.resposta = resposta;

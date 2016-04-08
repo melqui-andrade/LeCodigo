@@ -17,6 +17,10 @@ public class RespostaDoAluno {
 	private int etapa;
 	private String respostas;
 	
+	public RespostaDoAluno() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public RespostaDoAluno(int id_partida, int id_questao, int etapa, String respostas) {
 		this.id_partida = id_partida;
 		this.id_questao = id_questao;

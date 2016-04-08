@@ -24,6 +24,10 @@ public class Partida {
 	private String data_hora;
 	private int pontuacao;
 
+	public Partida() {
+		
+	}
+	
 	public Partida(int id_jogador, String data_hora) {
 		this.id_jogador = id_jogador;
 		this.data_hora = data_hora;
