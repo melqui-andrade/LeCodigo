@@ -7,7 +7,7 @@ package com.br.uepb.domain;
  */
 public enum TipoQuestao_Enum {
 
-	ATRICUICAO(1), 		IF_ELSE(2), 
+	ATRIBUICAO(1), 		IF_ELSE(2), 
 	SWITCH_CASE(3), 	FOR(4), 
 	WHILE(5), 		    DO_WHILE(6), 
 	TROCA_VARIAVEIS(7), ORDENACAO_SIMPLES(8), 

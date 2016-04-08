@@ -64,4 +64,30 @@ public class SessaoBusiness {
 	public int getPontuacao() {
 		return pontuacao;
 	}
+
+	public void setFase(int fase) {
+		this.fase = fase;
+	}
+
+	public void setEtapa(int etapa) {
+		this.etapa = etapa;
+	}
+
+	public void setBits(int bits) {
+		this.bits = bits;
+	}
+
+	public void setValorDaQuestao(int valorDaQuestao) {
+		this.valorDaQuestao = valorDaQuestao;
+	}
+
+	public void setVidas(int vidas) {
+		this.vidas = vidas;
+	}
+
+	public void setPontuacao(int pontuacao) {
+		this.pontuacao = pontuacao;
+	}
+	
+	
 }
