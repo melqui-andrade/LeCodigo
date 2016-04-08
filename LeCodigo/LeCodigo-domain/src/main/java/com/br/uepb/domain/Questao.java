@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 @Entity
 @Table (name="Questao")
 public class Questao {
@@ -18,12 +19,16 @@ public class Questao {
 	private String descricao;
 	private String resposta;
 	private int fase;
-	private int tipo_questao;
+	private TipoQuestao_Enum tipo_questao;
 	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Bloco> blocos;
 	
-	public Questao(String descricao, String resposta, int fase, int tipo_questao, List<Bloco> blocos){
-		
+	public Questao(String descricao, String resposta, int fase, TipoQuestao_Enum tipo_questao, List<Bloco> blocos){
+		this.descricao = descricao;
+		this.resposta = resposta;
+		this.fase = fase;
+		this.tipo_questao =  tipo_questao;
+		this.blocos = blocos;
 	}
 	
 	public int getId() {
@@ -54,11 +59,11 @@ public class Questao {
 		this.fase = fase;
 	}
 
-	public int getTipo_questao() {
+	public TipoQuestao_Enum getTipo_questao() {
 		return tipo_questao;
 	}
 
-	public void setTipo_questao(int tipo_questao) {
+	public void setTipo_questao(TipoQuestao_Enum tipo_questao) {
 		this.tipo_questao = tipo_questao;
 	}
 
