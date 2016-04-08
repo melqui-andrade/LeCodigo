@@ -2,17 +2,33 @@ package com.br.uepb.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="Jogador")
 public class Jogador {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String nome;
 	private String login;
 	private String senha;
 	private int pontuacao_total;
+	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Partida> partidas;
 	
 	public Jogador(String nome, String login, String senha){
-		
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
 	}
 
 	public int getId() {

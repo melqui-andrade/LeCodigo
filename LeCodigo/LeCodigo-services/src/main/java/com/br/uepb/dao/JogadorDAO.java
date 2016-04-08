@@ -1,34 +1,99 @@
 package com.br.uepb.dao;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import com.br.uepb.domain.Jogador;
+
+import conexaoBD.HibernateUtil;
 
 public class JogadorDAO {
 	
+	private Session session;
+	
+	public JogadorDAO() {
+		this.session = HibernateUtil.getSessionFactory().openSession();
+	}
+
 	public boolean adicionarJogador(Jogador jogador){
-		return false;
+		
+		if(!session.isOpen())
+			session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		boolean verifica = true;
+		try {
+			session.save(jogador);
+		} catch (Exception e) {
+			verifica = false;
+		}
+		session.flush();
+		tx.commit();
+		session.close();
+		
+		return verifica;
 	}
 	
-	public boolean atualizarJogo(Jogador jogador){
+	/*public boolean atualizarJogo(Jogador jogador){
 		return false;
-	}
+	}*/
 	
 	public Jogador buscarJogador(int id){
-		return null;
+		
+		if(!session.isOpen())
+			session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		Jogador jogador = null;
+		try {
+			jogador = (Jogador) session.createCriteria(Jogador.class).add(Restrictions.eq("id", id)).uniqueResult();
+			session.flush();
+			tx.commit();
+		} catch (Exception e) {
+		}
+		
+		session.close();
+		
+		return jogador;
 	}
 
 	public Jogador buscarJogador(String login) {
-		// TODO Auto-generated method stub
-		return null;
+		if(!session.isOpen())
+			session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		Jogador jogador = null;
+		try {
+			jogador = (Jogador) session.createCriteria(Jogador.class).add(Restrictions.eq("login", login)).uniqueResult();
+			session.flush();
+			tx.commit();
+		} catch (Exception e) {
+		}
+		
+		session.close();
+		return jogador;
 	}
 
 	public boolean autenticarJogador(String login, String senha) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		if(!session.isOpen())
+			session = HibernateUtil.getSessionFactory().openSession();
+			Transaction tx = session.beginTransaction();
+			boolean verifica = true;
+		try {
+			session.createQuery("from Jogador where login='"+login+"' and senha='"+senha+"'").list();
+		} catch (RuntimeException e) {
+			verifica = false;
+		}finally{
+			session.flush();
+			tx.commit();
+			session.close();
+		}
+		
+		return verifica;
 	}
 
 	public int buscarPontuacao(int idJogador) {
-		// TODO Auto-generated method stub
-		return 0;
+		Jogador jogador = buscarJogador(idJogador);
+		int pontuacao = jogador.getPontuacao_total();
+		return pontuacao;
 	}
 
 }
