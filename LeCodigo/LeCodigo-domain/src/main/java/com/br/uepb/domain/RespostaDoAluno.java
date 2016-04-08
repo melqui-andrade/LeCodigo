@@ -1,23 +1,35 @@
 package com.br.uepb.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="RespostaDoAluno")
 public class RespostaDoAluno {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private int id_partida;
 	private int id_questao;
 	private int etapa;
 	private String respostas;
 	
-	public RespostaDoAluno(int id_partida, int id_questao, int etapa, String respostas){
-		
+	public RespostaDoAluno(int id_partida, int id_questao, int etapa, String respostas) {
+		this.id_partida = id_partida;
+		this.id_questao = id_questao;
+		this.etapa = etapa;
+		this.respostas = respostas;
 	}
-	
+
 	public void addResposta(String resposta){
-		
+		setRespostas(getRespostas() + "|" + resposta);
 	}
 	
 	public void pulou(){
-		
+		setRespostas(getRespostas() + "|pulou");
 	}
 	
 	public int getId() {

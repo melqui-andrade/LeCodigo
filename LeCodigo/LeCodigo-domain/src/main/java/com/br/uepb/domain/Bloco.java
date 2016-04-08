@@ -1,13 +1,23 @@
 package com.br.uepb.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Bloco")
 public class Bloco {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private int id_questao;
 	private int descricao;
 	
 	public Bloco(int id_questao, int descricao){
-		
+		this.id_questao = id_questao;
+		this.descricao = descricao;
 	}
 
 	public int getId() {

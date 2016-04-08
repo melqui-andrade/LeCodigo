@@ -2,16 +2,31 @@ package com.br.uepb.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Partida")
 public class Partida {
 
+	@Id
+	@GeneratedValue
 	private int id;
 	private int id_jogador;
+	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<RespostaDoAluno> respostas_aluno;
 	private String data_hora;
 	private int pontuacao;
-	
-	public Partida(int id_jogador, String data_hora){
-		
+
+	public Partida(int id_jogador, String data_hora) {
+		this.id_jogador = id_jogador;
+		this.data_hora = data_hora;
 	}
 
 	public int getId() {
