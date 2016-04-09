@@ -8,12 +8,14 @@ import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.RespostaDoAluno;
 import com.br.uepb.domain.TipoQuestao_Enum;
 
+import conexaoBD.HibernateUtil;
+
 public class QuestaoBusiness {
 	 
 	public Questao buscarQuestao(int fase, int etapa){
 
 		QuestaoDAO questaoDAO = new QuestaoDAO();
-		List<Questao> questoes;
+		List<Questao> questoes = null;
 		if(fase==1){
 			if(etapa==1){
 				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRIBUICAO);
@@ -62,13 +64,20 @@ public class QuestaoBusiness {
 				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FUNCOES));
 			}
 			
-			Random random = new Random();
-			int numQuestao = random.nextInt(questoes.size()-1);
+			
+		}
+		if(questoes!=null){
+			int numQuestao = 0;
+			do{
+				Random random = new Random();
+				numQuestao = random.nextInt(questoes.size());
+				
+				
+			}while(SessaoBusiness.getQuestoesQueSairam().contains(questoes.get(numQuestao)));
+			SessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
 			return questoes.get(numQuestao);
 		}
-		
-				
-		return null; //questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRICUICAO);
+		return null;
 	}
 	
 	public boolean verificarResposta(String resposta, int idQuestao) throws Exception{
