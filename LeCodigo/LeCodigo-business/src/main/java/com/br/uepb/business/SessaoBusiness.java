@@ -1,5 +1,10 @@
 package com.br.uepb.business;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.br.uepb.domain.Questao;
+
 public class SessaoBusiness {
 
 	private int fase = 1;
@@ -9,6 +14,7 @@ public class SessaoBusiness {
 	private int vidas = 3;
 	private int pontuacao = 0;
 	private static SessaoBusiness instance;
+	private static List<Questao> questoesQueSairam;
 	
 	private SessaoBusiness(){};
 	
@@ -87,6 +93,20 @@ public class SessaoBusiness {
 
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
+	}
+
+	public static List<Questao> getQuestoesQueSairam() {
+		if(questoesQueSairam==null){
+			questoesQueSairam = new ArrayList<Questao>();
+		}
+		return questoesQueSairam;
+	}
+
+	public static void addQuestaoQueSaiu(Questao questaoQueSaiu) {
+		if(questoesQueSairam==null){
+			questoesQueSairam = new ArrayList<Questao>();
+		}
+		SessaoBusiness.questoesQueSairam.add(questaoQueSaiu);
 	}
 	
 	

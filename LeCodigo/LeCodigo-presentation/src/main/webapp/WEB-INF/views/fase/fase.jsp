@@ -2,23 +2,26 @@
 <%@ include file="/WEB-INF/views/imports.jsp"%>
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
+
 <link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
 <html>
-<body style="background: ${fase.colorBackground}">
+<body
+	style="background-color: ${fase.colorBackground}; background-image: url('../images/background/grid.png');   background-repeat: repeat; background-position: right top; ">
 
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
 
-			<div class="row" style="color: #eee; text-align: center;">
-				<div class="col-md-4">
+			<div class="row"
+				style="color: #eee; text-align: center; font-size: 14px;">
+				<div class="col-xs-6 col-sm-4">
 					<h5>Bits: ${bits}</h5>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-6 col-sm-4">
 					<h5>Pontuação: ${pontuacao}</h5>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-6 col-sm-4">
 					<h5>
-						Vida: 
+						Vida:
 						<c:forEach begin="1" end="${vidas}" varStatus="loop">
 							<i class="fa fa-heart"></i>
 						</c:forEach>
@@ -30,10 +33,10 @@
 		</div>
 	</nav>
 
-	<div class="col-md-4">&nbsp;</div>
 
-	<div class="col-md-4">
-		<div class="timeline">
+	<div class="container-fluid text-center" style="float: left;">
+
+		<div class="timeline" id="page-top" style="float: left;">
 			<dl>
 				<c:forEach begin="1" end="${etapa}" varStatus="loop">
 					<c:if test="${loop.index % 2 == 0}">
@@ -41,20 +44,23 @@
 							<div class="circ "></div>
 							<div class="time" style="color: #fff;"></div>
 							<div class="events">
-								<div class="pull-right">
+								<div class="pull-left">
 									<img class="events-object img-rounded"
-										src="../images/monster1_little.png">
+										src="${fase.imgPerfilMonstro}">
 								</div>
 								<div class="events-body">
 									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
-									<p><!-- Enunciado da questao --></p>
+									<p>
+										<!-- Enunciado da questao -->
+									</p>
 									<c:if test="${etapa - loop.index + 1 < etapa}">
 										<button class="btn btn-primary btn-block" disabled>
-										<i class="fa fa-like" style="color: #fff"> </i>
-										Parabéns acertou :)</button>
+											<i class="fa fa-like" style="color: #fff"> </i> Parabéns
+											acertou :)
+										</button>
 									</c:if>
 									<c:if test="${etapa - loop.index + 1 >= etapa}">
-										<a  href="questao.html?id="${etapa} >Responder</a>
+										<a href="questao.html?id=" ${etapa}>Responder</a>
 									</c:if>
 									<hr>
 								</div>
@@ -68,18 +74,22 @@
 							<div class="events">
 								<div class="pull-left">
 									<img class="events-object img-rounded"
-										src="../images/monster1_little.png">
+										src="${fase.imgPerfilMonstro}">
 								</div>
 								<div class="events-body">
 									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
-									<p><!-- Enunciado da questao --></p>
+									<p>
+										<!-- Enunciado da questao -->
+									</p>
 									<c:if test="${etapa - loop.index + 1 < etapa}">
 										<button class="btn btn-primary btn-block" disabled>
-										<i class="fa fa-like" style="color: #fff"> </i>
-										Parabéns acertou :)</button>
+											<i class="fa fa-like" style="color: #fff"> </i> Parabéns
+											acertou :)
+										</button>
 									</c:if>
 									<c:if test="${etapa - loop.index + 1 >= etapa}">
-										<a href="questao.html?id=${etapa}" class="btn btn-primary btn-block">Responder</a>
+										<a href="questao.html?id=${etapa}"
+											class="btn btn-primary btn-block">Responder</a>
 									</c:if>
 
 									<hr>
@@ -89,17 +99,16 @@
 					</c:if>
 				</c:forEach>
 
-
-
 			</dl>
 		</div>
-	</div>
 
+		<div class="col-xs-6 col-sm-4">
 
-	<div class="col-md-4">
-		<div style="position: fixed; bottom: 0; right: 0; z-index: 999">
-			<img src="${fase.imgMonstro}" class="img-responsive" />
+			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+				style="float: left;" />
+
 		</div>
+
 	</div>
 
 
@@ -109,12 +118,6 @@
 			class="fa fa-chevron-up"></i></a>
 	</div>
 
-	<script>
-		(function() {
-			document.body.style.background = " url('../images/background/grid.png')  repeat right top";
-
-		})();
-	</script>
 
 
 </body>

@@ -7,16 +7,9 @@
 	font-family: arial;
 }
 
-body {
-	background-color: #47CEAC;
-	background-image:  url('../images/background/grid.png');
-	background-repeat:  repeat;
-	background-position:  right top;
-}
-
 h1 {
 	
-	margin-top: 25%;
+	margin-top: 15%;
 	color: #fff;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
