@@ -6,6 +6,8 @@ import com.br.uepb.domain.Bloco;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
 
+import conexaoBD.HibernateUtil;
+
 public class PopularTabelaQuestoes {
 
 	public static void main(String[] args) {
@@ -231,7 +233,8 @@ public class PopularTabelaQuestoes {
 		addQuestao(
 				"Faça com que o código leia um número de 1 à 3, e escreva este número por extenso.",
 				" 4-6-11-5-8-10-3-2-7-13-9-1", 1, TipoQuestao_Enum.SWITCH_CASE, blocos10);
-
+		
+		HibernateUtil.shutdown();
 	}
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
