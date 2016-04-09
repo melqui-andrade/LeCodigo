@@ -7,6 +7,23 @@
 	font-family: arial;
 }
 
+/*Para dispositivos com width menor que 768px*/
+body {
+	padding-top: 290px;
+	padding-left: 290px;
+	padding-right: 290px;
+}
+
+/*Para dispositivos com width maior ou igual a 768px*/
+@media ( min-width : 768px) {
+	body {
+		padding-top: 140px;
+		padding-left: 170px;
+		padding-right: 170px;
+		font-size: 14px;
+	}
+}
+
 .cabecalho {
 	padding-top: 10px;
 	background: #eee;

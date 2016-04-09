@@ -7,11 +7,22 @@
 	font-family: arial;
 }
 
-body {
-	background-color: #47CEAC;
-	background-image: url('../images/background/grid.png');
-	background-repeat: repeat;
-	background-position: right top;
+
+/*Para dispositivos com width menor que 768px*/
+.container {
+	
+	padding-left: 290px;
+	padding-right: 290px;
+}
+
+/*Para dispositivos com width maior ou igual a 768px*/
+@media ( min-width : 768px) {
+	.container {
+		padding-top: 100px;
+		padding-left: 170px;
+		padding-right: 170px;
+		font-size: 14px;
+	}
 }
 
 h1 {

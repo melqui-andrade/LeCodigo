@@ -5,34 +5,36 @@
 
 <link href="../styles/jogo/fases/questao.css" rel="stylesheet">
 <html>
-<body>
+<body
+	style="background-color: ${fase.colorBackground}; background-image: url('../images/background/grid.png');   background-repeat: repeat; background-position: right top; ">
 
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
 
-			<div class="row" style="color: #eee; text-align: center;">
-				<div class="col-md-4">
-					<h5>Bits: 0000</h5>
+			<div class="row"
+				style="color: #eee; text-align: center; font-size: 14px;">
+				<div class="col-xs-6 col-sm-4">
+					<h5>Bits: ${bits}</h5>
 				</div>
-				<div class="col-md-4">
-					<h5>Pontuação: 0000</h5>
+				<div class="col-xs-6 col-sm-4">
+					<h5>Pontuação: ${pontuacao}</h5>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-6 col-sm-4">
 					<h5>
-						Vida: 
-						<i class="fa fa-heart"></i>
-						 <i class="fa fa-heart"></i> 
-						 <i class="fa fa-heart"></i>
+						Vida:
+						<c:forEach begin="1" end="${vidas}" varStatus="loop">
+							<i class="fa fa-heart"></i>
+						</c:forEach>
 					</h5>
-
 				</div>
 
 			</div>
 
 		</div>
 	</nav>
+
 	<div class="container">
-		<div class="">
+		<div class="" id="page-top">
 			<h3>ETAPA 1 - Questão 1</h3>
 			<hr>
 
@@ -135,9 +137,10 @@
 
 
 
-	<div class="col-md-4">
-		<div style="position: fixed; bottom: 0; right: 0; z-index: 999">
-			<img src="../images/monster1.png" class="img-responsive" />
+	<div class="col-xs-6 col-sm-4">
+		<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
+			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+				style="float: left;" />
 		</div>
 	</div>
 
@@ -148,12 +151,7 @@
 			class="fa fa-chevron-up"></i></a>
 	</div>
 
-	<script>
-		(function() {
-			document.body.style.background = "#F2BB82 url('../images/background/grid.png')  repeat right top";
 
-		})();
-	</script>
 
 
 </body>
