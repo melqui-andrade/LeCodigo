@@ -50,13 +50,13 @@ public class FaseController {
 			}
 		}
 		
-		faseModel = new FaseModel(fase);
+		faseModel = new FaseModel(3);
 		
 		modelAndView.addObject("bits", bits);
 		modelAndView.addObject("pontuacao", pontuacao);
 		modelAndView.addObject("vidas", 2);
 		modelAndView.addObject("fase", faseModel);
-		modelAndView.addObject("etapa", 1);
+		modelAndView.addObject("etapa", 5);
 		
 		return modelAndView;
 	}
