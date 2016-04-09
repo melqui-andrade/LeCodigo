@@ -12,28 +12,18 @@ public class Bloco {
 	@Id
 	@GeneratedValue
 	private int id;
-	private int id_questao;
 	private String descricao;
 	
 	public Bloco() {
 		
 	}
 	
-	public Bloco(int id_questao, String descricao){
-		this.id_questao = id_questao;
+	public Bloco(String descricao){
 		this.descricao = descricao;
 	}
 
 	public int getId() {
 		return id;
-	}
-	
-	public int getId_questao() {
-		return id_questao;
-	}
-
-	public void setId_questao(int id_questao) {
-		this.id_questao = id_questao;
 	}
 
 	public String getDescricao() {
