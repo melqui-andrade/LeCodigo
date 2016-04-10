@@ -10,7 +10,7 @@ public class TesteQuestoes {
 		
 		QuestaoDAO dao = new QuestaoDAO();
 		
-		List<Questao> list = dao.listarQuestoes(1, TipoQuestao_Enum.IF_ELSE.ordinal());
+		List<Questao> list = dao.listarQuestoes(1, TipoQuestao_Enum.IF_ELSE);
 		//System.out.println(TipoQuestao_Enum.IF_ELSE.ordinal());
 		System.out.println(list.size());
 		for (Questao questao : list) {
