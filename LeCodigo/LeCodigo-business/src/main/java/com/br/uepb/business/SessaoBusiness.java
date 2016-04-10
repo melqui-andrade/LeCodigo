@@ -1,9 +1,14 @@
 package com.br.uepb.business;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import com.br.uepb.dao.JogadorDAO;
+import com.br.uepb.domain.Jogador;
+import com.br.uepb.domain.Partida;
 import com.br.uepb.domain.Questao;
+import com.br.uepb.domain.RespostaDoAluno;
 
 public class SessaoBusiness {
 
@@ -15,6 +20,14 @@ public class SessaoBusiness {
 	private int pontuacao = 0;
 	private static SessaoBusiness instance;
 	private static List<Questao> questoesQueSairam;
+	
+	//TODO Já fiz, é só para lerem isso: Vou deixar o jogador atual da partida aqui,
+	//para poder salvar ou atualizar as informações dele no BD.
+	//Sempre que o jogador responder ou pular uma questão, deve ser atualizado os dados no bd
+	private Jogador jogador;
+	//Essa é a partida atual, as informações são persistidas nesse objeto, e associada ao jogador
+	private Partida partida;
+	private RespostaDoAluno respostaDoAluno;
 	
 	private SessaoBusiness(){};
 	
@@ -107,6 +120,30 @@ public class SessaoBusiness {
 			questoesQueSairam = new ArrayList<Questao>();
 		}
 		SessaoBusiness.questoesQueSairam.add(questaoQueSaiu);
+	}
+	
+	public void atualizarPartidaDoJogador(int id_questao, String resposta){
+		//Verifico se a resposta é referente a outra questão
+		if(id_questao!=respostaDoAluno.getId_questao())
+			this.respostaDoAluno = new RespostaDoAluno();
+		respostaDoAluno.setEtapa(this.etapa);
+		respostaDoAluno.setId_questao(id_questao);
+		if(respostaDoAluno.getRespostas().isEmpty())
+			respostaDoAluno.setRespostas(resposta);
+		else
+			//TODO outra coisa esse "|" era para ser adicionado no domain, mas não colocaram
+			respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
+		partida.getRespostas_aluno().add(respostaDoAluno);
+		partida.setData_hora(new Date().toString());
+		
+		
+	}
+	public void iniciarPartidaDoJogador(int idJogador){
+		this.jogador = new JogadorDAO().buscarJogador(idJogador);
+		this.partida = new Partida();
+		this.partida.setRespostas_aluno(new ArrayList<RespostaDoAluno>());
+		this.jogador.getPartidas().add(this.partida);
+		this.respostaDoAluno = new RespostaDoAluno();
 	}
 	
 	
