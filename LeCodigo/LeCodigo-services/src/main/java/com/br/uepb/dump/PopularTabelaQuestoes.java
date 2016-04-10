@@ -10,361 +10,355 @@ import conexaoBD.HibernateUtil;
 
 public class PopularTabelaQuestoes {
 
-	public static void main(String[] args) {
+	public void popularQuestoes_Fase1() {
+		//FASE 1 - IF_ELSE
+		Questao1_Fase1_IfElse();		
+		Questao2_Fase1_IfElse();
+		Questao3_Fase1_IfElse();
+		Questao4_Fase1_IfElse();
+		Questao5_Fase1_IfElse();
+		
+		//FASE 2 - SWITH_CASE
+		Questao1_Fase1_SwitchCase();
+		Questao2_Fase1_SwitchCase();
+		Questao3_Fase1_SwitchCase();
+		Questao4_Fase1_SwitchCase();
+		Questao5_Fase1_SwitchCase();
+		
+		//FASE 3 - ATRIBUICAO
+		Questao1_Fase1_Atribuicao();
+		Questao2_Fase1_Atribuicao();
+		Questao3_Fase1_Atribuicao();
+		Questao4_Fase1_Atribuicao();
+		Questao5_Fase1_Atribuicao();		
+	}
+	
+	//FASE 1 - IF_ELSE
+	private void Questao1_Fase1_IfElse() {
+		List<Bloco> blocos = new ArrayList<>();
 
-		/*
-		 * // Testando se a lista de blocos salva para uma questão e é retornada
-		 * certo
-		 * 
-		 * QuestaoDAO dao = new QuestaoDAO();
-		 * 
-		 * Questao questao = dao.buscarQuestao(1); List<Bloco> blocos =
-		 * questao.getBlocos(); System.out.println("Da questão 1: " +
-		 * blocos.get(1).getDescricao() + " com id: " + blocos.get(1).getId());
-		 * 
-		 * Questao questao2 = dao.buscarQuestao(2); List<Bloco> blocos2 =
-		 * questao2.getBlocos(); System.out.println("Da questão 2: " +
-		 * blocos2.get(1).getDescricao() + " com id: " +
-		 * blocos2.get(1).getId());
-		 * 
-		 */
-
-		// Questão 01
-		List<Bloco> blocos01 = new ArrayList<>();
-
-		blocos01.add(new Bloco("1-int numero; String resposta;"));
-		blocos01.add(new Bloco("2-if(numero){"));
-		blocos01.add(new Bloco("3-resposta = “O número é par”;}"));
-		blocos01.add(new Bloco("4-else{ resposta = “O número é impar”;}"));
-		blocos01.add(new Bloco("5-if(numero%3==0){"));
-		blocos01.add(new Bloco("6-if(numero%2==0){"));
+		blocos.add(new Bloco(1, "int numero; String resposta;"));
+		blocos.add(new Bloco(2, "if(numero){ "));
+		blocos.add(new Bloco(3, "resposta = “O número é par”; }"));
+		blocos.add(new Bloco(4, "else { resposta = “O número é impar”; }"));
+		blocos.add(new Bloco(5, "if (numero%3==0) {"));
+		blocos.add(new Bloco(6, "if (numero%2==0) {"));
 
 		addQuestao(
 				"Como deve-se verificar se um número qualquer é par ou impar? Organize blocos para estabelecer a ordem que considerar correta.",
-				"1-6-3-4", 1, TipoQuestao_Enum.IF_ELSE, blocos01);
+				"1-6-3-4", 1, TipoQuestao_Enum.IF_ELSE, blocos);
 
-		// Questão 02
-		List<Bloco> blocos02 = new ArrayList<>();
+	}
+	
+	
+	private void Questao2_Fase1_IfElse() {
+		List<Bloco> blocos = new ArrayList<>();
 
-		blocos02.add(new Bloco("1-input(numeros[2]);"));
-		blocos02.add(new Bloco("2-int maior = numeros[0];"));
-		blocos02.add(new Bloco("3-input(numeros[1]);"));
-		blocos02.add(new Bloco("4-if(numeros[1] > maior){"));
-		blocos02.add(new Bloco("5-int numeros[3];"));
-		blocos02.add(new Bloco("6-input(numeros[0]);"));
-		blocos02.add(new Bloco("7-print(maior);"));
-		blocos02.add(new Bloco("8-maior = numeros[1];"));
-		blocos02.add(new Bloco("9-if(numero[2] > maior){"));
-		blocos02.add(new Bloco("10-if(numero[2] > maior){"));
-		blocos02.add(new Bloco("11-maior = numero[2];}"));
-		blocos02.add(new Bloco("12-else{"));
-		blocos02.add(new Bloco("13-maior = numero[2];}"));
+		blocos.add(new Bloco(1, "input(numeros[2]);"));
+		blocos.add(new Bloco(2, "int maior = numeros[0];"));
+		blocos.add(new Bloco(3, "input(numeros[1]);"));
+		blocos.add(new Bloco(4, "if(numeros[1] > maior){"));
+		blocos.add(new Bloco(5, "int numeros[3];"));
+		blocos.add(new Bloco(6, "input(numeros[0]);"));
+		blocos.add(new Bloco(7, "print(maior);"));
+		blocos.add(new Bloco(8, "maior = numeros[1];"));
+		blocos.add(new Bloco(9, "if(numero[2] > maior){"));
+		blocos.add(new Bloco(10, "if(numero[2] > maior){"));
+		blocos.add(new Bloco(11, "maior = numero[2];}"));
+		blocos.add(new Bloco(12, "else{"));
+		blocos.add(new Bloco(13, "maior = numero[2];}"));
 
 		addQuestao(
 				"Escreva um algoritmo para determinar qual o maior valor em uma lista que contém três números distintos.",
 				"5-6-3-1-2-4-8-10-13-12-9-11-7 | 5-3-6-1-2-4-8-10-13-12-9-11-7 | 5-1-3-6-2-4-8-10-13-12-9-11-7 | 5-6-1-3-2-4-8-10-13-12-9-11-7",
-				1, TipoQuestao_Enum.IF_ELSE, blocos02);
+				1, TipoQuestao_Enum.IF_ELSE, blocos);
+	}
+	
+	private void Questao3_Fase1_IfElse() {
+		List<Bloco> blocos = new ArrayList<>();
 
-		// Questão 03
-		List<Bloco> blocos03 = new ArrayList<>();
-
-		blocos03.add(new Bloco("1-print(3);}"));
-		blocos03.add(new Bloco("2-if (n1 == n2 && n1 == n3) {"));
-		blocos03.add(new Bloco("3-print(2);"));
-		blocos03.add(new Bloco("4-print(1);"));
-		blocos03.add(new Bloco("5-} else {"));
-		blocos03.add(new Bloco("6-input(n1); input(n2); input(n3);"));
-		blocos03.add(new Bloco("7-} else if (n1 != n2 && n1 != n3) {"));
+		blocos.add(new Bloco(1, "print(3);}"));
+		blocos.add(new Bloco(2, "if (n1 == n2 && n1 == n3) {"));
+		blocos.add(new Bloco(3, "print(2);"));
+		blocos.add(new Bloco(4, "print(1);"));
+		blocos.add(new Bloco(5, "} else {"));
+		blocos.add(new Bloco(6, "input(n1); input(n2); input(n3);"));
+		blocos.add(new Bloco(7, "} else if (n1 != n2 && n1 != n3) {"));
 
 		addQuestao(
 				"Faça um programa que leia 3 números inteiros e imprima um (e apenas um) dos seguintes números: \n1 - (Se todos os números são iguais)\n2 - (Se todos os números são diferentes) \n3 - (Se apenas dois números são iguais)",
-				"6-2-4-7-3-5-1", 1, TipoQuestao_Enum.IF_ELSE, blocos03);
+				"6-2-4-7-3-5-1", 1, TipoQuestao_Enum.IF_ELSE, blocos);
 
-		// Questão 04
-		List<Bloco> blocos04 = new ArrayList<>();
+	}
 
-		blocos04.add(new Bloco("1-}"));
-		blocos04.add(new Bloco("2-print(“Informe a idade:“);"));
-		blocos04.add(new Bloco("3-input(profissao);"));
-		blocos04.add(new Bloco("4-print(“Informe a profissao:“);"));
-		blocos04.add(new Bloco("5-int idade;"));
-		blocos04.add(new Bloco("6-print(“Passagem = 1,50“);"));
-		blocos04.add(new Bloco("7-if (profissão == “estudante”) {"));
-		blocos04.add(new Bloco("8-print(Passagem = 1,50);"));
-		blocos04.add(new Bloco("9-else {"));
-		blocos04.add(new Bloco("10-if ( (idade <= 7) ||  (idade >= 65) ) {"));
-		blocos04.add(new Bloco("11-input(idade);"));
-		blocos04.add(new Bloco("12-print(“Passagem = 3,00“);"));
-		blocos04.add(new Bloco("13-if (profissão = “estudante”) {"));
-		blocos04.add(new Bloco("14-input(estudante);"));
-		blocos04.add(new Bloco("15-string profissao;"));
-		blocos04.add(new Bloco("16-print (“Passagem gratuita”);"));
+	private void Questao4_Fase1_IfElse() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "}"));
+		blocos.add(new Bloco(2, "print(“Informe a idade:“);"));
+		blocos.add(new Bloco(3, "input(profissao);"));
+		blocos.add(new Bloco(4, "print(“Informe a profissao:“);"));
+		blocos.add(new Bloco(5, "int idade;"));
+		blocos.add(new Bloco(6, "print(“Passagem = 1,50“);"));
+		blocos.add(new Bloco(7, "if (profissão == “estudante”) {"));
+		blocos.add(new Bloco(8, "print(Passagem = 1,50);"));
+		blocos.add(new Bloco(9, "else {"));
+		blocos.add(new Bloco(10, "if ( (idade <= 7) ||  (idade >= 65) ) {"));
+		blocos.add(new Bloco(11, "input(idade);"));
+		blocos.add(new Bloco(12, "print(“Passagem = 3,00“);"));
+		blocos.add(new Bloco(13, "if (profissão = “estudante”) {"));
+		blocos.add(new Bloco(14, "input(estudante);"));
+		blocos.add(new Bloco(15, "string profissao;"));
+		blocos.add(new Bloco(16, "print (“Passagem gratuita”);"));
 
 		addQuestao(
-				"Mariana está querendo desenvolver um código para gerenciar as passagens de um ônibus coletivo. Para isto, ela precisa considerar que pessoas acima de 65 anos e abaixo de 7 anos não pagam passagem. E que os estudantes pagam meia-passagem. Desenvolva o código para imprimir o valor da passagem do ônibus, considerando que o valor da passagem inteira é 3,00. Se o passageiro não precisa pagar passagem imprima a mensagem “Passagem gratuita!”",
+				"Mariana está querendo desenvolver um código para gerenciar as passagens de um ônibus coletivo. Para isto, ela precisa "+
+				"considerar que pessoas acima de 65 anos e abaixo de 7 anos não pagam passagem. E que os estudantes pagam meia-passagem. "+
+				"Desenvolva o código para imprimir o valor da passagem do ônibus, considerando que o valor da passagem inteira é 3,00. "+
+				"Se o passageiro não precisa pagar passagem imprima a mensagem “Passagem gratuita!”",
 				"5-15-2-11-4-3-10-16-1-9-7-6-1-9-12-1-1 | 5-15-4-3-2-11-10-16-1-9-7-6-1-9-12-1-1 | 15-5-2-11-4-3-10-16-1-9-7-6-1-9-12-1-1 | 15-5-4-3-2-11-10-16-1-9-7-6-1-9-12-1-1",
-				1, TipoQuestao_Enum.IF_ELSE, blocos04);
+				1, TipoQuestao_Enum.IF_ELSE, blocos);
 
-		// Questão 05
-		List<Bloco> blocos05 = new ArrayList<>();
+	}
+	
+	private void Questao5_Fase1_IfElse() {
+		List<Bloco> blocos = new ArrayList<>();
 
-		blocos05.add(new Bloco("1-input(idade);"));
-		blocos05.add(new Bloco("2-}"));
-		blocos05.add(new Bloco("3-print(”Você pode doar sangue”);"));
-		blocos05.add(new Bloco("4-print(”Você não pode doar sangue”);"));
-		blocos05.add(new Bloco("5-if( (idade >= 18) && (idade <=67)){"));
-		blocos05.add(new Bloco("6-else{"));
-		blocos05.add(new Bloco("7-int idade;"));
+		blocos.add(new Bloco(1, "input(idade);"));
+		blocos.add(new Bloco(2, "}"));
+		blocos.add(new Bloco(3, "print(”Você pode doar sangue“);"));
+		blocos.add(new Bloco(4, "print(”Você não pode doar sangue“);"));
+		blocos.add(new Bloco(5, "if( (idade >= 18) && (idade <=67)){"));
+		blocos.add(new Bloco(6, "else{"));
+		blocos.add(new Bloco(7, "int idade;"));
 
 		addQuestao(
-				"Para doar sangue é necessário ter entre 18 e 67 anos. Faça um código que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não.",
-				"7-1-5-3-2-6-4-2", 1, TipoQuestao_Enum.IF_ELSE, blocos05);
+				"Para doar sangue é necessário ter entre 18 e 67 anos. "+
+				"Faça um código que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não.",
+				"7-1-5-3-2-6-4-2", 1, TipoQuestao_Enum.IF_ELSE, blocos);
 
-		// Questão 06
-		List<Bloco> blocos06 = new ArrayList<>();
+	}
 
-		blocos06.add(new Bloco("1-String lugar; String sigla;"));
-		blocos06.add(new Bloco("2-switch(lugar){"));
-		blocos06.add(new Bloco("3-case “Brasil” :"));
-		blocos06.add(new Bloco("4-sigla = “BR”;"));
-		blocos06.add(new Bloco("5-case “Nordeste” :"));
-		blocos06.add(new Bloco("6-sigla = “NE”;"));
-		blocos06.add(new Bloco("7-case “Paraíba” :"));
-		blocos06.add(new Bloco("8-sigla = “PB”;"));
-		blocos06.add(new Bloco("9-}"));
-		blocos06.add(new Bloco("10-switch(sigla){"));
-		blocos06.add(new Bloco("11-case “PB” :"));
-		blocos06.add(new Bloco("12-lugar = “Paraíba”;"));
-		blocos06.add(new Bloco("13-case “BR” :"));
-		blocos06.add(new Bloco("14-lugar = “Brasil”;"));
-		blocos06.add(new Bloco("15-case “NE” :"));
-		blocos06.add(new Bloco("16-lugar = “Nordeste”;"));
+	//FASE 1 - SWITCH_CASE
+	private void Questao1_Fase1_SwitchCase() {
+		List<Bloco> blocos = new ArrayList<>();
+
+		blocos.add(new Bloco(1, "String lugar; String sigla;"));
+		blocos.add(new Bloco(2, "switch(lugar){"));
+		blocos.add(new Bloco(3, "case “Brasil” :"));
+		blocos.add(new Bloco(4, "sigla = “BR”;"));
+		blocos.add(new Bloco(5, "case “Nordeste” :"));
+		blocos.add(new Bloco(6, "sigla = “NE”;"));
+		blocos.add(new Bloco(7, "case “Paraíba” :"));
+		blocos.add(new Bloco(8, "sigla = “PB”;"));
+		blocos.add(new Bloco(9, "}"));
+		blocos.add(new Bloco(10, "switch(sigla){"));
+		blocos.add(new Bloco(11, "case “PB” :"));
+		blocos.add(new Bloco(12, "lugar = “Paraíba”;"));
+		blocos.add(new Bloco(13, "case “BR” :"));
+		blocos.add(new Bloco(14, "lugar = “Brasil”;"));
+		blocos.add(new Bloco(15, "case “NE” :"));
+		blocos.add(new Bloco(16, "lugar = “Nordeste”;"));
 
 		addQuestao(
 				"A variável “lugar” pode possuir os valores “Brasil”, “Nordeste” ou “Paraíba”. Garanta que a variável “sigla” corresponda ao lugar informado.",
 				"1-2-3-4-5-6-7-8-9 | 1-2-3-4-7-8-5-6-9 | 1-2-5-6-3-4-7-8-9 | 1-2-5-6-7-8-3-4-9 | 1-2-7-8-3-4-5-6-9 | 1-2-7-8-5-6-3-4-9",
-				1, TipoQuestao_Enum.SWITCH_CASE, blocos06);
+				1, TipoQuestao_Enum.SWITCH_CASE, blocos);
 
-		// Questão 07
-		List<Bloco> blocos07 = new ArrayList<>();
 
-		blocos07.add(new Bloco("1-print(“Quarta-feira“); break;"));
-		blocos07.add(new Bloco("2-case 7:"));
-		blocos07.add(new Bloco("3-print(“Sábado“); break;"));
-		blocos07.add(new Bloco("4-case 2:"));
-		blocos07.add(new Bloco("5-print(“Terça-feira“); break;"));
-		blocos07.add(new Bloco("6-case 6:"));
-		blocos07.add(new Bloco("7-case 4:"));
-		blocos07.add(new Bloco("8-print(“Domingo“); break;"));
-		blocos07.add(new Bloco("9-default:"));
-		blocos07.add(new Bloco("10-switch (diaDaSemana) {"));
-		blocos07.add(new Bloco("11-print(“Este não é um dia válido!“);}"));
-		blocos07.add(new Bloco("12-case 3:"));
-		blocos07.add(new Bloco("13-case 5:"));
-		blocos07.add(new Bloco("14-int diaDaSemana = 5;"));
-		blocos07.add(new Bloco("15-case 1:"));
-		blocos07.add(new Bloco("16-print(“Sexta-feira“); break;"));
-		blocos07.add(new Bloco("17-print(“Quinta-feira“); break;"));
-		blocos07.add(new Bloco("18-print(“Segunda-feira“); break;"));
+	}
+
+	private void Questao2_Fase1_SwitchCase() {
+		List<Bloco> blocos = new ArrayList<>();
+
+		blocos.add(new Bloco(1, "ordenação"));
+		blocos.add(new Bloco(2, "decisão"));
+		blocos.add(new Bloco(3, "if/else"));
+		blocos.add(new Bloco(4, "resolvido"));
+		blocos.add(new Bloco(5, "inserir"));
+		blocos.add(new Bloco(6, "resolvido"));
+		blocos.add(new Bloco(7, "switch/case"));
+		blocos.add(new Bloco(8, "variável"));
+
+		addQuestao(
+				"A estrutura switch/case é uma estrutura para problemas de 1______. Quando uma 2 ______ possui várias condições a serem testadas, "+
+				"o uso do 3 ______ torna o código mais legível. Decidir que mensagem mostrar após o usuário 4 ______ um valor no programa, "+
+				"é um exemplo comum de problema que pode ser 5 ______ com switch/case. Já decidir qual o maior valor em uma lista de tamanho variável "+
+				"é um problema em que a estrutura 6 ______ fica melhor empregada.",
+				"2-8-7-5-4-3", 1, TipoQuestao_Enum.SWITCH_CASE, blocos);
+	}
+	
+	private void Questao3_Fase1_SwitchCase() {		
+		List<Bloco> blocos = new ArrayList<>();
+
+		blocos.add(new Bloco(1, "print(“Quarta-feira“); break;"));
+		blocos.add(new Bloco(2, "case 7:"));
+		blocos.add(new Bloco(3, "print(“Sábado“); break;"));
+		blocos.add(new Bloco(4, "case 2:"));
+		blocos.add(new Bloco(5, "print(“Terça-feira“); break;"));
+		blocos.add(new Bloco(6, "case 6:"));
+		blocos.add(new Bloco(7, "case 4:"));
+		blocos.add(new Bloco(8, "print(“Domingo“); break;"));
+		blocos.add(new Bloco(9, "default:"));
+		blocos.add(new Bloco(10, "switch (diaDaSemana) {"));
+		blocos.add(new Bloco(11, "print(“Este não é um dia válido!“);}"));
+		blocos.add(new Bloco(12, "case 3:"));
+		blocos.add(new Bloco(13, "case 5:"));
+		blocos.add(new Bloco(14, "int diaDaSemana = 5;"));
+		blocos.add(new Bloco(15, "case 1:"));
+		blocos.add(new Bloco(16, "print(“Sexta-feira“); break;"));
+		blocos.add(new Bloco(17, "print(“Quinta-feira“); break;"));
+		blocos.add(new Bloco(18, "print(“Segunda-feira“); break;"));
 
 		addQuestao("Ordene os dias da semana usando um Switch Case e depois imprima a quinta-feira.",
-				"14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11", 1, TipoQuestao_Enum.SWITCH_CASE, blocos07);
+				"14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11", 1, TipoQuestao_Enum.SWITCH_CASE, blocos);
+	}
+	
+	private void Questao4_Fase1_SwitchCase() {
+		List<Bloco> blocos = new ArrayList<>();
 
-		// Questão 08
-		List<Bloco> blocos08 = new ArrayList<>();
-
-		blocos08.add(new Bloco("1-case 4 :  valor_total = (3,50 * quantidade);"));
-		blocos08.add(new Bloco("2-input(numero_produto);"));
-		blocos08.add(new Bloco("3-int quantidade = 0;"));
-		blocos08.add(new Bloco("4-case 1 :  valor_total = (2,00 * quantidade);"));
-		blocos08.add(new Bloco("5-print(“Informe o código do produto”);"));
-		blocos08.add(new Bloco("6-input(codigo);"));
-		blocos08.add(new Bloco("7-}"));
-		blocos08.add(new Bloco("8-case 3 :  valor_total = (2,50 * quantidade);"));
-		blocos08.add(new Bloco("9-print(“Informe a quantidade do produto”);"));
-		blocos08.add(new Bloco("10-case (1,2,3,4) :  valor_total = (2,00 * quantidade);"));
-		blocos08.add(new Bloco("11-int codigo = 0;"));
-		blocos08.add(new Bloco("12-input(quantidade);"));
-		blocos08.add(new Bloco("13-float valor_total = 0;"));
-		blocos08.add(new Bloco("14-switch(codigo) {"));
-		blocos08.add(new Bloco("15–print(“Valor Total = “+valor_total);"));
-		blocos08.add(new Bloco("16-switch ()"));
-		blocos08.add(new Bloco("17-case 2 :  valor_total = (3,00 * quantidade);"));
-		blocos08.add(new Bloco("18-print(“Valor  Total= “ + valor_total);"));
-		blocos08.add(new Bloco("19-string codigo = 0;"));
+		blocos.add(new Bloco(1, "case 4 :  valor_total = (3,50 * quantidade);"));
+		blocos.add(new Bloco(2, "input(numero_produto);"));
+		blocos.add(new Bloco(3, "int quantidade = 0;"));
+		blocos.add(new Bloco(4, "case 1 :  valor_total = (2,00 * quantidade);"));
+		blocos.add(new Bloco(5, "print(“Informe o código do produto”);"));
+		blocos.add(new Bloco(6, "input(codigo);"));
+		blocos.add(new Bloco(7, "}"));
+		blocos.add(new Bloco(8, "case 3 :  valor_total = (2,50 * quantidade);"));
+		blocos.add(new Bloco(9, "print(“Informe a quantidade do produto”);"));
+		blocos.add(new Bloco(10, "case (1,2,3,4) :  valor_total = (2,00 * quantidade);"));
+		blocos.add(new Bloco(11, "int codigo = 0;"));
+		blocos.add(new Bloco(12, "input(quantidade);"));
+		blocos.add(new Bloco(13, "float valor_total = 0;"));
+		blocos.add(new Bloco(14, "switch(codigo) {"));
+		blocos.add(new Bloco(15, "print(“Valor Total = ”+valor_total);"));
+		blocos.add(new Bloco(16, "switch ()"));
+		blocos.add(new Bloco(17, "case 2 :  valor_total = (3,00 * quantidade);"));
+		blocos.add(new Bloco(18, "print(“Valor  Total= ” + valor_total);"));
+		blocos.add(new Bloco(19, "string codigo = 0;"));
 
 		addQuestao(
-				"A lanchonete de Marli está com um sistema novo e codificou todos os seus produtos para agilizar o atendimento. \nA tabela dos produtos é a seguinte: \nProduto -  Código - Valor \nPastel - 1- 2,00 \nCachorro-Quente - 2 - 3,00 \nCoxinha - 3 - 2,50 \nRefrigerante - 4 - 3,50 \n\nCrie um algoritmo que leia o código de um produto e a quantidade e imprima o  valor total",
+				"A lanchonete de Marli está com um sistema novo e codificou todos os seus produtos para agilizar o atendimento. \n"+
+				"A tabela dos produtos é a seguinte: \nProduto -  Código - Valor \nPastel - 1- 2,00 \nCachorro-Quente - 2 - 3,00 \nCoxinha - 3 - 2,50 \nRefrigerante - 4 - 3,50 \n\n"+
+				"Crie um algoritmo que leia o código de um produto e a quantidade e imprima o  valor total",
 				"11-3-5-6-9-12-14-4-17-8-1-7-18 | 3-11-5-6-9-12-14-4-17-8-1-7-18", 1, TipoQuestao_Enum.SWITCH_CASE,
-				blocos08);
+				blocos);
 
-		// Questão 09
-		List<Bloco> blocos09 = new ArrayList<>();
+	}
+	
+	private void Questao5_Fase1_SwitchCase() {
+		List<Bloco> blocos = new ArrayList<>();
 
-		blocos09.add(new Bloco("1-ordenação"));
-		blocos09.add(new Bloco("2-decisão"));
-		blocos09.add(new Bloco("3-if/else"));
-		blocos09.add(new Bloco("4-resolvido"));
-		blocos09.add(new Bloco("5-inserir"));
-		blocos09.add(new Bloco("6-resolvido"));
-		blocos09.add(new Bloco("7-switch/case"));
-		blocos09.add(new Bloco("8-variável"));
-
-		addQuestao(
-				"A estrutura switch/case é uma estrutura para problemas de 1______. Quando uma 2 ______ possui várias condições a serem testadas, o uso do 3 ______ torna o código mais legível. Decidir que mensagem mostrar após o usuário 4 ______ um valor no programa, é um exemplo comum de problema que pode ser 5 ______ com switch/case. Já decidir qual o maior valor em uma lista de tamanho variável é um problema em que a estrutura 6 ______ fica melhor empregada.",
-				"2-8-7-5-4-3", 1, TipoQuestao_Enum.SWITCH_CASE, blocos09);
-
-		// Questão 10
-		List<Bloco> blocos10 = new ArrayList<>();
-
-		blocos10.add(new Bloco("1-}"));
-		blocos10.add(new Bloco("2-case 3:"));
-		blocos10.add(new Bloco("3-print(“dois“);"));
-		blocos10.add(new Bloco("4-int n;"));
-		blocos10.add(new Bloco("5-case 1:"));
-		blocos10.add(new Bloco("6-input(n);"));
-		blocos10.add(new Bloco("7-print(“três“);"));
-		blocos10.add(new Bloco("8-print(“um“);"));
-		blocos10.add(new Bloco("9-break;"));
-		blocos10.add(new Bloco("10-case 2:"));
-		blocos10.add(new Bloco("11-switch(n){"));
-		blocos10.add(new Bloco("13-default:"));
+		blocos.add(new Bloco(1, "}"));
+		blocos.add(new Bloco(2, "case 3:"));
+		blocos.add(new Bloco(3, "print(“dois“);"));
+		blocos.add(new Bloco(4, "int n;"));
+		blocos.add(new Bloco(5, "case 1:"));
+		blocos.add(new Bloco(6, "input(n);"));
+		blocos.add(new Bloco(7, "print(“três“);"));
+		blocos.add(new Bloco(8, "print(“um“);"));
+		blocos.add(new Bloco(9, "break;"));
+		blocos.add(new Bloco(10, "case 2:"));
+		blocos.add(new Bloco(11, "switch(n){"));
+		blocos.add(new Bloco(13, "default:"));
 
 		addQuestao(
 				"Faça com que o código leia um número de 1 à 3, e escreva este número por extenso.",
-				" 4-6-11-5-8-10-3-2-7-13-9-1", 1, TipoQuestao_Enum.SWITCH_CASE, blocos10);
-		
+				" 4-6-11-5-8-10-3-2-7-13-9-1", 1, TipoQuestao_Enum.SWITCH_CASE, blocos);
 
-		//Questao 11
-		List<Bloco> blocos11 = new ArrayList<>();
-
-		blocos11.add(new Bloco("1-String lugar; String sigla;"));
-		blocos11.add(new Bloco("2-switch(lugar){"));
-		blocos11.add(new Bloco("3-case “Brasil” : "));
-		blocos11.add(new Bloco("4-sigla = “BR”;"));
-		blocos11.add(new Bloco("5-case “Nordeste” : "));
-		blocos11.add(new Bloco("6-sigla = “NE”;"));
-		blocos11.add(new Bloco("7-case “Paraíba” : "));
-		blocos11.add(new Bloco("8-sigla = “PB”;"));
-		blocos11.add(new Bloco("9-}"));
-		blocos11.add(new Bloco("10-switch(sigla){"));
-		blocos11.add(new Bloco("11-case “PB” : "));
-		blocos11.add(new Bloco("12-lugar = “Paraíba”;"));
-		blocos11.add(new Bloco("13-case “BR” : "));
-		blocos11.add(new Bloco("14-lugar = “Brasil”;"));
-		blocos11.add(new Bloco("15-case “NE” : "));
-		blocos11.add(new Bloco("16-lugar = “Nordeste”;"));
-
-		addQuestao(
-				"A variável “lugar” pode possuir os valores “Brasil”, “Nordeste” ou “Paraíba”. Garanta que a variável “sigla” corresponda ao lugar informado.",
-				"1-2-3-4-5-6-7-8-9 | 1-2-3-4-7-8-5-6-9 | 1-2-5-6-3-4-7-8-9 | 1-2-5-6-7-8-3-4-9 | 1-2-7-8-3-4-5-6-9 | 1-2-7-8-5-6-3-4-9",
-				1, TipoQuestao_Enum.ATRIBUICAO, blocos11);
-
-		//Questao 12
-		List<Bloco> blocos12 = new ArrayList<>();
-
-		blocos12.add(new Bloco("1- ordenação"));
-		blocos12.add(new Bloco("2 - decisão"));
-		blocos12.add(new Bloco("3 - if/else"));
-		blocos12.add(new Bloco("4 - resolvido"));
-		blocos12.add(new Bloco("5 - inserir"));
-		blocos12.add(new Bloco("6 - resolvido"));
-		blocos12.add(new Bloco("7 - switch/case"));
-		blocos12.add(new Bloco("8 - variável"));
-
-		addQuestao(
-				"A estrutura switch/case é uma estrutura para problemas de 1______. Quando uma 2 ______ possui várias condições a serem testadas, o uso do 3 ______ torna o código mais legível. Decidir que mensagem mostrar após o usuário 4 ______ um valor no programa, é um exemplo comum de problema que pode ser 5 ______ com switch/case. Já decidir qual o maior valor em uma lista de tamanho variável é um problema em que a estrutura 6 ______ fica melhor empregada.",
-				"2-8-7-5-4-3",
-				1, TipoQuestao_Enum.ATRIBUICAO, blocos12);
-		
-		//Questao13
-		List<Bloco> blocos13 = new ArrayList<>();
-
-		blocos13.add(new Bloco("1 - print(“Quarta-feira”); break;"));
-		blocos13.add(new Bloco("2 - case 7:"));
-		blocos13.add(new Bloco("3 - print(“Sábado”); break;"));
-		blocos13.add(new Bloco("4 - case 2:"));
-		blocos13.add(new Bloco("5 - print(“Terça-feira”); break;"));
-		blocos13.add(new Bloco("6 - case 6:"));
-		blocos13.add(new Bloco("7 - case 4:"));
-		blocos13.add(new Bloco("8 - print(“Domingo”); break;"));
-		blocos13.add(new Bloco("9 - default:"));
-		blocos13.add(new Bloco("10 - switch (diaDaSemana) {"));
-		blocos13.add(new Bloco("11 - print(“Este não é um dia válido!”);}"));
-		blocos13.add(new Bloco("12 - case 3:"));
-		blocos13.add(new Bloco("13 - case 5:"));
-		blocos13.add(new Bloco("14 - int diaDaSemana = 5;"));
-		blocos13.add(new Bloco("15 - case 1:"));
-		blocos13.add(new Bloco("16 - print(“Sexta-feira”); break;"));
-		blocos13.add(new Bloco("17 - print(“Quinta-feira”); break;"));                                
-		blocos13.add(new Bloco("18 - print(“Segunda-feira”); break;"));
-		
-		
-		addQuestao(
-				"Ordene os dias da semana usando um Switch Case e depois imprima a quinta-feira.",
-				"14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11",
-				1, TipoQuestao_Enum.ATRIBUICAO, blocos13);
-		
-		//Questao 14
-		List<Bloco> blocos14 = new ArrayList<>();
-
-		blocos14.add(new Bloco("1 - print(“Quarta-feira”); break;"));
-		blocos14.add(new Bloco("1 - case 4 :  valor_total = (3,50 * quantidade);"));
-		blocos14.add(new Bloco("2 - input(numero_produto);"));
-		blocos14.add(new Bloco("3 - int quantidade = 0;"));
-		blocos14.add(new Bloco("4 - case 1 :  valor_total = (2,00 * quantidade);"));
-		blocos14.add(new Bloco("5 - print(“Informe o código do produto”);"));
-		blocos14.add(new Bloco("6 - input(codigo);"));
-		blocos14.add(new Bloco("7 - }"));
-		blocos14.add(new Bloco("8 - case 3 :  valor_total = (2,50 * quantidade);"));
-		blocos14.add(new Bloco("9 - print(“Informe a quantidade do produto”);"));
-		blocos14.add(new Bloco("10 - case (1,2,3,4) :  valor_total = (2,00 * quantidade);"));
-		blocos14.add(new Bloco("11 - int codigo = 0;"));
-		blocos14.add(new Bloco("12 - input(quantidade);"));
-		blocos14.add(new Bloco("13 - float valor_total = 0;"));
-		blocos14.add(new Bloco("14 - switch(codigo) {"));
-		blocos14.add(new Bloco("15 – print(“Valor Total = ”+valor_total);"));
-		blocos14.add(new Bloco("16 - switch () "));
-		blocos14.add(new Bloco("17 - case 2 :  valor_total = (3,00 * quantidade);"));
-		blocos14.add(new Bloco("18 - print(“Valor  Total= ” + valor_total); "));
-		blocos14.add(new Bloco("19 - string codigo = 0;"));
-
-		
-		addQuestao("A lanchonete de Marli está com um sistema novo e codificou todos os seus produtos para agilizar o atendimento."+ 
-				   "A tabela dos produtos é a seguinte:"+
-			       "Produto -  Código - Valor"+        
-			       "Pastel - 1- 2,00"+
-			       "Cachorro-Quente - 2 - 3,00"+
-			       "Coxinha - 3 - 2,50"+
-			       "Refrigerante - 4 - 3,50"+
-			       "Crie um algoritmo que leia o código de um produto e a quantidade e imprima o  valor total",
-				"11-3-5-6-9-12-14-4-17-8-1-7-18 | 3-11-5-6-9-12-14-4-17-8-1-7-18",
-				1, TipoQuestao_Enum.ATRIBUICAO, blocos14);
-		
-		//Questao 15
-		List<Bloco> blocos15 = new ArrayList<>();
-
-		blocos15.add(new Bloco("1- }"));
-		blocos15.add(new Bloco("2- case 3:"));
-		blocos15.add(new Bloco("3- print(“dois”);"));
-		blocos15.add(new Bloco("4- int n;"));
-		blocos15.add(new Bloco("5- case 1:"));
-		blocos15.add(new Bloco("6- input(n);"));
-		blocos15.add(new Bloco("7- print(“três”);"));
-		blocos15.add(new Bloco("8- print(“um”);"));
-		blocos15.add(new Bloco("9- break;"));
-		blocos15.add(new Bloco("10- case 2:"));
-		blocos15.add(new Bloco("11- switch(n){"));
-		blocos15.add(new Bloco("13- default:"));
-		
-		addQuestao("Faça com que o código leia um número de 1 à 3, e escreva este número por extenso.",
-				" 4-6-11-5-8-10-3-2-7-13-9-1",
-				1, TipoQuestao_Enum.ATRIBUICAO, blocos15);		
-		
-		
-		HibernateUtil.shutdown();
 	}
 
+	//FASE 1 - ATRIBUICAO
+	private void Questao1_Fase1_Atribuicao() {		
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "String palavras [] = {“Seja bem-vindo”, “universo dos algoritmos”, “ao”, “ ”};"));
+		blocos.add(new Bloco(2, "int a = 3;"));
+		blocos.add(new Bloco(3, "int b = a-1;"));
+		blocos.add(new Bloco(4, "String frase = palavras[0] + palavras[a];"));
+		blocos.add(new Bloco(5, "String frase = palavras[0] + palavras[b];"));
+		blocos.add(new Bloco(6, "frase = frase + palavras[b] + palavras[1];"));
+		blocos.add(new Bloco(7, "frase = frase + palavras[b] + palavras[a] + palavras[1];"));
+
+		addQuestao(
+				"Utilizando os blocos a seguir, atribua a frase “Seja bem-vindo ao universo dos algoritmos” para a variável “frase”.",
+				"1-2-3-4-7 | 1-3-2-4-7 | 2-3-1-4-7 | 2-1-3-4-7 | 3-1-2-4-7 | 3-2-1-4-7", 1, TipoQuestao_Enum.ATRIBUICAO, blocos);
+
+	}
+	
+	private void Questao2_Fase1_Atribuicao() {		
+		List<Bloco> blocos = new ArrayList<>();
+
+		blocos.add(new Bloco(1, "int a"));
+		blocos.add(new Bloco(2, "double b"));
+		blocos.add(new Bloco(3, "boolean c"));
+		blocos.add(new Bloco(4, "= false;"));
+		blocos.add(new Bloco(5, "= 3,1415;"));
+		blocos.add(new Bloco(6, "= -1000000;"));
+		
+		addQuestao(
+				"Para cada valor a seguir declare uma variável que melhor armazene os valores a seguir:\n"+
+				"a) false\nb) 3,1415\nc) -1.000.000",
+				"1-6-2-5-3-4 | 1-6-3-4-2-5 | 2-5-1-6-3-4 | 2-5-3-4-1-6 | 3-4-1-6-2-5 | 3-4-2-5-1-6", 1, TipoQuestao_Enum.ATRIBUICAO, blocos);
+
+	}
+	
+	private void Questao3_Fase1_Atribuicao() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "print(idade + “ - ” + nome);"));
+		blocos.add(new Bloco(2, "String nome = “Leandro”;"));
+		blocos.add(new Bloco(3, "print((idade + 5) + “ - ” + sobrenome);"));
+		blocos.add(new Bloco(4, "int idade = 20;"));
+		blocos.add(new Bloco(5, "String sobrenome = “Gomes”;"));
+		                              		
+		addQuestao(
+				"Imprima a idade e o nome, logo em seguida imprima a idade após 5 anos junto com o sobrenome.",
+				"4-2-5-1-3 | 5-4-2-1-3 | 2-4-5-1-3 | 2-5-4-1-3 | 4-5-2-1-3 | 5-2-4-1-3", 1, TipoQuestao_Enum.ATRIBUICAO, blocos);
+		
+	}
+	
+	private void Questao4_Fase1_Atribuicao() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "print(“Informe a primeira nota”);"));
+		blocos.add(new Bloco(2, "media = nota1 + nota2 / 2;"));
+		blocos.add(new Bloco(3, "print(“A media final é ”+media);"));
+		blocos.add(new Bloco(4, "nota1 = print(“Informe a primeira nota”);"));
+		blocos.add(new Bloco(5, "print(“A media final é ”media);"));
+		blocos.add(new Bloco(6, "float media = 0;"));
+		blocos.add(new Bloco(7, "string media = “0”;"));
+		blocos.add(new Bloco(8, "input (nota2);"));
+		blocos.add(new Bloco(9, "float nota1 = 0, nota2 = 0;"));
+		blocos.add(new Bloco(10, "media = (nota1 + nota2) / 2;"));
+		blocos.add(new Bloco(11, "nota2 = print(“Informe a segunda nota);"));
+		blocos.add(new Bloco(12, "print(“Informe a segunda nota”);"));
+		blocos.add(new Bloco(13, "input (nota1);"));		
+
+		addQuestao(
+				"Maurício, um aluno da turma de algoritmos, deseja calcular sua média final utilizando a fórmula MEDIA = (Nota1 + Nota 2) / 2. "+
+				"Organize os códigos abaixo para calcular a média final de Maurício e depois imprima a frase = “A média final é X”, onde X é o resultado da média final.",
+				"6-9-1-13-12-8-10-3 | 9-6-1-13-12-8-10-3", 1, TipoQuestao_Enum.ATRIBUICAO, blocos);
+		
+	}
+
+	private void Questao5_Fase1_Atribuicao() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "int a = 12;"));
+		blocos.add(new Bloco(2, "a = a - b + c;"));
+		blocos.add(new Bloco(3, "float b = 3,5;"));
+		blocos.add(new Bloco(4, "b = c - a * b;"));
+		blocos.add(new Bloco(5, "int c = 4;"));
+		blocos.add(new Bloco(6, "c = a * b /c;"));
+		
+		addQuestao(
+				"Dado os valores para a, b e c organize o algoritmo para que no fim da execução os valores sejam a = 18, b = -53, c = 10.",
+				"1-3-5-6-2-4 | 1-5-3-6-2-4 | 3-1-5-6-2-4 | 3-5-1-6-2-4 | 5-1-3-6-2-4 | 5-3-1-6-2-4", 1, TipoQuestao_Enum.ATRIBUICAO, blocos);
+		
+	}
+
+	
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
 			List<Bloco> blocos) {
 		QuestaoDAO dao = new QuestaoDAO();

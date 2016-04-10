@@ -20,7 +20,8 @@ public class Bloco {
 		
 	}
 	
-	public Bloco(String descricao){
+	public Bloco(int id_bloco, String descricao){
+		this.id_bloco = id_bloco;
 		this.descricao = descricao;
 	}
 

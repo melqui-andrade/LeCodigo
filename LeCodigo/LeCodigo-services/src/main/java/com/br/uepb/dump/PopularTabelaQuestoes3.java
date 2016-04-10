@@ -15,6 +15,7 @@ import com.br.uepb.domain.Bloco;
 public class PopularTabelaQuestoes3 {
 
 	public static void main(String[] args){
+		/*
 		//Questão 21
 		List<Bloco> blocos021 = new ArrayList<>();
 
@@ -156,7 +157,7 @@ public class PopularTabelaQuestoes3 {
 		
 		HibernateUtil.shutdown();
 
-
+		 */
 	}
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
