@@ -71,7 +71,7 @@ public class QuestaoDAO {
 			session = HibernateUtil.getSessionFactory().openSession();
 		}
 		Transaction tx = session.beginTransaction();
-		List listaQuestoes = session.createQuery("from Questao where fase='"+fase+"' and tipo_questao='"+tipo_questao.getTipos()+"'").list();
+		List listaQuestoes = session.createQuery("from Questao where fase='"+fase+"' and tipo_questao='"+tipo_questao.ordinal()+"'").list();
 		session.flush();
 		tx.commit();
 		session.close();
