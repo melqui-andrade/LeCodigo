@@ -91,12 +91,13 @@ public class QuestaoBusiness {
 		for (int i = 0; i < possiveisRespostas.length; i++) {
 			if(possiveisRespostas[i].trim().equals(resposta)){
 				sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
-				//TODO atualizar partida
+				sessao.setPontuacao(sessao.getPontuacao()+sessao.getValorDaQuestao());
+				sessao.atualizarPartidaDoJogador(idQuestao, resposta);
 				return true;
 			}
-		}		
-		//TODO diminuir vida e atualizar partida
+		}
 		sessao.diminuirVida();
+		sessao.atualizarPartidaDoJogador(idQuestao, resposta);
 		return false;
 	}
 	
@@ -105,7 +106,9 @@ public class QuestaoBusiness {
 //		Questao questao = questaoDAO.buscarQuestao(fase, etapa);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
 		//TODO O que é preciso para pular uma questão?
-		return null; //questaoDAO.PulaQuestao(fase, etapa);
+		//Acho que é:
+		
+		return buscarQuestao(fase, etapa); //questaoDAO.PulaQuestao(fase, etapa);
 		
 	}
 
