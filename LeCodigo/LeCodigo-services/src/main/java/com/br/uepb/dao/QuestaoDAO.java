@@ -1,25 +1,16 @@
 package com.br.uepb.dao;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import org.hibernate.HibernateError;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import com.br.uepb.domain.Bloco;
+import org.hibernate.criterion.Restrictions;
 import com.br.uepb.domain.Questao;
-import com.br.uepb.domain.TipoQuestao_Enum;
-
 import conexaoBD.HibernateUtil;
 
-
 public class QuestaoDAO {
-	
-private Session session;
-	
+
+	private Session session;
+
 	public QuestaoDAO() {
 		this.session = HibernateUtil.getSessionFactory().openSession();
 	}
@@ -35,66 +26,55 @@ private Session session;
 			session.flush();
 			tx.commit();
 		} catch (Exception e) {
-			
+
 		}
-		session.flush();
+		//session.flush();
 		session.close();
 		return questao1;
 	}
 
-	public Questao buscarQuestao(int id_questao) {
-		try {
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			Questao questao = (Questao) session.get(Questao.class, Integer.valueOf(id_questao));
-			session.flush();
-			session.close();
-			return questao;
-		} catch (HibernateError err) {
-			System.err.println("Erro ao buscar a questão. " + err);
-			return null;
+	public Questao buscarQuestao(int id) {
+		if (!session.isOpen()) {
+			session = HibernateUtil.getSessionFactory().openSession();
 		}
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<Questao> listarQuestoes(int fase) {
-		List<Questao> lista = new ArrayList<Questao>();
+		Transaction tx = session.beginTransaction();
+		Questao questao = null;
 		try {
-			
-			String SQL = "SELECT * FROM questao WHERE fase = " + fase + ";";
-			
-			if(!session.isOpen()) session = HibernateUtil.getSessionFactory().openSession();	
-					
-			Transaction tx = session.beginTransaction();
-			boolean verifica = true;
-			try {
-				lista = session.createSQLQuery(SQL).list();
-			} catch (Exception e) {
-				verifica = false;
-			}						
+			questao = (Questao) session.createCriteria(Questao.class).add(Restrictions.eq("id", id)).uniqueResult();
 			session.flush();
 			tx.commit();
-			session.close();
-			return lista;
-		} catch (HibernateException e) {
-			System.err.println("Erro ao listar as questões. " + e); 
-			return null;
-		}		
+		} catch (Exception e) {
+		}
+		session.close();
+		return questao;
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Questao> listarQuestoes(int fase, TipoQuestao_Enum tipo_questao) {
-		List<Questao> lista = new ArrayList<>();
-		try {
-			String SQL = "SELECT * FROM questao WHERE fase = " + fase + " AND tipo_questao = + " + tipo_questao.getTipos();
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<Questao> listarQuestoes(int fase) {
+		if (!session.isOpen()) {
 			session = HibernateUtil.getSessionFactory().openSession();
-			lista = session.createSQLQuery(SQL).list();
-			session.flush();
-			session.close();
-			return lista;
-		} catch (HibernateException e) {
-			System.err.println("Erro ao listar as questões. " + e); 
-			return null;
 		}
+		Transaction tx = session.beginTransaction();
+		List listaQuestoes = session.createQuery("from Questao where fase='"+fase+"'").list();
+		session.flush();
+		tx.commit();
+		session.close();
+
+		return listaQuestoes;
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<Questao> listarQuestoes(int fase, int tipo_questao) {
+		if (!session.isOpen()) {
+			session = HibernateUtil.getSessionFactory().openSession();
+		}
+		Transaction tx = session.beginTransaction();
+		List listaQuestoes = session.createQuery("from Questao where fase='"+fase+"' and tipo_questao='"+tipo_questao+"'").list();
+		session.flush();
+		tx.commit();
+		session.close();
+
+		return listaQuestoes;
 	}
 
 }
