@@ -34,38 +34,37 @@
 	</nav>
 
 	<div class="container">
-		<div class="" id="page-top">
-			<h3>ETAPA 1 - Questão 1</h3>
+		<div class="margem-acima" id="page-top">
+			<h3>Fase ${idFase} - Etapa ${etapa}</h3>
 			<hr>
-
 		</div>
 
 		<div class="panel panel-info">
-
 			<div class="panel-body" style="border-color: #fff;">
 				${questao.descricao}</div>
 		</div>
-
 
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading" style="background: #FAE6B3; color: #fff;">
 					<h6 class=" ">Linhas de código</h6>
 				</div>
-				<div class="panel-body panel-body-questao">
+				<div id="panelOpcoes" class="panel-body">
 					<div class="title">
 						Use as linhas de códigos abaixo para montar o algoritmo para a
 						resposta. <br>
-						<c:forEach var="bloco" varStatus="status"
-							items="${questao.blocos}">
-							<div class="" style="text-align: left;">
+						<div class="panel-body-opcoes">
+							<c:forEach var="bloco" varStatus="status"
+								items="${questao.blocos}">
+
 								<a id="${bloco.id}" class="list-group-item "
 									onclick="adicionarOpcaoSelecionada(${bloco.id},'${bloco.descricao}')">
 									${bloco.descricao} </a>
-							</div>
-						</c:forEach>
+
+							</c:forEach>
+						</div>
 					</div>
-					<br>					
+					<br>
 				</div>
 			</div>
 		</div>
@@ -77,18 +76,19 @@
 					<h6 class="">Visualização do código</h6>
 
 				</div>
-				<div class="panel-body panel-body-questao"
+				<div id="panelResposta" class="panel-body"
 					style="background: #444; color: #fff;">
-					Algoritmo: Par ou Impar? <br> <br> início <br>
-					<div class="col-md-12">
-						<div id="divResposta">
-						
-						</div>
+					Algoritmo: Par ou Impar? <br> <br>
+					<div class="col-md-4">início</div>
+					<br>
+					<div class="col-md-12" style="height: 300px; ">
+						<div id="divResposta" class="panel-body-resposta"></div>
 						<br>
 					</div>
 					<div class="col-md-4">fim</div>
 					<div class="col-md-4">
-						<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar Código</button>
+						<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar
+							Código</button>
 						<br>
 					</div>
 					<div class="col-md-4">
@@ -104,10 +104,7 @@
 				<br>
 			</div>
 		</div>
-
 	</div>
-
-
 
 	<div class="col-xs-6 col-sm-4">
 		<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
