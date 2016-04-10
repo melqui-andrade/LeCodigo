@@ -8,23 +8,6 @@
 }
 
 
-/*Para dispositivos com width menor que 768px*/
-.container {
-	
-	padding-left: 290px;
-	padding-right: 290px;
-}
-
-/*Para dispositivos com width maior ou igual a 768px*/
-@media ( min-width : 768px) {
-	.container {
-		padding-top: 100px;
-		padding-left: 170px;
-		padding-right: 170px;
-		font-size: 14px;
-	}
-}
-
 h1 {
 	color: #fff;
 	text-align: left;
@@ -33,7 +16,7 @@ h1 {
 }
 
 h3 {
-	color: #fff;
+	color: #34495E;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
 	font-size: 325%;
@@ -90,4 +73,18 @@ pre {
 
 .panel-body-questao {
 	min-height: 450px;
+	overflow-y:scroll;
+}
+
+.panel-body-opcoes{
+	height: 350px;
+	overflow-y:scroll;
+}
+.panel-body-resposta{
+	height: 250px;
+	overflow-y:scroll;
+}
+
+.margem-acima{
+	padding-top: 5%;
 }
