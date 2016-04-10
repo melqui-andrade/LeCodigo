@@ -135,6 +135,7 @@ public class SessaoBusiness {
 			respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
 		partida.getRespostas_aluno().add(respostaDoAluno);
 		partida.setData_hora(new Date().toString());
+		partida.setPontuacao(pontuacao);
 		
 		
 	}

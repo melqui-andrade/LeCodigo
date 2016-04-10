@@ -15,6 +15,7 @@ public class PartidaBusiness {
 		sessaoBusiness.setEtapa(1);
 		sessaoBusiness.setBits(0);
 		sessaoBusiness.setValorDaQuestao(3);
+		sessaoBusiness.iniciarPartidaDoJogador(id_jogador);
 		
 	}
 	
