@@ -175,7 +175,7 @@ public class PopularTabelaQuestoes2 {
 		HibernateUtil.shutdown();
 	
 		
-		addQuestao(null, null, 0, null, null);
+		
 	}
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
