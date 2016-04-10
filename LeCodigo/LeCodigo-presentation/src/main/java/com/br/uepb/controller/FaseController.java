@@ -14,7 +14,6 @@ import com.br.uepb.business.QuestaoBusiness;
 import com.br.uepb.business.SessaoBusiness;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.model.FaseModel;
-import com.br.uepb.model.LoginModel;
 
 @Controller
 public class FaseController {
@@ -34,7 +33,7 @@ public class FaseController {
 		int pontuacao = SessaoBusiness.getInstace().getPontuacao();
 		int vidas = SessaoBusiness.getInstace().getVidas();
 		int fase = SessaoBusiness.getInstace().getFase();
-		int etapa = 1;//SessaoBusiness.getInstace().getEtapa();
+		int etapa = SessaoBusiness.getInstace().getEtapa();
 		
 		if(fase == 1 && listaQuestoesFase1.isEmpty()){
 			for(int i=1; i<=5; i++){
@@ -50,13 +49,13 @@ public class FaseController {
 			}
 		}
 		
-		faseModel = new FaseModel(3);
+		faseModel = new FaseModel(fase);
 		
 		modelAndView.addObject("bits", bits);
 		modelAndView.addObject("pontuacao", pontuacao);
-		modelAndView.addObject("vidas", 2);
+		modelAndView.addObject("vidas", vidas);
 		modelAndView.addObject("fase", faseModel);
-		modelAndView.addObject("etapa", 5);
+		modelAndView.addObject("etapa", etapa);
 		
 		return modelAndView;
 	}
@@ -88,6 +87,13 @@ public class FaseController {
 		modelAndView.addObject("fase", faseModel);
 		modelAndView.addObject("etapa", 4);
 		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/fase/transicaoFase.html", method = RequestMethod.GET)
+	public ModelAndView transicaoGet(HttpServletRequest request) {
+
+		ModelAndView modelAndView = new ModelAndView();
 		return modelAndView;
 	}
 	
