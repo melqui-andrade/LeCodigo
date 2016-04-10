@@ -111,5 +111,18 @@ public class QuestaoBusiness {
 		return buscarQuestao(fase, etapa); //questaoDAO.PulaQuestao(fase, etapa);
 		
 	}
+	
+	public String getParteDoEnunciado(int idQuestao, int tamanho){
+		QuestaoDAO questaoDAO = new QuestaoDAO();
+		
+		Questao questao = questaoDAO.buscarQuestao(idQuestao);
+		
+		if(questao != null){
+			return questao.getDescricao().substring(tamanho);
+		}
+		else{
+			return "ID inválido";
+		}
+	}
 
 }
