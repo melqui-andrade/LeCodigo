@@ -11,7 +11,8 @@ import com.br.uepb.domain.TipoQuestao_Enum;
 import conexaoBD.HibernateUtil;
 
 public class QuestaoBusiness {
-	 
+	
+	
 	public Questao buscarQuestao(int fase, int etapa){
 
 		QuestaoDAO questaoDAO = new QuestaoDAO();
@@ -66,7 +67,7 @@ public class QuestaoBusiness {
 			
 			
 		}
-		if(questoes!=null){
+		if(!questoes.isEmpty()){
 			int numQuestao = 0;
 			do{
 				Random random = new Random();
@@ -86,19 +87,17 @@ public class QuestaoBusiness {
 		Questao questao = questaoDAO.buscarQuestao(idQuestao);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
 		
-		RespostaDoAluno respostaDoAluno;
-		
-		
-		if(questao.getResposta().equals(resposta)){
-			sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
-			
-			return true;
-		}
-		else{		
-			//TODO diminuir vida
-			sessao.diminuirVida();
-			return false;
-		}
+		String [] possiveisRespostas = questao.getResposta().split("|");
+		for (int i = 0; i < possiveisRespostas.length; i++) {
+			if(possiveisRespostas[i].trim().equals(resposta)){
+				sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
+				//TODO atualizar partida
+				return true;
+			}
+		}		
+		//TODO diminuir vida e atualizar partida
+		sessao.diminuirVida();
+		return false;
 	}
 	
 	public Questao pularQuestao(int fase, int etapa){
