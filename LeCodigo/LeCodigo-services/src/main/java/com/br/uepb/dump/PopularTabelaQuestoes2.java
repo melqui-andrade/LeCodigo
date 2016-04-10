@@ -1,5 +1,6 @@
 package com.br.uepb.dump;
-import java.util.ArrayList; 
+
+import java.util.ArrayList;
 import java.util.List;
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Bloco;
@@ -170,7 +171,11 @@ public class PopularTabelaQuestoes2 {
 		addQuestao(
 				"Faça um programa que imprima os números inteiros que inicia em 1 e termina em 1000.",
 				"3-1", 2, TipoQuestao_Enum.FOR, blocos020);
+	
 		HibernateUtil.shutdown();
+	
+		
+		
 	}
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
@@ -180,6 +185,7 @@ public class PopularTabelaQuestoes2 {
 		Questao questao = new Questao(descricao, resposta, fase, tipoQuestao, blocos);
 
 		dao.adicionarQuestao(questao);
+		
 		return true;
 	}
 }

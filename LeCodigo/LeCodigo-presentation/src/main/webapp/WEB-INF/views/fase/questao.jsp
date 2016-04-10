@@ -42,9 +42,8 @@
 
 		<div class="panel panel-info">
 
-			<div class="panel-body" style="border-color: #fff;">Como
-				deve-se verificar se um número qualquer é par ou impar? Organize
-				blocos para estabelecer a ordem que considerar correta.</div>
+			<div class="panel-body" style="border-color: #fff;">
+				${questao.descricao}</div>
 		</div>
 
 
@@ -57,40 +56,18 @@
 					<div class="title">
 						Use as linhas de códigos abaixo para montar o algoritmo para a
 						resposta. <br>
-						<div class="selecter  multiple" tabindex="0">
-							<select name="selecter_multiple"
-								class="selecter_5 selecter-element" multiple="multiple"
-								tabindex="-1">
-								<option value="1">1-int numero; String resposta;</option>
-								<option value="2">2-if(numero){</option>
-								<option value="3">3-resposta = "O número é par";}</option>
-								<option value="4">4-else{ resposta = "O número é
-									impar";}</option>
-								<option value="5">5-if(numero%3==0){</option>
-								<option value="6">6-if(numero%2==0){</option>
-							</select>
-							<div class="selecter-options">
-								<span class="selecter-item" data-value="1">1-int numero;
-									String resposta;</span> <span class="selecter-item " data-value="2">2-if(numero){</span>
-								<span class="selecter-item " data-value="3">3-resposta =
-									"O número é par";}</span> <span class="selecter-item" data-value="4">4-else{
-									resposta = "O número é impar";}</span> <span class="selecter-item"
-									data-value="5">5-if(numero%3==0){</span> <span
-									class="selecter-item" data-value="6">6-if(numero%2==0){</span>
+						<c:forEach var="bloco" varStatus="status"
+							items="${questao.blocos}">
+							<div class="" style="text-align: left;">
+								<a id="${bloco.id}" class="list-group-item "
+									onclick="adicionarOpcaoSelecionada(${bloco.id},'${bloco.descricao}')">
+									${bloco.descricao} </a>
 							</div>
-						</div>
+						</c:forEach>
 					</div>
-					<br>
-
-					<div class="col-md-12" style="text-align: center;">
-
-						<button class="btn btn-block btn-primary">Adicionar</button>
-					</div>
+					<br>					
 				</div>
-
-
 			</div>
-
 		</div>
 
 		<div class="col-md-8">
@@ -104,19 +81,14 @@
 					style="background: #444; color: #fff;">
 					Algoritmo: Par ou Impar? <br> <br> início <br>
 					<div class="col-md-12">
-						<div class="" style="text-align: left;">
-							<a href="#" class="list-group-item ">int numero; String
-								resposta; </a> <a href="#" class="list-group-item ">if(numero%2==0){
-							</a> <a href="#" class="list-group-item ">resposta = "O número é
-								par";} </a> <a href="#" class="list-group-item ">else{ resposta
-								= "O número é impar";} </a>
+						<div id="divResposta">
+						
 						</div>
-
 						<br>
 					</div>
 					<div class="col-md-4">fim</div>
 					<div class="col-md-4">
-						<button class="btn btn-danger btn-block">Limpar Código</button>
+						<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar Código</button>
 						<br>
 					</div>
 					<div class="col-md-4">
@@ -150,7 +122,6 @@
 		<a class="btn btn-primary" href="#page-top"><i
 			class="fa fa-chevron-up"></i></a>
 	</div>
-
 
 
 

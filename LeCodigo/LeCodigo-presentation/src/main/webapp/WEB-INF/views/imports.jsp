@@ -19,16 +19,15 @@
 	rel="stylesheet">
 
 <!-- JAVASCRIPT -->
-<!-- <script src="../js/freelancer/bootstrap.js"></script> -->
-<!-- <script src="../js/freelancer/cbpAnimatedHeader.js"></script> -->
-<!-- <script src="../js/freelancer/classie.js"></script> -->
-<!-- <script src="../js/freelancer/contact_me.js"></script> -->
-<!-- <script src="../js/freelancer/freelancer.js"></script> -->
-<!-- <script src="../js/freelancer/jqBootstrapValidation.js"></script> -->
-<!-- <script src="../js/freelancer/jquery.js"></script> -->
 <script src="../styles/bootflat/js/icheck.min.js"></script>
 <script src="../styles/bootflat/js/jquery.fs.selecter.min.js"></script>
 <script src="../styles/bootflat/js/jquery.fs.stepper.min.js"></script>
+
+<!-- JS BLOCKS -->
+<script src="../js/jsBlocks/blocks.js"></script>
+
+<!-- QUESTAO -->
+<script src="../js/questao.js"></script>
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
 <script src="../js/jogo/vendor/jquery.min.js"></script>
@@ -38,7 +37,9 @@
 <script src="../js/jogo/site_.js"></script>
 <script src="../js/jogo/site.min.js"></script>
 
-<script src="../js/jogo/jogo.js" type="text/javascript" charset="utf-8"></script>
-
 <!-- Custom Fonts -->
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

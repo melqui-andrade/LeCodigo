@@ -19,50 +19,50 @@ public class QuestaoBusiness {
 		List<Questao> questoes = null;
 		if(fase==1){
 			if(etapa==1){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRIBUICAO);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRIBUICAO.ordinal());
 			}
 			else if(etapa==2){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.IF_ELSE);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.IF_ELSE.ordinal());
 			}
 			else if(etapa==3){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.SWITCH_CASE);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.SWITCH_CASE.ordinal());
 			}
 			else{
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRIBUICAO);
-				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.IF_ELSE));
-				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.SWITCH_CASE));
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ATRIBUICAO.ordinal());
+				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.IF_ELSE.ordinal()));
+				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.SWITCH_CASE.ordinal()));
 			}
 		}
 		else if(fase==2){
 			if(etapa==1){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FOR);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FOR.ordinal());
 			}
 			else if(etapa==2){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.WHILE);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.WHILE.ordinal());
 			}
 			else if(etapa==3){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.DO_WHILE);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.DO_WHILE.ordinal());
 			}
 			else{
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FOR);
-				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.WHILE));
-				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.DO_WHILE));
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FOR.ordinal());
+				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.WHILE.ordinal()));
+				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.DO_WHILE.ordinal()));
 			}
 		}
 		else if(fase==3){
 			if(etapa==1){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.TROCA_VARIAVEIS);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.TROCA_VARIAVEIS.ordinal());
 			}
 			else if(etapa==2){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ORDENACAO_SIMPLES);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ORDENACAO_SIMPLES.ordinal());
 			}
 			else if(etapa==3){
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FUNCOES);
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FUNCOES.ordinal());
 			}
 			else{
-				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.TROCA_VARIAVEIS);
-				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ORDENACAO_SIMPLES));
-				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FUNCOES));
+				questoes = questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.TROCA_VARIAVEIS.ordinal());
+				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.ORDENACAO_SIMPLES.ordinal()));
+				questoes.addAll(questaoDAO.listarQuestoes(fase, TipoQuestao_Enum.FUNCOES.ordinal()));
 			}
 			
 			

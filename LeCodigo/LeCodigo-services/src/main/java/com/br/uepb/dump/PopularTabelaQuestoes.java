@@ -6,6 +6,8 @@ import com.br.uepb.domain.Bloco;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
 
+import conexaoBD.HibernateUtil;
+
 public class PopularTabelaQuestoes {
 
 	public static void main(String[] args) {
@@ -231,7 +233,136 @@ public class PopularTabelaQuestoes {
 		addQuestao(
 				"Faça com que o código leia um número de 1 à 3, e escreva este número por extenso.",
 				" 4-6-11-5-8-10-3-2-7-13-9-1", 1, TipoQuestao_Enum.SWITCH_CASE, blocos10);
+		
 
+		//Questao 11
+		List<Bloco> blocos11 = new ArrayList<>();
+
+		blocos11.add(new Bloco("1-String lugar; String sigla;"));
+		blocos11.add(new Bloco("2-switch(lugar){"));
+		blocos11.add(new Bloco("3-case “Brasil” : "));
+		blocos11.add(new Bloco("4-sigla = “BR”;"));
+		blocos11.add(new Bloco("5-case “Nordeste” : "));
+		blocos11.add(new Bloco("6-sigla = “NE”;"));
+		blocos11.add(new Bloco("7-case “Paraíba” : "));
+		blocos11.add(new Bloco("8-sigla = “PB”;"));
+		blocos11.add(new Bloco("9-}"));
+		blocos11.add(new Bloco("10-switch(sigla){"));
+		blocos11.add(new Bloco("11-case “PB” : "));
+		blocos11.add(new Bloco("12-lugar = “Paraíba”;"));
+		blocos11.add(new Bloco("13-case “BR” : "));
+		blocos11.add(new Bloco("14-lugar = “Brasil”;"));
+		blocos11.add(new Bloco("15-case “NE” : "));
+		blocos11.add(new Bloco("16-lugar = “Nordeste”;"));
+
+		addQuestao(
+				"A variável “lugar” pode possuir os valores “Brasil”, “Nordeste” ou “Paraíba”. Garanta que a variável “sigla” corresponda ao lugar informado.",
+				"1-2-3-4-5-6-7-8-9 | 1-2-3-4-7-8-5-6-9 | 1-2-5-6-3-4-7-8-9 | 1-2-5-6-7-8-3-4-9 | 1-2-7-8-3-4-5-6-9 | 1-2-7-8-5-6-3-4-9",
+				1, TipoQuestao_Enum.ATRIBUICAO, blocos11);
+
+		//Questao 12
+		List<Bloco> blocos12 = new ArrayList<>();
+
+		blocos12.add(new Bloco("1- ordenação"));
+		blocos12.add(new Bloco("2 - decisão"));
+		blocos12.add(new Bloco("3 - if/else"));
+		blocos12.add(new Bloco("4 - resolvido"));
+		blocos12.add(new Bloco("5 - inserir"));
+		blocos12.add(new Bloco("6 - resolvido"));
+		blocos12.add(new Bloco("7 - switch/case"));
+		blocos12.add(new Bloco("8 - variável"));
+
+		addQuestao(
+				"A estrutura switch/case é uma estrutura para problemas de 1______. Quando uma 2 ______ possui várias condições a serem testadas, o uso do 3 ______ torna o código mais legível. Decidir que mensagem mostrar após o usuário 4 ______ um valor no programa, é um exemplo comum de problema que pode ser 5 ______ com switch/case. Já decidir qual o maior valor em uma lista de tamanho variável é um problema em que a estrutura 6 ______ fica melhor empregada.",
+				"2-8-7-5-4-3",
+				1, TipoQuestao_Enum.ATRIBUICAO, blocos12);
+		
+		//Questao13
+		List<Bloco> blocos13 = new ArrayList<>();
+
+		blocos13.add(new Bloco("1 - print(“Quarta-feira”); break;"));
+		blocos13.add(new Bloco("2 - case 7:"));
+		blocos13.add(new Bloco("3 - print(“Sábado”); break;"));
+		blocos13.add(new Bloco("4 - case 2:"));
+		blocos13.add(new Bloco("5 - print(“Terça-feira”); break;"));
+		blocos13.add(new Bloco("6 - case 6:"));
+		blocos13.add(new Bloco("7 - case 4:"));
+		blocos13.add(new Bloco("8 - print(“Domingo”); break;"));
+		blocos13.add(new Bloco("9 - default:"));
+		blocos13.add(new Bloco("10 - switch (diaDaSemana) {"));
+		blocos13.add(new Bloco("11 - print(“Este não é um dia válido!”);}"));
+		blocos13.add(new Bloco("12 - case 3:"));
+		blocos13.add(new Bloco("13 - case 5:"));
+		blocos13.add(new Bloco("14 - int diaDaSemana = 5;"));
+		blocos13.add(new Bloco("15 - case 1:"));
+		blocos13.add(new Bloco("16 - print(“Sexta-feira”); break;"));
+		blocos13.add(new Bloco("17 - print(“Quinta-feira”); break;"));                                
+		blocos13.add(new Bloco("18 - print(“Segunda-feira”); break;"));
+		
+		
+		addQuestao(
+				"Ordene os dias da semana usando um Switch Case e depois imprima a quinta-feira.",
+				"14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11",
+				1, TipoQuestao_Enum.ATRIBUICAO, blocos13);
+		
+		//Questao 14
+		List<Bloco> blocos14 = new ArrayList<>();
+
+		blocos14.add(new Bloco("1 - print(“Quarta-feira”); break;"));
+		blocos14.add(new Bloco("1 - case 4 :  valor_total = (3,50 * quantidade);"));
+		blocos14.add(new Bloco("2 - input(numero_produto);"));
+		blocos14.add(new Bloco("3 - int quantidade = 0;"));
+		blocos14.add(new Bloco("4 - case 1 :  valor_total = (2,00 * quantidade);"));
+		blocos14.add(new Bloco("5 - print(“Informe o código do produto”);"));
+		blocos14.add(new Bloco("6 - input(codigo);"));
+		blocos14.add(new Bloco("7 - }"));
+		blocos14.add(new Bloco("8 - case 3 :  valor_total = (2,50 * quantidade);"));
+		blocos14.add(new Bloco("9 - print(“Informe a quantidade do produto”);"));
+		blocos14.add(new Bloco("10 - case (1,2,3,4) :  valor_total = (2,00 * quantidade);"));
+		blocos14.add(new Bloco("11 - int codigo = 0;"));
+		blocos14.add(new Bloco("12 - input(quantidade);"));
+		blocos14.add(new Bloco("13 - float valor_total = 0;"));
+		blocos14.add(new Bloco("14 - switch(codigo) {"));
+		blocos14.add(new Bloco("15 – print(“Valor Total = ”+valor_total);"));
+		blocos14.add(new Bloco("16 - switch () "));
+		blocos14.add(new Bloco("17 - case 2 :  valor_total = (3,00 * quantidade);"));
+		blocos14.add(new Bloco("18 - print(“Valor  Total= ” + valor_total); "));
+		blocos14.add(new Bloco("19 - string codigo = 0;"));
+
+		
+		addQuestao("A lanchonete de Marli está com um sistema novo e codificou todos os seus produtos para agilizar o atendimento."+ 
+				   "A tabela dos produtos é a seguinte:"+
+			       "Produto -  Código - Valor"+        
+			       "Pastel - 1- 2,00"+
+			       "Cachorro-Quente - 2 - 3,00"+
+			       "Coxinha - 3 - 2,50"+
+			       "Refrigerante - 4 - 3,50"+
+			       "Crie um algoritmo que leia o código de um produto e a quantidade e imprima o  valor total",
+				"11-3-5-6-9-12-14-4-17-8-1-7-18 | 3-11-5-6-9-12-14-4-17-8-1-7-18",
+				1, TipoQuestao_Enum.ATRIBUICAO, blocos14);
+		
+		//Questao 15
+		List<Bloco> blocos15 = new ArrayList<>();
+
+		blocos15.add(new Bloco("1- }"));
+		blocos15.add(new Bloco("2- case 3:"));
+		blocos15.add(new Bloco("3- print(“dois”);"));
+		blocos15.add(new Bloco("4- int n;"));
+		blocos15.add(new Bloco("5- case 1:"));
+		blocos15.add(new Bloco("6- input(n);"));
+		blocos15.add(new Bloco("7- print(“três”);"));
+		blocos15.add(new Bloco("8- print(“um”);"));
+		blocos15.add(new Bloco("9- break;"));
+		blocos15.add(new Bloco("10- case 2:"));
+		blocos15.add(new Bloco("11- switch(n){"));
+		blocos15.add(new Bloco("13- default:"));
+		
+		addQuestao("Faça com que o código leia um número de 1 à 3, e escreva este número por extenso.",
+				" 4-6-11-5-8-10-3-2-7-13-9-1",
+				1, TipoQuestao_Enum.ATRIBUICAO, blocos15);		
+		
+		
+		HibernateUtil.shutdown();
 	}
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,

@@ -3,6 +3,7 @@ package com.br.uepb.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ public class Questao {
 	@Id
 	@GeneratedValue
 	private int id;
+	@Column (length=500)
 	private String descricao;
 	private String resposta;
 	private int fase;
