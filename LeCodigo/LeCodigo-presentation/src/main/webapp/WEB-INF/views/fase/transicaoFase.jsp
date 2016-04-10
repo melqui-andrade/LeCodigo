@@ -6,7 +6,14 @@
 <html>
 <body>
 
-	<div class="col-md-4">&nbsp;</div>
+	<div class="col-md-4">&nbsp;
+		<a href="fase.html"
+			    data-original-title="Botao temporário pra ir para fase //Depois a gente tira Sidney :)"
+				type="button" class="btn btn-primary btn-block"
+				data-toggle="tooltip" data-placement="bottom" title="">
+				<h5>Jogar</h5>
+			</a>
+	</div>
 
 	<div class="col-md-4">
 		<h1>
@@ -37,6 +44,12 @@
 	</div>
 
 	<script>
+		//TODO: DEPOIS QUE TIRAR O BOTAO TEMPORAIO POE TIRAR ESSA FUNCAO
+		
+		$(document).ready(function() {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	
 		(function() {
 			document.body.style.background = "#F2BB82 url('../images/background/grid.png')  repeat right top";
 

@@ -14,62 +14,63 @@
 			<h1 style="float: left;">
 				Le<br> Código
 			</h1>
-		<img src="../images/monster1.png" class="img-responsive" align="middle"
-					style="float: left;" />
+			<img src="../images/monster1.png" class="img-responsive"
+				align="middle" style="float: left;" />
 		</div>
 
 		<div class="col-lg-8 col-lg-offset-2 text-center">
-			<button data-original-title="Clique neste botão e irá iniciar o jogo"
+			<a href="/LeCodigo-presentation/fase/transicaoFase.html"
+				data-original-title="Clique neste botão e irá iniciar o jogo"
 				type="button" class="btn btn-primary btn-block btn-large"
 				data-toggle="tooltip" data-placement="left" title="">
 				<h5>Jogar</h5>
-			</button>
-			<br>
+			</a> <br>
 		</div>
 
 
 		<div class="col-lg-8 col-lg-offset-2 text-center">
 
-			<button
+			<a href="#"
 				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
 				<h5>Instruções</h5>
-			</button>
+			</a>
 			<br>
 		</div>
 
 		<div class="col-lg-8 col-lg-offset-2 text-center">
-			<button
+			<a href="#"
 				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
 				<h5>Ranking</h5>
-			</button>
+			</a>
 			<br>
 		</div>
 
 		<div class="col-lg-8 col-lg-offset-2 text-center">
 
-			<button data-original-title="Clique neste botão para sair do jogo"
+			<a href="#"
+			    data-original-title="Clique neste botão para sair do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
 				<h5>Sair</h5>
-			</button>
+			</a>
 			<br>
 		</div>
 
 		<div class="row">
 			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-				<img src="../images/monster2.png" class="img-responsive" align="middle"
-					style="float: left;" />
+				<img src="../images/monster2.png" class="img-responsive"
+					align="middle" style="float: left;" />
 			</div>
 			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-				<img src="../images/monster3.png" class="img-responsive" align="middle"
-					style="float: left;" />
+				<img src="../images/monster3.png" class="img-responsive"
+					align="middle" style="float: left;" />
 			</div>
 		</div>
-		
+
 	</div>
 
 
