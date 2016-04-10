@@ -21,7 +21,7 @@ public class ValidarEmailTest {
 			"mkyong..2002@gmail.com", "mkyong.@gmail.com",
 			"mkyong@mkyong@gmail.com", "mkyong@gmail.com.1a" };
 
-	@Before
+/*	@Before
 	public void setUp() {
 		strValidador = new ValidadorDeStringsAdapter();
 	}
@@ -45,5 +45,5 @@ public class ValidarEmailTest {
 			//System.out.println("Email is valid : " + temp + " , " + valid);
 			Assert.assertEquals(valid, false);
 		}
-	}
+	}*/
 }

@@ -15,7 +15,7 @@ public class ValidarLoginTest {
 	String[] loginsInvalidos = new String[] { "mk", "mk@yong",
 			"mkyong123456789_-" };
 
-	@Before
+	/*@Before
 	public void setUp() {
 		strValidador = new ValidadorDeStringsAdapter();
 	}
@@ -40,6 +40,6 @@ public class ValidarLoginTest {
 			Assert.assertEquals(false, ehValido);
 		}
 
-	}
+	}*/
 
 }
