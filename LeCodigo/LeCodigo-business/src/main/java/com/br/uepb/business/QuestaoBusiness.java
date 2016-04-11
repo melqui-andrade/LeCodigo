@@ -87,7 +87,7 @@ public class QuestaoBusiness {
 		Questao questao = questaoDAO.buscarQuestao(idQuestao);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
 		
-		String [] possiveisRespostas = questao.getResposta().split("|");
+		String [] possiveisRespostas = questao.getResposta().split(" | ");
 		for (int i = 0; i < possiveisRespostas.length; i++) {
 			if(possiveisRespostas[i].trim().equals(resposta)){
 				sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
