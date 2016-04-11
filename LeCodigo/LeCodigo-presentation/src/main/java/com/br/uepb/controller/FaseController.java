@@ -80,6 +80,8 @@ public class FaseController {
 			questao = listaQuestoesFase3.get(etapa-1);
 		}
 		
+		
+		
 		modelAndView.addObject("bits", bits);
 		modelAndView.addObject("pontuacao", pontuacao);
 		modelAndView.addObject("vidas", 2);
