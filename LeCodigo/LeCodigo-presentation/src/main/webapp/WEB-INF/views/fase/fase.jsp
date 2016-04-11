@@ -27,16 +27,14 @@
 						</c:forEach>
 					</h5>
 				</div>
-
 			</div>
-
 		</div>
 	</nav>
 
-
-	<div class="container-fluid text-center" style="float: left;">
-
-		<div class="timeline" id="page-top" style="float: left;">
+	<div class="col-md-4">&nbsp;</div>
+	
+	<div class="col-md-4">	
+		<div class="timeline" id="page-top">
 			<dl>
 				<c:forEach begin="1" end="${etapa}" varStatus="loop">
 					<c:if test="${loop.index % 2 == 0}">
@@ -48,7 +46,7 @@
 									<img class="events-object img-rounded"
 										src="${fase.imgPerfilMonstro}">
 								</div>
-								<div class="events-body">
+								<div class="events-body" style="width: 100px;">
 									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
 									<p>
 										<!-- Enunciado da questao -->
@@ -76,7 +74,7 @@
 									<img class="events-object img-rounded"
 										src="${fase.imgPerfilMonstro}">
 								</div>
-								<div class="events-body">
+								<div class="events-body"  style="width: 100px;">
 									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
 									<p>
 										<!-- Enunciado da questao -->
@@ -98,19 +96,14 @@
 						</dd>
 					</c:if>
 				</c:forEach>
-
 			</dl>
 		</div>
-
-		<div class="col-xs-6 col-sm-4">
-
-			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
-				style="float: left;" />
-
-		</div>
-
 	</div>
-
+	
+	<div class="col-md-4">
+		<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+			style="float: left;" />
+	</div>
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div class="scroll-top page-scroll visible-xs visble-sm">

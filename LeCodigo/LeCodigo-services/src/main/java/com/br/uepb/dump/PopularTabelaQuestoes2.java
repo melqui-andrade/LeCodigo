@@ -12,7 +12,7 @@ import conexaoBD.HibernateUtil;
 public class PopularTabelaQuestoes2 {
 
 	public static void main(String[] args) {
-
+/*
 		// Questão 011
 		List<Bloco> blocos011 = new ArrayList<>();
 
@@ -175,7 +175,7 @@ public class PopularTabelaQuestoes2 {
 		HibernateUtil.shutdown();
 	
 		
-		
+*/		
 	}
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,

@@ -3,6 +3,7 @@ package com.br.uepb.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,13 +13,15 @@ public class Bloco {
 	@Id
 	@GeneratedValue
 	private int id;
+	private int id_bloco;
 	private String descricao;
 	
 	public Bloco() {
 		
 	}
 	
-	public Bloco(String descricao){
+	public Bloco(int id_bloco, String descricao){
+		this.id_bloco = id_bloco;
 		this.descricao = descricao;
 	}
 
@@ -26,6 +29,15 @@ public class Bloco {
 		return id;
 	}
 
+	
+	public int getId_bloco() {
+		return id_bloco;
+	}
+
+	public void setId_bloco(int id_bloco) {
+		this.id_bloco = id_bloco;
+	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
