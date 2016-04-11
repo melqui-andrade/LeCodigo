@@ -11,6 +11,9 @@ public class PartidaBusiness {
 
 	SessaoBusiness sessaoBusiness = SessaoBusiness.getInstace();
 	public void iniciarPartida(int id_jogador){
+		if(sessaoBusiness.getPartida()!=null){
+			return;
+		}
 		sessaoBusiness.setFase(1);
 		sessaoBusiness.setEtapa(1);
 		sessaoBusiness.setBits(0);
@@ -45,4 +48,8 @@ public class PartidaBusiness {
 		return null;
 	}
 	
+	public static void main(String[] args) {
+		new PartidaBusiness().iniciarPartida(0);
+		SessaoBusiness.getInstace().atualizarPartidaDoJogador(2, "9-9-0");
+	}
 }

@@ -128,7 +128,7 @@ public class SessaoBusiness {
 			this.respostaDoAluno = new RespostaDoAluno();
 		respostaDoAluno.setEtapa(this.etapa);
 		respostaDoAluno.setId_questao(id_questao);
-		if(respostaDoAluno.getRespostas().isEmpty())
+		if(respostaDoAluno.getRespostas()==null)
 			respostaDoAluno.setRespostas(resposta);
 		else
 			//TODO outra coisa esse "|" era para ser adicionado no domain, mas não colocaram
@@ -141,10 +141,19 @@ public class SessaoBusiness {
 	}
 	public void iniciarPartidaDoJogador(int idJogador){
 		this.jogador = new JogadorDAO().buscarJogador(idJogador);
+		//TODO remover essa verificação depois que o cadastro de jogadores tiver feito
+		if(jogador==null){
+			jogador = new Jogador();
+			jogador.setPartidas(new ArrayList<>());
+		}
 		this.partida = new Partida();
 		this.partida.setRespostas_aluno(new ArrayList<RespostaDoAluno>());
 		this.jogador.getPartidas().add(this.partida);
 		this.respostaDoAluno = new RespostaDoAluno();
+	}
+	
+	public Partida getPartida(){
+		return this.partida;
 	}
 	
 	
