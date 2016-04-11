@@ -7,18 +7,23 @@
 	href="//fonts.googleapis.com/css?family=Open+Sans" />
 
 <html>
-<body>
+<body
+	style="background: url('../images/background/background2.png') fixed no-repeat; background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
 
-	<div class="container ">
-		<div class="col-lg-8 col-lg-offset-2 text-center">
-			<h1 style="float: left;">
+
+
+	<div class="col-md-4">&nbsp;</div>
+
+
+	<div class="col-md-4 container ">
+		<div class="row">
+			<h1>
 				Le<br> Código
 			</h1>
-			<img src="../images/monster1.png" class="img-responsive"
-				align="middle" style="float: left;" />
+
 		</div>
 
-		<div class="col-lg-8 col-lg-offset-2 text-center">
+		<div class="row">
 			<a href="/LeCodigo-presentation/fase/transicaoFase.html"
 				data-original-title="Clique neste botão e irá iniciar o jogo"
 				type="button" class="btn btn-primary btn-block btn-large"
@@ -28,52 +33,38 @@
 		</div>
 
 
-		<div class="col-lg-8 col-lg-offset-2 text-center">
-
+		<div class="row">
 			<a href="#"
 				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
 				<h5>Instruções</h5>
-			</a>
-			<br>
+			</a> <br>
 		</div>
 
-		<div class="col-lg-8 col-lg-offset-2 text-center">
+		<div class="row">
 			<a href="#"
 				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
 				<h5>Ranking</h5>
-			</a>
-			<br>
-		</div>
-
-		<div class="col-lg-8 col-lg-offset-2 text-center">
-
-			<a href="#"
-			    data-original-title="Clique neste botão para sair do jogo"
-				type="button" class="btn btn-primary btn-block"
-				data-toggle="tooltip" data-placement="left" title="">
-				<h5>Sair</h5>
-			</a>
-			<br>
+			</a> <br>
 		</div>
 
 		<div class="row">
-			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-				<img src="../images/monster2.png" class="img-responsive"
-					align="middle" style="float: left;" />
-			</div>
-			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-				<img src="../images/monster3.png" class="img-responsive"
-					align="middle" style="float: left;" />
-			</div>
+			<a href="#"
+				data-original-title="Clique neste botão para sair do jogo"
+				type="button" class="btn btn-primary btn-block"
+				data-toggle="tooltip" data-placement="left" title="">
+				<h5>Sair</h5>
+			</a> <br>
 		</div>
+
+
 
 	</div>
 
-
+	<div class="col-md-4">&nbsp;</div>
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div class="scroll-top page-scroll visible-xs visble-sm">
@@ -85,11 +76,6 @@
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 		});
-
-		(function() {
-			document.body.style.background = "#47CEAC url('../images/background/grid.png')  repeat right top";
-
-		})();
 	</script>
 
 

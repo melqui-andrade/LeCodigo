@@ -4,16 +4,10 @@
 
 <link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
 <html>
-<body>
+<body
+	style="background: url('../images/background/background2.png') fixed no-repeat;  background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
 
-	<div class="col-md-4">&nbsp;
-		<a href="fase.html"
-			    data-original-title="Botao temporário pra ir para fase //Depois a gente tira Sidney :)"
-				type="button" class="btn btn-primary btn-block"
-				data-toggle="tooltip" data-placement="bottom" title="">
-				<h5>Jogar</h5>
-			</a>
-	</div>
+	<div class="col-md-4">&nbsp;</div>
 
 	<div class="col-md-4">
 		<h1>
@@ -26,13 +20,14 @@
 		</h2>
 
 		<h3>
-			Fase <span class="numeroDaFase">1</span>
+			Fase <span class="numeroDaFase">${idFase}</span>
 		</h3>
 	</div>
 
 	<div class="col-md-4">
 		<div style="position: fixed; bottom: 0; right: 0; z-index: 999">
-			<img src="../images/monster1.png" class="img-responsive" />
+			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+				style="float: left;" />
 		</div>
 	</div>
 
@@ -49,11 +44,8 @@
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 		});
-	
-		(function() {
-			document.body.style.background = "#F2BB82 url('../images/background/grid.png')  repeat right top";
-
-		})();
+			
+		window.setTimeout("location.href='fase.html'",1000);
 	</script>
 
 

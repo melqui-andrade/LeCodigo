@@ -6,7 +6,8 @@
 <link href="../styles/jogo/fases/questao.css" rel="stylesheet">
 <html>
 <body
-	style="background-color: ${fase.colorBackground}; background-image: url('../images/background/grid.png');   background-repeat: repeat; background-position: right top; ">
+	style="background: url('../images/background/background2.png') fixed no-repeat;  background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
+
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
@@ -57,8 +58,8 @@
 							<c:forEach var="bloco" varStatus="status"
 								items="${questao.blocos}">
 
-								<a id="${bloco.id}" class="list-group-item "
-									onclick="adicionarOpcaoSelecionada(${bloco.id},'${bloco.descricao}')">
+								<a id="${bloco.id_bloco}" class="list-group-item "
+									onclick="adicionarOpcaoSelecionada(${bloco.id_bloco},'${bloco.descricao}',${bloco.id})">
 									${bloco.descricao} </a>
 
 							</c:forEach>
@@ -66,6 +67,11 @@
 					</div>
 					<br>
 				</div>
+			</div>
+			<div class="row">
+				<a class="btn btn-info " href="fase.html">
+					<h5>voltar</h5>
+				</a>
 			</div>
 		</div>
 
@@ -81,24 +87,23 @@
 					Algoritmo: Par ou Impar? <br> <br>
 					<div class="col-md-4">início</div>
 					<br>
-					<div class="col-md-12" style="height: 300px; ">
+					<div class="col-md-12" style="height: 300px;">
 						<div id="divResposta" class="panel-body-resposta"></div>
 						<br>
 					</div>
 					<div class="col-md-4">fim</div>
-					<div class="col-md-4">
+					<div class="col-md-8">
 						<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar
 							Código</button>
 						<br>
 					</div>
-					<div class="col-md-4">
-						<button class="btn btn-block btn-warning">Remover Linha</button>
-						<br>
-					</div>
+
 				</div>
 			</div>
 			<div class="row">
-				<button class="btn btn-block btn-success btn-large">
+
+				<button class="btn btn-block btn-success btn-large"
+					onclick="enviarResposta()">
 					<h5>Enviar Resposta</h5>
 				</button>
 				<br>

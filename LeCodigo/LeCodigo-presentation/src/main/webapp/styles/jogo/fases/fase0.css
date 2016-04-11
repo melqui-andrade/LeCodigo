@@ -10,40 +10,8 @@
 h1 {
 	
 	margin-top: 15%;
-	color: #fff;
+	color: #34495E;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
 	font-size: 100px;
-}
-h3 {
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 15.4px;
-}
-p {
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 20px;
-}
-blockquote {
-	font-family: 'Open Sans';
-	font-size: 21px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 30px;
-}
-pre {
-	font-family: 'Open Sans';
-	font-size: 13px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 18.5714px;
 }
