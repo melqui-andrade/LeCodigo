@@ -6,7 +6,7 @@
 <link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
 <html>
 <body
-	style="background-color: ${fase.colorBackground}; background-image: url('../images/background/grid.png');   background-repeat: repeat; background-position: right top; ">
+	style="background: url('../images/background/background2.png') fixed no-repeat;  background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
@@ -32,8 +32,8 @@
 	</nav>
 
 	<div class="col-md-4">&nbsp;</div>
-	
-	<div class="col-md-4">	
+
+	<div class="col-md-4">
 		<div class="timeline" id="page-top">
 			<dl>
 				<c:forEach begin="1" end="${etapa}" varStatus="loop">
@@ -48,9 +48,7 @@
 								</div>
 								<div class="events-body" style="width: 100px;">
 									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
-									<p>
-										<!-- Enunciado da questao -->
-									</p>
+									<p>${ enumQuestao }</p>
 									<c:if test="${etapa - loop.index + 1 < etapa}">
 										<button class="btn btn-primary btn-block" disabled>
 											<i class="fa fa-like" style="color: #fff"> </i> Parabéns
@@ -58,7 +56,7 @@
 										</button>
 									</c:if>
 									<c:if test="${etapa - loop.index + 1 >= etapa}">
-										<a href="questao.html?id=" ${etapa}>Responder</a>
+										<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
 									</c:if>
 									<hr>
 								</div>
@@ -74,11 +72,9 @@
 									<img class="events-object img-rounded"
 										src="${fase.imgPerfilMonstro}">
 								</div>
-								<div class="events-body"  style="width: 100px;">
+								<div class="events-body" style="width: 100px;">
 									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
-									<p>
-										<!-- Enunciado da questao -->
-									</p>
+									<p>${ enumQuestao }</p>
 									<c:if test="${etapa - loop.index + 1 < etapa}">
 										<button class="btn btn-primary btn-block" disabled>
 											<i class="fa fa-like" style="color: #fff"> </i> Parabéns
@@ -86,8 +82,7 @@
 										</button>
 									</c:if>
 									<c:if test="${etapa - loop.index + 1 >= etapa}">
-										<a href="questao.html?id=${etapa}"
-											class="btn btn-primary btn-block">Responder</a>
+										<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
 									</c:if>
 
 									<hr>
@@ -99,7 +94,7 @@
 			</dl>
 		</div>
 	</div>
-	
+
 	<div class="col-md-4">
 		<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
 			style="float: left;" />

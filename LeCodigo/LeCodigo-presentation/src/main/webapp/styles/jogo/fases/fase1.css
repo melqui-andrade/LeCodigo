@@ -48,8 +48,8 @@ body {
 
 h1 {
 	padding-left: 10%;
-	margin-top: 45%;
-	color: #fff;
+	margin-top: 30%;
+	color: #34495E;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
 	font-size: 100px;
@@ -58,14 +58,14 @@ h1 {
 h2 {
 	padding-left: 10%;
 	margin-top: 0.5%;
-	color: #fff;
+	color: #34495E;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
 	font-size: 20px;
 }
 
 h3 {
-	color: #fff;
+	color: #34495E;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
 	font-size: 325%;
@@ -79,7 +79,7 @@ h5 {
 }
 
 .numeroDaFase {
-	color: #fff;
+	color: #34495E;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
 	font-size: 380%;
@@ -87,4 +87,8 @@ h5 {
 
 .fa-heart {
 	color: #DA4453;
+}
+
+.events{
+	box-shadow: 5px 5px 5px #444;
 }
