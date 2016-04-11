@@ -2,182 +2,328 @@ package com.br.uepb.dump;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Bloco;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
 
-import conexaoBD.HibernateUtil;
-
 public class PopularTabelaQuestoes2 {
 
-	public static void main(String[] args) {
-/*
-		// Questão 011
-		List<Bloco> blocos011 = new ArrayList<>();
-
-		blocos011.add(new Bloco("1-String palavras [] = {“Seja bem-vindo”, “universo dos algoritmos”, “ao”, “ “};"));
-		blocos011.add(new Bloco("2-int a = 3;"));
-		blocos011.add(new Bloco("3-int b = a-1;"));
-		blocos011.add(new Bloco("4-String frase = palavras[0] + palavras[a];"));
-		blocos011.add(new Bloco("5-String frase = palavras[0] + palavras[b];"));
-		blocos011.add(new Bloco("6-frase = frase + palavras[b] + palavras[1];"));
-		blocos011.add(new Bloco("7-frase = frase + palavras[b] + palavras[a] + palavras[1];"));
+	public void popularQuestoes_Fase2() {
+		//FASE 2 - FOR
+		Questao1_Fase2_For();
+		Questao2_Fase2_For();
+		Questao3_Fase2_For();
+		Questao4_Fase2_For();
+		Questao5_Fase2_For();
 		
-		addQuestao(
-				"Utilizando os blocos a seguir, atribua a frase “Seja bem-vindo ao universo dos algoritmos“ para a variável “frase“",
-				"1-2-3-4-7 | 1-3-2-4-7 | 2-3-1-4-7 | 2-1-3-4-7 | 3-1-2-4-7 | 3-2-1-4-7"
-				, 1
-				, TipoQuestao_Enum.SWITCH_CASE
-				, blocos011);
-
-		// Questão 012
-		List<Bloco> blocos012 = new ArrayList<>();
-
-		blocos012.add(new Bloco("1 - int a"));
-		blocos012.add(new Bloco("2 - double b"));
-		blocos012.add(new Bloco("3 - boolean c"));
-		blocos012.add(new Bloco("4 - = false;"));
-		blocos012.add(new Bloco("5 - = 3,1415;"));
-		blocos012.add(new Bloco("6 - = -1000000;"));
-
-		addQuestao(
-				"Para cada valor a seguir declare uma variável que melhor armazene os valores a seguir: a) false b) 3,1415 c) -1.000.000",
-				"1-6-2-5-3-4 | 1-6-3-4-2-5 | 2-5-1-6-3-4 | 2-5-3-4-1-6 | 3-4-1-6-2-5 | 3-4-2-5-1-6",
-				1, TipoQuestao_Enum.SWITCH_CASE, blocos012);
-
-		// Questão 013
-		List<Bloco> blocos013 = new ArrayList<>();
-
-		blocos013.add(new Bloco("1 - print(idade + ' - ' + nome);"));
-		blocos013.add(new Bloco("2 - String nome = 'Leandro';"));
-		blocos013.add(new Bloco("3 - print((idade + 5) + ' - ' + sobrenome);"));
-		blocos013.add(new Bloco("4 - int idade = 20;"));
-		blocos013.add(new Bloco("5 - String sobrenome = 'Gomes';"));
-
-		addQuestao(
-				"Imprima a idade e o nome, logo em seguida imprima a idade após 5 anos junto com o sobrenome.",
-				"4-2-5-1-3 | 5-4-2-1-3 | 2-4-5-1-3 | 2-5-4-1-3 | 4-5-2-1-3 | 5-2-4-1-3", 1, TipoQuestao_Enum.SWITCH_CASE, blocos013);
-
-		// Questão 014
-		List<Bloco> blocos014 = new ArrayList<>();
-
-		blocos014.add(new Bloco("1 - print(“Informe a primeira nota);"));
-		blocos014.add(new Bloco("2 - media = nota1 + nota2 / 2;"));
-		blocos014.add(new Bloco("3 - print(“A media final é “+media);"));
-		blocos014.add(new Bloco("4 - nota1 = print(“Informe a primeira nota);"));
-		blocos014.add(new Bloco("5 - print(“A media final é “media);"));
-		blocos014.add(new Bloco("6 - float media = 0;"));
-		blocos014.add(new Bloco("7 - string media = '0';"));
-		blocos014.add(new Bloco("8 - input (nota2);"));
-		blocos014.add(new Bloco("9 - float nota1 = 0, nota2 = 0;"));
-		blocos014.add(new Bloco("10 - media = (nota1 + nota2) / 2;"));
-		blocos014.add(new Bloco("11 - nota2 = print(“Informe a segunda nota);"));
-		blocos014.add(new Bloco("12 - print(“Informe a segunda nota);"));
-		blocos014.add(new Bloco("13 - input (nota1);"));
-		blocos014.add(new Bloco("14 - print(“A media final é “+media);"));
+		//FASE 2 - WHILE
+		Questao1_Fase2_While();
+		Questao2_Fase2_While();
+		Questao3_Fase2_While();
+		Questao4_Fase2_While();
+		Questao5_Fase2_While();
 		
+		//FASE 2 - DO_WHILE
+		Questao1_Fase2_DoWhile();
+		Questao2_Fase2_DoWhile();
+		Questao3_Fase2_DoWhile();
+		Questao4_Fase2_DoWhile();
+		Questao5_Fase2_DoWhile();
+	}
+	
+	//FASE 2 - FOR
+	private void Questao1_Fase2_For() {
+		List<Bloco> blocos = new ArrayList<>();
+			
+		blocos.add(new Bloco(1, "for(int i=9; i>=0; i--){"));
+		blocos.add(new Bloco(2, "print(i);"));
+		blocos.add(new Bloco(3, "}"));
+		blocos.add(new Bloco(4, "for(int i=0; i<10; i++){"));
+		blocos.add(new Bloco(5, "for(int i=9; i>0; i--){"));
+		blocos.add(new Bloco(6, "for(int i=1; i<=10; i++){"));
+		blocos.add(new Bloco(7, "for(int i=10; i>=0; i--){"));
+		blocos.add(new Bloco(8, "for(int i=1; i<10; i++){"));
+			
 		addQuestao(
-				"Maurício, um aluno da turma de algoritmos, deseja calcular sua média final utilizando a fórmula MEDIA = (Nota1 + Nota 2) / 2. Organize os códigos abaixo para calcular a média final de Maurício e depois imprima a frase = 'A média final é X', onde X é o resultado da média final.",
-				"6-9-1-13-12-8-10-3 | 9-6-1-13-12-8-10-3", 1, TipoQuestao_Enum.SWITCH_CASE, blocos014);
-
-		// Questão 015
-		List<Bloco> blocos015 = new ArrayList<>();
-
-		blocos015.add(new Bloco("1- int a = 12;"));
-		blocos015.add(new Bloco("2- a = a - b + c;"));
-		blocos015.add(new Bloco("3- float b = 3,5;"));
-		blocos015.add(new Bloco("4- b = c - a * b;"));
-		blocos015.add(new Bloco("5- int c = 4;"));
-		blocos015.add(new Bloco("6- c = a * b /c;"));
-				
-		addQuestao(
-				"Dado os valores para a, b e c organize o algoritmo para que no fim da execução os valores sejam a = 18, b = -53, c = 10",
-				"1-3-5-6-2-4|1-5-3-6-2-4|3-1-5-6-2-4|3-5-1-6-2-4|5-1-3-6-2-4|5-3-1-6-2-4", 1, TipoQuestao_Enum.SWITCH_CASE, blocos015);
+				"Usando a estrutura de repetição for, ordene os blocos para permitir que seja impresso em ordem "+
+				"decrescente apenas os 10 primeiros números do conjunto dos naturais.",
+				"1-2-3", 2, TipoQuestao_Enum.FOR, blocos);
+	}
 		
-		// Questão 016 - FASE 2
-		List<Bloco> blocos016 = new ArrayList<>();
+	private void Questao2_Fase2_For() {
+		List<Bloco> blocos = new ArrayList<>();
+			
+		blocos.add(new Bloco(1, "input(n);"));
+		blocos.add(new Bloco(2, "int soma;"));
+		blocos.add(new Bloco(3, "for (int i = 0; i < n; i++) {"));
+		blocos.add(new Bloco(4, "for (i; i <= n; i--){"));
+		blocos.add(new Bloco(5, "int i = 0;"));
+		blocos.add(new Bloco(6, "int soma = 0;"));
+		blocos.add(new Bloco(7, "soma = soma + i; }"));
+		blocos.add(new Bloco(8, "for (i; i >= n; i++){"));
+		blocos.add(new Bloco(9, "print(“A soma é ” + soma);")); 
+		blocos.add(new Bloco(10, "print(“A soma é ” + i);"));
 
-		blocos016.add(new Bloco("1- for(int i=9; i>=0; i--){"));
-		blocos016.add(new Bloco("2- print(i);"));
-		blocos016.add(new Bloco("3- }"));
-		blocos016.add(new Bloco("4- for(int i=0; i<10; i++){"));
-		blocos016.add(new Bloco("5- for(int i=9; i>0; i--){"));
-		blocos016.add(new Bloco("6- for(int i=1; i<=10; i++){"));
-		blocos016.add(new Bloco("7- for(int i=10; i>=0; i--){"));
-		blocos016.add(new Bloco("8- for(int i=1; i<10; i++){"));
+		addQuestao(
+				"O programa escrito abaixo está embralhado. Sua missão é por o código na ordem correta. "+
+				"O programa faz a soma dos n primeiros números naturais e depois imprime o valor da soma.",
+				"6-1-3-7-9 | 1-6-3-7-9", 2, TipoQuestao_Enum.FOR, blocos);
+	}
 					
-		
-		addQuestao(
-				"Usando a estrutura de repetição for, ordene os blocos para permitir que seja impresso em ordem decrescente apenas os 10 primeiros números do conjunto dos naturais:",
-				"1-2-3", 2, TipoQuestao_Enum.FOR, blocos016);
-		
-		// Questão 017
-		List<Bloco> blocos017 = new ArrayList<>();
-
-		blocos017.add(new Bloco("1 - input(n);"));
-		blocos017.add(new Bloco("2 - int soma;"));
-		blocos017.add(new Bloco("3 - for (int i = 0; i < n; i++) {"));
-		blocos017.add(new Bloco("4 - for (i; i <= n; i--){"));
-		blocos017.add(new Bloco("5 - int i = 0;"));
-		blocos017.add(new Bloco("6 - int soma = 0;"));
-		blocos017.add(new Bloco("7 - soma = soma + i; }"));
-		blocos017.add(new Bloco("8 - for (i; i >= n; i++){"));
-		blocos017.add(new Bloco("9 - print('A soma é ' + soma);"));
-		blocos017.add(new Bloco("10 - print('A soma é ' + i);"));
-		
-		addQuestao(
-				"O programa escrito abaixo está embralhado. Sua missão é por o código na ordem correta. O programa faz a soma dos n primeiros números naturais e depois imprime o valor da soma.",
-				"6-1-3-7-9 | 1-6-3-7-9", 2, TipoQuestao_Enum.FOR, blocos017);
-
-		// Questão 018
-		List<Bloco> blocos018 = new ArrayList<>();
-
-		blocos018.add(new Bloco("1- }"));
-		blocos018.add(new Bloco("2- float c = 0;"));
-		blocos018.add(new Bloco("3- c = (f - 32) * 5 / 9;"));
-		blocos018.add(new Bloco("4- for(int f=0; f<=100; f++){"));
-		blocos018.add(new Bloco("5- print(f+'ºF é igual a '+c+'ºC');"));
+	private void Questao3_Fase2_For() {
+		List<Bloco> blocos = new ArrayList<>();
+			
+		blocos.add(new Bloco(1, "}"));
+		blocos.add(new Bloco(2, "float c = 0;"));
+		blocos.add(new Bloco(3, "c = (f - 32) * 5 / 9;"));
+		blocos.add(new Bloco(4, "for(int f=0; f<=100; f++){"));
+		blocos.add(new Bloco(5, "print(f+“ºF é igual a ”+c+“ºC”);"));
 		
 		addQuestao(
 				"Faça um algoritmo que calcule e escreva o valor correspondente a temperatura em graus Farenheit de 50ºF até 150ºF para graus Celsius",
-				"2-4-3-5-1", 2, TipoQuestao_Enum.FOR, blocos018);
-
-		// Questão 019
-		List<Bloco> blocos019 = new ArrayList<>();
-
-		blocos019.add(new Bloco("1 - int soma = 0;"));
-		blocos019.add(new Bloco("2 - for (int i = 20; i < 40; i= i + 2) {"));
-		blocos019.add(new Bloco("3 - print('O resultado da soma é: '+soma);"));
-		blocos019.add(new Bloco("4 - }"));
-		blocos019.add(new Bloco("5 - for(int i = 20; i <= 40; i= i + 2) {"));
-		blocos019.add(new Bloco("6 - soma = soma + i;"));
-		blocos019.add(new Bloco("7 - for(int i = 0; i <= 40; i++) {"));
-		blocos019.add(new Bloco("8 - print('O resultado da soma é: ') + soma;"));
-		
-		addQuestao(
-				"Laura, estudante de algoritmos, precisa de sua ajuda para completar a seguinte atividade: Somar apenas os números pares entre 20 e 40 e depois imprimir o seguinte texto 'O resultado da soma é: X', onde 'X' é resultado final do somatório. Organize o código abaixo para ajudar Laura.",
-				"1-5-6-4-3", 2, TipoQuestao_Enum.FOR, blocos019);
-
-		// Questão 020
-		List<Bloco> blocos020 = new ArrayList<>();
-
-		blocos020.add(new Bloco("1 - print(i + 1);}"));
-		blocos020.add(new Bloco("2 - print(i);}"));
-		blocos020.add(new Bloco("3 - for (int i = 0; i < 1000; i++) {"));
-		blocos020.add(new Bloco("4 - for (int i = 0; i < 1000; i--) {"));
-		blocos020.add(new Bloco("5 - for (int i = 0; i <= 1000; i++) {"));
-			
-		addQuestao(
-				"Faça um programa que imprima os números inteiros que inicia em 1 e termina em 1000.",
-				"3-1", 2, TipoQuestao_Enum.FOR, blocos020);
-	
-		HibernateUtil.shutdown();
-	
-		
-*/		
+				"2-4-3-5-1", 2, TipoQuestao_Enum.FOR, blocos);
 	}
 
+	private void Questao4_Fase2_For() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "int soma = 0;"));
+		blocos.add(new Bloco(2, "for (int i = 20; i < 40; i= i + 2) {"));
+		blocos.add(new Bloco(3, "print(“O resultado da soma é: ”+soma);"));
+		blocos.add(new Bloco(4, "}"));
+		blocos.add(new Bloco(5, "for(int i = 20; i <= 40; i= i + 2) {"));
+		blocos.add(new Bloco(6, "soma = soma + i;"));
+		blocos.add(new Bloco(7, "for(int i = 0; i <= 40; i++) {"));
+		blocos.add(new Bloco(8, "print(“O resultado da soma é: ”) + soma;"));
+		
+		addQuestao(
+				"Laura, estudante de algoritmos, precisa de sua ajuda para completar a seguinte atividade:\n"+ 
+				"Somar apenas os números pares entre 20 e 40 e depois imprimir o seguinte texto “O resultado da soma é: X”, "+
+				"onde “X” é resultado final do somatório. Organize o código abaixo para ajudar Laura.",
+				"1-5-6-4-3", 2, TipoQuestao_Enum.FOR, blocos);
+	}
+		
+	private void Questao5_Fase2_For() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "print(i + 1);}"));
+		blocos.add(new Bloco(2, "print(i);}"));
+		blocos.add(new Bloco(3, "for (int i = 0; i < 1000; i++) {"));
+		blocos.add(new Bloco(4, "for (int i = 0; i < 1000; i--) {"));
+		blocos.add(new Bloco(5, "for (int i = 0; i <= 1000; i++) {"));
+		
+		addQuestao(
+			"Faça um programa que imprima os números inteiros que inicia em 1 e termina em 1000.",
+			"3-1", 2, TipoQuestao_Enum.FOR, blocos);
+	}
+		
+	
+	//FASE 2 - WHILE
+	private void Questao1_Fase2_While() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "while(x<21){"));
+		blocos.add(new Bloco(2, "print(“Ao infinito e além :P”);"));
+		blocos.add(new Bloco(3, "int x = 6;"));
+		blocos.add(new Bloco(4, "x+=1;}"));
+		blocos.add(new Bloco(5, "while(x==21){"));
+		blocos.add(new Bloco(6, "x-=1;}"));
+			
+		addQuestao(
+			"Organize o código para exibir a mensagem “Ao infinito e além :P” várias vezes.",
+			"3-1-2-4", 2, TipoQuestao_Enum.WHILE, blocos);
+	}
+	
+	private void Questao2_Fase2_While() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "}"));
+		blocos.add(new Bloco(2, "while(x < 10){"));
+		blocos.add(new Bloco(3, "while(x < 5){"));
+		blocos.add(new Bloco(4, "while(x > 10){"));
+		blocos.add(new Bloco(5, "while(x <= 11){"));
+		blocos.add(new Bloco(6, "while(x <= 5){"));
+		blocos.add(new Bloco(7, "print(“Hello Word!”);"));
+		blocos.add(new Bloco(8, "x = x + 2;"));
+		blocos.add(new Bloco(9, "int x = 1; "));
+
+		addQuestao(
+			"Organize o algoritmo para que a palavra “Hello Word!” seja escrita 5 vezes.",
+			"9-2-7-8-1 | 9-2-8-7-1", 2, TipoQuestao_Enum.WHILE, blocos);
+		
+	}
+	
+	private void Questao3_Fase2_While() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "for"));
+		blocos.add(new Bloco(2, "while"));
+		blocos.add(new Bloco(3, "if"));
+		blocos.add(new Bloco(4, "falso"));
+		blocos.add(new Bloco(5, "verdadeira"));
+		blocos.add(new Bloco(6, "switch"));
+		blocos.add(new Bloco(7, "(i)"));
+		blocos.add(new Bloco(8, "(ii)"));
+		
+		addQuestao(
+				"A instrução ____ executa uma instrução ou bloco de instrução enquanto uma determinada condição for ______. "+
+				"O seu funcionamento se resume aos seguintes passos. (i) A condição é avaliada; (ii) Se o resultado da avaliação for Falso, "+
+				"o laço termina e o programa continua na instrução imediatamente após o _____. "+
+				"(iii) Se o resultado for verdadeiro, é executada a instrução associada ao _____. (iv) Volta-se ao ponto ___.",
+				"2-5-2-2-7", 2, TipoQuestao_Enum.WHILE, blocos);
+		
+	}
+
+	private void Questao4_Fase2_While() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "while (true) {"));
+		blocos.add(new Bloco(2, "}"));
+		blocos.add(new Bloco(3, "while (numero != 0) {"));
+		blocos.add(new Bloco(4, "print (“Informe um número:”);"));
+		blocos.add(new Bloco(5, "if (numero != 0) {"));
+		blocos.add(new Bloco(6, "int numero = 0;"));
+		blocos.add(new Bloco(7, "print(“O numero é: ”+numero);"));
+		blocos.add(new Bloco(8, "x = x + 2;"));
+		blocos.add(new Bloco(9, "int x = 1;"));
+		
+		addQuestao(
+				"Organize o código abaixo para receber vários números e imprimir logo em seguida, enquanto o número 0 não for informado. Se o número 0 for informado, ele não será impresso e o programa termina.",
+				"6-10-9-3-7-10-9-2 | 10-6-9-3-7-10-9-2", 2, TipoQuestao_Enum.WHILE, blocos);
+	}
+
+	private void Questao5_Fase2_While() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "while (count <= 10) {"));
+		blocos.add(new Bloco(2, "maior = num;"));
+		blocos.add(new Bloco(3, "print(“O maior numero digitado é: ” + maior);"));
+		blocos.add(new Bloco(4, "input(num);"));
+		blocos.add(new Bloco(5, "int count = 2;"));
+		blocos.add(new Bloco(6, "maior = num;}"));
+		blocos.add(new Bloco(7, "if (num > maior) {"));
+		blocos.add(new Bloco(8, "float maior, num;"));
+		blocos.add(new Bloco(9, "count++;}"));
+		
+		addQuestao(
+				"Imprima o maior número dentre os 10 números digitados pelo usuário.",
+				"8-5-4-2-1-4-7-6-9-3 | 5-8-4-2-1-4-7-6-9-3", 2, TipoQuestao_Enum.WHILE, blocos);
+		
+	}
+	
+	
+	//FASE 2 - DO_WHILE
+
+	private void Questao1_Fase2_DoWhile() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "int x = 0;"));
+		blocos.add(new Bloco(2, "do{"));
+		blocos.add(new Bloco(3, "if(x%2 != 0){"));
+		blocos.add(new Bloco(4, "print(x+“\n”);}"));
+		blocos.add(new Bloco(5, "x++;"));
+		blocos.add(new Bloco(6, "}while(x<=10);"));
+		blocos.add(new Bloco(7, "if(x%2 == 0){"));
+		blocos.add(new Bloco(8, "}while(x=10);"));
+		
+		addQuestao(
+				"Arranje as linhas de um loop finito para que seja impresso o valor da variável x apenas quando for ímpar.",
+				"1-2-3-4-5-6 | 1-2-5-3-4-6", 2, TipoQuestao_Enum.DO_WHILE, blocos);
+	}
+	
+	private void Questao2_Fase2_DoWhile() {
+		List<Bloco> blocos = new ArrayList<>();
+				
+		blocos.add(new Bloco(1, "while"));
+		blocos.add(new Bloco(2, "for"));
+		blocos.add(new Bloco(3, "while e for"));
+		blocos.add(new Bloco(4, "if"));
+		blocos.add(new Bloco(5, "do ... while")); 
+		blocos.add(new Bloco(6, "switch"));
+
+		addQuestao(
+				"A instução ______ difere dos outros laço porque o teste da condição é realizado no fim do corpo do laço e não antes, "+
+				"como acontecia com os laços _____ e _____. Desta forma o corpo do laço _____ é executado pelo menos uma vez, enquanto nos laços _____ o corpo do laço pode nunca ser executado.",
+				"5-1-2-5-3 | 5-2-1-5-3", 2, TipoQuestao_Enum.DO_WHILE, blocos);
+	}
+	
+	private void Questao3_Fase2_DoWhile() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "int x = 50;"));
+		blocos.add(new Bloco(2, "int y = 8;"));
+		blocos.add(new Bloco(3, "x--;"));
+		blocos.add(new Bloco(4, "y++;"));
+		blocos.add(new Bloco(5, "}while(y <10);"));
+		blocos.add(new Bloco(6, "}while( x > 48);"));
+		blocos.add(new Bloco(7, "print(“GO HORSE!”);"));
+		blocos.add(new Bloco(8, "do{"));
+		
+		addQuestao(
+				"Organize o algoritmo para que a palavra “GO HORSE!” seja escrita 4 vezes.",
+				"1-8-2-8-7-4-5-3-6 | 2-8-1-8-7-3-6-4-5 | 1-8-2-8-4-7-5-3-6 | 2-8-1-8-3-7-6-4-5", 2, TipoQuestao_Enum.DO_WHILE, blocos);
+	}
+	
+	private void Questao4_Fase2_DoWhile() {
+		List<Bloco> blocos = new ArrayList<>();
+		
+		blocos.add(new Bloco(1, "do {"));
+		blocos.add(new Bloco(2, "input(numero1);"));
+		blocos.add(new Bloco(3, "int numero1 = 0, numero2 = 0;"));
+		blocos.add(new Bloco(4, "} while(1);"));
+		blocos.add(new Bloco(5, "int resultado = 0, multiplicacao = 0;"));
+		blocos.add(new Bloco(6, "input(numero2);"));
+		blocos.add(new Bloco(7, "}"));
+		blocos.add(new Bloco(8, "print (“Informe o primeiro numero: ”);"));
+		blocos.add(new Bloco(9, "print (“O resultado da multiplicacao é: ” + multiplicacao);"));
+		blocos.add(new Bloco(10, "multiplicacao = numero1 * numero2;"));
+		blocos.add(new Bloco(11, "multiplicacao = numero1 . numero2;"));
+		blocos.add(new Bloco(12, "do (resultado = 1) {"));
+		blocos.add(new Bloco(13, "input(resultado);"));
+		blocos.add(new Bloco(14, "print (“Deseja realizar uma nova multiplicacao?”);"));
+		blocos.add(new Bloco(15, "print (“Informe o segundo numero: ”);"));
+		blocos.add(new Bloco(16, "} while(resultado == 1);"));
+		
+		addQuestao(
+				"Roberto está trabalhando em um algoritmo para uma loja que utiliza apenas teclado numerico. "+
+				"O algoritmo deve multiplicar 2 números e imprimir o resultado da multiplicacao. "+
+				"Após informar o resultado da multiplicação, deve ser apresentada a seguinte pergunta: “Deseja realizar uma nova multiplicacao?”. "+
+				"Se o usuário informar o número 1 será realizada uma nova multiplicacao. Caso contrario, o programa será encerrado. "+
+				"Uma observação: Utilize a variavel “resultado” para armazenar o retorno da pergunta, "+
+				"a variável “numero1” para receber o primeiro numero e “numero2” para receber o segundo. ",
+				"3-5-1-8-2-15-6-10-9-14-13-16 | 3-5-1-15-6-8-2-10-9-14-13-16 | 5-3-1-8-2-15-6-10-9-14-13-16 | 5-3-1-15-6-8-2-10-9-14-13-16 ", 
+				2, TipoQuestao_Enum.DO_WHILE, blocos);
+	}
+	
+	private void Questao5_Fase2_DoWhile() {
+		List<Bloco> blocos = new ArrayList<>();
+				
+		blocos.add(new Bloco(1, "println(“\t0. Sair”);"));
+		blocos.add(new Bloco(2, "println(“\t2. Ler o menu”);"));
+		blocos.add(new Bloco(3, "do {"));
+		blocos.add(new Bloco(4, "if (opcao == 0) {"));
+		blocos.add(new Bloco(5, "println(“\t1. Ver o menu”);"));
+		blocos.add(new Bloco(6, "input(opcao);"));
+		blocos.add(new Bloco(7, "println(“\t\tMenu de opções:”);"));
+		blocos.add(new Bloco(8, "println(“\n\n\n\n\n\n”);}"));
+		blocos.add(new Bloco(9, "println(“\t5. Não li, pode repetir?”);"));
+		blocos.add(new Bloco(10, "println(“\t3. Repetir o menu”);"));
+		blocos.add(new Bloco(11, "} else {"));
+		blocos.add(new Bloco(12, "} while (continuar);"));
+		blocos.add(new Bloco(13, "println(“Programa finalizado.”);"));
+		blocos.add(new Bloco(14, "println(“\t4. Tudo de novo”);"));
+		blocos.add(new Bloco(15, "boolean continuar = true; int opcao;"));
+		blocos.add(new Bloco(16, "continuar = false;"));
+		
+		addQuestao(
+				"Usando DoWhile ordene o codigo a seguir para formar um menu de visualização",
+				"15-3-7-5-2-10-14-9-1-6-4-16-13-11-8-12", 
+				2, TipoQuestao_Enum.DO_WHILE, blocos);
+	}
+	
+	
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
 			List<Bloco> blocos) {
 		QuestaoDAO dao = new QuestaoDAO();

@@ -79,4 +79,18 @@ public class QuestaoDAO {
 		return listaQuestoes;
 	}
 
+	
+	public void apagarQuestoes(){
+		
+		if (!session.isOpen()) {
+			session = HibernateUtil.getSessionFactory().openSession();
+		}
+		Transaction tx = session.beginTransaction();		
+		session.createQuery("delete from Questao").executeUpdate();
+		session.createQuery("delete from Bloco").executeUpdate();
+		session.flush();
+		tx.commit();
+		session.close();	
+	}
+
 }
