@@ -1,12 +1,11 @@
 package com.br.uepb.dump;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Bloco;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
-
-import conexaoBD.HibernateUtil;
 
 public class PopularTabelaQuestoes {
 
