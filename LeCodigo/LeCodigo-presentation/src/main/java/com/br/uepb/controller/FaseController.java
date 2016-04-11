@@ -100,6 +100,7 @@ public class FaseController {
 
 			try {
 				if(questaoBusiness.verificarResposta(resposta, questao.getId())){
+					partidaBusiness.avancarEtapa();
 					return new ModelAndView("redirect:/fase/fase.html");
 				}				
 
@@ -107,7 +108,7 @@ public class FaseController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else {
+		}
 			
 			int bits = SessaoBusiness.getInstace().getBits();
 			int pontuacao = SessaoBusiness.getInstace().getPontuacao();
@@ -121,8 +122,8 @@ public class FaseController {
 			modelAndView.addObject("fase", faseModel);
 			modelAndView.addObject("etapa", etapa);
 			return modelAndView;
-		}
-		return modelAndView;
+		
+		//return modelAndView;
 	}
 
 	@RequestMapping(value = "/fase/transicaoFase.html", method = RequestMethod.GET)
