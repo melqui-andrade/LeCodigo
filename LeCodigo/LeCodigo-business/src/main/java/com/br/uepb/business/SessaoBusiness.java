@@ -20,12 +20,7 @@ public class SessaoBusiness {
 	private int pontuacao = 0;
 	private static SessaoBusiness instance;
 	private static List<Questao> questoesQueSairam;
-	
-	//TODO Já fiz, é só para lerem isso: Vou deixar o jogador atual da partida aqui,
-	//para poder salvar ou atualizar as informações dele no BD.
-	//Sempre que o jogador responder ou pular uma questão, deve ser atualizado os dados no bd
 	private Jogador jogador;
-	//Essa é a partida atual, as informações são persistidas nesse objeto, e associada ao jogador
 	private Partida partida;
 	private RespostaDoAluno respostaDoAluno;
 	
@@ -130,9 +125,10 @@ public class SessaoBusiness {
 		respostaDoAluno.setId_questao(id_questao);
 		if(respostaDoAluno.getRespostas()==null)
 			respostaDoAluno.setRespostas(resposta);
-		else
-			//TODO outra coisa esse "|" era para ser adicionado no domain, mas não colocaram
-			respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
+		else {
+			respostaDoAluno.addResposta(resposta); 
+		}
+			//respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
 		partida.getRespostas_aluno().add(respostaDoAluno);
 		partida.setData_hora(new Date().toString());
 		partida.setPontuacao(pontuacao);

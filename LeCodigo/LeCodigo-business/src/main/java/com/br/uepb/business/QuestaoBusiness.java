@@ -82,7 +82,6 @@ public class QuestaoBusiness {
 	}
 	
 	public boolean verificarResposta(String resposta, int idQuestao) throws Exception{
-		//TODO Esse método precisa de mais um parâmetro, o ID da questão, atualizar doc
 		QuestaoDAO questaoDAO = new QuestaoDAO();
 		Questao questao = questaoDAO.buscarQuestao(idQuestao);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
@@ -102,13 +101,11 @@ public class QuestaoBusiness {
 	}
 	
 	public Questao pularQuestao(int fase, int etapa){
+		// TODO: Bruno vai fazer ainda.
 		QuestaoDAO questaoDAO = new QuestaoDAO();
-//		Questao questao = questaoDAO.buscarQuestao(fase, etapa);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
-		//TODO O que é preciso para pular uma questão?
-		//Acho que é:
-		
-		return buscarQuestao(fase, etapa); //questaoDAO.PulaQuestao(fase, etapa);
+		 
+		return buscarQuestao(fase, etapa);
 		
 	}
 	
