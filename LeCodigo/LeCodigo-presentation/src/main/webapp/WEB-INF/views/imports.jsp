@@ -25,8 +25,7 @@
 <!-- JS BLOCKS -->
 <script src="../js/jsBlocks/blocks.js"></script>
 
-<!-- QUESTAO -->
-<script src="../js/questao.js"></script>
+
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
 <script src="../js/jogo/vendor/jquery.min.js"></script>

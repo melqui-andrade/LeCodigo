@@ -15,8 +15,10 @@ function removerOpcaoResposta(id) {
 }
 
 function limparReposta() {
+	piscarEt();
 	var div = "divResposta";
 	var elemento = document.getElementById(div).innerHTML = null;
+
 }
 
 function removerLinhaResposta(idName) {
@@ -24,7 +26,8 @@ function removerLinhaResposta(idName) {
 	var divPai = document.getElementById(div);
 	document.getElementsByName(idName).id = idName;
 	var divFilho = document.getElementById(idName);
-	return (elem=document.getElementById(idName)).parentNode.removeChild(elem);
+	return (elem = document.getElementById(idName)).parentNode
+			.removeChild(elem);
 	//divPai.removeChild(divFilho);
 
 }
@@ -46,6 +49,29 @@ function enviarResposta() {
 	alert(resposta);
 }
 
-(function() {
+var opcoes = document.getElementById("opcoes").clientHeight + "px";
+//var respostas = document.getElementById("respostas");
 
-})();
+document.getElementById("respostas").style.height = opcoes;
+document.getElementById("respostas").style.maxHeight = opcoes;
+var respostas = document.getElementById("respostas").clientHeight;
+
+opcoes = document.getElementById("blocosOpcoes").clientHeight + "px";
+//var respostas = document.getElementById("respostas");
+
+document.getElementById("divResposta").style.height = opcoes;
+document.getElementById("divResposta").style.maxHeight = opcoes;
+
+function piscarEt() {
+	setTimeout(etNormal, 500);
+	setTimeout(etPisca,	250);
+	setTimeout(etNormal, 500);
+}
+
+function etNormal(){
+	document.getElementById("et_").src = "../images/et/et_verde_normal.png";
+}
+
+function etPisca(){
+	document.getElementById("et_").src = "../images/et/et_verde_pisca.png";
+}

@@ -6,13 +6,19 @@ public class FaseModel {
 	private final String CORFASE2 = "#22214d";
 	private final String CORFASE3 = "#22214d";
 
-	private final String MONSTROFASE1 = "../images/et.png";
-	private final String MONSTROFASE2 = "../images/et.png";
-	private final String MONSTROFASE3 = "../images/et.png";
+	private final String MONSTROFASE1 = "../images/et/et_verde_normal.png";
+	private final String MONSTROFASE2 = "../images/et/et_verde_normal.png";
+	private final String MONSTROFASE3 = "../images/et/et_verde_normal.png";
+	
+	private final String ET_FELIZ = "../images/et/et_verde_feliz.png";
+	private final String ET_NORMAL = "../images/et/et_verde_normal.png";
+	private final String ET_RAIVA = "../images/et/et_verde_raiva.png";
 
-	private final String PERFILMONSTROFASE1 = "../images/monster1_little.png";
-	private final String PERFILMONSTROFASE2 = "../images/monster2_little.png";
-	private final String PERFILMONSTROFASE3 = "../images/monster3_little.png";
+	
+
+	private final String PERFILMONSTROFASE1 = "../images/et/et_verde_little.png";
+	private final String PERFILMONSTROFASE2 = "../images/et/et_verde_little.png";
+	private final String PERFILMONSTROFASE3 = "../images/et/et_verde_little.png";
 
 	public String imgMonstro;
 	public String imgPerfilMonstro;

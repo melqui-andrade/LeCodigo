@@ -2,13 +2,13 @@
 <%@ include file="/WEB-INF/views/imports.jsp"%>
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
-<link href="../styles/jogo/fases/fase0.css" rel="stylesheet">
+<link href="../styles/jogo/fases/home.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css"
 	href="//fonts.googleapis.com/css?family=Open+Sans" />
 
 <html>
 <body
-	style="background: url('../images/background/bg.jpg') fixed no-repeat; background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
+	style="background-color: #22214d;">
 
 	<div class="col-md-4">&nbsp;</div>
 	<div class="col-md-4 container ">

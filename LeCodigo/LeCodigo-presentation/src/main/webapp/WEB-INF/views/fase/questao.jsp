@@ -5,39 +5,34 @@
 <link href="../styles/jogo/fases/questao.css" rel="stylesheet">
 
 <html>
-<body style="background-color: ${fase.colorBackground};">
+<body style="background-color: ${fase.colorBackground};" class="teste">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
-			<div class="row" style="color: #eee; text-align: center;">
+
+			<div class="row"
+				style="color: #eee; text-align: center; font-size: 14px;">
 				<div class="col-xs-6 col-sm-3">
-					<h5>Fase ${idFase} - Etapa ${etapa}</h5>
+					<span>Fase ${idFase} - Etapa ${etapa} </span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<h5>Bits: ${bits}</h5>
+					<span>Bits: ${bits}</span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<h5>Pontuação: ${pontuacao}</h5>
+					<span>Pontuação: ${pontuacao}</span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<h5>
-						Vida:
-						<c:forEach begin="1" end="${vidas}" varStatus="loop">
+					<span> Vida: <c:forEach begin="1" end="${vidas}"
+							varStatus="loop">
 							<i class="fa fa-heart"></i>
 						</c:forEach>
-						</h6>
+					</span>
 				</div>
-
 			</div>
-
 		</div>
 	</nav>
 
-	<div class="container">
-		<div class="margem-acima" id="page-top">
-			<h3></h3>
-			<hr>
-		</div>
+	<div class="margem">
 
 		<div class="panel panel-info">
 			<div class="panel-body" style="border-color: #fff;">
@@ -49,11 +44,11 @@
 				<div class="panel-heading"
 					style="background: #FAE6B3; color: #34495E;">Linhas de código
 				</div>
-				<div id="panelOpcoes" class="panel-body">
+				<div id="opcoes" class="panel-body">
 					<div class="title">
 						Use as linhas de códigos abaixo para montar o algoritmo para a
 						resposta. <br>
-						<div class="panel-body-opcoes">
+						<div id="blocosOpcoes" class="panel-body-opcoes">
 							<c:forEach var="bloco" varStatus="status"
 								items="${questao.blocos}">
 
@@ -63,53 +58,58 @@
 
 							</c:forEach>
 						</div>
+						<br>
 					</div>
 					<br>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading"
 					style="background: #eee; color: #34495E; padding: -1%;">
 					Visualização do código</div>
-				<div id="panelResposta" class="panel-body"
-					style="background: #444; color: #fff;">
+				<div id="respostas" class="panel-body "
+					style="background: #444; color: #fff;" onload="ajustarTamanho()">
 
-					<div class="col-md-4">início</div>
-					<br>
+
+					início <br>
+
 					<div class="col-md-12">
 						<div id="divResposta" class="panel-body-resposta"></div>
 						<br>
 					</div>
-					<div class="col-md-4">fim</div>
-					<div class="col-md-8">
-						<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar
-							Código</button>
-						<br>
-					</div>
+
+					fim <br>
+
 
 				</div>
 			</div>
 		</div>
+		<div class="col-md-2">
+			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
+				<img src="${fase.imgMonstro}" class="img-responsive" align="middle" id="et_"
+					style="float: left;" />
+			</div>
+
+			<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar
+				Código</button>
+			<br>
+
+		</div>
+
 		<br>
 		<div class="row">
 			<div class="col-md-4">
 				<a class="btn btn-block btn-info " href="fase.html"><span>voltar</span></a>
 			</div>
-			<div class="col-md-8">
+			<br>
+			<div class="col-md-6">
 				<button class="btn btn-block btn-success" onclick="enviarResposta()">
 					<span>Enviar Resposta</span>
 				</button>
 			</div>
-		</div>
-	</div>
-
-	<div class="col-xs-6 col-sm-4">
-		<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
-				style="float: left;" />
 		</div>
 	</div>
 
@@ -119,6 +119,8 @@
 			class="fa fa-chevron-up"></i></a>
 	</div>
 
+	<!-- QUESTAO -->
+	<script src="../js/questao.js"></script>
 </body>
 
 </html>

@@ -21,6 +21,12 @@ body {
 	}
 }
 
+span{
+	font-family: 'Open Sans', cursive;
+	font-weight: bold;
+	font-size: 22px;	
+}
+
 .cabecalho {
 	padding-top: 10px;
 	background: #eee;

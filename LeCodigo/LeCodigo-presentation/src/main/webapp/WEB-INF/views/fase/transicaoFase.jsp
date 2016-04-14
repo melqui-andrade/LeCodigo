@@ -4,8 +4,7 @@
 
 <link href="../styles/jogo/fases/transicao.css" rel="stylesheet">
 <html>
-<body
-	style="background-color: ${fase.colorBackground};">
+<body style="background-color: ${fase.colorBackground};">
 	<div class="col-md-4">&nbsp;</div>
 	<div class="col-md-4">
 		<h1>
@@ -20,10 +19,20 @@
 		</h4>
 	</div>
 
+
 	<div class="col-md-4">
 		<div style="position: fixed; bottom: 0; right: 0; z-index: 999">
-			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+			<img src="${fase.imgMonstro}" class="img-responsive" id="et"
 				style="float: left;" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar"
+				aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+				style="width: 40%">
+				<span class="sr-only">40% Complete (success)</span>
+			</div>
 		</div>
 	</div>
 
@@ -39,6 +48,45 @@
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 		});
+	
+		function et_normal() {  
+	         document.images["et"].src = "../images/et/et_verde_feliz.png";  
+	}
+		function et_feliz() {  
+	         document.images["et"].src = "../images/et/et_verde_normal.png";  
+	}
+		setInterval(et_normal, 500);
+		setInterval(et_feliz, 500);
+
+		
+		$(window).load(function(){
+		    setTimeout(function(){
+
+		        $('.progress-bar').each(function() {
+		            var me = $(this);
+		            var perc = me.attr("data-percentage");
+
+		            //TODO: left and right text handling
+
+		            var current_perc = 0;
+
+		            var progress = setInterval(function() {
+		                if (current_perc>=perc) {
+		                    clearInterval(progress);
+		                } else {
+		                    current_perc +=1;
+		                    me.css('width', (current_perc)+'%');
+		                }
+
+		                me.text((current_perc)+'%');
+
+		            }, 50);
+
+		        });
+
+		    },300);
+		
+		
 			
 		window.setTimeout("location.href='fase.html'",5000);
 	</script>

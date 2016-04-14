@@ -3,10 +3,9 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
 
-<link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
+<link href="../styles/jogo/fases/fase.css" rel="stylesheet">
 <html>
-<body
-	style="background-color: ${fase.colorBackground};">
+<body style="background-color: ${fase.colorBackground};">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
@@ -14,21 +13,20 @@
 			<div class="row"
 				style="color: #eee; text-align: center; font-size: 14px;">
 				<div class="col-xs-6 col-sm-3">
-					<h5>Fase ${idFase}</h5>
+					<span>Fase ${idFase}</span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<h5>Bits: ${bits}</h5>
+					<span>Bits: ${bits}</span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<h5>Pontuação: ${pontuacao}</h5>
+					<span>Pontuação: ${pontuacao}</span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<h5>
-						Vida:
-						<c:forEach begin="1" end="${vidas}" varStatus="loop">
+					<span> Vida: <c:forEach begin="1" end="${vidas}"
+							varStatus="loop">
 							<i class="fa fa-heart"></i>
 						</c:forEach>
-					</h5>
+					</span>
 				</div>
 			</div>
 		</div>

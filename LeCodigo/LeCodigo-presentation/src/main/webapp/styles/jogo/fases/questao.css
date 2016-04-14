@@ -7,6 +7,17 @@
 	font-family: arial;
 }
 
+body{
+	font-size: 12px;
+	font-family: 'Open Sans';
+}
+
+span{
+	font-family: 'Open Sans';
+	font-weight: bold;
+	font-size: 22px;	
+}
+
 
 h1 {
 	color: #fff;
@@ -36,7 +47,7 @@ h6 {
 a {
 	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter',
 		'Lucida Typewriter', monospace;
-	font-size: 10pt;
+	font-size: 9pt;
 }
 
 p {
@@ -67,7 +78,11 @@ pre {
 	color: #DA4453;
 }
 
+.margem{
+	padding: 5%;
+}
 .panel-body-questao {
+	min-height: 300px;
 	overflow-y:scroll;
 }
 
@@ -77,6 +92,11 @@ pre {
 .panel-body-resposta{
 	overflow-y:scroll;
 }
+
+.list-group-item {
+	padding: 1%;
+}
+
 
 .margem-acima{
 	padding-top: 5%;
