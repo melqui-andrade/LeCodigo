@@ -22,7 +22,7 @@
 
 	<div class="col-md-4">
 		<div style="position: fixed; bottom: 0; right: 0; z-index: 999">
-			<img src="${fase.imgMonstro}" class="img-responsive" id="et"
+			<img src="${fase.imgMonstro}" class="img-responsive" id="et_"
 				style="float: left;" />
 		</div>
 	</div>
@@ -44,51 +44,25 @@
 
 	<script>
 		//TODO: DEPOIS QUE TIRAR O BOTAO TEMPORAIO POE TIRAR ESSA FUNCAO
-		
+
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 		});
-	
-		function et_normal() {  
-	         document.images["et"].src = "../images/et/et_verde_feliz.png";  
-	}
-		function et_feliz() {  
-	         document.images["et"].src = "../images/et/et_verde_normal.png";  
-	}
-		setInterval(et_normal, 500);
-		setInterval(et_feliz, 500);
 
-		
-		$(window).load(function(){
-		    setTimeout(function(){
-
-		        $('.progress-bar').each(function() {
-		            var me = $(this);
-		            var perc = me.attr("data-percentage");
-
-		            //TODO: left and right text handling
-
-		            var current_perc = 0;
-
-		            var progress = setInterval(function() {
-		                if (current_perc>=perc) {
-		                    clearInterval(progress);
-		                } else {
-		                    current_perc +=1;
-		                    me.css('width', (current_perc)+'%');
-		                }
-
-		                me.text((current_perc)+'%');
-
-		            }, 50);
-
-		        });
-
-		    },300);
-		
-		
+		function et_normal() {
+			document.getElementById("et_").src = "../images/et/et_verde_normal.png";
 			
-		window.setTimeout("location.href='fase.html'",5000);
+		}
+
+		function et_feliz() {
+			document.getElementById("et_").src = "../images/et/et_verde_feliz.png";
+
+		}
+		setInterval(et_normal, 500);
+		setInterval(et_feliz, 200);
+		setInterval(et_normal, 500);
+
+		window.setTimeout("location.href='fase.html'", 5000);
 	</script>
 
 
