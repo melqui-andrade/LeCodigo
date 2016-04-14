@@ -12,21 +12,20 @@ h1 {
 	color: #fff;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
-	font-size: 100px;
+	
 }
 
 h3 {
 	color: #34495E;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
-	font-size: 325%;
+	
 }
 
 h5 {
 	color: #fff;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
-	font-size: 200%;
 }
 
 
@@ -45,7 +44,7 @@ p {
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 400;
+	
 	line-height: 20px;
 }
 
@@ -54,17 +53,14 @@ blockquote {
 	font-size: 21px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 400;
-	line-height: 30px;
-}
+	}
 
 pre {
 	font-family: 'Open Sans';
 	font-size: 13px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 400;
-	line-height: 18.5714px;
+		line-height: 18.5714px;
 }
 
 .fa-heart {
@@ -72,16 +68,13 @@ pre {
 }
 
 .panel-body-questao {
-	min-height: 450px;
 	overflow-y:scroll;
 }
 
 .panel-body-opcoes{
-	height: 350px;
 	overflow-y:scroll;
 }
 .panel-body-resposta{
-	height: 250px;
 	overflow-y:scroll;
 }
 

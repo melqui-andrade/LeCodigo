@@ -2,13 +2,13 @@ package com.br.uepb.model;
 
 public class FaseModel {
 
-	private final String CORFASE1 = "#fac3b3";
-	private final String CORFASE2 = "#fae6b3";
-	private final String CORFASE3 = "#ebfab3";
+	private final String CORFASE1 = "#22214d";
+	private final String CORFASE2 = "#22214d";
+	private final String CORFASE3 = "#22214d";
 
-	private final String MONSTROFASE1 = "../images/monster1.png";
-	private final String MONSTROFASE2 = "../images/monster2.png";
-	private final String MONSTROFASE3 = "../images/monster3.png";
+	private final String MONSTROFASE1 = "../images/et.png";
+	private final String MONSTROFASE2 = "../images/et.png";
+	private final String MONSTROFASE3 = "../images/et.png";
 
 	private final String PERFILMONSTROFASE1 = "../images/monster1_little.png";
 	private final String PERFILMONSTROFASE2 = "../images/monster2_little.png";

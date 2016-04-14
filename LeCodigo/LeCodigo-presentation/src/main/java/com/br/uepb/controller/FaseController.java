@@ -66,6 +66,7 @@ public class FaseController {
 
 		faseModel = new FaseModel(fase);
 
+		modelAndView.addObject("idFase", fase);
 		modelAndView.addObject("bits", bits);
 		modelAndView.addObject("pontuacao", pontuacao);
 		modelAndView.addObject("vidas", vidas);
@@ -105,6 +106,7 @@ public class FaseController {
 				}				
 
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

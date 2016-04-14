@@ -9,14 +9,17 @@
 
 /*Para dispositivos com width menor que 768px*/
 body {
-	padding-top: 290px;
-	
+	padding-top: 250px;
+	padding-left: 290px;
+	padding-right: 290px;
 }
 
 /*Para dispositivos com width maior ou igual a 768px*/
 @media ( min-width : 768px) {
 	body {
-		padding-top: 140px;
+		padding-top: 70px;
+		padding-left: 170px;
+		padding-right: 170px;
 		font-size: 14px;
 	}
 }
@@ -44,19 +47,25 @@ body {
 }
 
 h1 {
-	color: #34495E;
+	color: #fff;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
 }
 
 h2 {
-	color: #34495E;
+	color: #fff;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
 }
 
 h3 {
-	color: #34495E;
+	color: #fff;
+	text-align: center;
+	font-family: 'Montserrat', cursive;
+}
+
+h4 {
+	color: #fff;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
 }
@@ -67,11 +76,15 @@ h5 {
 	font-family: 'Montserrat', cursive;
 }
 
+p{
+	color: #fff;
+}
+
 .numeroDaFase {
-	color: #34495E;
+	color: #fff;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
-	font-size: 80px;
+	font-size: 120px;
 }
 
 .fa-heart {

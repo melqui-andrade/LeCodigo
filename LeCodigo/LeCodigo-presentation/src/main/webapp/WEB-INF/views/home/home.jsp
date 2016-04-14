@@ -8,62 +8,48 @@
 
 <html>
 <body
-	style="background: url('../images/background/background2.png') fixed no-repeat; background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
-
-
+	style="background: url('../images/background/bg.jpg') fixed no-repeat; background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
 
 	<div class="col-md-4">&nbsp;</div>
-
-
 	<div class="col-md-4 container ">
 		<div class="row">
 			<h1>
 				Le<br> Código
 			</h1>
-
 		</div>
-
 		<div class="row">
 			<a href="/LeCodigo-presentation/fase/transicaoFase.html"
 				data-original-title="Clique neste botão e irá iniciar o jogo"
-				type="button" class="btn btn-primary btn-block btn-large"
+				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
-				<h5>Jogar</h5>
+				<p>Jogar</p>
 			</a> <br>
 		</div>
-
-
 		<div class="row">
 			<a href="#"
 				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
-				<h5>Instruções</h5>
+				<p>Instruções</p>
 			</a> <br>
 		</div>
-
 		<div class="row">
 			<a href="#"
-				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
+				data-original-title="Clique neste botão e irá visualizar o Ranking do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
-				<h5>Ranking</h5>
+				<p>Ranking</p>
 			</a> <br>
 		</div>
-
 		<div class="row">
 			<a href="#"
 				data-original-title="Clique neste botão para sair do jogo"
 				type="button" class="btn btn-primary btn-block"
 				data-toggle="tooltip" data-placement="left" title="">
-				<h5>Sair</h5>
+				<p>Sair</p>
 			</a> <br>
 		</div>
-
-
-
 	</div>
-
 	<div class="col-md-4">&nbsp;</div>
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->

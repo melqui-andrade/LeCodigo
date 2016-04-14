@@ -6,20 +6,23 @@
 <link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
 <html>
 <body
-	style="background: url('../images/background/background2.png') fixed no-repeat;  background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
+	style="background-color: ${fase.colorBackground};">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
 
 			<div class="row"
 				style="color: #eee; text-align: center; font-size: 14px;">
-				<div class="col-xs-6 col-sm-4">
+				<div class="col-xs-6 col-sm-3">
+					<h5>Fase ${idFase}</h5>
+				</div>
+				<div class="col-xs-6 col-sm-3">
 					<h5>Bits: ${bits}</h5>
 				</div>
-				<div class="col-xs-6 col-sm-4">
+				<div class="col-xs-6 col-sm-3">
 					<h5>Pontuação: ${pontuacao}</h5>
 				</div>
-				<div class="col-xs-6 col-sm-4">
+				<div class="col-xs-6 col-sm-3">
 					<h5>
 						Vida:
 						<c:forEach begin="1" end="${vidas}" varStatus="loop">

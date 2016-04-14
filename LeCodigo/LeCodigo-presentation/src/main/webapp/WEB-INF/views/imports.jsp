@@ -8,7 +8,6 @@
 
 <!-- Bootflat -->
 <link href="../styles/bootflat/css/bootflat.min.css" rel="stylesheet">
-<link href="../styles/bootflat/css/site.min.css" rel="stylesheet">
 
 
 <!-- FlatUI -->

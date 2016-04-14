@@ -2,26 +2,22 @@
 <%@ include file="/WEB-INF/views/imports.jsp"%>
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
-<link href="../styles/jogo/fases/fase1.css" rel="stylesheet">
+<link href="../styles/jogo/fases/transicao.css" rel="stylesheet">
 <html>
 <body
-	style="background: url('../images/background/background2.png') fixed no-repeat;  background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; -khtml-background-size: 100% 100%; -moz-background-size: 100% 100%;">
-
+	style="background-color: ${fase.colorBackground};">
 	<div class="col-md-4">&nbsp;</div>
-
 	<div class="col-md-4">
 		<h1>
 			Le<br> Código
 		</h1>
-
-		<h2>
+		<p>
 			Atribuição de váriaveis, tipos de variáveis,<br> estrutura de
 			condição (if-else, Switch-case)
-		</h2>
-
-		<h3>
+		</p>
+		<h4>
 			Fase <span class="numeroDaFase">${idFase}</span>
-		</h3>
+		</h4>
 	</div>
 
 	<div class="col-md-4">
@@ -30,7 +26,6 @@
 				style="float: left;" />
 		</div>
 	</div>
-
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div class="scroll-top page-scroll visible-xs visble-sm">
@@ -45,7 +40,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 		});
 			
-		window.setTimeout("location.href='fase.html'",1000);
+		window.setTimeout("location.href='fase.html'",5000);
 	</script>
 
 
