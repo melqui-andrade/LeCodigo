@@ -36,6 +36,7 @@ function enviarResposta() {
 	var div = "divResposta";
 	var divResposta = document.getElementById(div);
 	var quantidadeDeFilhosDaDiv = divResposta.childElementCount;
+	resposta="";
 	for (var i = 0; i < quantidadeDeFilhosDaDiv; i++) {
 		if (i == quantidadeDeFilhosDaDiv - 1) {
 			resposta += divResposta.children[i].name;
@@ -52,7 +53,6 @@ function enviarResposta() {
 		document.getElementById("modalMensagem").innerHTML = "Você está certo que essa é a solução para o problema?<br><br>";
 		document.getElementById("modalMensagem").innerHTML += resposta;
 		document.getElementById("et_status").src = "../images/et/et_verde_pensativo.png";
-		resposta="";
 		
 		
 	} else {
@@ -69,6 +69,8 @@ function enviarResposta() {
 
 function confirmarResposta(){
 	window.location = "questao.html?resposta=" + resposta;
+	resposta="";
+	
 }
 
 function btnVoltarModal(){
@@ -95,6 +97,8 @@ opcoes = document.getElementById("blocosOpcoes").clientHeight + "px";
 
 document.getElementById("divResposta").style.height = opcoes;
 document.getElementById("divResposta").style.maxHeight = opcoes;
+
+
 
 function piscarEt() {
 	setTimeout(etNormal, 500);

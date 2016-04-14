@@ -26,6 +26,9 @@
 							varStatus="loop">
 							<i class="fa fa-heart"></i>
 						</c:forEach>
+						<a data-original-title="Comprar mais vidas"
+						type="button" class="btn btn-success fa fa-money"
+						data-toggle="tooltip" data-placement="bottom" title=""></a>
 					</span>
 				</div>
 			</div>
@@ -154,7 +157,7 @@
 
 	<!-- QUESTAO -->
 	<script src="../js/jogo/questao.js"></script>
-
+	<script src="../js/jogo/fase.js"></script>
 	<script src="../js/jogo/dialogs_jogo.js"></script>
 </body>
 

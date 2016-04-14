@@ -23,8 +23,10 @@
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<i class="fa fa-heart"></i>
-						</c:forEach>
-					</span>
+						</c:forEach> <a data-original-title="Comprar mais vidas"
+						type="button" class="btn btn-success fa fa-money"
+						data-toggle="tooltip" data-placement="bottom" title=""></a>
+					</span> <br>
 				</div>
 			</div>
 		</div>
@@ -104,7 +106,7 @@
 			class="fa fa-chevron-up"></i></a>
 	</div>
 
-
+<script src="../js/jogo/fase.js"></script>
 
 </body>
 
