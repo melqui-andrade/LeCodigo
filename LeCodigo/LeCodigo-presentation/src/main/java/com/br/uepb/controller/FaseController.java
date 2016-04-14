@@ -63,6 +63,16 @@ public class FaseController {
 				// 5));
 			}
 		}
+		
+		Questao questao = null;
+		if (fase == 1) {
+			questao = listaQuestoesFase1.get(etapa - 1);
+		} else if (fase == 2) {
+			questao = listaQuestoesFase2.get(etapa - 1);
+		} else if (fase == 3) {
+			questao = listaQuestoesFase3.get(etapa - 1);
+		}
+		
 
 		faseModel = new FaseModel(fase);
 
@@ -115,6 +125,7 @@ public class FaseController {
 			int pontuacao = SessaoBusiness.getInstace().getPontuacao();
 			int vidas = SessaoBusiness.getInstace().getVidas();			
 
+			modelAndView.addObject("questao", questao);
 			modelAndView.addObject("idFase", fase);
 			modelAndView.addObject("bits", bits);
 			modelAndView.addObject("pontuacao", pontuacao);

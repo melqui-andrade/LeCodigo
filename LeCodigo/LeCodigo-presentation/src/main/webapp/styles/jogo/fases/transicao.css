@@ -7,67 +7,27 @@
 	font-family: arial;
 }
 
-/*Para dispositivos com width menor que 768px*/
-body {
-	padding-top: 250px;
-	padding-left: 290px;
-	padding-right: 290px;
-}
-
-/*Para dispositivos com width maior ou igual a 768px*/
-@media ( min-width : 768px) {
-	body {
-		padding-top: 70px;
-		padding-left: 170px;
-		padding-right: 170px;
-		font-size: 14px;
-	}
-}
-
-.cabecalho {
-	padding-top: 10px;
-	background: #eee;
-	color: #444;
-	font-weight: bold;
-	height: 70px;
-	font-size: 150%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-}
-
-.time {
-	color: #fff;
-}
-
-.btn-cabecalho {
-	margin-top: 10%;
-	padding: 8%;
-	font-size: 100%;
-}
-
 h1 {
 	color: #fff;
 	text-align: left;
-	font-family: 'Montserrat', cursive;
+	font-family: 'Open Sans';
 }
 
 h2 {
 	color: #fff;
 	text-align: left;
-	font-family: 'Montserrat', cursive;
+	font-family: 'Open Sans';
 }
 
 h3 {
 	color: #fff;
 	text-align: center;
-	font-family: 'Montserrat', cursive;
+	font-family: 'Open Sans';
 }
 
 h4 {
 	color: #fff;
-	text-align: center;
-	font-family: 'Montserrat', cursive;
+	font-family: 'Open Sans';
 }
 
 h5 {
@@ -76,21 +36,19 @@ h5 {
 	font-family: 'Montserrat', cursive;
 }
 
-p{
-	color: #fff;
-}
-
 .numeroDaFase {
-	color: #fff;
-	text-align: center;
+	color: #fff;	
 	font-family: 'Montserrat', cursive;
-	font-size: 120px;
+	font-size: 70px;
 }
 
-.fa-heart {
-	color: #DA4453;
-}
-
-.events{
-	box-shadow: 5px 5px 5px #444;
+.conteudo-centralizado {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    text-align: left;
+    -webkit-transform: translateY( -50% );
+    -moz-transform: translateY( -50% );
+    transform: translateY( -50% );
 }

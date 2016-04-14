@@ -5,8 +5,8 @@
 <link href="../styles/jogo/fases/transicao.css" rel="stylesheet">
 <html>
 <body style="background-color: ${fase.colorBackground};">
-	<div class="col-md-4">&nbsp;</div>
-	<div class="col-md-4">
+
+	<div class="col-md-12 container conteudo-centralizado ">
 		<h1>
 			Le<br> Código
 		</h1>
@@ -17,22 +17,11 @@
 		<h4>
 			Fase <span class="numeroDaFase">${idFase}</span>
 		</h4>
-	</div>
+		<div class="col-md-4">
 
-
-	<div class="col-md-4">
-		<div style="position: fixed; bottom: 0; right: 0; z-index: 999">
 			<img src="${fase.imgMonstro}" class="img-responsive" id="et_"
 				style="float: left;" />
-		</div>
-	</div>
-	<div class="row">
-		<div class="progress">
-			<div class="progress-bar progress-bar-success" role="progressbar"
-				aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-				style="width: 40%">
-				<span class="sr-only">40% Complete (success)</span>
-			</div>
+
 		</div>
 	</div>
 

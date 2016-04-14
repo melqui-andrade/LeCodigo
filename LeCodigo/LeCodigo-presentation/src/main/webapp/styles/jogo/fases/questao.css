@@ -101,3 +101,11 @@ pre {
 .margem-acima{
 	padding-top: 5%;
 }
+
+.panel-terminal{
+	background-color: #444;
+	color: #fff;
+	white-space: pre;
+	word-wrap: break-word; /* quebrar texto */
+}
+.panel-terminal:after{content:""; display:block; clear:both}

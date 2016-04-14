@@ -71,7 +71,7 @@
 					style="background: #eee; color: #34495E; padding: -1%;">
 					Visualização do código</div>
 				<div id="respostas" class="panel-body "
-					style="background: #444; color: #fff;" onload="ajustarTamanho()">
+					style="background: #444; color: #fff;">
 
 
 					início <br>
@@ -89,12 +89,11 @@
 		</div>
 		<div class="col-md-2">
 			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-				<img src="${fase.imgMonstro}" class="img-responsive" align="middle" id="et_"
-					style="float: left;" />
+				<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+					id="et_" style="float: left;" />
 			</div>
 
-			<button class="btn btn-danger btn-block" onclick="limparReposta()">Limpar
-				Código</button>
+
 			<br>
 
 		</div>
@@ -102,16 +101,50 @@
 		<br>
 		<div class="row">
 			<div class="col-md-4">
-				<a class="btn btn-block btn-info " href="fase.html"><span>voltar</span></a>
+				<button class="btn btn-block btn-info " onclick="btnVoltarQuestaoOnClick()">voltar</button>
 			</div>
 			<br>
 			<div class="col-md-6">
-				<button class="btn btn-block btn-success" onclick="enviarResposta()">
-					<span>Enviar Resposta</span>
+				<button class="btn btn-block btn-success" onclick="enviarResposta()"
+					data-toggle="modal" data-target="#myModal">
+					Enviar Resposta
+				</button>
+			</div>
+				<br>
+			<div class="col-md-2">
+				<button class="btn btn-danger btn-block" onclick="limparReposta()">
+					Limpar Código
 				</button>
 			</div>
 		</div>
 	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="modalTitulo"></h4>
+				</div>
+				<div class="modal-body">
+					<h6 id="modalMensagem"></h6>
+					<img src="" class="img-responsive" align="middle" id="et_status"
+						style="float: left;" /> <br>
+				</div>
+				<div id="modalFooter" class="modal-footer">
+										
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div class="scroll-top page-scroll visible-xs visble-sm">
@@ -120,7 +153,9 @@
 	</div>
 
 	<!-- QUESTAO -->
-	<script src="../js/questao.js"></script>
+	<script src="../js/jogo/questao.js"></script>
+
+	<script src="../js/jogo/dialogs_jogo.js"></script>
 </body>
 
 </html>
