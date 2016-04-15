@@ -12,10 +12,9 @@ import conexaoBD.HibernateUtil;
 
 public class QuestaoBusiness {
 	
-	
+	QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
 	public Questao buscarQuestao(int fase, int etapa){
 
-		QuestaoDAO questaoDAO = new QuestaoDAO();
 		List<Questao> questoes = null;
 		if(fase==1){
 			if(etapa==1){
@@ -82,7 +81,6 @@ public class QuestaoBusiness {
 	}
 	
 	public boolean verificarResposta(String resposta, int idQuestao) throws Exception{
-		QuestaoDAO questaoDAO = new QuestaoDAO();
 		Questao questao = questaoDAO.buscarQuestao(idQuestao);
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
 		
@@ -102,7 +100,6 @@ public class QuestaoBusiness {
 	
 	public Questao pularQuestao(int fase, int etapa){
 		// TODO: Bruno vai fazer ainda.
-		QuestaoDAO questaoDAO = new QuestaoDAO();
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
 		 
 		return buscarQuestao(fase, etapa);
@@ -110,7 +107,6 @@ public class QuestaoBusiness {
 	}
 	
 	public String getParteDoEnunciado(int idQuestao, int tamanho){
-		QuestaoDAO questaoDAO = new QuestaoDAO();
 		
 		Questao questao = questaoDAO.buscarQuestao(idQuestao);
 		

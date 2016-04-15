@@ -24,6 +24,8 @@ public class SessaoBusiness {
 	private Partida partida;
 	private RespostaDoAluno respostaDoAluno;
 	
+	private JogadorDAO jogadorDAO = JogadorDAO.getInstance();
+	
 	private SessaoBusiness(){};
 	
 	public static SessaoBusiness getInstace(){
@@ -136,7 +138,7 @@ public class SessaoBusiness {
 		
 	}
 	public void iniciarPartidaDoJogador(int idJogador){
-		this.jogador = new JogadorDAO().buscarJogador(idJogador);
+		this.jogador = jogadorDAO.buscarJogador(idJogador);
 		//TODO remover essa verificação depois que o cadastro de jogadores tiver feito
 		if(jogador==null){
 			jogador = new Jogador();
