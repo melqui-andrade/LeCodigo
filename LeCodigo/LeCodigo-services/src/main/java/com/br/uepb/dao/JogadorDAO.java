@@ -9,12 +9,23 @@ import conexaoBD.HibernateUtil;
 
 public class JogadorDAO {
 	
-	private Session session;
+	private static Session session;
 	
-	public JogadorDAO() {
-		this.session = HibernateUtil.getSessionFactory().openSession();
+	//singleton para o jogadorDAO
+	private static JogadorDAO jogadorDAO;
+	
+	public static JogadorDAO getInstance(){
+		if(jogadorDAO == null){
+			jogadorDAO = new JogadorDAO();
+			session = HibernateUtil.getSessionFactory().openSession();
+			return jogadorDAO;
+		}else{
+			return jogadorDAO;
+		}
 	}
-
+	
+	private JogadorDAO() { }
+	
 	public boolean adicionarJogador(Jogador jogador){
 		
 		if(!session.isOpen())

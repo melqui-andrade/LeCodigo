@@ -8,9 +8,9 @@ public class TesteQuestoes {
 
 	public static void main(String[] args) {
 		
-		QuestaoDAO dao = new QuestaoDAO();
+		QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
 		
-		List<Questao> list = dao.listarQuestoes(1, TipoQuestao_Enum.IF_ELSE);
+		List<Questao> list = questaoDAO.listarQuestoes(1, TipoQuestao_Enum.IF_ELSE);
 		//System.out.println(TipoQuestao_Enum.IF_ELSE.ordinal());
 		System.out.println(list.size());
 		for (Questao questao : list) {

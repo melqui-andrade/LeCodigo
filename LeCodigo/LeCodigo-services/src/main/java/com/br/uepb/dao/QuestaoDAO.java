@@ -11,11 +11,22 @@ import conexaoBD.HibernateUtil;
 
 public class QuestaoDAO {
 
-	private Session session;
-
-	public QuestaoDAO() {
-		this.session = HibernateUtil.getSessionFactory().openSession();
+	private static Session session;
+	
+	//singleton para o partidaDAO
+	private static QuestaoDAO questaoDAO;
+	
+	public static QuestaoDAO getInstance(){
+		if(questaoDAO == null){
+			questaoDAO = new QuestaoDAO();
+			session = HibernateUtil.getSessionFactory().openSession();
+			return questaoDAO;
+		}else{
+			return questaoDAO;
+		}
 	}
+	
+	private QuestaoDAO() { }
 
 	public Questao adicionarQuestao(Questao questao) {
 

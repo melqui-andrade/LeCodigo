@@ -9,7 +9,7 @@ public class PopularQuestoes {
 	public static void main(String[] args) {
 		
 		//Metodo para apagar as questoes e os bocos e criar de novo
-		QuestaoDAO questaoDAO = new QuestaoDAO();
+		QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
 		questaoDAO.apagarQuestoes();
 		
 		//Popular questoes da fase 1 (15 questoes)

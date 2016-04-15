@@ -9,11 +9,22 @@ import conexaoBD.HibernateUtil;
 
 public class PartidaDAO {
 	
-private Session session;
+	private static Session session;
 	
-	public PartidaDAO() {
-		this.session = HibernateUtil.getSessionFactory().openSession();
+	//singleton para o partidaDAO
+	private static PartidaDAO partidaDAO;
+	
+	public static PartidaDAO getInstance(){
+		if(partidaDAO == null){
+			partidaDAO = new PartidaDAO();
+			session = HibernateUtil.getSessionFactory().openSession();
+			return partidaDAO;
+		}else{
+			return partidaDAO;
+		}
 	}
+	
+	private PartidaDAO() { }
 	
 	public boolean salvarPartida(Partida partida){
 		

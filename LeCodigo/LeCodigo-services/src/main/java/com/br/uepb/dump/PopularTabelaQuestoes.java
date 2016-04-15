@@ -360,10 +360,11 @@ public class PopularTabelaQuestoes {
 	
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
 			List<Bloco> blocos) {
-		QuestaoDAO dao = new QuestaoDAO();
+		QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
+		
 		Questao questao = new Questao(descricao, resposta, fase, tipoQuestao, blocos);
-
-		dao.adicionarQuestao(questao);
+		questaoDAO.adicionarQuestao(questao);
+		
 		return true;
 	}
 }

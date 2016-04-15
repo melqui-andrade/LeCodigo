@@ -1,16 +1,12 @@
 package com.br.uepb.dump;
 
 
-import java.util.ArrayList;
 import java.util.List;
+
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Bloco;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
-
-import conexaoBD.HibernateUtil;
-
-import com.br.uepb.domain.Bloco;
 
 public class PopularTabelaQuestoes3 {
 
@@ -162,11 +158,11 @@ public class PopularTabelaQuestoes3 {
 
 	public static boolean addQuestao(String descricao, String resposta, int fase, TipoQuestao_Enum tipoQuestao,
 			List<Bloco> blocos) {
-		QuestaoDAO dao = new QuestaoDAO();
+		QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
 
 		Questao questao = new Questao(descricao, resposta, fase, tipoQuestao, blocos);
-
-		dao.adicionarQuestao(questao);
+		questaoDAO.adicionarQuestao(questao);
+		
 		return true;
 	}
 }
