@@ -25,10 +25,9 @@
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<i class="fa fa-heart"></i>
-						</c:forEach>
-						<a data-original-title="Comprar mais vidas"
-						type="button" class="btn btn-success fa fa-money"
-						data-toggle="tooltip" data-placement="bottom" title=""></a>
+						</c:forEach> <a data-original-title="Comprar mais vidas" type="button"
+						class="btn btn-success fa fa-money" data-toggle="tooltip"
+						data-placement="bottom" title=""></a>
 					</span>
 				</div>
 			</div>
@@ -97,27 +96,28 @@
 			</div>
 
 
-			<br>
+
 
 		</div>
 
 		<br>
 		<div class="row">
+			<br>
+
 			<div class="col-md-4">
-				<button class="btn btn-block btn-info " onclick="btnVoltarQuestaoOnClick()">voltar</button>
+				<button class="btn btn-block btn-info "
+					onclick="btnVoltarQuestaoOnClick()">voltar</button>
 			</div>
 			<br>
 			<div class="col-md-6">
 				<button class="btn btn-block btn-success" onclick="enviarResposta()"
-					data-toggle="modal" data-target="#myModal">
-					Enviar Resposta
+					data-toggle="modal" data-target="#myModal">Enviar Resposta
 				</button>
 			</div>
-				<br>
+			<br>
 			<div class="col-md-2">
 				<button class="btn btn-danger btn-block" onclick="limparReposta()">
-					Limpar Código
-				</button>
+					Limpar Código</button>
 			</div>
 		</div>
 	</div>
@@ -140,10 +140,7 @@
 					<img src="" class="img-responsive" align="middle" id="et_status"
 						style="float: left;" /> <br>
 				</div>
-				<div id="modalFooter" class="modal-footer">
-										
-					
-				</div>
+				<div id="modalFooter" class="modal-footer"></div>
 			</div>
 		</div>
 	</div>

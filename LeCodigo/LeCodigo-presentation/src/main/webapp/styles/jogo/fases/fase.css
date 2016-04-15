@@ -10,7 +10,6 @@
 /*Para dispositivos com width menor que 768px*/
 body {
 	padding-top: 290px;
-	
 }
 
 /*Para dispositivos com width maior ou igual a 768px*/
@@ -21,10 +20,10 @@ body {
 	}
 }
 
-span{
+span {
 	font-family: 'Open Sans', cursive;
 	font-weight: bold;
-	font-size: 22px;	
+	font-size: 22px;
 }
 
 .cabecalho {
@@ -84,15 +83,21 @@ h5 {
 	color: #DA4453;
 }
 
-
 .conteudo-centralizado {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    width: 50%;
-    text-align: center;
-    -webkit-transform: translateY( -50% );
-    -moz-transform: translateY( -50% );
-    transform: translateY( -50% );
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	width: 50%;
+	text-align: center;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+	
 }
 
+.barra_vertical {
+	margin: 10%;
+	
+	margin-top: -6%;
+		//overflow-y: scroll;
+}

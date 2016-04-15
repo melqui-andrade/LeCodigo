@@ -23,81 +23,94 @@
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<i class="fa fa-heart"></i>
-						</c:forEach> <a data-original-title="Comprar mais vidas"
-						type="button" class="btn btn-success fa fa-money"
-						data-toggle="tooltip" data-placement="bottom" title=""></a>
+						</c:forEach> <a data-original-title="Comprar mais vidas" type="button"
+						class="btn btn-success fa fa-money" data-toggle="tooltip"
+						data-placement="bottom" title=""></a>
 					</span> <br>
 				</div>
 			</div>
 		</div>
 	</nav>
+	<div id="div_timeline" class="barra_vertical">
+		<div 
+			class="col-md-12 container ">
+			<div class="timeline" id="page-top">
+				<dl>
+					<c:forEach begin="1" end="${etapa}" varStatus="loop">
+						<c:if test="${loop.index % 2 == 0}">
+							<dd class="pos-right clearfix">
+								<div class="circ "></div>
+								<div class="time" style="color: #fff;"></div>
+								<div class="events">
+									<div class="pull-left">
+										<c:if test="${etapa - loop.index + 1 < etapa}">
+											<img class="events-object img-rounded"
+												src="../images/et/et_verde_little_sumiu.png">
+										</c:if>
+										<c:if test="${etapa - loop.index + 1 >= etapa}">
+											<img class="events-object img-rounded"
+												src="${fase.imgPerfilMonstro}">
+										</c:if>
+									</div>
+									<div class="events-body">
+										<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
+										<p>${ enumQuestao }</p>
+										<c:if test="${etapa - loop.index + 1 < etapa}">
+											<button class="btn btn-primary btn-block" disabled
+												style="color: #000">
+												<i class="fa fa-2x fa-check" style="color: #23A566"> </i>
+												Parabéns acertou :)
+											</button>
+										</c:if>
+										<c:if test="${etapa - loop.index + 1 >= etapa}">
+											<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
+										</c:if>
+										<hr>
+									</div>
+								</div>
+							</dd>
+						</c:if>
+						<c:if test="${loop.index % 2 != 0}">
+							<dd class="pos-left clearfix">
+								<div class="circ "></div>
+								<div class="time" style="color: #fff;"></div>
+								<div class="events">
+									<div class="pull-left">
+										<c:if test="${etapa - loop.index + 1 < etapa}">
+											<img class="events-object img-rounded"
+												src="../images/et/et_verde_little_sumiu.png">
+										</c:if>
+										<c:if test="${etapa - loop.index + 1 >= etapa}">
+											<img class="events-object img-rounded"
+												src="${fase.imgPerfilMonstro}">
+										</c:if>
+									</div>
+									<div class="events-body">
+										<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
+										<p>${ enumQuestao }</p>
+										<c:if test="${etapa - loop.index + 1 < etapa}">
+											<button class="btn btn-primary btn-block" disabled
+												style="color: #000">
+												<i class="fa fa-2x fa-check" style="color: #23A566"> </i>
+												Parabéns acertou :)
+											</button>
+										</c:if>
+										<c:if test="${etapa - loop.index + 1 >= etapa}">
+											<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
+										</c:if>
 
-	<div class="col-md-12 container conteudo-centralizado ">
-		<div class="timeline" id="page-top">
-			<dl>
-				<c:forEach begin="1" end="${etapa}" varStatus="loop">
-					<c:if test="${loop.index % 2 == 0}">
-						<dd class="pos-right clearfix">
-							<div class="circ "></div>
-							<div class="time" style="color: #fff;"></div>
-							<div class="events">
-								<div class="pull-left">
-									<img class="events-object img-rounded"
-										src="${fase.imgPerfilMonstro}">
+										<hr>
+									</div>
 								</div>
-								<div class="events-body">
-									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
-									<p>${ enumQuestao }</p>
-									<c:if test="${etapa - loop.index + 1 < etapa}">
-										<button class="btn btn-primary btn-block" disabled
-											style="color: #000">
-											<i class="fa fa-3x fa-check" style="color: #23A566"> </i> <br>
-											Parabéns acertou :)
-										</button>
-									</c:if>
-									<c:if test="${etapa - loop.index + 1 >= etapa}">
-										<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
-									</c:if>
-									<hr>
-								</div>
-							</div>
-						</dd>
-					</c:if>
-					<c:if test="${loop.index % 2 != 0}">
-						<dd class="pos-left clearfix">
-							<div class="circ "></div>
-							<div class="time" style="color: #fff;"></div>
-							<div class="events">
-								<div class="pull-left">
-									<img class="events-object img-rounded"
-										src="${fase.imgPerfilMonstro}">
-								</div>
-								<div class="events-body">
-									<h4 class="events-heading">Etapa ${etapa - loop.index + 1}</h4>
-									<p>${ enumQuestao }</p>
-									<c:if test="${etapa - loop.index + 1 < etapa}">
-										<button class="btn btn-primary btn-block" disabled
-											style="color: #000">
-											<i class="fa fa-3x fa-check" style="color: #23A566"> </i> <br>
-											Parabéns acertou :)
-										</button>
-									</c:if>
-									<c:if test="${etapa - loop.index + 1 >= etapa}">
-										<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
-									</c:if>
-
-									<hr>
-								</div>
-							</div>
-						</dd>
-					</c:if>
-				</c:forEach>
-			</dl>
+							</dd>
+						</c:if>
+					</c:forEach>
+				</dl>
+			</div>
+			<img src="${fase.imgMonstro}" height="90px" width="90px"
+				class="img-responsive" align="middle" style="float: left;" />
 		</div>
-		<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
-			style="float: left;" />
 	</div>
-
 
 
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
@@ -106,7 +119,7 @@
 			class="fa fa-chevron-up"></i></a>
 	</div>
 
-<script src="../js/jogo/fase.js"></script>
+	<script src="../js/jogo/fase.js"></script>
 
 </body>
 

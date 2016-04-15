@@ -52,3 +52,7 @@ h5 {
     -moz-transform: translateY( -50% );
     transform: translateY( -50% );
 }
+
+p{
+	color: #fff;
+}
