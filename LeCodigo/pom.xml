@@ -135,7 +135,7 @@
 	                    <configuration>
 	                        <path>/lecodigo</path>
 	                        <update>true</update>
-	                        <url>http://localhost:8080/manager/text</url>
+	                        <url>http://162.243.23.39:8080/manager/html</url>
 	                        <username>tomcat</username>
 	                        <password>tomcat</password>
 	                    </configuration>
