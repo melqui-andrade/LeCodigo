@@ -138,6 +138,7 @@
 	                        <url>http://162.243.23.39:8080/manager/html</url>
 	                        <username>tomcat</username>
 	                        <password>tomcat</password>
+	                        
 	                    </configuration>
             		</plugin>	
             		<plugin>

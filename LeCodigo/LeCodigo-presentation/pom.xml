@@ -10,7 +10,7 @@
 	<name>LeCodigo-presentation</name>
 	<packaging>war</packaging>	
 	<build>
-		<finalName>LeCodigo-presentation</finalName>
+		<finalName>LeCodigo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
