@@ -8,8 +8,9 @@
 	</parent>
 	<artifactId>LeCodigo-presentation</artifactId>
 	<name>LeCodigo-presentation</name>
-	<packaging>war</packaging>
+	<packaging>war</packaging>	
 	<build>
+		<finalName>LeCodigo-presentation</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
