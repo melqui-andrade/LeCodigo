@@ -98,11 +98,37 @@ public class QuestaoBusiness {
 		return false;
 	}
 	
-	public Questao pularQuestao(int fase, int etapa){
-		// TODO: Bruno vai fazer ainda.
+	public Questao pularQuestao(int idQuestao, int fase, int etapa){
 		SessaoBusiness sessao = SessaoBusiness.getInstace();
-		 
-		return buscarQuestao(fase, etapa);
+		boolean podePular = false;
+		switch(fase){
+		case 1:
+			if(sessao.getBits() >= 3){
+				podePular=true;
+				sessao.setBits(sessao.getBits()-3);
+			}
+			break;
+		case 2:
+			if(sessao.getBits() >= 5){
+				podePular=true;
+				sessao.setBits(sessao.getBits()-5);
+			}
+			break;
+		case 3:
+			if(sessao.getBits() >= 7){
+				podePular=true;
+				sessao.setBits(sessao.getBits()-7);
+			}
+			break;
+		}
+		
+		if(podePular){
+			sessao.atualizarPartidaDoJogador(idQuestao, "pulou");
+			return buscarQuestao(fase, etapa);
+		}
+		else{
+			return null;
+		}
 		
 	}
 	
