@@ -108,17 +108,22 @@ public class FaseController {
 
 		resposta = (String) request.getParameter("resposta");
 		if (resposta != null) {
+			boolean status_resposta = false;
 
 			try {
-				if(questaoBusiness.verificarResposta(resposta, questao.getId())){
+				status_resposta = questaoBusiness.verificarResposta(resposta, questao.getId());
+				if(status_resposta){
 					partidaBusiness.avancarEtapa();
-					return new ModelAndView("redirect:/fase/fase.html");
+					//return new ModelAndView("redirect:/fase/fase.html");
 				}				
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			modelAndView.addObject("status_resposta", status_resposta);
+
 		}
 			
 			int bits = SessaoBusiness.getInstace().getBits();

@@ -25,7 +25,13 @@
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<i class="fa fa-heart"></i>
-						</c:forEach> <a data-original-title="Comprar mais vidas" type="button"
+						</c:forEach> <c:if test="${vidas <3}">
+
+							<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
+								<i class="fa fa-heart-o"></i>
+							</c:forEach>
+
+						</c:if> <a data-original-title="Comprar mais vidas" type="button"
 						class="btn btn-success fa fa-money" data-toggle="tooltip"
 						data-placement="bottom" title=""></a>
 					</span>
@@ -106,21 +112,25 @@
 
 			<div class="col-md-4">
 				<button class="btn btn-block btn-info "
-					onclick="btnVoltarQuestaoOnClick()">voltar</button>
+					onclick="btnVoltarQuestaoOnClick()"> <i class="fa fa-reply" aria-hidden="true"></i>
+					 voltar</button>
 			</div>
 			<br>
 			<div class="col-md-6">
 				<button class="btn btn-block btn-success" onclick="enviarResposta()"
-					data-toggle="modal" data-target="#myModal">Enviar Resposta
+					data-toggle="modal" data-target="#myModal"> <i class="fa fa-paper-plane" aria-hidden="true"></i>
+					 Enviar Resposta
 				</button>
 			</div>
 			<br>
 			<div class="col-md-2">
 				<button class="btn btn-danger btn-block" onclick="limparReposta()">
-					Limpar Código</button>
+					<i class="fa fa-times" aria-hidden="true"></i>
+					 Limpar Código</button>
 			</div>
 		</div>
 	</div>
+
 
 
 	<!-- Modal -->
@@ -146,6 +156,7 @@
 	</div>
 
 
+
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div class="scroll-top page-scroll visible-xs visble-sm">
 		<a class="btn btn-primary" href="#page-top"><i
@@ -155,7 +166,21 @@
 	<!-- QUESTAO -->
 	<script src="../js/jogo/questao.js"></script>
 	<script src="../js/jogo/fase.js"></script>
-	<script src="../js/jogo/dialogs_jogo.js"></script>
+
+	<c:if test="${status_resposta == true}">
+		<button onclick="feedbackQuestaoCerta()" data-toggle="modal"
+			data-target="#myModal" id="status_true" style="display: none;"></button>
+		<script>
+			$('#status_true').click();			
+			</script>
+	</c:if>
+	<c:if test="${status_resposta == false}">
+		<button onclick="feedbackQuestaoErrada()" data-toggle="modal"
+			data-target="#myModal" id="status_false" style="display: none;"></button>
+		<script>
+			$('#status_false').click();
+		</script>
+	</c:if>
 </body>
 
 </html>

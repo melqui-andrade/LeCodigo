@@ -1,8 +1,9 @@
 var contador = 999;
 var resposta = "";
+var respostaEnunciado = "";
 
 function adicionarOpcaoSelecionada(id, descricao) {
-	var opcao = "<a id='" + contador + "' class='panel-terminal' name='" + id
+	var opcao = "<a id='" + contador + "' class='panel-terminal mouse_mao' name='" + id
 			+ "' onclick='removerLinhaResposta(" + contador + ")'> "
 			+ descricao + " </a>";
 	var div = "divResposta";
@@ -37,21 +38,24 @@ function enviarResposta() {
 	var divResposta = document.getElementById(div);
 	var quantidadeDeFilhosDaDiv = divResposta.childElementCount;
 	resposta="";
+	respostaEnunciado="";
 	for (var i = 0; i < quantidadeDeFilhosDaDiv; i++) {
 		if (i == quantidadeDeFilhosDaDiv - 1) {
 			resposta += divResposta.children[i].name;
+			
 		} else {
 			resposta += divResposta.children[i].name + "-";
 		}
+		respostaEnunciado+=divResposta.children[i].innerText +"<br>";
 	}
 	if (resposta != "") {
 		document.getElementById("modalFooter").innerHTML ="";
 		document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-info'"+ "data-dismiss='modal'"+"'>Voltar</button>";		
-		document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-primary' onclick='confirmarResposta()' id='btnConfirmar'>Confirmar</button>";
+		document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-primary' onclick='confirmarResposta()' id='btnConfirmar'>Enviar</button>";
 		document.getElementById("modalMensagem").innerHTML ="";
 		document.getElementById("modalTitulo").innerHTML = "Olá terráqueo...";
-		document.getElementById("modalMensagem").innerHTML = "Você está certo que essa é a solução para o problema?<br><br>";
-		document.getElementById("modalMensagem").innerHTML += resposta;
+		document.getElementById("modalMensagem").innerHTML = "Deseja enviar esta resposta?<br><br>";
+		document.getElementById("modalMensagem").innerHTML += respostaEnunciado;
 		document.getElementById("et_status").src = "../images/et/et_verde_pensativo.png";
 		
 		
@@ -67,8 +71,34 @@ function enviarResposta() {
 
 }
 
+function feedbackQuestaoErrada(){
+	document.getElementById("modalFooter").innerHTML ="";
+	document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-info'"+ "data-dismiss='modal'"+"'>Voltar</button>";		
+	document.getElementById("modalTitulo").innerHTML = "Owww terráqueo...";
+	document.getElementById("modalMensagem").innerHTML = "Infelizmente você errou a questão, reveja seu código, você pode encontrar a solução ! :)";
+	document.getElementById("et_status").src = "../images/et/et_verde_triste.png";
+	$('#myModal').modal('toggle');
+	resposta="";
+}
+
+function feedbackQuestaoCerta(){
+	document.getElementById("modalFooter").innerHTML ="";
+	document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-success' onclick='proximaEtapa()'"+"'>Ok</button>";		
+	document.getElementById("modalTitulo").innerHTML = "Parabéns terráqueo ! :D";
+	document.getElementById("modalMensagem").innerHTML = "Você acertou a questão, está pronto para seguir para a próxima etapa :) :)";
+	document.getElementById("et_status").src = "../images/et/et_verde_feliz.png";
+	
+	resposta="";
+}
+
 function confirmarResposta(){
 	window.location = "questao.html?resposta=" + resposta;
+	resposta="";
+	
+}
+
+function proximaEtapa(){
+	window.location = "fase.html";
 	resposta="";
 	
 }
@@ -97,6 +127,7 @@ opcoes = document.getElementById("blocosOpcoes").clientHeight + "px";
 
 document.getElementById("divResposta").style.height = opcoes;
 document.getElementById("divResposta").style.maxHeight = opcoes;
+
 
 
 

@@ -23,10 +23,16 @@
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<i class="fa fa-heart"></i>
-						</c:forEach> <a data-original-title="Comprar mais vidas" type="button"
+						</c:forEach> <c:if test="${vidas <3}">
+
+							<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
+								<i class="fa fa-heart-o"></i>
+							</c:forEach>
+
+						</c:if> <a data-original-title="Comprar mais vidas" type="button"
 						class="btn btn-success fa fa-money" data-toggle="tooltip"
 						data-placement="bottom" title=""></a>
-					</span> <br>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -63,7 +69,10 @@
 											</button>
 										</c:if>
 										<c:if test="${etapa - loop.index + 1 >= etapa}">
-											<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
+											<a href="questao.html" class="btn btn-primary btn-block">
+											<i class="fa fa-share" aria-hidden="true"></i>
+											
+											Responder</a>
 										</c:if>
 										<hr>
 									</div>
@@ -96,7 +105,10 @@
 											</button>
 										</c:if>
 										<c:if test="${etapa - loop.index + 1 >= etapa}">
-											<a href="questao.html" class="btn btn-primary btn-block">Responder</a>
+											<a href="questao.html" class="btn btn-primary btn-block">
+											<i class="fa fa-share" aria-hidden="true"></i>
+											
+											Responder</a>
 										</c:if>
 
 										<hr>

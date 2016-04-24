@@ -7,30 +7,27 @@
 	font-family: arial;
 }
 
-body{
+body {
 	font-size: 12px;
 	font-family: 'Open Sans';
 }
 
-span{
+span {
 	font-family: 'Open Sans';
 	font-weight: bold;
-	font-size: 22px;	
+	font-size: 22px;
 }
-
 
 h1 {
 	color: #fff;
 	text-align: left;
 	font-family: 'Montserrat', cursive;
-	
 }
 
 h3 {
 	color: #34495E;
 	text-align: center;
 	font-family: 'Montserrat', cursive;
-	
 }
 
 h5 {
@@ -38,7 +35,6 @@ h5 {
 	text-align: center;
 	font-family: 'Montserrat', cursive;
 }
-
 
 h6 {
 	color: #444;
@@ -55,7 +51,6 @@ p {
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
-	
 	line-height: 20px;
 }
 
@@ -64,48 +59,60 @@ blockquote {
 	font-size: 21px;
 	font-style: normal;
 	font-variant: normal;
-	}
+}
 
 pre {
 	font-family: 'Open Sans';
 	font-size: 13px;
 	font-style: normal;
 	font-variant: normal;
-		line-height: 18.5714px;
+	line-height: 18.5714px;
 }
 
 .fa-heart {
 	color: #DA4453;
 }
 
-.margem{
-	padding: 5%;
-}
-.panel-body-questao {
-	min-height: 300px;
-	overflow-y:scroll;
+a:link, a:visited { 
+  
+   cursor: pointer;
 }
 
-.panel-body-opcoes{
-	overflow-y:scroll;
+
+.margem {
+	padding: 5%;
 }
-.panel-body-resposta{
-	overflow-y:scroll;
+
+.panel-body-questao {
+	min-height: 300px;
+	overflow-y: scroll;
+}
+
+.panel-body-opcoes {
+	overflow-y: scroll;
+}
+
+.panel-body-resposta {
+	overflow-y: scroll;
 }
 
 .list-group-item {
 	padding: 1%;
 }
 
-
-.margem-acima{
+.margem-acima {
 	padding-top: 5%;
 }
 
-.panel-terminal{
+.panel-terminal {
 	background-color: #444;
 	color: #fff;
 	white-space: pre;
 	word-wrap: break-word; /* quebrar texto */
 }
-.panel-terminal:after{content:""; display:block; clear:both}
+
+.panel-terminal:after {
+	content: "";
+	display: block;
+	clear: both
+}
