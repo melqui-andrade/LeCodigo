@@ -110,10 +110,16 @@
 		<div class="row">
 			<br>
 
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<button class="btn btn-block btn-info "
 					onclick="btnVoltarQuestaoOnClick()"> <i class="fa fa-reply" aria-hidden="true"></i>
-					 voltar</button>
+					 Voltar</button>
+			</div>
+			<br>
+			<div class="col-md-1">
+				<button class="btn btn-block btn-info "
+					onclick="pularQuestao()" data-toggle="modal" data-target="#myModal">
+					 Pular</button>
 			</div>
 			<br>
 			<div class="col-md-6">

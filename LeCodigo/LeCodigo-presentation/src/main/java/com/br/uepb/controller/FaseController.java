@@ -32,12 +32,19 @@ public class FaseController {
 	private List<String> listaEnumQuestoes2 = new ArrayList<String>();
 	private List<String> listaEnumQuestoes3 = new ArrayList<String>();
 
-	FaseModel faseModel;
+	private FaseModel faseModel;
+	private boolean passouFase = false;
 
 	@RequestMapping(value = "/fase/fase.html", method = RequestMethod.GET)
 	public ModelAndView faseGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		
+		if(passouFase){
+			passouFase = false;
+            return new ModelAndView("redirect:/fase/transicaoFase.html");
+		}
+		
 		int bits = SessaoBusiness.getInstace().getBits();
 		int pontuacao = SessaoBusiness.getInstace().getPontuacao();
 		int vidas = SessaoBusiness.getInstace().getVidas();
@@ -111,10 +118,13 @@ public class FaseController {
 			boolean status_resposta = false;
 
 			try {
+				
 				status_resposta = questaoBusiness.verificarResposta(resposta, questao.getId());
 				if(status_resposta){
 					partidaBusiness.avancarEtapa();
-					//return new ModelAndView("redirect:/fase/fase.html");
+					if(SessaoBusiness.getInstace().getFase() > fase){
+						passouFase = true;
+					}
 				}				
 
 			} catch (Exception e) {
