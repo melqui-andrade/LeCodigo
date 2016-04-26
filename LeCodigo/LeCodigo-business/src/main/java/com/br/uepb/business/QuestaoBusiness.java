@@ -1,5 +1,7 @@
 package com.br.uepb.business;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -75,7 +77,9 @@ public class QuestaoBusiness {
 				
 			}while(SessaoBusiness.getQuestoesQueSairam().contains(questoes.get(numQuestao)));
 			SessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
-			return questoes.get(numQuestao);
+			Questao questao = questoes.get(numQuestao);
+			Collections.shuffle(questao.getBlocos());
+			return questao;
 		}
 		return null;
 	}
@@ -143,5 +147,4 @@ public class QuestaoBusiness {
 			return "ID inválido";
 		}
 	}
-
 }

@@ -29,27 +29,41 @@ public class PartidaBusiness {
 	
 	public void avancarEtapa(){
 		int etapa = sessaoBusiness.getEtapa();
+		int fase = sessaoBusiness.getFase();
 		sessaoBusiness.setEtapa(etapa+1);
-		if(etapa<=5){
-			sessaoBusiness.setFase(1);
-			sessaoBusiness.setValorDaQuestao(3);
+		if(fase==1){
+			if(etapa<5){
+				sessaoBusiness.setValorDaQuestao(3);
+			}else{
+				sessaoBusiness.setFase(2);
+				sessaoBusiness.setEtapa(1);
+				sessaoBusiness.setValorDaQuestao(5);
+			}
+			
 		}
-		else if(etapa<=10){
-			sessaoBusiness.setFase(2);
-			sessaoBusiness.setValorDaQuestao(5);
+		else if(fase==2){
+			if(etapa<5){
+				sessaoBusiness.setValorDaQuestao(5);
+			}else{
+				sessaoBusiness.setFase(3);
+				sessaoBusiness.setEtapa(1);
+				sessaoBusiness.setValorDaQuestao(7);
+			}
 		}
-		else if(etapa<=15){
-			sessaoBusiness.setFase(3);
-			sessaoBusiness.setValorDaQuestao(7);
+		else if(fase==3){
+			if(etapa<5){
+				sessaoBusiness.setValorDaQuestao(7);
+			}else{
+				//Pensando em uma quarta fase :P
+				sessaoBusiness.setFase(4);
+				sessaoBusiness.setEtapa(1);
+				sessaoBusiness.setValorDaQuestao(9);
+			}
+			
 		}
 	}
 	
 	public List<Jogador> visualizarRanking(){
 		return null;
-	}
-	
-	public static void main(String[] args) {
-		new PartidaBusiness().iniciarPartida(0);
-		SessaoBusiness.getInstace().atualizarPartidaDoJogador(2, "9-9-0");
 	}
 }
