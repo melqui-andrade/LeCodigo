@@ -23,6 +23,7 @@ public class Partida {
 	private List<RespostaDoAluno> respostas_aluno;
 	private String data_hora;
 	private int pontuacao;
+	private boolean partidaEncerrada;
 
 	public Partida() {
 		
@@ -67,5 +68,13 @@ public class Partida {
 
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
+	}
+
+	public boolean isPartidaEncerrada() {
+		return partidaEncerrada;
+	}
+
+	public void setPartidaEncerrada(boolean partidaEncerrada) {
+		this.partidaEncerrada = partidaEncerrada;
 	}
 }
