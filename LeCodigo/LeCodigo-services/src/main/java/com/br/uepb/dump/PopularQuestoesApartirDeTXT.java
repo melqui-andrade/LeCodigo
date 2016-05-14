@@ -24,7 +24,6 @@ public class PopularQuestoesApartirDeTXT {
 
 		String caminhoArquivo = "src/main/java/arquivos"; 
 		File file = new File(caminhoArquivo);
-		System.out.println(file.exists());
 		File arquivos[] = file.listFiles();
 		for (int i = 0; i < arquivos.length; i++) {
 			FileReader arq = new FileReader(arquivos[i]);
@@ -48,7 +47,7 @@ public class PopularQuestoesApartirDeTXT {
 				switch (linha.charAt(1)) {
 				case 'I':
 					linha = bufferedReader.readLine();
-					while(!linha.isEmpty() && !linha.equals("*F")){
+					while(!linha.equals("*F")){
 						if(!linha.isEmpty() && linha.charAt(0)!= '#'){
 							String[] info = linha.split("_");
 							fase = info[0];
@@ -59,8 +58,8 @@ public class PopularQuestoesApartirDeTXT {
 					break;
 				case 'Q':
 					linha = bufferedReader.readLine();
-					while(!linha.isEmpty() && !linha.equals("*F")){
-						if(linha.charAt(0)!= '#'){
+					while(!linha.equals("*F")){
+						if(!linha.isEmpty() && linha.charAt(0)!= '#'){
 							descricao+=linha;
 						}
 						linha = bufferedReader.readLine();
@@ -68,8 +67,8 @@ public class PopularQuestoesApartirDeTXT {
 					break;
 				case 'B':
 					linha = bufferedReader.readLine();
-					while(!linha.isEmpty() && !linha.equals("*F")){
-						if(linha.charAt(0)!= '#'){
+					while(!linha.equals("*F")){
+						if(!linha.isEmpty() && linha.charAt(0)!= '#'){
 							String[] info = linha.split("_");
 							blocos.add(new Bloco( Integer.parseInt(info[0]) , info[1]));
 						}
@@ -78,8 +77,8 @@ public class PopularQuestoesApartirDeTXT {
 					break;
 				case 'R':
 					linha = bufferedReader.readLine();
-					while(!linha.isEmpty() && !linha.equals("*F")){
-						if(linha.charAt(0)!= '#'){
+					while(!linha.equals("*F")){
+						if(!linha.isEmpty() && linha.charAt(0)!= '#'){
 							resposta = linha;
 						}
 						linha = bufferedReader.readLine();

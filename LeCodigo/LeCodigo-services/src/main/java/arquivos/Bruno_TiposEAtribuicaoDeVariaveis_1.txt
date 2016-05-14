@@ -1,3 +1,6 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Tipos e atribuição de variáveis
+
 *Q
 Utilizando os blocos a seguir, atribua a frase “Seja bem-vindo ao universo dos algoritmos” para a variável “frase”
 *F
