@@ -23,7 +23,7 @@ public class PartidaBusiness {
 	}
 	
 	public void finalizarPartida(){
-		
+		sessaoBusiness.finalizarPartida();
 		
 	}
 	

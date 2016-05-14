@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.br.uepb.dao.JogadorDAO;
+import com.br.uepb.dao.PartidaDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Partida;
 import com.br.uepb.domain.Questao;
@@ -25,6 +26,7 @@ public class SessaoBusiness {
 	private RespostaDoAluno respostaDoAluno;
 	
 	private JogadorDAO jogadorDAO = JogadorDAO.getInstance();
+	private PartidaDAO partidaDAO = PartidaDAO.getInstance();
 	
 	private SessaoBusiness(){};
 	
@@ -121,19 +123,23 @@ public class SessaoBusiness {
 	
 	public void atualizarPartidaDoJogador(int id_questao, String resposta){
 		//Verifico se a resposta é referente a outra questão
-		if(id_questao!=respostaDoAluno.getId_questao())
+		if(id_questao!=respostaDoAluno.getId_questao()){
 			this.respostaDoAluno = new RespostaDoAluno();
+			partida.getRespostas_aluno().add(respostaDoAluno);
+		}
 		respostaDoAluno.setEtapa(this.etapa);
 		respostaDoAluno.setId_questao(id_questao);
+		respostaDoAluno.setId_partida(partida.getId());
 		if(respostaDoAluno.getRespostas()==null)
 			respostaDoAluno.setRespostas(resposta);
 		else {
 			respostaDoAluno.addResposta(resposta); 
 		}
 			//respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
-		partida.getRespostas_aluno().add(respostaDoAluno);
 		partida.setData_hora(new Date().toString());
 		partida.setPontuacao(pontuacao);
+		//Atualizar a partida no banco de dados
+		partidaDAO.atualizarPartida(partida);
 		
 		
 	}
@@ -145,9 +151,17 @@ public class SessaoBusiness {
 			jogador.setPartidas(new ArrayList<>());
 		}
 		this.partida = new Partida();
+		this.partida.setId_jogador(jogador.getId());
 		this.partida.setRespostas_aluno(new ArrayList<RespostaDoAluno>());
 		this.jogador.getPartidas().add(this.partida);
 		this.respostaDoAluno = new RespostaDoAluno();
+		//Adiciona a partida no banco de dados
+		partidaDAO.salvarPartida(partida);
+	}
+	
+	public void finalizarPartida(){
+		partida.setPartidaEncerrada(true);
+		partidaDAO.atualizarPartida(partida);
 	}
 	
 	public Partida getPartida(){

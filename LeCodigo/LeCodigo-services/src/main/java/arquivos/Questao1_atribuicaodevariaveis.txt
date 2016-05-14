@@ -1,0 +1,18 @@
+*Q
+Utilizando os blocos a seguir, atribua a frase “Seja bem-vindo ao universo dos algoritmos” para a variável “frase”
+*F
+*B
+1_String palavras [] = {“Seja bem-vindo”, “universo dos algoritmos”, “ao”, “ “};
+2_int a = 3;
+3_int b = a-1;
+4_String frase = palavras[0] + palavras[a];
+5_String frase = palavras[0] + palavras[b];
+6_frase = frase + palavras[b] + palavras[1];
+7_frase = frase + palavras[b] + palavras[a] + palavras[1];
+*F
+*R
+1-2-3-4-7 | 1-3-2-4-7 | 2-3-1-4-7 | 2-1-3-4-7 | 3-1-2-4-7 | 3-2-1-4-7 | 1-2-4-3-7
+*F
+*I
+1_1
+*F

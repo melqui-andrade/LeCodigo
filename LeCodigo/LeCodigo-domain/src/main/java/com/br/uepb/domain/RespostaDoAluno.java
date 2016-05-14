@@ -27,11 +27,11 @@ public class RespostaDoAluno {
 	}
 
 	public void addResposta(String resposta){
-		setRespostas(getRespostas() + "|" + resposta);
+		setRespostas(getRespostas() + " | " + resposta);
 	}
 	
 	public void pulou(){
-		setRespostas(getRespostas() + "|pulou");
+		setRespostas(getRespostas() + " | pulou");
 	}
 	
 	public int getId() {
