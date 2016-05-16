@@ -1,0 +1,31 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Ordenação simples
+
+*Q
+Como fazer para ordenar alfabeticamente uma lista com centenas de nomes? É simples, basta implementar um algoritmo que faça a ordenação. Talvez a implementação do algoritmo não seja tão simples. Vamos lá, o código a seguir deverá ser capaz de fazer a ordenação. Suponha que a variavel “nomes” já possua 200 nomes. Considere que o comando tamanho(nome) retorna o tamanho de uma palavra
+*F
+*B
+1_String nomes[200];
+2_String palavraMenor, aux;
+3_for(int i=0; i<tamanho(nomes)-1; i++){
+4_for(int j=i+1;j<tamanho(nomes); j++){
+5_if(tamanho(nomes[i]) < tamanho(nomes[j])){
+6_palavraMenor=nomes[i];
+7_}else{
+8_palavraMenor=nomes[j];
+9_}for(int x=0; x<tamanho(palavraMenor); x++){
+10_if(nomes[i][x]>nomes[j][x]){
+11_aux = nomes[i];
+12_nomes[i] = nomes[j];
+13_nomes[j] = aux; break;}
+14_if(nomes[i][x]<nomes[j][x]){ break;}
+15_}}}
+16_for(int j=1;j<tamanho(nomes); j++){
+*F
+*R
+1-2-3-4-5-6-7-8-9-10-11-12-13-14-15 | 
+2-1-3-4-5-6-7-8-9-10-11-12-13-14-15
+*F
+*I
+3_2
+*F

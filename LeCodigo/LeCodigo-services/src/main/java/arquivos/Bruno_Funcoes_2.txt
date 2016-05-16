@@ -1,0 +1,24 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Funções
+
+*Q
+Faça uma função que recebe como parâmetro um ano, e informa se é bissexto. Logo em seguida faça o algoritmo que ler um ano e imprimi se ele é bissexto ou não.
+OBS: O ano é bissexto se for múltiplo de quatro e não for múltiplo de 100, ou se for multiplo de 4 e de 400.
+*F
+*B
+1_boolean ehBissexto(int ano){
+2_if(ano%4==0 && (ano%100!=0 || ano%400==0)){
+3_return true;}
+4_else{return false;}
+5_int ano;
+6_input(ano);
+7_if(ehBissexto(ano)==true){
+8_print(“O ano “+ano+” é bissexto”);}
+9_else{ print(“O ano “+ano+” não bissexto”);}
+*F
+*R
+1-2-3-4-5-6-7-8-9
+*F
+*I
+3_3
+*F

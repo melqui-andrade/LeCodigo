@@ -1,0 +1,30 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Troca de Variáveis
+
+*Q
+Imagine que você possui uma lista de compras com 5 itens ordenados de acordo com sua prioridade.
+Os itens são: Biscoito, Pão, Café, Açúcar e Manteiga;
+Um amigo pede para que você compre os mesmos itens para ele, mas como não sabe o custo da compra e possui pouco dinheiro, modifica a lista de acordo com sua prioridade.
+A lista que ele pede é: Biscoito, Pão, Manteiga, Açúcar e Café.
+Organize o código a seguir para que sua lista de compras seja alterada para atender o desejo de seu amigo, e mostre a lista com os itens alterados.
+*F
+*B
+1_String minhaLista[] = {“Biscoito”, “Pão”, “Café”, “Açúcar”, “Manteiga”};
+2_String acumuladorDeItem;
+3_int indice = 2;
+4_acumuladorDeItem = minhaLista[indice];
+5_minhaLista[indice] = minhaLista[4];
+6_minhaLista[4] = acumuadorDeItem;
+7_for(int contador = 0; contador<5; contador+=1){
+8_print(minhaLista[contador]+” “);
+9_}
+10_print(minhaLista[indice]+” “);
+11_for(int contador = 1; contador<6; contador++){
+*F
+*R
+1-2-3-4-5-6-7-8-9 | 2-1-3-4-5-6-7-8-9 | 3-1-2-4-5-6-7-8-9 | 1-3-2-4-5-6-7-8-9 | 
+2-3-1-4-5-6-7-8-9 | 3-2-1-4-5-6-7-8-9
+*F
+*I
+3_1
+*F

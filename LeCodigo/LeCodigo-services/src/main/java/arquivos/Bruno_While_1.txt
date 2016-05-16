@@ -1,0 +1,20 @@
+#Autor: Bruno josé Clementino
+#Questão sobre While
+
+*Q
+Organize o código para exibir a mensagem “Ao infinito e além :P” várias vezes.
+*F
+*B
+1_while(x<21){
+2_print(“Ao infinito e além :P”);
+3_int x = 6;
+4_x+=1;}
+5_while(x==21){
+6_x-=1;}
+*F
+*R
+3-1-2-4
+*F
+*I
+2_2
+*F

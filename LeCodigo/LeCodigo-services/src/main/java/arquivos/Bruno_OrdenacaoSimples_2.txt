@@ -1,0 +1,25 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Ordenação simples
+
+*Q
+Faça um algoritmo que verifica se os elementos de uma lista estão em ordem crescente.
+OBS: Considere que a variável numeros não precisa ter seus valores inicializados.
+*F
+*B
+1_int numeros[100];
+2_boolean estaEmOrdem = true;
+3_for (int i = 1; i < 100; i++) {
+4_if (numeros[i-1]>numeros[i]) {
+5_estaEmOrdem = false; }
+6_}
+7_if(estaEmOrdem==true) {
+8_print("Está ordenado");
+9_} else { print("Está desordenado"); }
+10_for (int i = 0; i < 100; i++) {
+*F
+*R
+1-2-3-4-5-6-7-8-9 | 2-1-3-4-5-6-7-8-9
+*F
+*I
+3_2
+*F
