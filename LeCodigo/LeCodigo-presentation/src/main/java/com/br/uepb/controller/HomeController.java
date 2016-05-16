@@ -1,5 +1,7 @@
 package com.br.uepb.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.br.uepb.business.JogadorBusiness;
+import com.br.uepb.business.PartidaBusiness;
+import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.model.JogadorModel;
 
@@ -91,7 +95,10 @@ public class HomeController {
 	@RequestMapping(value = "/home/ranking.html", method = RequestMethod.GET)
 	public ModelAndView rankingGet(HttpServletRequest request) {
 
+		PartidaBusiness partidaBusiness = new PartidaBusiness();
+		List<Jogador> jogadores = partidaBusiness.visualizarRanking();
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("jogadores", jogadores);
 		return modelAndView;
 	}
 }

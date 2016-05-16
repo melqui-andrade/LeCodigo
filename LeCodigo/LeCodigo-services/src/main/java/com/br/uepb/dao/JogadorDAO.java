@@ -114,7 +114,8 @@ public class JogadorDAO {
 			Transaction tx = session.beginTransaction();
 			boolean verifica = true;
 		try {
-			session.createQuery("from Jogador order by pontuacao_total").list();
+			List listaJogadores = session.createQuery("from Jogador order by pontuacao_total").list();
+			return listaJogadores;
 		} catch (RuntimeException e) {
 			verifica = false;
 		}finally{

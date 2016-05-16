@@ -24,20 +24,46 @@ body {
 	<div class="col-md-12 container ">
 
 		<div class="row">
-			<h1 style="text-align: center">Ranking</h1>
+			<h1 style="text-align: center">LeCódigo</h1>
+			<h2 style="text-align: center">Ranking</h2>
 			<br>
-			<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-2">
 
-				<a href="/LeCodigo-presentation/home/home.html"
-					data-original-title="Clique neste botão e irá iniciar o jogo"
-					type="button" class="btn btn-primary btn-block "
-					data-toggle="tooltip" data-placement="left" title=""><span>Voltar</span></a>
+					<a href="/LeCodigo-presentation/home/home.html"
+						data-original-title="Clique neste botão e irá iniciar o jogo"
+						type="button" class="btn btn-primary btn-block "
+						data-toggle="tooltip" data-placement="left" title=""><span>Voltar</span></a>
+				</div>
 			</div>
-			<div class="col-md-4">&nbsp;</div>
-			<div class="col-md-4">&nbsp;</div>
 			<br>
 
+			<div class="panel panel-info">
+				<!-- Default panel contents -->
+				<div class="panel-heading">Ranking</div>
 
+				<!-- Table -->
+				<table class="table container">
+					<thead>
+						<tr>
+							<th>Colocação</th>
+							<th>Pontuação</th>
+							<th>Nome</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${jogadores}" var="jogador" varStatus="contador">
+						<tr>
+							<th scope="row">${contador.index +1}</th>
+							<td>${jogador.pontuacao_total}</td>
+							<td>${jogador.nome}</td>					
+						</tr>
+						</c:forEach>
+						
+					</tbody>
+				</table>
+			</div>
 		</div>
 
 
