@@ -144,3 +144,18 @@ function etNormal() {
 function etPisca() {
 	document.getElementById("et_").src = "../images/et/et_verde_pisca.png";
 }
+
+function pularQuestao() {
+	document.getElementById("modalFooter").innerHTML ="";
+	document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-info'"+ "data-dismiss='modal'"+"'>Voltar</button>";		
+	document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-primary' onclick='confirmarPulo()' id='btnConfirmar'>Pular Questão</button>";
+	document.getElementById("modalMensagem").innerHTML ="";
+	document.getElementById("modalTitulo").innerHTML = "Olá terráqueo...";
+	document.getElementById("modalMensagem").innerHTML = "Deseja pular essa questão?<br>Custo X bits<br<br>";
+	document.getElementById("et_status").src = "../images/et/et_verde_pensativo.png";
+}
+
+function confirmarPulo(){
+	window.location = "questao.html?resposta=pulou";
+	resposta="";
+}

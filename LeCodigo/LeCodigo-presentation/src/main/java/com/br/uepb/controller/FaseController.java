@@ -116,23 +116,33 @@ public class FaseController {
 		resposta = (String) request.getParameter("resposta");
 		if (resposta != null) {
 			boolean status_resposta = false;
-
+			
 			try {
-				
-				status_resposta = questaoBusiness.verificarResposta(resposta, questao.getId());
-				if(status_resposta){
-					partidaBusiness.avancarEtapa();
-					if(SessaoBusiness.getInstace().getFase() > fase){
-						passouFase = true;
+				if(resposta.equals("pulou")){
+					questao = questaoBusiness.pularQuestao(questao.getId(), fase, etapa);
+					if (fase == 1) {
+						listaQuestoesFase1.add(etapa - 1,  questao);
+					} else if (fase == 2) {
+						listaQuestoesFase2.add(etapa - 1,  questao);
+					} else if (fase == 3) {
+						listaQuestoesFase3.add(etapa - 1,  questao);
 					}
-				}				
-
+				}else{
+					status_resposta = questaoBusiness.verificarResposta(resposta, questao.getId());
+					if(status_resposta){
+						partidaBusiness.avancarEtapa();
+						if(SessaoBusiness.getInstace().getFase() > fase){
+							passouFase = true;
+						}
+					}
+					modelAndView.addObject("status_resposta", status_resposta);
+				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			modelAndView.addObject("status_resposta", status_resposta);
+			
 
 		}
 			

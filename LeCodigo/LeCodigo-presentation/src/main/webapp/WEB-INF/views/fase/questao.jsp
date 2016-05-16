@@ -117,8 +117,8 @@
 			</div>
 			<br>
 			<div class="col-md-1">
-				<button class="btn btn-block btn-info "
-					onclick="pularQuestao()" data-toggle="modal" data-target="#myModal">
+				<button class="btn btn-block btn-info " onclick="pularQuestao()"
+				data-toggle="modal" data-target="#myModal"> 
 					 Pular</button>
 			</div>
 			<br>
