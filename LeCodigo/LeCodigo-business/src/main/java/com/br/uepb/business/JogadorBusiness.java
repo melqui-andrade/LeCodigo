@@ -5,13 +5,14 @@ import org.springframework.stereotype.Component;
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Questao;
+import com.br.uepb.domain.TipoUsuario_Enum;
 
 @Component
 public class JogadorBusiness {
 
 	JogadorDAO jogadorDAO = JogadorDAO.getInstance();
-	public boolean criarJogador(String nome, String login, String senha){
-		Jogador jogador = new Jogador(nome, login, senha);
+	public boolean criarJogador(String nome, String login, String senha, TipoUsuario_Enum tipo_usuario){
+		Jogador jogador = new Jogador(nome, login, senha, tipo_usuario);
 		return jogadorDAO.adicionarJogador(jogador);
 	}
 	
