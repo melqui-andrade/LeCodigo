@@ -49,18 +49,18 @@ body {
 							<th>Colocação</th>
 							<th>Pontuação</th>
 							<th>Nome</th>
-							
+
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach items="${jogadores}" var="jogador" varStatus="contador">
-						<tr>
-							<th scope="row">${contador.index +1}</th>
-							<td>${jogador.pontuacao_total}</td>
-							<td>${jogador.nome}</td>					
-						</tr>
+						<c:forEach items="${jogadores}" var="jogador" varStatus="contador">
+							<tr>
+								<th scope="row">${contador.index +1}</th>
+								<td>${jogador.pontuacao_total}</td>
+								<td>${jogador.nome}</td>
+							</tr>
 						</c:forEach>
-						
+
 					</tbody>
 				</table>
 			</div>

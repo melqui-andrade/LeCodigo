@@ -22,46 +22,40 @@ body {
 <body>
 
 
-	<div class="col-md-12 container">
+	<div class="col-md-12 container ">
 		<div class="row">
-			<h1 style="text-align: center">
-				Le<br> Código
-			</h1>
-		</div>
-		<div class="col-md-4">&nbsp;</div>
-		<div class="col-md-4" style="background-color: #eee; padding: 2%;">
-			<a href="/LeCodigo-presentation/home/login.html"
-				data-original-title="Clique neste botão e irá iniciar o jogo"
-				type="button" class="btn btn-info btn-block btn-lg"
-				data-toggle="tooltip" data-placement="left" title=""><span>Jogar</span></a>
-			<br> <a href="/LeCodigo-presentation/home/instrucoes.html"
-				data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
-				type="button" class="btn btn-info  btn-block btn-lg"
-				data-toggle="tooltip" data-placement="left" title=""><span>Instruções</span></a>
-			<br> <a href="/LeCodigo-presentation/home/cadastrar.html"
-				data-original-title="Clique neste botão e irá cadastrar novos usuários"
-				type="button" class="btn btn-info  btn-block btn-lg"
-				data-toggle="tooltip" data-placement="left" title=""><span>Cadastrar</span></a>
-			<br> <a href="/LeCodigo-presentation/home/ranking.html"
-				data-original-title="Clique neste botão e irá visualizar o Ranking do jogo"
-				type="button" class="btn btn-info  btn-block btn-lg"
-				data-toggle="tooltip" data-placement="left" title=""><span>Ranking</span></a>
-			<br> <a href="#"
-				data-original-title="Clique neste botão para sair do jogo"
-				type="button" class="btn btn-info  btn-block btn-lg"
-				data-toggle="tooltip" data-placement="left" title=""><span>Sair</span></a>
+			<h1 style="text-align: center">LeCódigo</h1>
+			<h2 style="text-align: center"></h2>
 			<br>
+			<div class="row">
+				<div class="col-md-4">&nbsp;</div>
+				<div class="col-md-4" style="background-color: #eee; padding: 2%;">
+					<a href="/LeCodigo-presentation/home/login.html"
+						data-original-title="Clique neste botão e irá iniciar o jogo"
+						type="button" class="btn btn-info btn-block btn-lg"
+						data-toggle="tooltip" data-placement="left" title=""><span>Login</span></a>
+					<br> <a href="/LeCodigo-presentation/home/instrucoes.html"
+						data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
+						type="button" class="btn btn-info  btn-block btn-lg"
+						data-toggle="tooltip" data-placement="left" title=""><span>Instruções</span></a>
+
+					<br> <a href="/LeCodigo-presentation/home/ranking.html"
+						data-original-title="Clique neste botão e irá visualizar o Ranking do jogo"
+						type="button" class="btn btn-info  btn-block btn-lg"
+						data-toggle="tooltip" data-placement="left" title=""><span>Ranking</span></a>
+					<br>
+				</div>
+				<div class="col-md-4">&nbsp;</div>
+			</div>
 		</div>
-		<div class="col-md-4">&nbsp;</div>
 	</div>
 
+
 	<script>
-		$(document).ready(function() {
-			$('[data-toggle="tooltip"]').tooltip();
-		});
-	</script>
-
-
+			$(document).ready(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+			});
+		</script>
 </body>
 
 </html>

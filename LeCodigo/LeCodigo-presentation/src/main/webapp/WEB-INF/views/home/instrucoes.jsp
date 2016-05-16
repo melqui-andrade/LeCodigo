@@ -12,19 +12,20 @@
 
 	<div class="col-md-12 container ">
 		
-		<div class="row">
-		<h1 style="text-align: center">Instruções</h1>
-		<br>
-		<div class="col-md-4">
-		
-			<a href="/LeCodigo-presentation/home/home.html"
-				data-original-title="Clique neste botão e irá iniciar o jogo"
-				type="button" class="btn btn-primary btn-block "
-				data-toggle="tooltip" data-placement="left" title=""><span>Voltar</span></a>
-		</div>
-		<div class="col-md-4">&nbsp; </div>
-		<div class="col-md-4">&nbsp; </div>
-		<br>
+	<div class="row">
+			<h1 style="text-align: center">LeCódigo</h1>
+			<h2 style="text-align: center">Ranking</h2>
+			<br>
+			<div class="row">
+				<div class="col-md-2">
+
+					<a href="/LeCodigo-presentation/home/home.html"
+						data-original-title="Clique neste botão e irá iniciar o jogo"
+						type="button" class="btn btn-primary btn-block "
+						data-toggle="tooltip" data-placement="left" title=""><span>Voltar</span></a>
+				</div>
+			</div>
+			<br>
 			
 
 		</div>

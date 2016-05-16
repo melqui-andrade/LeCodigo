@@ -42,11 +42,12 @@
 
 	<div class="margem">
 
-		<div class="panel">
-			<div class="panel-body" style="border-color: #fff;">
-				${questao.descricao}</div>
+		<div class="row">
+			<div class="panel">
+				<div class="panel-body" style="border-color: #fff;">
+					${questao.descricao}</div>
+			</div>
 		</div>
-
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading"
@@ -96,46 +97,44 @@
 			</div>
 		</div>
 		<div class="col-md-2">
-			<div class=".col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0">
-				<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
-					id="et_" style="float: left;" />
-			</div>
 
-
-
+			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+				id="et_" style="float: left;" />
 
 		</div>
-
 		<br>
-		<div class="row">
-			<br>
+	</div>
+	
+	<div class="row margem">
+		<br>
+		<div class="col-md-2">
+			<button class="btn btn-block btn-info "
+				onclick="btnVoltarQuestaoOnClick()">
+				<i class="fa fa-reply" aria-hidden="true"></i> Voltar
+			</button>
+		</div>
 
-			<div class="col-md-3">
-				<button class="btn btn-block btn-info "
-					onclick="btnVoltarQuestaoOnClick()"> <i class="fa fa-reply" aria-hidden="true"></i>
-					 Voltar</button>
-			</div>
-			<br>
-			<div class="col-md-1">
-				<button class="btn btn-block btn-info " onclick="pularQuestao()"
-				data-toggle="modal" data-target="#myModal"> 
-					 Pular</button>
-			</div>
-			<br>
-			<div class="col-md-6">
-				<button class="btn btn-block btn-success" onclick="enviarResposta()"
-					data-toggle="modal" data-target="#myModal"> <i class="fa fa-paper-plane" aria-hidden="true"></i>
-					 Enviar Resposta
-				</button>
-			</div>
-			<br>
-			<div class="col-md-2">
-				<button class="btn btn-danger btn-block" onclick="limparReposta()">
-					<i class="fa fa-times" aria-hidden="true"></i>
-					 Limpar Código</button>
-			</div>
+		<div class="col-md-2">
+			<button class="btn btn-block btn-info " onclick="pularQuestao()"
+				data-toggle="modal" data-target="#myModal">
+				<i class="fa fa-retweet" aria-hidden="true"></i> Pular
+			</button>
+		</div>
+
+		<div class="col-md-6">
+			<button class="btn btn-block btn-success" onclick="enviarResposta()"
+				data-toggle="modal" data-target="#myModal">
+				<i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar Resposta
+			</button>
+		</div>
+
+		<div class="col-md-2">
+			<button class="btn btn-danger btn-block" onclick="limparReposta()">
+				<i class="fa fa-times" aria-hidden="true"></i> Limpar Código
+			</button>
 		</div>
 	</div>
+
 
 
 
