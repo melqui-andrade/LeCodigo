@@ -75,7 +75,7 @@ public class QuestaoBusiness {
 				numQuestao = random.nextInt(questoes.size());
 				
 				
-			}while(SessaoBusiness.getQuestoesQueSairam().contains(questoes.get(numQuestao)));
+			}while(questaoRepetida(questoes.get(numQuestao).getId()));
 			SessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
 			Questao questao = questoes.get(numQuestao);
 			Collections.shuffle(questao.getBlocos());
@@ -146,5 +146,14 @@ public class QuestaoBusiness {
 		else{
 			return "ID inválido";
 		}
+	}
+	
+	private boolean questaoRepetida(int idQuestao){
+		for(Questao questao : SessaoBusiness.getQuestoesQueSairam()){
+			if(questao.getId()==idQuestao){
+				return true;
+			}
+		}
+		return false;
 	}
 }
