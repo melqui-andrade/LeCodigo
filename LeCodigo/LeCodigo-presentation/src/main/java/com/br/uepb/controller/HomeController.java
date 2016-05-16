@@ -76,7 +76,7 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView();
 		try {
 			jogadorBusiness.autenticarJogador(jogadorModel.getLogin(), jogadorModel.getSenha());
-			modelAndView.setViewName("fase/transicaoFase");
+			modelAndView.setViewName("professor/home");
 
 		} catch (Exception e) {
 			modelAndView.setViewName("home/login");
