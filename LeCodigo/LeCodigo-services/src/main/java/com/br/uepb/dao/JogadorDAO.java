@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import com.br.uepb.domain.Jogador;
+import java.util.*;
 
 import conexaoBD.HibernateUtil;
 
@@ -105,6 +106,24 @@ public class JogadorDAO {
 		Jogador jogador = buscarJogador(idJogador);
 		int pontuacao = jogador.getPontuacao_total();
 		return pontuacao;
+	}
+	
+	public List<Jogador> rankingJogadores(){
+		if(!session.isOpen())
+			session = HibernateUtil.getSessionFactory().openSession();
+			Transaction tx = session.beginTransaction();
+			boolean verifica = true;
+		try {
+			session.createQuery("from Jogador order by pontuacao_total").list();
+		} catch (RuntimeException e) {
+			verifica = false;
+		}finally{
+			session.flush();
+			tx.commit();
+			session.close();
+		}
+		
+		return null;
 	}
 
 }

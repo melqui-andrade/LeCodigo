@@ -26,8 +26,7 @@ public class Jogador {
 	@NotNull
 	private String senha;
 	@NotNull
-	private TipoUsuario_Enum tipo_usuario; //pode ser administrador, aluno e professor
-	@NotNull
+	private TipoUsuario_Enum tipo_usuario; //pode ser administrador, aluno e professor	
 	private int pontuacao_total;
 	
 	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
