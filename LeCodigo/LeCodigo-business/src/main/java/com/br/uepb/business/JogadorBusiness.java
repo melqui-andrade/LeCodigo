@@ -28,4 +28,20 @@ public class JogadorBusiness {
 		return jogadorDAO.buscarPontuacao(idJogador);
 	}
 	
+	public boolean cadastraJogador(String nome, String login, String senha, TipoUsuario_Enum tipoJogador){
+		JogadorDAO jogadorDAO = JogadorDAO.getInstance();
+		Jogador novoJogador = jogadorDAO.buscarJogador(login);
+		if(novoJogador == null){
+			novoJogador = new Jogador();
+			novoJogador.setLogin(login);
+			novoJogador.setNome(nome);
+			novoJogador.setSenha(senha);
+			novoJogador.setTipo(tipoJogador);
+			return jogadorDAO.adicionarJogador(novoJogador);
+		}
+		else{
+			return false;
+		}
+	}
+	
 }

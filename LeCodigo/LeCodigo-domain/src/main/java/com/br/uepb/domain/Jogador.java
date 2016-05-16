@@ -74,11 +74,11 @@ public class Jogador {
 	}
 
 
-	private TipoUsuario_Enum getTipo() {
+	public TipoUsuario_Enum getTipo() {
 		return tipo_usuario;
 	}
 
-	private void setTipo(TipoUsuario_Enum tipo_usuario) {
+	public void setTipo(TipoUsuario_Enum tipo_usuario) {
 		this.tipo_usuario = tipo_usuario;
 	}
 	
