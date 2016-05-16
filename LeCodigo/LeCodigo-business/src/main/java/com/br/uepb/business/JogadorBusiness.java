@@ -28,7 +28,15 @@ public class JogadorBusiness {
 		return jogadorDAO.buscarPontuacao(idJogador);
 	}
 	
-	public boolean cadastraJogador(String nome, String login, String senha, TipoUsuario_Enum tipoJogador){
+	/**
+	 * Cadastrar um novo usuário
+	 * @param nome Nome do usuário
+	 * @param login Login para acessar o jogo
+	 * @param senha Senha para acessar o jogo
+	 * @param tipoJogador Valores: Adm, Aluno, Professor
+	 * @return true, caso o jogador tenha sido cadastrado com sucesso
+	 */
+	public boolean cadastraJogador(String nome, String login, String senha, String tipoJogador){
 		JogadorDAO jogadorDAO = JogadorDAO.getInstance();
 		Jogador novoJogador = jogadorDAO.buscarJogador(login);
 		if(novoJogador == null){
@@ -36,11 +44,23 @@ public class JogadorBusiness {
 			novoJogador.setLogin(login);
 			novoJogador.setNome(nome);
 			novoJogador.setSenha(senha);
-			novoJogador.setTipo(tipoJogador);
+			novoJogador.setTipo(obtemTipoUsuario(tipoJogador));
 			return jogadorDAO.adicionarJogador(novoJogador);
 		}
 		else{
 			return false;
+		}
+	}
+	
+	private TipoUsuario_Enum obtemTipoUsuario(String tipo){
+		switch(tipo){
+		case "Adm": return TipoUsuario_Enum.ADMINISTRADOR;		
+		
+		case "Professor": return TipoUsuario_Enum.PROFESSOR;
+		
+		case "Aluno": return TipoUsuario_Enum.ALUNO;
+		
+		default: return null;
 		}
 	}
 	
