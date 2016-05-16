@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import com.br.uepb.business.JogadorBusiness;
 import com.br.uepb.domain.Jogador;
+import com.br.uepb.domain.TipoUsuario_Enum;
 
 public class TestJogadorBusiness {
 
@@ -13,7 +14,7 @@ public class TestJogadorBusiness {
 	public void testAssertRetornoCriaJogador() {
 		JogadorBusiness jogadorBusiness = new JogadorBusiness();
 		assertEquals("Criar Jogador retornou false", true,
-				jogadorBusiness.criarJogador("Jogador Teste", "teste", "teste"));
+				jogadorBusiness.criarJogador("Jogador Teste", "teste", "teste", TipoUsuario_Enum.ADMINISTRADOR));
 		
 	}
 	@Test
