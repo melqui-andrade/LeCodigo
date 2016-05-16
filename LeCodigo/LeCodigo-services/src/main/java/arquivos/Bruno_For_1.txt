@@ -1,0 +1,22 @@
+#Autor: Bruno josé Clementino
+#Questão sobre For
+
+*Q
+Usando a estrutura de repetição for, ordene os blocos para permitir que seja impresso em ordem decrescente apenas os 10 primeiros números do conjunto dos naturais.
+*F
+*B
+1_for(int i=9; i>=0; i--){
+2_print(i);
+3_}
+4_for(int i=0; i<10; i++){
+5_for(int i=9; i>0; i--){
+6_for(int i=1; i<=10; i++){
+7_for(int i=10; i>=0; i--){
+8_for(int i=1; i<10; i++){
+*F
+*R
+1-2-3
+*F
+*I
+2_1
+*F

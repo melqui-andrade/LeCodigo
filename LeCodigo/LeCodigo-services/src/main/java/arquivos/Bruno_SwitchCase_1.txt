@@ -1,0 +1,31 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Switch case
+
+*Q
+A variável “lugar” pode possuir os valores “Brasil”, “Nordeste” ou “Paraíba”. Garanta que a variável “sigla” corresponda ao lugar informado.
+*F
+*B
+1_String lugar; String sigla;
+2_switch(lugar){
+3_case “Brasil” : 
+4_sigla = “BR”;
+5_case “Nordeste” : 
+6_sigla = “NE”;
+7_case “Paraíba” : 
+8_sigla = “PB”;
+9_}
+10_switch(sigla){
+11_case “PB” : 
+12_lugar = “Paraíba”;
+13_case “BR” : 
+14_lugar = “Brasil”;
+15_case “NE” : 
+16_lugar = “Nordeste”;
+
+*F
+*R
+1-2-3-4-5-6-7-8-9 | 1-2-3-4-7-8-5-6-9 | 1-2-5-6-3-4-7-8-9 | 1-2-5-6-7-8-3-4-9 | 1-2-7-8-3-4-5-6-9 | 1-2-7-8-5-6-3-4-9
+*F
+*I
+1_3
+*F

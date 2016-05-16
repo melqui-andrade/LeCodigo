@@ -1,0 +1,23 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Troca de Variáveis
+
+*Q
+Um humano vai ao médico para consulta, chegando ao consultório encontra uma longa fila única onde todos devem aguardar. Após passar um tempo nessa fila, uma jovem que estava no início da fila se aproxima desse ser para perguntar sua idade, caso tenha 60 anos ou mais ela trocará de lugar com ele.
+O algoritmo a seguir deve verificar a idade desse ser, caso atenda a condição imposta pela jovem, troque o lugar dele com o dela.
+*F
+*B
+1_int posicaoDoHumano = 36, posicaoDaJovem = 1, idade;
+2_int auxiliar;
+3_if(idade>=60){
+4_auxiliar = posicaoDoHumano;
+5_posicaoDoHumano = posicaoDaJovem;
+6_posicaoDaJovem = auxiliar;
+7_}
+8_input(idade);
+*F
+*R
+1-8-2-3-4-5-6-7 | 2-1-8-3-4-5-6-7 | 1-8-3-2-4-5-6-7
+*F
+*I
+3_1
+*F

@@ -1,0 +1,20 @@
+#Autor: Bruno josé Clementino
+#Questão sobre If else
+
+*Q
+Como deve-se verificar se um número qualquer é par ou impar? Organize blocos para estabelecer a ordem que considerar correta.
+*F
+*B
+1_int numero; String resposta;
+2_if(numero){
+3_resposta = “O número é par”;}
+4_else{ resposta = “O número é impar”;}
+5_if(numero%3==0){
+6_if(numero%2==0){
+*F
+*R
+1-6-3-4
+*F
+*I
+1_2
+*F

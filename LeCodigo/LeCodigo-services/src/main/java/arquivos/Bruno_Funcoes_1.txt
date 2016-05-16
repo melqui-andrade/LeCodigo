@@ -1,0 +1,35 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Funções
+
+*Q
+A criptografia é uma técnica que transforma uma informação original em ilegível. Apenas quem possuir o código de decodificação é capaz de acessar a informação original.
+O algoritmo a seguir usa a “Cifra de César” que consiste em substituir cada letra de uma palavra por uma terceira letra contada a partir da atual.
+Por exemplo,  temos originalmente a palavra Algoritmos, criptografando teremos:
+Dojrulwpov
+Veja que o A é representado pelo D, L pelo O, e assim sucessivamente.
+Ordene o algoritmo para que seja capaz de criptografar e descriptografar qualquer palavra.
+Mostre também como ficaria criptografado o nome “Computação”.
+
+Assuma que o comando tamanho(palavra) retorna o tamanho da palavra.
+*F
+*B
+1_String nome = "Computação";
+2_String criptografar(String palavraCriptografar){
+3_String palavraCriptografada = "";
+4_for(int i = 0; i<tamanho(palavraCriptografar); i++){
+5_palavraCriptografada += (palavraCriptografar[i+3]);}
+6_return palavraCriptografada ;}
+7_String descriptografar(String palavraDescriptografar){
+8_String palavraDescriptografada = "";
+9_for(int i = 0; i<tamanho(palavra); i++){
+10_palavraDesriptografada+= (palavraDescriptografar[i-3]);}
+11_return palavraDescriptografada;}
+12_print(criptografar(nome));
+13_print(descriptografar(nome));
+*F
+*R
+2-3-4-5-6-7-8-9-10-11-1-12 | 7-8-9-10-11-2-3-4-5-6-1-12
+*F
+*I
+3_3
+*F

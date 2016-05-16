@@ -1,0 +1,22 @@
+#Autor: Bruno josé Clementino
+#Questão sobre Do While
+
+*Q
+Arranje as linhas de um loop finito para que seja impresso o valor da variável x apenas quando for ímpar.
+*F
+*B
+1_int x = 0;
+2_do{
+3_if(x%2 != 0){
+4_print(x+"\n");}
+5_x++;
+6_}while(x<=10);
+7_if(x%2 == 0){
+8_}while(x=10);
+*F
+*R
+1-2-3-4-5-6 | 1-2-5-3-4-6
+*F
+*I
+2_3
+*F
