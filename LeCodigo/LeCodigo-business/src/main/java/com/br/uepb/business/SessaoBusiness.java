@@ -78,6 +78,10 @@ public class SessaoBusiness {
 	public int getVidas() {
 		return vidas;
 	}
+	
+	public Jogador getJogador(){
+		return jogador;
+	}
 
 	public int getPontuacao() {
 		return pontuacao;
@@ -105,6 +109,10 @@ public class SessaoBusiness {
 
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
+	}
+	
+	public void setJogador(Jogador jogador){
+		this.jogador = jogador;
 	}
 
 	public static List<Questao> getQuestoesQueSairam() {
