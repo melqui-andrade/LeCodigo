@@ -13,7 +13,15 @@ public class JogadorBusiness {
 	JogadorDAO jogadorDAO = JogadorDAO.getInstance();	
 	
 	public boolean autenticarJogador(String login, String senha){
-		return jogadorDAO.autenticarJogador(login, senha);
+		boolean jogadorFoiAutenticado = jogadorDAO.autenticarJogador(login, senha);
+		if(jogadorFoiAutenticado){
+			Jogador novoJogador = jogadorDAO.buscarJogador(login);
+			adicionaJogadorNaSessao(novoJogador, jogadorFoiAutenticado);
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public Jogador buscaJogador(String login){
@@ -46,11 +54,7 @@ public class JogadorBusiness {
 			novoJogador.setNome(nome);
 			novoJogador.setSenha(senha);
 			novoJogador.setTipo(obtemTipoUsuario(tipoJogador));
-			boolean jogadorFoiAdicionado = jogadorDAO.adicionarJogador(novoJogador);
-			
-			adicionaJogadorNaSessao(novoJogador, jogadorFoiAdicionado);
-			
-			return jogadorFoiAdicionado;
+			return jogadorDAO.adicionarJogador(novoJogador);
 		}
 		else{
 			return false;
