@@ -149,6 +149,7 @@
 		                        <include>**/*Spec.*</include>
 		                        <include>**/*Test.*</include>
 		                        <include>*testesDeUnidade*</include>
+		                        <include>*TestJogadorBusiness*</include>
 		                    </includes>
 		                </configuration>				    
 					    <dependencies>
