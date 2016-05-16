@@ -2,6 +2,7 @@
 <!-- <link href="../styles/freelancer/bootstrap.css" rel="stylesheet"> -->
 <link href="../styles/bootstrap-3.3.4/css/bootstrap.min.css"
 	rel="stylesheet">
+	
 
 <!-- Freelancer CSS -->
 <!-- <link href="../styles/freelancer/freelancer.css" rel="stylesheet"> -->
@@ -24,8 +25,6 @@
 
 <!-- JS BLOCKS -->
 <script src="../js/jsBlocks/blocks.js"></script>
-
-
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
 <script src="../js/jogo/vendor/jquery.min.js"></script>

@@ -12,22 +12,22 @@
 
 	<div class="col-md-12 container conteudo-centralizado ">
 		<div class="row">
-			<h1>
-				LeCódigo - Relatório
+			<h1 style="text-align: left">
+				Le<br>Código - Relatório
 			</h1>
 		</div>
 
 		<a href="/LeCodigo-presentation/relatorio/relatorioAluno.html"
-			data-original-title="Clique neste botão e irá iniciar o jogo"
+			data-original-title="Clique neste botão e irá visualizar o relatório do aluno"
 			type="button" class="btn btn-primary btn-block btn-lg"
 			data-toggle="tooltip" data-placement="left" title=""><span>Aluno</span></a>
 		<br> <a href="/LeCodigo-presentation/relatorio/relatorioTurma.html"
-			data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
+			data-original-title="Clique neste botão e irá visualizar o relatório da turma"
 			type="button" class="btn btn-primary btn-block btn-lg"
 			data-toggle="tooltip" data-placement="left" title=""><span>Turma</span></a>
 		
 		<br> <a href="#"
-			data-original-title="Clique neste botão para sair do jogo"
+			data-original-title="Clique neste botão para sair"
 			type="button" class="btn btn-primary btn-block btn-lg"
 			data-toggle="tooltip" data-placement="left" title=""><span>Sair</span></a>
 		<br>
