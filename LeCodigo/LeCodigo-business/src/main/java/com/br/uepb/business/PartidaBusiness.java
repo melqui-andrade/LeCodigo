@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 
 @Component
@@ -64,6 +65,6 @@ public class PartidaBusiness {
 	}
 	
 	public List<Jogador> visualizarRanking(){
-		return null;
+		return JogadorDAO.getInstance().rankingJogadores();		
 	}
 }
