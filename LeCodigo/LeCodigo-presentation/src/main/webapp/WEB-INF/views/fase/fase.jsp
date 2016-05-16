@@ -3,8 +3,18 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
 <link href="../styles/jogo/fases/fase.css" rel="stylesheet">
+<style rel="stylesheet">
+body {
+	background: url("../images/background/background.png") no-repeat center
+		top fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
 <html>
-<body style="background-color: ${fase.colorBackground};">
+<body >
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">

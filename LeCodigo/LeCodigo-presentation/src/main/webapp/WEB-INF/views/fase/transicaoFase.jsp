@@ -3,8 +3,19 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
 <link href="../styles/jogo/fases/transicao.css" rel="stylesheet">
+
+<style rel="stylesheet">
+body {
+	background: url("../images/background/background2.png") no-repeat center
+		top fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
 <html>
-<body style="background-color: ${fase.colorBackground};">
+<body>
 
 	<div class="col-md-12 container conteudo-centralizado ">
 		<h1>
@@ -51,7 +62,7 @@
 		setInterval(et_feliz, 200);
 		setInterval(et_normal, 500);
 
-		window.setTimeout("location.href='fase.html'", 5000);
+		window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'", 5000);
 	</script>
 
 

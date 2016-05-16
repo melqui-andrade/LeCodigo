@@ -42,7 +42,7 @@
 
 	<div class="margem">
 
-		<div class="panel panel-info">
+		<div class="panel">
 			<div class="panel-body" style="border-color: #fff;">
 				${questao.descricao}</div>
 		</div>

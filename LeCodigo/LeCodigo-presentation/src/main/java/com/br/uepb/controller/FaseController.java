@@ -40,6 +40,7 @@ public class FaseController {
 
 		ModelAndView modelAndView = new ModelAndView();
 		
+		
 		if(passouFase){
 			passouFase = false;
             return new ModelAndView("redirect:/fase/transicaoFase.html");
