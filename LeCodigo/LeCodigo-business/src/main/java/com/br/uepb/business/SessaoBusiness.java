@@ -176,5 +176,19 @@ public class SessaoBusiness {
 		return this.partida;
 	}
 	
+	public static void encerraSessao(){
+		//fase = 1;
+		//etapa = 1;
+		//bits = 0;
+		//valorDaQuestao = 3;
+		//vidas = 3;
+		//pontuacao = 0;
+		SessaoBusiness instance = null;
+		questoesQueSairam = null;
+		jogador = null;
+		//partida = null;
+		//respostaDoAluno = null;
+	}
+	
 	
 }
