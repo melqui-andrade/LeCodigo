@@ -29,7 +29,7 @@ public class Jogador {
 	private TipoUsuario_Enum tipo_usuario; //pode ser administrador, aluno e professor	
 	private int pontuacao_total;
 	
-	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Partida> partidas;
 	
 	

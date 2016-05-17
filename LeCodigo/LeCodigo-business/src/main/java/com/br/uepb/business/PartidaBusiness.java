@@ -39,6 +39,8 @@ public class PartidaBusiness {
 	public boolean ahPartidaPendente(int id_jogador){
 		Jogador jogador = JogadorDAO.getInstance().buscarJogador(id_jogador);
 		int qtdPartidas = jogador.getPartidas().size();
+		if(qtdPartidas == 0)
+			return false;
 		this.partida = jogador.getPartidas().get(qtdPartidas-1);
 		return !this.partida.isPartidaEncerrada();
 	}

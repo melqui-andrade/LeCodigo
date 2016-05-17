@@ -30,6 +30,8 @@ public class Partida {
 	private int bits;
 	private int valorDaQuestao;
 	private int vidas;
+	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Questao> questoesQueSairam;
 
 	public Partida() {
