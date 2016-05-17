@@ -48,7 +48,7 @@
 					${questao.descricao}</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" >
 			<div class="panel panel-default">
 				<div class="panel-heading"
 					style="background: #FAE6B3; color: #34495E;">Linhas de código
@@ -74,7 +74,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6" id="divOpcoes" >
 			<div class="panel panel-default">
 				<div class="panel-heading"
 					style="background: #eee; color: #34495E; padding: -1%;">
@@ -96,15 +96,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-2">
+		
+	</div>
+	<div class="col-md-2" id="divET">
 
 			<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
 				id="et_" style="float: left;" />
 
 		</div>
 		<br>
-	</div>
-	
 	<div class="row margem">
 		<br>
 		<div class="col-md-2">
