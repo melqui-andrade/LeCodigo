@@ -54,13 +54,15 @@ public class JogadorDAO {
 		
 		if(!session.isOpen())
 			session = HibernateUtil.getSessionFactory().openSession();
-		Transaction tx = session.beginTransaction();
 		Jogador jogador = null;
 		try {
-			jogador = (Jogador) session.createCriteria(Jogador.class).add(Restrictions.eq("id", id)).uniqueResult();
-			session.flush();
-			tx.commit();
+			Query query = session.createQuery("FROM Jogador WHERE id= :id"); 
+			query.setParameter("id", id);
+			jogador = (Jogador)query.uniqueResult();
+			
+			
 		} catch (Exception e) {
+			System.err.println(e);
 		}
 		
 		session.close();
