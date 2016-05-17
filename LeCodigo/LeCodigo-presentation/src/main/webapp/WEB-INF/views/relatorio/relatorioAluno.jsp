@@ -23,40 +23,65 @@
 					placeholder="Nome do Aluno" /> <i
 					class="form-control-feedback glyphicon glyphicon-user"></i>
 			</div>
-		</form>	
-		
-			<div class="panel panel-default none">
-				<!-- Default panel contents -->
-				<div class="panel-heading">Alunos</div>
+		</form>
 
-				<!-- Table -->
-				<table class="table">
-					<thead>
-						<tr>
-							<th class="col-md-3">Id</th>
-							<th class="col-md-6">Nome</th>
-							<th class="col-md-3"></th>
-						</tr>
+		<div class="panel panel-default none">
+			<!-- Default panel contents -->
+			<div class="panel-heading"></div>
 
-					</thead>
-					<c:forEach items="${lstAlunos }" var="aluno" >
+			<!-- Table -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th class="col-md-3">Id</th>
+						<th class="col-md-6">Nome</th>
+						<th class="col-md-3"></th>
+					</tr>
+
+				</thead>
+				<c:forEach items="${lstJogador }" var="usuario">
 					<tbody>
 						<tr>
-							<td class="col-md-3">${aluno.id }</td>
-							<td class="col-md-6">${aluno.nome }</td>
+							<td class="col-md-3">${usuario.id }</td>
+							<td class="col-md-6">${usuario.nome }</td>
 							<td class="col-md-3">
-							<a href="">
-							<i class="glyphicon glyphicon-eye-open"
-								style="background-color: #bdc3c7; text-align: center; "></i>
-							</a>
+								<button type="button" class="btn btn-primary btn-lg"
+									data-toggle="modal" data-target="#relatorioAluno">
+									Veja o relatório</button>								
 							</td>
 						</tr>
 					</tbody>
-					</c:forEach>
-				</table>
-			</div>
-		
+				</c:forEach>
+			</table>
+		</div>
+
 	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="relatorioAluno" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" style="color: black;" id="myModalLabel">Relatório</h4>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
 
 </html>
