@@ -12,10 +12,13 @@
 
 <!-- JavaScript -->
 <script src="../js/jquery-2.2.3.js"></script>
-<script src="../js/materialDesign/material.js"></script>
 <script src="../js/flat-ui/flat-ui.js"></script>
-<script src="../js/flat-ui/application.js"></script>
-<script src="../js/chart/Chart.bundle.js"></script>
+<script src="../js/bootflat/application.js"></script>
+<script src="../js/bootflat/bootstrap.min.js"></script>
+<script src="../js/bootflat/html5shiv.js"></script>
+<script src="../js/bootflat/respond.min.js"></script>
+<script src="../js/bootflat/site.min.js"></script>
+
 
 
 <!-- Custom Fonts -->
