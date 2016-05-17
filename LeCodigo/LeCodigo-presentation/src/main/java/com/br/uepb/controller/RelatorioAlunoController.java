@@ -21,9 +21,12 @@ public class RelatorioAlunoController {
 
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("jogador", new Jogador());
+		modelAndView.addObject("modelViewJogador");
 		List<Jogador> lstJogador = JogadorDAO.getInstance().rankingJogadores();
 		request.setAttribute("lstJogador", lstJogador);
 		return modelAndView;
 	}
+	
+	// TODO: FAZER O POST. Pegar o idUsuario e listar as questoes que ele fez e identificar se ele errou, acertou ou pulou.
 
 }

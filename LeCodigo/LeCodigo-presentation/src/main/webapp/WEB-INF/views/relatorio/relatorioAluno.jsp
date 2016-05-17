@@ -17,9 +17,6 @@ body {
 }
 </style>
 <html>
-
-
-
 <body>
 	<div class="col-md-12 container ">
 		<div class="row">
@@ -29,29 +26,31 @@ body {
 			<div class="row">
 				<div class="col-md-2">
 
-					<a href="/LeCodigo-presentation/relatorio/relatorio.html"
+					<a href="relatorio.html"
 						data-original-title="Clique neste botão e irá iniciar o jogo"
 						type="button" class="btn btn-primary btn-block "
-						data-toggle="tooltip" data-placement="left" title=""><span>Voltar</span></a>
-
+						style="text-align: left;" data-placement="left" title="">Voltar</a>
+					<br>
 				</div>
-				
-					<form role="form">
-						<div class="form-group has-feedback has-feedback-left">
-							<label class="control-label sr-only">Nome do Aluno</label> <input
-								type="text" class="form-control input-lg btn-toggle"
-								placeholder="Nome do Aluno" /> <i
-								class="form-control-feedback fa fa-user"></i>
-						</div>
-					</form>
-				
+				<br>
+				<form role="form">
+					<div class="form-group has-feedback has-feedback-left">
+						<input type="text" class="form-control input-lg btn-toggle"
+							placeholder="Nome do Aluno" /> <i
+							class="form-control-feedback fa fa-user"></i>
+
+					</div>
+				</form>
+
+
 			</div>
 			<br>
 
-			<div class="panel panel-info">
+			<div class="panel panel-default none">
 				<!-- Default panel contents -->
-				<div class="panel-heading">Alunos</div>
+				<div class="panel-heading"></div>
 
+				<!-- Table -->
 				<table class="table">
 					<thead>
 						<tr>
@@ -61,24 +60,68 @@ body {
 						</tr>
 
 					</thead>
-
-					<tbody>
-						<c:forEach items="${lstAlunos }" var="aluno">
+					<c:forEach items="${lstJogador }" var="usuario">
+						<tbody>
 							<tr>
-								<td class="col-md-3">${aluno.id }</td>
-								<td class="col-md-6">${aluno.nome }</td>
-								<td class="col-md-3"><a href=""> <i
-										class="glyphicon glyphicon-eye-open"
-										style="background-color: #bdc3c7; text-align: center;"></i>
-								</a></td>
+								<td class="col-md-3">${usuario.id }</td>
+								<td class="col-md-6">${usuario.nome }</td>
+								<td class="col-md-3">
+									<button type="button" class="btn btn-primary btn-lg"
+										data-toggle="modal" data-target="#relatorioAluno">
+										Veja o relatório</button>
+								</td>
 							</tr>
-						</c:forEach>
-					</tbody>
+						</tbody>
+					</c:forEach>
 				</table>
 			</div>
 		</div>
 	</div>
-	
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="relatorioAluno" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" style="color: black;" id="myModalLabel">Relatório</h4>
+				</div>
+				<div class="modal-body">
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th class="col-md-8">Questao</th>
+								<th class="col-md-4">Status</th>
+							</tr>
+
+						</thead>
+						<c:forEach items="${lstQuestoes }">
+							<tbody>
+								<tr>
+									<td class="col-md-8">QOWEIU asdshd asidha sldkahsd</td>
+									<td class="col-md-4">ERROU</td>
+								</tr>
+							</tbody>
+						</c:forEach>
+					</table>
+
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
