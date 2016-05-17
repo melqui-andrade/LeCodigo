@@ -3,18 +3,16 @@
 <link href="../styles/bootstrap.min.css" rel="stylesheet">
 <link href="../styles/flat-ui/flat-ui.min.css" rel="stylesheet">
 <link href="../styles/bootflat/css/bootflat.min.css" rel="stylesheet">
+
+<link href="../styles/styles.css" rel="stylesheet">
 <link href="../styles/font-awesome/css/font-awesome.css"
 	rel="stylesheet">
-<link href="../styles/styles.css" rel="stylesheet">
-
 
 
 
 <!-- JavaScript -->
 <script src="../js/jquery-2.2.3.js"></script>
-<script src="../js/materialDesign/material.js"></script>
 <script src="../js/flat-ui/flat-ui.js"></script>
-<script src="../js/flat-ui/application.js"></script>
 <script src="../js/chart/Chart.bundle.js"></script>
 
 
