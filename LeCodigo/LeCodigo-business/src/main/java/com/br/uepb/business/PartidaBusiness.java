@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
+import com.br.uepb.domain.Partida;
 
 @Component
 public class PartidaBusiness {
@@ -21,6 +22,13 @@ public class PartidaBusiness {
 		sessaoBusiness.setValorDaQuestao(3);
 		sessaoBusiness.iniciarPartidaDoJogador(id_jogador);
 		
+	}
+	
+	public boolean ahPartidaPendente(int id_jogador){
+		Jogador jogador = JogadorDAO.getInstance().buscarJogador(id_jogador);
+		int qtdPartidas = jogador.getPartidas().size();
+		Partida partida = jogador.getPartidas().get(qtdPartidas-1);
+		return !partida.isPartidaEncerrada();
 	}
 	
 	public void finalizarPartida(){
