@@ -24,6 +24,8 @@ public class HomeController {
 	@RequestMapping(value = "/home/home.html", method = RequestMethod.GET)
 	public ModelAndView homeGet(HttpServletRequest request) {
 
+		SessaoBusiness.getInstace().encerraSessao();
+		
 		ModelAndView modelAndView = new ModelAndView();
 		return modelAndView;
 	}
@@ -77,12 +79,12 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView();
 		try {
 			jogadorBusiness.autenticarJogador(jogadorModel.getLogin(), jogadorModel.getSenha());
-			SessaoBusiness jog = SessaoBusiness.getInstace();
-			int tipo_usuario = SessaoBusiness.getInstace().getJogador().getTipo().getTipos();
-			if ( tipo_usuario == 2) { // aluno
+			Jogador jog = SessaoBusiness.getInstace().getJogador();
+			int tipo_usuario = SessaoBusiness.getInstace().getJogador().getTipo().ordinal();
+			if ( tipo_usuario == 1) { // aluno
 				modelAndView.setViewName("fase/transicaoFase");
 			}
-			if (tipo_usuario == 3) { // professor
+			if (tipo_usuario == 2) { // professor
 				modelAndView.setViewName("professor/home");
 			}
 

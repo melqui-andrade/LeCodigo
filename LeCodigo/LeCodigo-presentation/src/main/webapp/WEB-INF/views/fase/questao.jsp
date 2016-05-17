@@ -24,11 +24,11 @@
 				<div class="col-xs-6 col-sm-3">
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
-							<i class="fa fa-heart"></i>
+							<span class="fa fa-heart"></span>
 						</c:forEach> <c:if test="${vidas <3}">
 
 							<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
-								<i class="fa fa-heart-o"></i>
+								<span class="fa fa-heart-o"></span>
 							</c:forEach>
 
 						</c:if> <a data-original-title="Comprar mais vidas" type="button"

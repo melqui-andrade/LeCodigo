@@ -38,14 +38,14 @@ body {
 				<div class="col-md-4" style="background-color: #eee; padding: 2%;">
 					<c:if test="${status == 0}">
 						<div class="alert alert-success" role="alert">
-							<span class="glyphicon glyphicon-exclamation-sign"
+							<span class="fa fa-exclamation-circle"
 								aria-hidden="true"></span> <span class="sr-only">Sucesso:</span>
 							Cadastro realizado com sucesso!
 						</div>
 					</c:if>
 					<c:if test="${status == 1}">
 						<div class="alert alert-danger" role="alert">
-							<span class="glyphicon glyphicon-exclamation-sign"
+							<span class="fa fa-exclamation-circle"
 								aria-hidden="true"></span> <span class="sr-only">Erro:</span>
 							Erro ao cadastrar, verifique as informações novamente.
 						</div>
