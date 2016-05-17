@@ -20,8 +20,10 @@ body {
 		<div class="container-fluid" style="padding-top: 10px;">
 			<div class="row"
 				style="color: #eee; text-align: center; font-size: 14px;">
-				<div class="col-xs-6 col-sm-2">
+				<div class="col-xs-6 col-sm-2 span-header">
+				
 					<span>Fase ${idFase}</span>
+					<br>
 				</div>
 				<div class="col-xs-6 col-sm-3">
 					<span>Bits: ${bits}</span>
@@ -40,8 +42,12 @@ body {
 							</c:forEach>
 
 						</c:if> <a data-original-title="Comprar mais vidas" type="button"
-						class="btn btn-success fa fa-money" data-toggle="tooltip"
+						class="btn btn-success fa fa-btc" data-toggle="tooltip"
 						data-placement="bottom" title=""></a>
+						<a href="/LeCodigo-presentation/home/home.html"
+					data-original-title="Sair do jogo"
+					type="button" class="btn btn-info fa fa-sign-out  " data-toggle="tooltip"
+					data-placement="bottom" title=""></a>
 					</span>
 				</div>
 			</div>
@@ -51,10 +57,7 @@ body {
 
 		<div id="div_timeline" class="row">
 			<div class="col-md-2">
-				<a href="/LeCodigo-presentation/home/home.html"
-					data-original-title="Clique neste botão e irá iniciar o jogo"
-					type="button" class="btn btn-info btn-block " data-toggle="tooltip"
-					data-placement="left" title=""><span>Sair</span></a>
+				&nbsp;
 			</div>
 			<div class="col-md-4">&nbsp;</div>
 			<div class="col-md-6 container ">
@@ -135,8 +138,7 @@ body {
 						</c:forEach>
 					</dl>
 				</div>
-				<img src="${fase.imgMonstro}" height="90px" width="90px"
-					class="img-responsive" align="middle" style="float: left;" />
+			
 			</div>
 		</div>
 	</div>

@@ -18,6 +18,12 @@ span {
 	font-size: 22px;
 }
 
+.span-header{
+	font-family: 'Open Sans';
+	font-weight: bold;
+	font-size: 22px;
+}
+
 h1 {
 	color: #fff;
 	text-align: left;
