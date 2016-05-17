@@ -111,7 +111,7 @@ public class SessaoBusiness {
 		this.pontuacao = pontuacao;
 	}
 	
-	public void setJogador(Jogador novoJogador){
+	public static void setJogador(Jogador novoJogador){
 		jogador = novoJogador;
 	}
 
