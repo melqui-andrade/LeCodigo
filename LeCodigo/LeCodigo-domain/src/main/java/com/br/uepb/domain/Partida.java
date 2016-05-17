@@ -24,6 +24,13 @@ public class Partida {
 	private String data_hora;
 	private int pontuacao;
 	private boolean partidaEncerrada;
+	//*************************//
+	private int fase;
+	private int etapa;
+	private int bits;
+	private int valorDaQuestao;
+	private int vidas;
+	private List<Questao> questoesQueSairam;
 
 	public Partida() {
 		
@@ -77,4 +84,54 @@ public class Partida {
 	public void setPartidaEncerrada(boolean partidaEncerrada) {
 		this.partidaEncerrada = partidaEncerrada;
 	}
+
+	public int getFase() {
+		return fase;
+	}
+
+	public void setFase(int fase) {
+		this.fase = fase;
+	}
+
+	public int getEtapa() {
+		return etapa;
+	}
+
+	public void setEtapa(int etapa) {
+		this.etapa = etapa;
+	}
+
+	public int getBits() {
+		return bits;
+	}
+
+	public void setBits(int bits) {
+		this.bits = bits;
+	}
+
+	public int getValorDaQuestao() {
+		return valorDaQuestao;
+	}
+
+	public void setValorDaQuestao(int valorDaQuestao) {
+		this.valorDaQuestao = valorDaQuestao;
+	}
+
+	public int getVidas() {
+		return vidas;
+	}
+
+	public void setVidas(int vidas) {
+		this.vidas = vidas;
+	}
+
+	public List<Questao> getQuestoesQueSairam() {
+		return questoesQueSairam;
+	}
+
+	public void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
+		this.questoesQueSairam = questoesQueSairam;
+	}
+	
+	
 }

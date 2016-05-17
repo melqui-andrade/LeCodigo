@@ -121,6 +121,10 @@ public class SessaoBusiness {
 		}
 		return questoesQueSairam;
 	}
+	
+	public static void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
+		SessaoBusiness.questoesQueSairam = questoesQueSairam;
+	}
 
 	public static void addQuestaoQueSaiu(Questao questaoQueSaiu) {
 		if(questoesQueSairam==null){
@@ -170,12 +174,19 @@ public class SessaoBusiness {
 	public void finalizarPartida(){
 		partida.setPartidaEncerrada(true);
 		partidaDAO.atualizarPartida(partida);
+		this.partida = null;
+		questoesQueSairam.clear();
+		
 	}
 	
 	public Partida getPartida(){
 		return this.partida;
 	}
 	
+	public void setPartida(Partida partida) {
+		this.partida = partida;
+	}
+
 	public static void encerraSessao(){
 		//fase = 1;
 		//etapa = 1;
