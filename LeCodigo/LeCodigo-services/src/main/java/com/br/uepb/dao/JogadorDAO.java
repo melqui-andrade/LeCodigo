@@ -1,5 +1,6 @@
 package com.br.uepb.dao;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -70,13 +71,16 @@ public class JogadorDAO {
 	public Jogador buscarJogador(String login) {
 		if(!session.isOpen())
 			session = HibernateUtil.getSessionFactory().openSession();
-		Transaction tx = session.beginTransaction();
+		
 		Jogador jogador = null;
 		try {
-			jogador = (Jogador) session.createCriteria(Jogador.class).add(Restrictions.eq("login", login)).uniqueResult();
-			session.flush();
-			tx.commit();
+			Query query = session.createQuery("FROM Jogador WHERE login= :login"); 
+			query.setParameter("login", login);
+			jogador = (Jogador)query.uniqueResult();
+			
+			
 		} catch (Exception e) {
+			System.err.println(e);
 		}
 		
 		session.close();
