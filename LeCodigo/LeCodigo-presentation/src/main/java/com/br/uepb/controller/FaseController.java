@@ -160,6 +160,10 @@ public class FaseController {
 						if(SessaoBusiness.getInstace().getFase() > fase){
 							passouFase = true;
 						}
+					}else if(SessaoBusiness.getInstace().getVidas() == 0){
+						ModelAndView mav = new ModelAndView("redirect:/fase/perdeu.html");
+						mav.addObject("fase",faseModel);
+						return mav;
 					}
 					modelAndView.addObject("status_resposta", status_resposta);
 				}
