@@ -34,42 +34,35 @@ public class FaseController {
 
 	private FaseModel faseModel;
 	private boolean passouFase = false;
+	private int idJogador;
+	private boolean ehNovaPartida = true;
+	int bits;
+	int pontuacao;
+	int vidas;
+	int fase;
+	int etapa;
 
 	@RequestMapping(value = "/fase/fase.html", method = RequestMethod.GET)
 	public ModelAndView faseGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
 		
-		
 		if(passouFase){
 			passouFase = false;
             return new ModelAndView("redirect:/fase/transicaoFase.html");
 		}
 		
-		int bits = SessaoBusiness.getInstace().getBits();
-		int pontuacao = SessaoBusiness.getInstace().getPontuacao();
-		int vidas = SessaoBusiness.getInstace().getVidas();
-		int fase = SessaoBusiness.getInstace().getFase();
-		int etapa = SessaoBusiness.getInstace().getEtapa();
+		bits = SessaoBusiness.getInstace().getBits();
+		pontuacao = SessaoBusiness.getInstace().getPontuacao();
+		vidas = SessaoBusiness.getInstace().getVidas();
+		fase = SessaoBusiness.getInstace().getFase();
+		etapa = SessaoBusiness.getInstace().getEtapa();
 
-		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
-			for (int i = 1; i <= 5; i++) {
-				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(fase, i));
-				// listaEnumQuestoes1.add(questaoBusiness.getParteDoEnunciado(listaQuestoesFase1.get(i).getId(),
-				// 5));
-			}
-		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
-			for (int i = 1; i <= 5; i++) {
-				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(fase, i));
-				// listaEnumQuestoes2.add(questaoBusiness.getParteDoEnunciado(listaQuestoesFase2.get(i).getId(),
-				// 5));
-			}
-		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
-			for (int i = 1; i <= 5; i++) {
-				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(fase, i));
-				// listaEnumQuestoes3.add(questaoBusiness.getParteDoEnunciado(listaQuestoesFase3.get(i).getId(),
-				// 5));
-			}
+		
+		if(ehNovaPartida){
+			poularQuestoes();
+		}else{
+			popularQuestoesDaSessao();
 		}
 		
 		Questao questao = null;
@@ -92,6 +85,38 @@ public class FaseController {
 		modelAndView.addObject("etapa", etapa);
 
 		return modelAndView;
+	}
+
+	private void popularQuestoesDaSessao() {
+		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
+			for (int i = 5; i >= etapa; i--) {
+				listaQuestoesFase1.add(i-1, questaoBusiness.buscarQuestao(fase, i));
+			}
+		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
+			for (int i = 5; i >= etapa; i--) {
+				listaQuestoesFase2.add(i-1, questaoBusiness.buscarQuestao(fase, i));
+			}
+		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
+			for (int i = 5; i >= etapa; i--) {
+				listaQuestoesFase3.add(i-1, questaoBusiness.buscarQuestao(fase, i));
+			}
+		}
+	}
+
+	private void poularQuestoes() {
+		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
+			for (int i = 1; i <= 5; i++) {
+				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(fase, i));
+			}
+		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
+			for (int i = 1; i <= 5; i++) {
+				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(fase, i));
+			}
+		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
+			for (int i = 1; i <= 5; i++) {
+				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(fase, i));
+			}
+		}
 	}
 
 	// id é etapa
@@ -135,6 +160,10 @@ public class FaseController {
 						if(SessaoBusiness.getInstace().getFase() > fase){
 							passouFase = true;
 						}
+					}else if(SessaoBusiness.getInstace().getVidas() == 0){
+						ModelAndView mav = new ModelAndView("redirect:/fase/perdeu.html");
+						mav.addObject("fase",faseModel);
+						return mav;
 					}
 					modelAndView.addObject("status_resposta", status_resposta);
 				}
@@ -168,7 +197,14 @@ public class FaseController {
 	public ModelAndView transicaoGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
-		partidaBusiness.iniciarPartida(0);
+		idJogador = SessaoBusiness.getInstace().getJogador().getId();
+		
+		if(partidaBusiness.ahPartidaPendente(idJogador)){
+			partidaBusiness.continuarPartida(idJogador);
+		}else{
+			partidaBusiness.iniciarPartida(idJogador);
+		}
+		
 		int fase = SessaoBusiness.getInstace().getFase();
 		faseModel = new FaseModel(fase);
 

@@ -6,11 +6,13 @@ import org.springframework.stereotype.Component;
 
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
+import com.br.uepb.domain.Partida;
 
 @Component
 public class PartidaBusiness {
 
 	SessaoBusiness sessaoBusiness = SessaoBusiness.getInstace();
+	private Partida partida = null;
 	public void iniciarPartida(int id_jogador){
 		if(sessaoBusiness.getPartida()!=null){
 			return;
@@ -21,6 +23,26 @@ public class PartidaBusiness {
 		sessaoBusiness.setValorDaQuestao(3);
 		sessaoBusiness.iniciarPartidaDoJogador(id_jogador);
 		
+	}
+	
+	public void continuarPartida(int id_jogador){
+		if(this.partida!=null){
+			SessaoBusiness.getInstace().setPartida(this.partida);
+			SessaoBusiness.getInstace().setBits(partida.getBits());
+			SessaoBusiness.getInstace().setPontuacao(partida.getPontuacao());
+			SessaoBusiness.getInstace().setVidas(partida.getVidas());
+			SessaoBusiness.getInstace().setValorDaQuestao(partida.getValorDaQuestao());
+			SessaoBusiness.getInstace().setQuestoesQueSairam(partida.getQuestoesQueSairam());
+		}
+	}
+	
+	public boolean ahPartidaPendente(int id_jogador){
+		Jogador jogador = JogadorDAO.getInstance().buscarJogador(id_jogador);
+		int qtdPartidas = jogador.getPartidas().size();
+		if(qtdPartidas == 0)
+			return false;
+		this.partida = jogador.getPartidas().get(qtdPartidas-1);
+		return !this.partida.isPartidaEncerrada();
 	}
 	
 	public void finalizarPartida(){
