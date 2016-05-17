@@ -21,7 +21,7 @@ public class SessaoBusiness {
 	private int pontuacao = 0;
 	private static SessaoBusiness instance;
 	private static List<Questao> questoesQueSairam;
-	private Jogador jogador;
+	private static Jogador jogador;
 	private Partida partida;
 	private RespostaDoAluno respostaDoAluno;
 	
@@ -111,8 +111,8 @@ public class SessaoBusiness {
 		this.pontuacao = pontuacao;
 	}
 	
-	public void setJogador(Jogador jogador){
-		this.jogador = jogador;
+	public void setJogador(Jogador novoJogador){
+		jogador = novoJogador;
 	}
 
 	public static List<Questao> getQuestoesQueSairam() {

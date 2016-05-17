@@ -39,8 +39,8 @@ body {
 				data-original-title="Clique neste botão e irá cadastrar novos usuários"
 				type="button" class="btn btn-info  btn-block btn-lg"
 				data-toggle="tooltip" data-placement="left" title=""><span>Cadastrar</span></a>
-			<br> <a href="/LeCodigo-presentation/home/ranking.html"
-				data-original-title="Clique neste botão e irá visualizar o Ranking do jogo"
+			<br> <a href="/LeCodigo-presentation/relatorio/relatorio.html"
+				data-original-title="Clique neste botão e irá visualizar o Relatório do jogo"
 				type="button" class="btn btn-info  btn-block btn-lg"
 				data-toggle="tooltip" data-placement="left" title=""><span>Relatório</span></a>
 			<br> <a href="/LeCodigo-presentation/home/home.html"

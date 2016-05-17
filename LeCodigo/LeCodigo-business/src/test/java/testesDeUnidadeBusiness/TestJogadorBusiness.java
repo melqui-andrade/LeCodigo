@@ -14,7 +14,7 @@ public class TestJogadorBusiness {
 	public void testAssertRetornoCriaJogador() {
 		JogadorBusiness jogadorBusiness = new JogadorBusiness();
 		assertEquals("Criar Jogador retornou false", true,
-				jogadorBusiness.criarJogador("Jogador Teste", "teste", "teste", TipoUsuario_Enum.ADMINISTRADOR));
+				jogadorBusiness.cadastraJogador("Jogador Teste", "teste", "teste", TipoUsuario_Enum.ADMINISTRADOR));
 		
 	}
 	@Test

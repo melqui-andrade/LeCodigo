@@ -122,11 +122,17 @@ document.getElementById("respostas").style.height = opcoes;
 document.getElementById("respostas").style.maxHeight = opcoes;
 var respostas = document.getElementById("respostas").clientHeight;
 
+
+
 opcoes = document.getElementById("blocosOpcoes").clientHeight + "px";
 // var respostas = document.getElementById("respostas");
 
 document.getElementById("divResposta").style.height = opcoes;
 document.getElementById("divResposta").style.maxHeight = opcoes;
+
+document.getElementById("divET").style.maxHeight = document.getElementById("divOpcoes").clientHeight + "px";
+document.getElementById("divET").style.maxHeight = document.getElementById("divOpcoes").clientHeight + "px";
+
 
 
 

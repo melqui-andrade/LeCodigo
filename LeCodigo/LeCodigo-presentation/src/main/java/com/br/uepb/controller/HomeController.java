@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.br.uepb.business.JogadorBusiness;
 import com.br.uepb.business.PartidaBusiness;
+import com.br.uepb.business.SessaoBusiness;
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.model.JogadorModel;
@@ -76,7 +77,14 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView();
 		try {
 			jogadorBusiness.autenticarJogador(jogadorModel.getLogin(), jogadorModel.getSenha());
-			modelAndView.setViewName("professor/home");
+			SessaoBusiness jog = SessaoBusiness.getInstace();
+			int tipo_usuario = SessaoBusiness.getInstace().getJogador().getTipo().getTipos();
+			if ( tipo_usuario == 2) { // aluno
+				modelAndView.setViewName("fase/transicaoFase");
+			}
+			if (tipo_usuario == 3) { // professor
+				modelAndView.setViewName("professor/home");
+			}
 
 		} catch (Exception e) {
 			modelAndView.setViewName("home/login");
