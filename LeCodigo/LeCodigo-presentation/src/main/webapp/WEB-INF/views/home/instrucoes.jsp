@@ -14,7 +14,7 @@
 		
 	<div class="row">
 			<h1 style="text-align: center">LeCódigo</h1>
-			<h2 style="text-align: center">Ranking</h2>
+			<h2 style="text-align: center">Instruções</h2>
 			<br>
 			<div class="row">
 				<div class="col-md-2">

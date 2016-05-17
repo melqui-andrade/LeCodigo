@@ -20,7 +20,7 @@ body {
 		<div class="container-fluid" style="padding-top: 10px;">
 			<div class="row"
 				style="color: #eee; text-align: center; font-size: 14px;">
-				<div class="col-xs-6 col-sm-3">
+				<div class="col-xs-6 col-sm-2">
 					<span>Fase ${idFase}</span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
@@ -29,7 +29,7 @@ body {
 				<div class="col-xs-6 col-sm-3">
 					<span>Pontuação: ${pontuacao}</span>
 				</div>
-				<div class="col-xs-6 col-sm-3">
+				<div class="col-xs-6 col-sm-4">
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<i class="fa fa-heart"></i>

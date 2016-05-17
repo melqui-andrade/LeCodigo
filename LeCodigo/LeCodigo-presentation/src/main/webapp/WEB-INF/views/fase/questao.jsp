@@ -12,7 +12,7 @@
 
 			<div class="row"
 				style="color: #eee; text-align: center; font-size: 14px;">
-				<div class="col-xs-6 col-sm-3">
+				<div class="col-xs-6 col-sm-2">
 					<span>Fase ${idFase} - Etapa ${etapa} </span>
 				</div>
 				<div class="col-xs-6 col-sm-3">
@@ -21,7 +21,7 @@
 				<div class="col-xs-6 col-sm-3">
 					<span>Pontuação: ${pontuacao}</span>
 				</div>
-				<div class="col-xs-6 col-sm-3">
+				<div class="col-xs-6 col-sm-4">
 					<span> Vida: <c:forEach begin="1" end="${vidas}"
 							varStatus="loop">
 							<span class="fa fa-heart"></span>
@@ -115,10 +115,19 @@
 		</div>
 
 		<div class="col-md-2">
+		<c:if test="${bits >= 2*idFase+1}">
 			<button class="btn btn-block btn-info " onclick="pularQuestao()"
 				data-toggle="modal" data-target="#myModal">
 				<i class="fa fa-retweet" aria-hidden="true"></i> Pular
 			</button>
+			</c:if>
+			
+			<c:if test="${bits < 2*idFase+1}">
+			<button class="btn btn-block btn-info " onclick="pularQuestao()" disabled
+				data-toggle="modal" data-target="#myModal">
+				<i class="fa fa-retweet" aria-hidden="true"></i> Pular
+			</button>
+			</c:if>
 		</div>
 
 		<div class="col-md-6">
