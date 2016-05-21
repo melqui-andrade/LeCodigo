@@ -229,6 +229,7 @@ public class FaseController {
 		
 		if(partidaBusiness.ahPartidaPendente(idJogador)){
 			partidaBusiness.continuarPartida(login, idJogador);
+			ehNovaPartida = false;
 		}else{
 			partidaBusiness.iniciarPartida(login, idJogador);
 		}

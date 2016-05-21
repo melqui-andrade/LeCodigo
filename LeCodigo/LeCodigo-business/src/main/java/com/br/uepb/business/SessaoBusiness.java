@@ -123,7 +123,7 @@ public class SessaoBusiness {
 	}
 	
 	public void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
-		questoesQueSairam = questoesQueSairam;
+		this.questoesQueSairam = questoesQueSairam;
 	}
 
 	public void addQuestaoQueSaiu(Questao questaoQueSaiu) {
