@@ -63,7 +63,7 @@ public class JogadorBusiness {
 
 	private void adicionaJogadorNaSessao(Jogador novoJogador, boolean jogadorFoiAdicionado) {
 		if(jogadorFoiAdicionado){
-			SessaoBusiness.setJogador(novoJogador);
+			GerenciarSessaoBusiness.addSessaoBusiness(novoJogador, new SessaoBusiness());
 		}
 	}
 	

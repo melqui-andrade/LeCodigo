@@ -11,9 +11,9 @@ import com.br.uepb.domain.Partida;
 @Component
 public class PartidaBusiness {
 
-	SessaoBusiness sessaoBusiness = SessaoBusiness.getInstace();
 	private Partida partida = null;
-	public void iniciarPartida(int id_jogador){
+	public void iniciarPartida(String login, int id_jogador){
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		if(sessaoBusiness.getPartida()!=null){
 			return;
 		}
@@ -25,14 +25,15 @@ public class PartidaBusiness {
 		
 	}
 	
-	public void continuarPartida(int id_jogador){
+	public void continuarPartida(String login, int id_jogador){
 		if(this.partida!=null){
-			SessaoBusiness.getInstace().setPartida(this.partida);
-			SessaoBusiness.getInstace().setBits(partida.getBits());
-			SessaoBusiness.getInstace().setPontuacao(partida.getPontuacao());
-			SessaoBusiness.getInstace().setVidas(partida.getVidas());
-			SessaoBusiness.getInstace().setValorDaQuestao(partida.getValorDaQuestao());
-			SessaoBusiness.getInstace().setQuestoesQueSairam(partida.getQuestoesQueSairam());
+			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+			sessaoBusiness.setPartida(this.partida);
+			sessaoBusiness.setBits(partida.getBits());
+			sessaoBusiness.setPontuacao(partida.getPontuacao());
+			sessaoBusiness.setVidas(partida.getVidas());
+			sessaoBusiness.setValorDaQuestao(partida.getValorDaQuestao());
+			sessaoBusiness.setQuestoesQueSairam(partida.getQuestoesQueSairam());
 		}
 	}
 	
@@ -45,12 +46,14 @@ public class PartidaBusiness {
 		return !this.partida.isPartidaEncerrada();
 	}
 	
-	public void finalizarPartida(){
+	public void finalizarPartida(String login){
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		sessaoBusiness.finalizarPartida();
 		
 	}
 	
-	public void avancarEtapa(){
+	public void avancarEtapa(String login){
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		int etapa = sessaoBusiness.getEtapa();
 		int fase = sessaoBusiness.getFase();
 		sessaoBusiness.setEtapa(etapa+1);

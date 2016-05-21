@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.uepb.business.GerenciarSessaoBusiness;
 import com.br.uepb.business.PartidaBusiness;
 import com.br.uepb.business.QuestaoBusiness;
 import com.br.uepb.business.SessaoBusiness;
@@ -51,18 +52,19 @@ public class FaseController {
 			passouFase = false;
             return new ModelAndView("redirect:/fase/transicaoFase.html");
 		}
-		
-		bits = SessaoBusiness.getInstace().getBits();
-		pontuacao = SessaoBusiness.getInstace().getPontuacao();
-		vidas = SessaoBusiness.getInstace().getVidas();
-		fase = SessaoBusiness.getInstace().getFase();
-		etapa = SessaoBusiness.getInstace().getEtapa();
+		String login = request.getSession().getAttribute("login").toString();
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+		bits = sessaoBusiness.getBits();
+		pontuacao = sessaoBusiness.getPontuacao();
+		vidas = sessaoBusiness.getVidas();
+		fase = sessaoBusiness.getFase();
+		etapa = sessaoBusiness.getEtapa();
 
 		
 		if(ehNovaPartida){
-			poularQuestoes();
+			poularQuestoes(login);
 		}else{
-			popularQuestoesDaSessao();
+			popularQuestoesDaSessao(login);
 		}
 		
 		Questao questao = null;
@@ -87,36 +89,52 @@ public class FaseController {
 		return modelAndView;
 	}
 
-	private void popularQuestoesDaSessao() {
+	private void popularQuestoesDaSessao(String login) {
 		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
 			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase1.add(i-1, questaoBusiness.buscarQuestao(fase, i));
+				listaQuestoesFase1.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
 			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase2.add(i-1, questaoBusiness.buscarQuestao(fase, i));
+				listaQuestoesFase2.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
 			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase3.add(i-1, questaoBusiness.buscarQuestao(fase, i));
+				listaQuestoesFase3.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		}
+		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
+		System.out.println(listaQuestoesFase2);
+		System.out.println(listaQuestoesFase3);
+	}
+	
+	String getLista(List<Questao> list){
+		String r = "";
+		
+		for (Questao questao : list) {
+			r+=questao.getDescricao()+"\n\n";
+		}
+		return r;
 	}
 
-	private void poularQuestoes() {
+	private void poularQuestoes(String login) {
 		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
 			for (int i = 1; i <= 5; i++) {
-				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(fase, i));
+				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
 			for (int i = 1; i <= 5; i++) {
-				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(fase, i));
+				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
 			for (int i = 1; i <= 5; i++) {
-				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(fase, i));
+				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		}
+
+		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
+		System.out.println(listaQuestoesFase2);
+		System.out.println(listaQuestoesFase3);
 	}
 
 	// id é etapa
@@ -125,9 +143,10 @@ public class FaseController {
 			@RequestParam(value = "resposta", required = false) String resposta) {
 
 		ModelAndView modelAndView = new ModelAndView();
-
-		int fase = SessaoBusiness.getInstace().getFase();
-		int etapa = SessaoBusiness.getInstace().getEtapa();
+		String login = request.getSession().getAttribute("login").toString();
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+		int fase = sessaoBusiness.getFase();
+		int etapa = sessaoBusiness.getEtapa();
 
 
 		Questao questao = null;
@@ -145,7 +164,7 @@ public class FaseController {
 			
 			try {
 				if(resposta.equals("pulou")){
-					questao = questaoBusiness.pularQuestao(questao.getId(), fase, etapa);
+					questao = questaoBusiness.pularQuestao(login, questao.getId(), fase, etapa);
 					if (fase == 1) {
 						listaQuestoesFase1.add(etapa - 1,  questao);
 					} else if (fase == 2) {
@@ -154,13 +173,13 @@ public class FaseController {
 						listaQuestoesFase3.add(etapa - 1,  questao);
 					}
 				}else{
-					status_resposta = questaoBusiness.verificarResposta(resposta, questao.getId());
+					status_resposta = questaoBusiness.verificarResposta(login, resposta, questao.getId());
 					if(status_resposta){
-						partidaBusiness.avancarEtapa();
-						if(SessaoBusiness.getInstace().getFase() > fase){
+						partidaBusiness.avancarEtapa(login);
+						if(sessaoBusiness.getFase() > fase){
 							passouFase = true;
 						}
-					}else if(SessaoBusiness.getInstace().getVidas() == 0){
+					}else if(sessaoBusiness.getVidas() == 0){
 						ModelAndView mav = new ModelAndView("redirect:/fase/perdeu.html");
 						mav.addObject("fase",faseModel);
 						return mav;
@@ -176,9 +195,9 @@ public class FaseController {
 
 		}
 			
-			int bits = SessaoBusiness.getInstace().getBits();
-			int pontuacao = SessaoBusiness.getInstace().getPontuacao();
-			int vidas = SessaoBusiness.getInstace().getVidas();			
+			int bits = sessaoBusiness.getBits();
+			int pontuacao = sessaoBusiness.getPontuacao();
+			int vidas = sessaoBusiness.getVidas();			
 
 			modelAndView.addObject("questao", questao);
 			modelAndView.addObject("idFase", fase);
@@ -197,15 +216,17 @@ public class FaseController {
 	public ModelAndView transicaoGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
-		idJogador = SessaoBusiness.getInstace().getJogador().getId();
+		String login = request.getSession().getAttribute("login").toString();
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+		idJogador = sessaoBusiness.getJogador().getId();
 		
 		if(partidaBusiness.ahPartidaPendente(idJogador)){
-			partidaBusiness.continuarPartida(idJogador);
+			partidaBusiness.iniciarPartida(login, idJogador);
 		}else{
-			partidaBusiness.iniciarPartida(idJogador);
+			partidaBusiness.iniciarPartida(login, idJogador);
 		}
 		
-		int fase = SessaoBusiness.getInstace().getFase();
+		int fase = sessaoBusiness.getFase();
 		faseModel = new FaseModel(fase);
 
 		modelAndView.addObject("idFase", fase);
