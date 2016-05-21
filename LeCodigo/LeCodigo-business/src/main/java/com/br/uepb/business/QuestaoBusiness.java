@@ -15,7 +15,7 @@ import conexaoBD.HibernateUtil;
 public class QuestaoBusiness {
 	
 	QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
-	public Questao buscarQuestao(int fase, int etapa){
+	public Questao buscarQuestao(String login, int fase, int etapa){
 
 		List<Questao> questoes = null;
 		if(fase==1){
@@ -75,8 +75,9 @@ public class QuestaoBusiness {
 				numQuestao = random.nextInt(questoes.size());
 				
 				
-			}while(questaoRepetida(questoes.get(numQuestao).getId()));
-			SessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
+			}while(questaoRepetida(login, questoes.get(numQuestao).getId()));
+			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+			sessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
 			Questao questao = questoes.get(numQuestao);
 			Collections.shuffle(questao.getBlocos());
 			return questao;
@@ -84,9 +85,9 @@ public class QuestaoBusiness {
 		return null;
 	}
 	
-	public boolean verificarResposta(String resposta, int idQuestao) throws Exception{
+	public boolean verificarResposta(String login, String resposta, int idQuestao) throws Exception{
 		Questao questao = questaoDAO.buscarQuestao(idQuestao);
-		SessaoBusiness sessao = SessaoBusiness.getInstace();
+		SessaoBusiness sessao = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		
 		String [] possiveisRespostas = questao.getResposta().split(" | ");
 		for (int i = 0; i < possiveisRespostas.length; i++) {
@@ -102,8 +103,8 @@ public class QuestaoBusiness {
 		return false;
 	}
 	
-	public Questao pularQuestao(int idQuestao, int fase, int etapa){
-		SessaoBusiness sessao = SessaoBusiness.getInstace();
+	public Questao pularQuestao(String login, int idQuestao, int fase, int etapa){
+		SessaoBusiness sessao = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		boolean podePular = false;
 		switch(fase){
 		case 1:
@@ -128,7 +129,7 @@ public class QuestaoBusiness {
 		
 		if(podePular){
 			sessao.atualizarPartidaDoJogador(idQuestao, "pulou");
-			return buscarQuestao(fase, etapa);
+			return buscarQuestao(login, fase, etapa);
 		}
 		else{
 			return null;
@@ -148,8 +149,9 @@ public class QuestaoBusiness {
 		}
 	}
 	
-	private boolean questaoRepetida(int idQuestao){
-		for(Questao questao : SessaoBusiness.getQuestoesQueSairam()){
+	private boolean questaoRepetida(String login, int idQuestao){
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+		for(Questao questao : sessaoBusiness.getQuestoesQueSairam()){
 			if(questao.getId()==idQuestao){
 				return true;
 			}

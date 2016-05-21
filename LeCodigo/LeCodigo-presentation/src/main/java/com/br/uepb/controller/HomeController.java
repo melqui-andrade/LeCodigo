@@ -3,6 +3,7 @@ package com.br.uepb.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.uepb.business.GerenciarSessaoBusiness;
 import com.br.uepb.business.JogadorBusiness;
 import com.br.uepb.business.PartidaBusiness;
 import com.br.uepb.business.SessaoBusiness;
@@ -24,7 +26,12 @@ public class HomeController {
 	@RequestMapping(value = "/home/home.html", method = RequestMethod.GET)
 	public ModelAndView homeGet(HttpServletRequest request) {
 
-		SessaoBusiness.getInstace().encerraSessao();
+		try {
+			String login = request.getSession().getAttribute("login").toString();
+			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+			sessaoBusiness.encerraSessao();
+		} catch (Exception e) {
+		}
 		
 		ModelAndView modelAndView = new ModelAndView();
 		return modelAndView;
@@ -73,14 +80,16 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/home/login.html", method = RequestMethod.POST)
-	public ModelAndView loginPost(@ModelAttribute("jogadorModel") JogadorModel jogadorModel, Model model) {
+	public ModelAndView loginPost(@ModelAttribute("jogadorModel") JogadorModel jogadorModel, HttpSession session, Model model) {
 		JogadorBusiness jogadorBusiness = new JogadorBusiness();
 
 		ModelAndView modelAndView = new ModelAndView();
 		try {
 			jogadorBusiness.autenticarJogador(jogadorModel.getLogin(), jogadorModel.getSenha());
-			Jogador jog = SessaoBusiness.getInstace().getJogador();
-			int tipo_usuario = SessaoBusiness.getInstace().getJogador().getTipo().ordinal();
+			session.setAttribute("login", jogadorModel.getLogin());
+			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(jogadorModel.getLogin());
+			Jogador jog = sessaoBusiness.getJogador();
+			int tipo_usuario = sessaoBusiness.getJogador().getTipo().ordinal();
 			if ( tipo_usuario == 1) { // aluno
 				modelAndView.setViewName("fase/transicaoFase");
 			}

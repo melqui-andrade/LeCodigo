@@ -19,18 +19,18 @@ public class SessaoBusiness {
 	private int valorDaQuestao = 3;
 	private int vidas = 3;
 	private int pontuacao = 0;
-	private static SessaoBusiness instance;
-	private static List<Questao> questoesQueSairam;
-	private static Jogador jogador;
+	private SessaoBusiness instance;
+	private List<Questao> questoesQueSairam;
+	private Jogador jogador;
 	private Partida partida;
 	private RespostaDoAluno respostaDoAluno;
 	
 	private JogadorDAO jogadorDAO = JogadorDAO.getInstance();
 	private PartidaDAO partidaDAO = PartidaDAO.getInstance();
 	
-	private SessaoBusiness(){};
+	public SessaoBusiness(){};
 	
-	public static SessaoBusiness getInstace(){
+	public SessaoBusiness getInstace(){
 		if(instance == null){
 			instance = new SessaoBusiness();
 		}
@@ -111,26 +111,26 @@ public class SessaoBusiness {
 		this.pontuacao = pontuacao;
 	}
 	
-	public static void setJogador(Jogador novoJogador){
+	public void setJogador(Jogador novoJogador){
 		jogador = novoJogador;
 	}
 
-	public static List<Questao> getQuestoesQueSairam() {
+	public List<Questao> getQuestoesQueSairam() {
 		if(questoesQueSairam==null){
 			questoesQueSairam = new ArrayList<Questao>();
 		}
 		return questoesQueSairam;
 	}
 	
-	public static void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
-		SessaoBusiness.questoesQueSairam = questoesQueSairam;
+	public void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
+		questoesQueSairam = questoesQueSairam;
 	}
 
-	public static void addQuestaoQueSaiu(Questao questaoQueSaiu) {
+	public void addQuestaoQueSaiu(Questao questaoQueSaiu) {
 		if(questoesQueSairam==null){
 			questoesQueSairam = new ArrayList<Questao>();
 		}
-		SessaoBusiness.questoesQueSairam.add(questaoQueSaiu);
+		questoesQueSairam.add(questaoQueSaiu);
 	}
 	
 	public void atualizarPartidaDoJogador(int id_questao, String resposta){
@@ -187,7 +187,7 @@ public class SessaoBusiness {
 		this.partida = partida;
 	}
 
-	public static void encerraSessao(){
+	public void encerraSessao(){
 		//fase = 1;
 		//etapa = 1;
 		//bits = 0;
