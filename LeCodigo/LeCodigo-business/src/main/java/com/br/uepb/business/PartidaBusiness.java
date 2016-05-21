@@ -34,6 +34,8 @@ public class PartidaBusiness {
 			sessaoBusiness.setVidas(partida.getVidas());
 			sessaoBusiness.setValorDaQuestao(partida.getValorDaQuestao());
 			sessaoBusiness.setQuestoesQueSairam(partida.getQuestoesQueSairam());
+			sessaoBusiness.setEtapa(partida.getEtapa());
+			sessaoBusiness.setFase(partida.getFase());
 		}
 	}
 	
