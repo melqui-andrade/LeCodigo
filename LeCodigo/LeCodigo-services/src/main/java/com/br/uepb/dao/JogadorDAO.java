@@ -5,6 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import com.br.uepb.domain.Jogador;
+import com.br.uepb.domain.Partida;
+
 import java.util.*;
 
 import conexaoBD.HibernateUtil;
@@ -131,6 +133,23 @@ public class JogadorDAO {
 		}
 		
 		return null;
+	}
+	
+	public boolean atualizarJogador(Jogador jogador){
+		if(!session.isOpen())
+			session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		boolean verifica = true;
+		try {
+			session.update(jogador);
+		} catch (Exception e) {
+			verifica = false;
+		}
+		session.flush();
+		tx.commit();
+		session.close();
+		
+		return verifica;
 	}
 
 }
