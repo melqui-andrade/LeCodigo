@@ -28,21 +28,17 @@ public class FaseController {
 	private List<Questao> listaQuestoesFase2 = new ArrayList<Questao>();
 	private List<Questao> listaQuestoesFase3 = new ArrayList<Questao>();
 
-	// enum == enunciado das questoes :)
-	private List<String> listaEnumQuestoes1 = new ArrayList<String>();
-	private List<String> listaEnumQuestoes2 = new ArrayList<String>();
-	private List<String> listaEnumQuestoes3 = new ArrayList<String>();
-
 	private FaseModel faseModel;
 	private boolean passouFase = false;
 	private int idJogador;
 	private boolean ehNovaPartida = true;
-	int bits;
-	int pontuacao;
-	int vidas;
-	int fase;
-	int etapa;
-
+	//int bits;
+	//int pontuacao;
+	//int vidas;
+	//int fase;
+	//int etapa;
+	SessaoBusiness sessaoBusiness;
+	
 	@RequestMapping(value = "/fase/fase.html", method = RequestMethod.GET)
 	public ModelAndView faseGet(HttpServletRequest request) {
 
@@ -53,29 +49,18 @@ public class FaseController {
             return new ModelAndView("redirect:/fase/transicaoFase.html");
 		}
 		String login = request.getSession().getAttribute("login").toString();
-		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
-		bits = sessaoBusiness.getBits();
-		pontuacao = sessaoBusiness.getPontuacao();
-		vidas = sessaoBusiness.getVidas();
-		fase = sessaoBusiness.getFase();
-		etapa = sessaoBusiness.getEtapa();
+		sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+		int bits = sessaoBusiness.getBits();
+		int pontuacao = sessaoBusiness.getPontuacao();
+		int vidas = sessaoBusiness.getVidas();
+		int fase = sessaoBusiness.getFase();
+		int etapa = sessaoBusiness.getEtapa();
 
-		
 		if(ehNovaPartida){
-			poularQuestoes(login);
+			//poularQuestoes(login);
 		}else{
 			popularQuestoesDaSessao(login);
 		}
-		
-		Questao questao = null;
-		if (fase == 1) {
-			questao = listaQuestoesFase1.get(etapa - 1);
-		} else if (fase == 2) {
-			questao = listaQuestoesFase2.get(etapa - 1);
-		} else if (fase == 3) {
-			questao = listaQuestoesFase3.get(etapa - 1);
-		}
-		
 
 		faseModel = new FaseModel(fase);
 
@@ -90,6 +75,8 @@ public class FaseController {
 	}
 
 	private void popularQuestoesDaSessao(String login) {
+		int fase = sessaoBusiness.getFase();
+		int etapa = sessaoBusiness.getEtapa();
 		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
 			for (int i = 5; i >= etapa; i--) {
 				listaQuestoesFase1.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
@@ -117,7 +104,8 @@ public class FaseController {
 		return r;
 	}
 
-	private void poularQuestoes(String login) {
+	/*private void poularQuestoes(String login) {
+		int fase = sessaoBusiness.getFase();
 		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
 			for (int i = 1; i <= 5; i++) {
 				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, i));
@@ -135,7 +123,7 @@ public class FaseController {
 		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
 		System.out.println(listaQuestoesFase2);
 		System.out.println(listaQuestoesFase3);
-	}
+	}*/
 
 	// id é etapa
 	@RequestMapping(value = "/fase/questao.html", method = RequestMethod.GET)
@@ -143,20 +131,13 @@ public class FaseController {
 			@RequestParam(value = "resposta", required = false) String resposta) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		
 		String login = request.getSession().getAttribute("login").toString();
 		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		int fase = sessaoBusiness.getFase();
 		int etapa = sessaoBusiness.getEtapa();
-
-
-		Questao questao = null;
-		if (fase == 1) {
-			questao = listaQuestoesFase1.get(etapa - 1);
-		} else if (fase == 2) {
-			questao = listaQuestoesFase2.get(etapa - 1);
-		} else if (fase == 3) {
-			questao = listaQuestoesFase3.get(etapa - 1);
-		}
+		
+		Questao questao = getQuestao(fase, etapa);
 
 		resposta = (String) request.getParameter("resposta");
 		if (resposta != null) {
@@ -179,7 +160,7 @@ public class FaseController {
 						if(sessaoBusiness.getFase() > fase){
 							passouFase = true;
 						}
-					}else if(sessaoBusiness.getVidas() == 0){
+					}else if(sessaoBusiness.getVidas() <= 0){
 						ModelAndView mav = new ModelAndView("redirect:/fase/perdeu.html");
 						mav.addObject("fase",faseModel);
 						return mav;
@@ -210,6 +191,28 @@ public class FaseController {
 			return modelAndView;
 		
 		//return modelAndView;
+	}
+
+	private Questao getQuestao(int fase, int etapa) {
+		Questao questao = null;
+		String login = sessaoBusiness.getJogador().getLogin();
+		if (fase == 1) {
+			if(listaQuestoesFase1.size() < etapa){
+				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, etapa));
+			}
+			questao = listaQuestoesFase1.get(etapa - 1);
+		} else if (fase == 2) {
+			if(listaQuestoesFase2.size() < etapa){
+				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, etapa));
+			}
+			questao = listaQuestoesFase2.get(etapa - 1);
+		} else if (fase == 3) {
+			if(listaQuestoesFase3.size() < etapa){
+				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, etapa));
+			}
+			questao = listaQuestoesFase3.get(etapa - 1);
+		}
+		return questao;
 	}
 
 	@RequestMapping(value = "/fase/transicaoFase.html", method = RequestMethod.GET)
