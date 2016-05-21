@@ -28,8 +28,7 @@ public class HomeController {
 
 		try {
 			String login = request.getSession().getAttribute("login").toString();
-			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
-			sessaoBusiness.encerraSessao();
+			GerenciarSessaoBusiness.removeSessao(login);
 		} catch (Exception e) {
 		}
 		

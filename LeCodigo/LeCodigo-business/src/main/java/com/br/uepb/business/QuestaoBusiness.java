@@ -80,6 +80,7 @@ public class QuestaoBusiness {
 			sessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
 			Questao questao = questoes.get(numQuestao);
 			Collections.shuffle(questao.getBlocos());
+			System.out.println(questao.getDescricao());
 			return questao;
 		}
 		return null;

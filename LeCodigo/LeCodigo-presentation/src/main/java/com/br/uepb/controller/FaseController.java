@@ -90,17 +90,24 @@ public class FaseController {
 	}
 
 	private void popularQuestoesDaSessao(String login) {
+		List<Questao> questoes = GerenciarSessaoBusiness.getSessaoBusiness(login).getQuestoesQueSairam();
 		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
-			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase1.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
+			for (Questao questao : questoes) {
+				if(questao.getFase()==1){
+					listaQuestoesFase1.add(questao);
+				}
 			}
 		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
-			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase2.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
+			for (Questao questao : questoes) {
+				if(questao.getFase()==2){
+					listaQuestoesFase2.add(questao);
+				}
 			}
 		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
-			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase3.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
+			for (Questao questao : questoes) {
+				if(questao.getFase()==3){
+					listaQuestoesFase3.add(questao);
+				}
 			}
 		}
 		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
@@ -221,7 +228,7 @@ public class FaseController {
 		idJogador = sessaoBusiness.getJogador().getId();
 		
 		if(partidaBusiness.ahPartidaPendente(idJogador)){
-			partidaBusiness.iniciarPartida(login, idJogador);
+			partidaBusiness.continuarPartida(login, idJogador);
 		}else{
 			partidaBusiness.iniciarPartida(login, idJogador);
 		}

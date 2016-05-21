@@ -150,8 +150,13 @@ public class SessaoBusiness {
 			//respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
 		partida.setData_hora(new Date().toString());
 		partida.setPontuacao(pontuacao);
-		//Atualizar a partida no banco de dados
-		partidaDAO.atualizarPartida(partida);
+		partida.setBits(bits);
+		partida.setEtapa(etapa);
+		partida.setFase(fase);
+		partida.setVidas(vidas);
+		partida.setValorDaQuestao(valorDaQuestao);
+		partida.setQuestoesQueSairam(questoesQueSairam);
+		jogadorDAO.atualizarJogador(jogador);
 		
 		
 	}
@@ -168,12 +173,12 @@ public class SessaoBusiness {
 		this.jogador.getPartidas().add(this.partida);
 		this.respostaDoAluno = new RespostaDoAluno();
 		//Adiciona a partida no banco de dados
-		partidaDAO.salvarPartida(partida);
+		jogadorDAO.atualizarJogador(jogador);
 	}
 	
 	public void finalizarPartida(){
 		partida.setPartidaEncerrada(true);
-		partidaDAO.atualizarPartida(partida);
+		jogadorDAO.atualizarJogador(jogador);
 		this.partida = null;
 		questoesQueSairam.clear();
 		
@@ -187,7 +192,7 @@ public class SessaoBusiness {
 		this.partida = partida;
 	}
 
-	public void encerraSessao(){
+	/*public void encerraSessao(){
 		//fase = 1;
 		//etapa = 1;
 		//bits = 0;
@@ -199,7 +204,7 @@ public class SessaoBusiness {
 		jogador = null;
 		//partida = null;
 		//respostaDoAluno = null;
-	}
+	}*/
 	
 	
 }
