@@ -1,0 +1,23 @@
+#Lukas Teles
+# Troca de vairÁveis
+
+*Q
+Organize os blocos e monte um algoritmo em que seja impresso a palavra "xau"
+*F
+
+*B
+1_char letra1 = 'x', letra2 = 'a', letra3 = 'u', aux;
+2_aux = letra1;
+3_letra1 = letra2;
+4_letra2 = letra3;
+5_letra3 = aux;
+6_print(""+letra3+letra1+letra2);
+*F
+
+*R
+1-2-3-4-5-6
+*F
+
+*I
+3_1
+*F

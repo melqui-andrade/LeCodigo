@@ -1,0 +1,23 @@
+#Lukas Teles
+# Atribuicao de vairiáveis
+
+*Q
+Organize os blocos para imprimir o nome "hahahaha" (use apenas 4 blocos)
+*F
+
+*B
+1_print(risos[c]);
+2_int a = 3, b = 2, c = 4;
+3_String risos[] = {"kkkkkkkkjk", "hahahaha", "aushahushaush", "rsrsrsrsrs"};
+4_c = a - c + b;
+5_c = c - b;
+6_c = a + b + c;
+*F
+
+*R
+3-2-4-1 | 2-3-4-1
+*F
+
+*I
+1_1
+*F

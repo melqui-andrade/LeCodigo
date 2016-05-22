@@ -1,0 +1,27 @@
+#Lukas Teles
+#Switch case
+
+*Q
+Organize o algoritmo para que leia dois números e escolha a operação de soma ou subtração e imprima o resultado.
+*F
+
+*B
+1_}
+2_print(c); break;
+3_case '+':
+4_case '-':
+5_int a, b, c; char operacao;
+6_input(a); input(b); input(operacao);
+7_switch (operacao){
+8_c = a - b;
+9_c = a + b;
+10_print(c); break;
+*F
+
+*R
+5-6-7-3-9-2-4-8-10-1 | 5-6-7-3-9-10-4-8-2-1 | 5-6-7-4-8-2-3-9-10-1 | 5-6-7-4-8-10-3-9-2-1
+*F
+
+*I
+1_3
+*F

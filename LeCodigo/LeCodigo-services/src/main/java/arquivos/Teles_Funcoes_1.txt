@@ -1,0 +1,25 @@
+#Lukas Teles
+#Funcoes
+
+*Q
+Construa uma função que retorne o elemento da posição N na sequência de fibonacci
+*F
+
+*B
+1_}
+2_if(n == 0){
+3_} else if(n == 1){
+4_fibonacci(int n){
+5_return 0;
+6_return 1;
+7_return  fibonacci(n-1) + fibonacci(n-2);
+8_}
+*F
+
+*R
+4-2-5-3-6-1-7-8 | 4-2-5-3-6-8-7-1
+*F
+
+*I
+3_3
+*F

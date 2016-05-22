@@ -1,0 +1,26 @@
+#Lukas Teles
+#While
+
+*Q
+Organize o algoritmo para que a palavra "Hello Word!" seja escrita 5 vezes
+*F
+
+*B
+1_}
+2_while(x < 10){
+3_while(x < 5){
+4_while(x > 10){
+5_while(x <= 11){
+6_while(x <= 5){
+7_print("Hello Word!");
+8_x = x + 2;
+9_int x = 1; 
+*F
+
+*R
+9-2-7-8-1 | 9-2-8-7-1
+*F
+
+*I
+2_2
+*F

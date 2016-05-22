@@ -1,0 +1,22 @@
+#Lukas Teles
+#Troca de variáveis
+
+*Q
+As variáveis a seguir tem os seguintes valores X = 2 e Y = 5. Organize o algoritmos para trocar o valor dessas variveis imprimindo "x = 5 - y = 2"
+*F
+
+*B
+1_print("x = "+x+"- y = "+y);
+2_int x = 2; y = 5;
+3_x = y - x;
+4_y = y - x;
+5_y = x + y;
+*F
+
+*R
+2-5-3-4-1
+*F
+
+*I
+3_1
+*F

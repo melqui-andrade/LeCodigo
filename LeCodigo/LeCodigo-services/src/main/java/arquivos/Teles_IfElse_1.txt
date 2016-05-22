@@ -1,29 +1,25 @@
-#**************************************Título da questão*********************************************************
-*Q
-Para doar sangue é necessário ter entre 18 e 67 anos. Faça um código que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não.
-*F
-#***************************Esse *F serve para finalizar o conteúdo do título*************************************
+#Lukas Teles
+#if else
 
-#**************************Os blocos*******************
+*Q
+Para doar sangue Ã© necessÃ¡rio ter entre 18 e 67 anos. FaÃ§a um cÃ³digo que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou nÃ£o.
+*F
+
 *B
 1_input(idade);
 2_}
-3_print("Você pode doar sangue");
-4_print("Você não pode doar sangue");
+3_print("VocÃª pode doar sangue");
+4_print("VocÃª nÃ£o pode doar sangue");
 5_if( (idade >= 18) && (idade <=67)){
 6_else{
 7_int idade;
+8_}
 *F
-#********************Fim dos blocos********************
 
-#********************Resposta***********************
 *R
-7-1-5-3-2-6-4-2
+7-1-5-3-2-6-4-8 | 7-1-5-3-8-6-4-2
 *F
-#******************Fim da resposta******************
 
-#******************Informações da questão: (Ex: Fase_etapa)**
 *I
 1_2
 *F
-#******************Fim das informações**************

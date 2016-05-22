@@ -1,0 +1,27 @@
+#Lukas Teles
+#switch case
+
+*Q
+Faça com que o código leia um número de 1 à 3, e escreva este número por extenso.
+*F
+
+*B
+1_}
+2_case 3:
+3_print("dois");break;
+4_int n;
+5_case 1:
+6_input(n);
+7_print("três");break;
+8_print("um");break;
+9_case 2:
+10_witch(n){
+*F
+
+*R
+4-6-10-5-8-9-3-2-7-1 | 4-6-10-5-8-2-7-9-3-1 | 4-6-10-9-3-5-8-2-7-1 | 4-6-10-9-3-2-7-5-8-1 | 4-6-10-2-7-5-8-9-3-1 | 4-6-10-2-7-9-3-5-8-1
+*F
+
+*I
+1_3
+*F

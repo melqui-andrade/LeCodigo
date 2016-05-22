@@ -1,0 +1,26 @@
+#Lukas Teles
+# Do While
+
+*Q
+Organize o algoritmo para que a palavra "GO HORSE!" seja escrita 4 vezes
+*F
+
+*B
+1_int x = 50;
+2_int y = 8;
+3_x--;
+4_y++;
+5_}while(y <10);
+6_}while( x > 48);
+7_print("GO HORSE!");
+8_do{
+9_do{
+*F
+
+*R
+1-8-2-9-7-4-5-3-6 | 2-8-1-9-7-3-6-4-5 | 1-8-2-9-4-7-5-3-6 | 2-8-1-9-3-7-6-4-5 | 1-9-2-8-7-4-5-3-6 | 2-9-1-8-7-3-6-4-5 | 1-9-2-8-4-7-5-3-6 | 2-9-1-8-3-7-6-4-5
+*F
+
+*I
+2_3
+*F

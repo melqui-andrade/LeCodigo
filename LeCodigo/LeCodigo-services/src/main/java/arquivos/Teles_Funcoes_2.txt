@@ -1,0 +1,23 @@
+#Lukas Teles
+#Funcao
+
+*Q
+Monte uma função que receba um número inteiro e caso esse número seja negativo retorne true e caso não seja retorne false.
+*F
+
+*B
+1_boolean ehNegativo(int numero){
+2_if(numero < 0){
+3_return true;
+4_}
+5_return false;
+6_}
+*F
+
+*R
+1-2-3-4-5-6 | 1-2-3-6-5-4
+*F
+
+*I
+3_2
+*F

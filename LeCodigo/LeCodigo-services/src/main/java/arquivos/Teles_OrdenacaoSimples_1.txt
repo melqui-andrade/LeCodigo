@@ -1,0 +1,29 @@
+#Lukas Teles
+#Ordenacao Simples
+
+*Q
+Crie um algoritmo para ordenar uma lista de tamanho n qualquer por seleção (v[] é um array com números aleatórios, com tamanho definido pela variável n)
+*F
+
+*B
+1_}
+2_aux = v[i];
+3_v[min] = aux;
+4_v[i] = v[min];
+5_min = i;
+6_min = j;
+7_for (i = 0; i < n-1; i++) {
+8_for (j = i+1; j < n; j++){
+9_if (v[j] < v[min]){
+10_int i, j, min, x, v[], n;
+11_}
+12_}
+*F
+
+*R
+10-7-5-8-9-6-1-11-2-4-3-12 | 10-7-5-8-9-6-1-12-2-4-3-11 | 10-7-5-8-9-6-11-1-2-4-3-12 | 10-7-5-8-9-6-11-12-2-4-3-1 | 10-7-5-8-9-6-12-1-2-4-3-11 | 10-7-5-8-9-6-12-11-2-4-3-1
+*F
+
+*I
+3_2
+*F

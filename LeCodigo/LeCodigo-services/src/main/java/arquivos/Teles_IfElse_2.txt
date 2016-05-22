@@ -1,0 +1,26 @@
+#Lukas Teles
+#if else
+
+*Q
+Um campeonato de vôlei têm 3 categorias infantil: de 10 à 14 anos, juvenil:  15 à 17 anos e adulto: 18 à 25 anos. Faça um programa que receba a idade de uma pessoa e mostre na saída em qual categoria ela se encontra.
+*F
+
+*B
+1_print("Infantil");
+2_print("Juvenil");
+3_print("Adulto");
+4_}
+5_} else if (idade >=15 && idade <=17){
+6_} else if (idade >=18 && idade <=25){
+7_if (idade >=10 && idade <=14){
+8_input(idade);
+9_int idade;
+*F
+
+*R
+9-8-7-1-5-2-6-3-4 | 9-8-7-1-6-3-5-2-4
+*F
+
+*I
+1_2
+*F
