@@ -56,11 +56,11 @@ public class FaseController {
 		int fase = sessaoBusiness.getFase();
 		int etapa = sessaoBusiness.getEtapa();
 
-		//if(ehNovaPartida){
-			//poularQuestoes(login);
-		//}else{
+		if(ehNovaPartida){
+			popularQuestoesNovas(login);
+		}else{
 			popularQuestoesDaSessao(login);
-		//}
+		}
 
 		faseModel = new FaseModel(fase);
 
@@ -86,31 +86,31 @@ public class FaseController {
 					cont++;
 				}
 			}
-			for (int i = 5; i > etapa; i--) {
-				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, i));
-			}
+//			for (int i = 5; i > etapa; i--) {
+//				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, i));
+//			}
 		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
 			int cont = 0;
 			for (int i = questoes.size()-1; i >= 0; i--) {
-				if(questoes.get(i).getFase()==1 && cont<etapa){
+				if(questoes.get(i).getFase()==2 && cont<etapa){
 					listaQuestoesFase2.add(questoes.get(i));
 					cont++;
 				}
 			}
-			for (int i = 5; i > etapa; i--) {
-				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, i));
-			}
+//			for (int i = 5; i > etapa; i--) {
+//				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, i));
+//			}
 		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
 			int cont = 0;
 			for (int i = questoes.size()-1; i >= 0; i--) {
-				if(questoes.get(i).getFase()==1 && cont<etapa){
+				if(questoes.get(i).getFase()==3 && cont<etapa){
 					listaQuestoesFase3.add(questoes.get(i));
 					cont++;
 				}
 			}
-			for (int i = 5; i > etapa; i--) {
-				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
-			}
+//			for (int i = 5; i > etapa; i--) {
+//				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
+//			}
 		}
 		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
 		System.out.println(listaQuestoesFase2);
@@ -121,22 +121,23 @@ public class FaseController {
 		String r = "";
 		
 		for (Questao questao : list) {
+			if(questao!=null)
 			r+=questao.getDescricao()+"\n\n";
 		}
 		return r;
 	}
 
-	/*private void poularQuestoes(String login) {
+	private void popularQuestoesNovas(String login) {
 		int fase = sessaoBusiness.getFase();
-		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
+		if (fase == 1) {
 			for (int i = 1; i <= 5; i++) {
 				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
-		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
+		} else if (fase == 2) {
 			for (int i = 1; i <= 5; i++) {
 				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
-		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
+		} else if (fase == 3) {
 			for (int i = 1; i <= 5; i++) {
 				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
@@ -145,7 +146,7 @@ public class FaseController {
 		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
 		System.out.println(listaQuestoesFase2);
 		System.out.println(listaQuestoesFase3);
-	}*/
+	}
 
 	// id é etapa
 	@RequestMapping(value = "/fase/questao.html", method = RequestMethod.GET)
@@ -222,7 +223,13 @@ public class FaseController {
 			if(listaQuestoesFase1.size() < etapa){
 				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, etapa));
 			}
-			questao = listaQuestoesFase1.get(etapa - 1);
+			if(ehNovaPartida){
+				questao = listaQuestoesFase1.get(etapa - 1);
+			}else{
+				int a = Math.abs(listaQuestoesFase1.size() - etapa);
+				questao = listaQuestoesFase1.get(listaQuestoesFase1.size() - a -1);
+			}
+				
 		} else if (fase == 2) {
 			if(listaQuestoesFase2.size() < etapa){
 				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, etapa));
@@ -246,8 +253,10 @@ public class FaseController {
 		idJogador = sessaoBusiness.getJogador().getId();
 		
 		if(partidaBusiness.ahPartidaPendente(idJogador)){
+			ehNovaPartida = false;
 			partidaBusiness.continuarPartida(login, idJogador);
 		}else{
+			ehNovaPartida = true;
 			partidaBusiness.iniciarPartida(login, idJogador);
 		}
 		
