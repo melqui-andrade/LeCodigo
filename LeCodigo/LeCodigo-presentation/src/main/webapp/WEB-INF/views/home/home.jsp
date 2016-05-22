@@ -31,16 +31,16 @@ body {
 				<div class="col-md-4">&nbsp;</div>
 				<div class="col-md-4" style="background-color: #eee; padding: 2%;">
 					<a href="/LeCodigo-presentation/home/login.html"
-						data-original-title="Clique neste botão e irá iniciar o jogo"
+						data-original-title="Realizar login"
 						type="button" class="btn btn-info btn-block btn-lg"
 						data-toggle="tooltip" data-placement="left" title=""><span>Login</span></a>
 					<br> <a href="/LeCodigo-presentation/home/instrucoes.html"
-						data-original-title="Clique neste botão e irá visualizar as instruções do jogo"
+						data-original-title="Visualizar as instruções do jogo"
 						type="button" class="btn btn-info  btn-block btn-lg"
 						data-toggle="tooltip" data-placement="left" title=""><span>Instruções</span></a>
 
 					<br> <a href="/LeCodigo-presentation/home/ranking.html"
-						data-original-title="Clique neste botão e irá visualizar o Ranking do jogo"
+						data-original-title="Visualizar o Ranking do jogo"
 						type="button" class="btn btn-info  btn-block btn-lg"
 						data-toggle="tooltip" data-placement="left" title=""><span>Ranking</span></a>
 					<br>

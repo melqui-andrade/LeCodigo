@@ -16,6 +16,8 @@ body {
 	background-size: cover;
 }
 </style>
+
+
 <html>
 <body>
 	<div class="col-md-12 container ">
@@ -122,6 +124,10 @@ body {
 			</div>
 		</div>
 	</div>
+	
+	
+	
+	
 </body>
 
 </html>

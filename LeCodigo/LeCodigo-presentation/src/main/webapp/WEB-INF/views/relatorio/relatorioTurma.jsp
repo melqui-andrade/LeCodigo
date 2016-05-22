@@ -32,99 +32,92 @@ body {
 						style="text-align: left;" data-placement="left" title="">Voltar</a>
 					<br>
 				</div>
-				<br> <br>
-				<div class="panel panel-default none">
-					<!-- Default panel contents -->
-					<div class="panel-heading"></div>
+			</div>
 
-					<div class="progress" style="margin-top: 2%;">
-						<div class="progress-bar progress-bar-success" style="width: ${certo}%">
-							<span class="sr-only">certo</span>
-						</div>
-						<div class="progress-bar progress-bar-warning progress-bar-striped"
-							style="width: ${erro}%">
-							<span class="sr-only">erro</span>
-						</div>
-						<div class="progress-bar progress-bar-warning" style="width: ${pulo}%">
-							<span class="sr-only">pulo</span>
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<div class="panel">
+						<div class="panel-heading"
+							style="background: #FAE6B3; color: #34495E;">Relação
+							Acertos, Erros e Pulos das questões</div>
+						<div class="panel-body" style="border-color: #fff;">
+
+							<div class="col-md-4">&nbsp;</div>
+							<div class="col-md-4">
+								<canvas id="chartHistorico" width="100" height="100"></canvas>
+							</div>
+							<div class="col-md-4">&nbsp;</div>
+
 						</div>
 					</div>
-		<p>Legenda</p>
-		<span class="label label-success">Correto</span>
-		<span class="label label-warning">Erradas</span>
-		<span class="label label-danger">Pulou</span>
-		<br>
-		<br>
-					<!-- Default panel contents -->
-					<div class="panel-heading"></div>
-
-					<!-- Table FASE 1 -->
-					<table class="table">
-						<thead>
-							<tr>
-								<th class="col-md-1">FASE</th>
-								<th class="col-md-4">Correto</th>
-								<th class="col-md-4">Erradas</th>
-								<th class="col-md-4">Pulou</th>
-							</tr>
-
-						</thead>
-						<tbody>
-							<tr>
-								<td class="col-md-1">1</td>
-								<td class="col-md-4">${questoesCertasF1 }</td>
-								<td class="col-md-4">${questoesErradasF1 }</td>
-								<td class="col-md-4">${questoesPulouF1 }</td>
-							</tr>
-							<tr>
-								<td class="col-md-1">2</td>
-								<td class="col-md-4">${questoesCertasF2 }</td>
-								<td class="col-md-4">${questoesErradasF2 }</td>
-								<td class="col-md-4">${questoesPulouF2 }</td>
-							</tr>
-							<tr>
-								<td class="col-md-1">3</td>
-								<td class="col-md-4">${questoesCertasF3 }</td>
-								<td class="col-md-4">${questoesErradasF3 }</td>
-								<td class="col-md-4">${questoesPulouF3 }</td>
-							</tr>
-						</tbody>
-
-					</table>
-					<br>
-					<br>
-					<!-- Table -->
-					<table class="table">
-						<thead>
-							<tr>
-								<th class="col-md-1">Id</th>
-								<th class="col-md-6">Questão</th>
-								<th class="col-md-2">Assunto</th>
-								<th class="col-md-1">Correto</th>
-								<th class="col-md-1">Erradas</th>
-								<th class="col-md-1">Pulou</th>
-							</tr>
-
-						</thead>
-						<c:forEach items="${lstQuestao }" var="questao">
-							<tbody>
-								<tr>
-									<td class="col-md-1">${questao.id }</td>
-									<td class="col-md-6">${questao.descricao }</td>
-									<td class="col-md-2">${questao.tipo_questao}</td>
-									<td class="col-md-1">0</td>
-									<td class="col-md-1">0</td>
-									<td class="col-md-1">0</td>
-								</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+				</div>
+				<div class="col-md-4">
+					<div class="panel">
+						<div class="panel-heading"
+							style="background: #FAE6B3; color: #34495E;">Fase 1<br>
+							Acertos, Erros e Pulos das questões</div>
+						<div class="panel-body" style="border-color: #fff;">
+							<canvas id="chartFase1" width="100" height="100"></canvas>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="panel">
+						<div class="panel-heading"
+							style="background: #FAE6B3; color: #34495E;">Fase 2<br>
+							Acertos, Erros e Pulos das questões</div>
+						<div class="panel-body" style="border-color: #fff;">
+							<canvas id="chartFase2" width="100" height="100"></canvas>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="panel">
+						<div class="panel-heading"
+							style="background: #FAE6B3; color: #34495E;">Fase 3<br>
+							Acertos, Erros e Pulos das questões</div>
+						<div class="panel-body" style="border-color: #fff;">
+							<canvas id="chartFase3" width="100" height="100"></canvas>
+						</div>
+					</div>
 				</div>
 
 			</div>
 
+
 		</div>
 	</div>
+
+
+	<script src="../js/jogo/relatorio.js"></script>
+
+	<script language="javascript">
+		var acertos = '${certo}';
+		var erros = '${erro}';
+		var pulos = '${pulo}';
+		
+		var acertosF1 = '${questoesCertasF1}';
+		var errosF1 = '${questoesErradasF1}';
+		var pulosF1 = '${questoesPulouF1}';
+		
+		var acertosF2 = '${questoesCertasF2}';
+		var errosF2 = '${questoesErradasF2}';
+		var pulosF2 = '${questoesPulouF2}';
+		
+		var acertosF3 = '${questoesCertasF3}';
+		var errosF3 = '${questoesErradasF3}';
+		var pulosF3 = '${questoesPulouF3}';
+		
+		
+		
+		carregaVariaveisHistoricoGeral(acertos, erros, pulos);
+		carregaVariaveisHistoricoF1(acertosF1, errosF1, pulosF1);
+		carregaVariaveisHistoricoF2(acertosF2, errosF2, pulosF2);
+		carregaVariaveisHistoricoF3(acertosF3, errosF3, pulosF3);
+	</script>
+
 </body>
 
 </html>

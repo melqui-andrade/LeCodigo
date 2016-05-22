@@ -17,9 +17,10 @@ body {
 	background-size: cover;
 }
 
-h4{
+h4 {
 	color: #444;
 }
+
 .panel-fase {
 	background: url("../images/background/background.png") no-repeat center
 		top fixed;
@@ -41,11 +42,10 @@ h4{
 			<br>
 			<div class="row">
 				<div class="col-md-2">
-
 					<a href="/LeCodigo-presentation/home/home.html"
-						data-original-title="Clique neste botão e irá iniciar o jogo"
+						data-original-title="Voltar para página incial"
 						type="button" class="btn btn-primary btn-block "
-						data-toggle="tooltip" data-placement="left" title=""><span>Voltar</span></a>
+						data-toggle="tooltip" data-placement="bottom" title=""><span>Voltar</span></a>
 				</div>
 			</div>
 			<br>
@@ -100,7 +100,7 @@ h4{
 
 
 			<hr />
-
+<h3 style="color: #fff;"> Tela - Fase </h3>
 			<div class="panel-fase">
 				<div class="panel-body" style="border-color: #fff;">
 
@@ -152,8 +152,9 @@ h4{
 							<div class="col-md-6 container ">
 								<div class="timeline" id="page-top">
 									<dl>
-										<dd class="pos-left clearfix" data-original-title="Etapa atual a ser respondida"
-										data-toggle="tooltip" data-placement="left" title="">
+										<dd class="pos-left clearfix"
+											data-original-title="Etapa atual a ser respondida"
+											data-toggle="tooltip" data-placement="left" title="">
 											<div class="circ "></div>
 											<div class="time" style="color: #fff;"></div>
 											<div class="events">
@@ -163,17 +164,17 @@ h4{
 												</div>
 												<div class="events-body">
 													<h4 class="events-heading">Etapa 2</h4>
-													<p>${ enumQuestao }</p>
-													<a href="questao.html" class="btn btn-primary btn-block">
-														<i class="fa fa-share" > </i>
-														Responder
-													</a>
+													<p></p>
+													<button class="btn btn-primary btn-block"> <i
+														class="fa fa-share"> </i> Responder
+													</button>
 													<hr>
 												</div>
 											</div>
 										</dd>
-										<dd class="pos-right clearfix" data-original-title="fase completada com sucesso"
-										data-toggle="tooltip" data-placement="left" title="">
+										<dd class="pos-right clearfix"
+											data-original-title="Fase completada com sucesso"
+											data-toggle="tooltip" data-placement="right" title="">
 											<div class="circ "></div>
 											<div class="time" style="color: #fff;"></div>
 											<div class="events">
@@ -209,6 +210,7 @@ h4{
 
 
 			<hr />
+			<h3 style="color: #fff;"> Tela - Questão </h3>
 			<div class=""
 				style="border-style: solid; border: 2px; border-color: #fff">
 				<div class="panel-body" style="border-color: #fff;">
@@ -276,12 +278,9 @@ h4{
 											Use as linhas de códigos abaixo para montar o algoritmo para
 											a resposta. <br>
 											<div id="blocosOpcoes" class="panel-body-opcoes">
-												<a id="${bloco.id_bloco}" class="list-group-item "
-													onclick="adicionarOpcaoSelecionada(${bloco.id_bloco},'${bloco.descricao}',${bloco.id})">
-													opção1 </a> <a id="${bloco.id_bloco}" class="list-group-item "
-													onclick="adicionarOpcaoSelecionada(${bloco.id_bloco},'${bloco.descricao}',${bloco.id})">
-													opção2 </a> <a id="${bloco.id_bloco}" class="list-group-item "
-													onclick="adicionarOpcaoSelecionada(${bloco.id_bloco},'${bloco.descricao}',${bloco.id})">
+												<a id="${bloco.id_bloco}" class="list-group-item ">
+													opção1 </a> <a id="${bloco.id_bloco}" class="list-group-item ">
+													opção2 </a> <a id="${bloco.id_bloco}" class="list-group-item ">
 													opção3 </a>
 											</div>
 											<br>
