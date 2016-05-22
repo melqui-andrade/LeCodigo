@@ -80,6 +80,7 @@ public class QuestaoBusiness {
 			sessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
 			Questao questao = questoes.get(numQuestao);
 			Collections.shuffle(questao.getBlocos());
+			System.out.println(questao.getDescricao());
 			return questao;
 		}
 		return null;
@@ -94,6 +95,7 @@ public class QuestaoBusiness {
 			if(possiveisRespostas[i].trim().equals(resposta)){
 				sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
 				sessao.setPontuacao(sessao.getPontuacao()+sessao.getValorDaQuestao());
+				new PartidaBusiness().avancarEtapa(login);
 				sessao.atualizarPartidaDoJogador(idQuestao, resposta);
 				return true;
 			}

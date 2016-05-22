@@ -1,12 +1,16 @@
 package com.br.uepb.business;
 
+
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import org.springframework.stereotype.Component;
 
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Partida;
+import com.br.uepb.domain.Questao;
 
 @Component
 public class PartidaBusiness {
@@ -22,6 +26,9 @@ public class PartidaBusiness {
 		sessaoBusiness.setBits(0);
 		sessaoBusiness.setValorDaQuestao(3);
 		sessaoBusiness.iniciarPartidaDoJogador(id_jogador);
+		sessaoBusiness.setVidas(3);
+		sessaoBusiness.getQuestoesQueSairam().clear();
+		
 		
 	}
 	
@@ -34,6 +41,11 @@ public class PartidaBusiness {
 			sessaoBusiness.setVidas(partida.getVidas());
 			sessaoBusiness.setValorDaQuestao(partida.getValorDaQuestao());
 			sessaoBusiness.setQuestoesQueSairam(partida.getQuestoesQueSairam());
+			sessaoBusiness.setEtapa(partida.getEtapa());
+			sessaoBusiness.setFase(partida.getFase());
+			int index = partida.getRespostas_aluno().size();
+			if(index>0)
+				sessaoBusiness.setRespostaDoAluno(partida.getRespostas_aluno().get(index-1));
 		}
 	}
 	
