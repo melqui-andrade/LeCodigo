@@ -56,11 +56,11 @@ public class FaseController {
 		int fase = sessaoBusiness.getFase();
 		int etapa = sessaoBusiness.getEtapa();
 
-		if(ehNovaPartida){
+		//if(ehNovaPartida){
 			//poularQuestoes(login);
-		}else{
+		//}else{
 			popularQuestoesDaSessao(login);
-		}
+		//}
 
 		faseModel = new FaseModel(fase);
 
@@ -77,17 +77,39 @@ public class FaseController {
 	private void popularQuestoesDaSessao(String login) {
 		int fase = sessaoBusiness.getFase();
 		int etapa = sessaoBusiness.getEtapa();
+		List<Questao> questoes = GerenciarSessaoBusiness.getSessaoBusiness(login).getQuestoesQueSairam();
 		if (fase == 1 && listaQuestoesFase1.isEmpty()) {
-			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase1.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
+			int cont = 0;
+			for (int i = questoes.size()-1; i >= 0; i--) {
+				if(questoes.get(i).getFase()==1 && cont<etapa){
+					listaQuestoesFase1.add(questoes.get(i));
+					cont++;
+				}
+			}
+			for (int i = 5; i > etapa; i--) {
+				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		} else if (fase == 2 && listaQuestoesFase2.isEmpty()) {
-			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase2.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
+			int cont = 0;
+			for (int i = questoes.size()-1; i >= 0; i--) {
+				if(questoes.get(i).getFase()==1 && cont<etapa){
+					listaQuestoesFase2.add(questoes.get(i));
+					cont++;
+				}
+			}
+			for (int i = 5; i > etapa; i--) {
+				listaQuestoesFase2.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		} else if (fase == 3 && listaQuestoesFase3.isEmpty()) {
-			for (int i = 5; i >= etapa; i--) {
-				listaQuestoesFase3.add(i-1, questaoBusiness.buscarQuestao(login, fase, i));
+			int cont = 0;
+			for (int i = questoes.size()-1; i >= 0; i--) {
+				if(questoes.get(i).getFase()==1 && cont<etapa){
+					listaQuestoesFase3.add(questoes.get(i));
+					cont++;
+				}
+			}
+			for (int i = 5; i > etapa; i--) {
+				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		}
 		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
@@ -156,7 +178,7 @@ public class FaseController {
 				}else{
 					status_resposta = questaoBusiness.verificarResposta(login, resposta, questao.getId());
 					if(status_resposta){
-						partidaBusiness.avancarEtapa(login);
+						//partidaBusiness.avancarEtapa(login);
 						if(sessaoBusiness.getFase() > fase){
 							passouFase = true;
 						}
@@ -224,7 +246,7 @@ public class FaseController {
 		idJogador = sessaoBusiness.getJogador().getId();
 		
 		if(partidaBusiness.ahPartidaPendente(idJogador)){
-			partidaBusiness.iniciarPartida(login, idJogador);
+			partidaBusiness.continuarPartida(login, idJogador);
 		}else{
 			partidaBusiness.iniciarPartida(login, idJogador);
 		}

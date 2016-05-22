@@ -95,6 +95,7 @@ public class QuestaoBusiness {
 			if(possiveisRespostas[i].trim().equals(resposta)){
 				sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
 				sessao.setPontuacao(sessao.getPontuacao()+sessao.getValorDaQuestao());
+				new PartidaBusiness().avancarEtapa(login);
 				sessao.atualizarPartidaDoJogador(idQuestao, resposta);
 				return true;
 			}

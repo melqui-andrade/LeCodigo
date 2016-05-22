@@ -3,6 +3,7 @@ package com.br.uepb.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,13 +26,13 @@ public class Partida {
 	private int pontuacao;
 	private boolean partidaEncerrada;
 	//*************************//
-	private int fase;
-	private int etapa;
-	private int bits;
-	private int valorDaQuestao;
-	private int vidas;
+	private int fase = 1;
+	private int etapa = 1;
+	private int bits = 0;
+	private int valorDaQuestao = 3;
+	private int vidas = 3;
 	
-	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany (mappedBy="id", cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch=FetchType.EAGER)
 	private List<Questao> questoesQueSairam;
 
 	public Partida() {

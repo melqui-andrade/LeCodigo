@@ -114,6 +114,16 @@ public class SessaoBusiness {
 	public void setJogador(Jogador novoJogador){
 		jogador = novoJogador;
 	}
+	
+	
+
+	public RespostaDoAluno getRespostaDoAluno() {
+		return respostaDoAluno;
+	}
+
+	public void setRespostaDoAluno(RespostaDoAluno respostaDoAluno) {
+		this.respostaDoAluno = respostaDoAluno;
+	}
 
 	public List<Questao> getQuestoesQueSairam() {
 		if(questoesQueSairam==null){
@@ -156,6 +166,8 @@ public class SessaoBusiness {
 		partida.setVidas(vidas);
 		partida.setValorDaQuestao(valorDaQuestao);
 		partida.setQuestoesQueSairam(questoesQueSairam);
+		int index = jogador.getPartidas().size()-1;
+		jogador.getPartidas().set(index, partida);
 		jogadorDAO.atualizarJogador(jogador);
 		
 		
@@ -172,6 +184,7 @@ public class SessaoBusiness {
 		this.partida.setRespostas_aluno(new ArrayList<RespostaDoAluno>());
 		this.jogador.getPartidas().add(this.partida);
 		this.respostaDoAluno = new RespostaDoAluno();
+		this.partida.getRespostas_aluno().add(this.respostaDoAluno);
 		//Adiciona a partida no banco de dados
 		jogadorDAO.atualizarJogador(jogador);
 	}
