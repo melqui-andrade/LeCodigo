@@ -149,36 +149,36 @@ public class RelatorioJogadorBusiness {
 
 	public void estatisticaTipoQuestao(int arg) throws NumberFormatException, Exception {
 		List<String> lista = QuestaoDAO.getInstance().view(arg, "tipo_questao");
+
 		qtdRespostaCorreta = 0;
 		qtdRespostaErrada = 0;
 		qtdRespostaPulou = 0;
 
 		for (String string : lista) {
-			StringTokenizer toke = new StringTokenizer(string, "*");
+			StringTokenizer toke = new StringTokenizer(string, "@");			 		
+				
+			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno			
+			if (respostaDoAluno.contains("pulou")) qtdRespostaPulou++;
+			toke.nextToken(); // id_questao
+			toke.nextToken(); // id
+			toke.nextToken(); // fase
+			String gabarito = toke.nextToken(); // Resposta
+			toke.nextToken(); // tipo_questao
 
-			String respostaDoAluno = toke.nextToken().trim();
-			if (respostaDoAluno.contains("pulou")) {
-				qtdRespostaPulou++;
-			}
-			toke.nextToken();
-			toke.nextToken();
-			toke.nextToken();
-			String resposta = toke.nextToken();
-			toke.nextToken();
-
-			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, " | ");
-			while (respostaToke.hasMoreElements()) {
-				if (respostaToke.hasMoreTokens()) {
-					String aux = respostaToke.nextToken().trim();
-					if (aux.equals(resposta)) {
-						qtdRespostaCorreta++;
-					} else {
-						qtdRespostaErrada++;
-					}
+			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
+			System.out.println("Gabarito: " + respostaToke.countTokens());
+		
+			while (respostaToke.hasMoreTokens()) {
+				String res = respostaToke.nextElement().toString();				
+				System.out.print(gabarito+"\t\t"+res.trim());
+				if (gabarito.trim().contains(res.trim())) {
+					qtdRespostaCorreta++; System.out.println(" OK");					
+				} else {
+					qtdRespostaErrada++; System.out.println(" X");
 				}
+				
 			}
 		}
-		qtdRespostaErrada -= qtdRespostaPulou;
 	}
 
 	public String getLogin() {
