@@ -55,6 +55,9 @@ public class PartidaBusiness {
 		if(qtdPartidas == 0)
 			return false;
 		this.partida = jogador.getPartidas().get(qtdPartidas-1);
+		if(this.partida.getVidas()<=0){
+			return false;
+		}
 		return !this.partida.isPartidaEncerrada();
 	}
 	
@@ -104,4 +107,10 @@ public class PartidaBusiness {
 	public List<Jogador> visualizarRanking(){
 		return JogadorDAO.getInstance().rankingJogadores();		
 	}
+
+	public Partida getPartida() {
+		return partida;
+	}
+	
+	
 }

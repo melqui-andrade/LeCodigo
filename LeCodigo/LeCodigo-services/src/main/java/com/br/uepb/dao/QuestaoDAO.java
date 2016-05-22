@@ -43,7 +43,7 @@ public class QuestaoDAO {
 			session.flush();
 			tx.commit();
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 		// session.flush();
 		session.close();

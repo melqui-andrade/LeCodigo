@@ -32,7 +32,7 @@ public class Partida {
 	private int valorDaQuestao = 3;
 	private int vidas = 3;
 	
-	@OneToMany (mappedBy="id", cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch=FetchType.EAGER)
+	@OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch=FetchType.EAGER)
 	private List<Questao> questoesQueSairam;
 
 	public Partida() {
