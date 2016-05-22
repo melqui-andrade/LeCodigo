@@ -26,6 +26,10 @@ public class RelatorioJogadorBusiness {
 	QuestaoDAO questaoDAO = QuestaoDAO.getInstance();
 	JogadorDAO jogadorDAO = JogadorDAO.getInstance();
 
+	public RelatorioJogadorBusiness() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public RelatorioJogadorBusiness(String login) {
 		this.login = login;
 		this.jogador = jogadorDAO.buscarJogador(login);

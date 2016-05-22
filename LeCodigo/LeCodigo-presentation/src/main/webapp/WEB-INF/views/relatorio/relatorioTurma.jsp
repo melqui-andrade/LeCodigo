@@ -32,12 +32,67 @@ body {
 						style="text-align: left;" data-placement="left" title="">Voltar</a>
 					<br>
 				</div>
-				<br>
-				<br>
+				<br> <br>
 				<div class="panel panel-default none">
 					<!-- Default panel contents -->
 					<div class="panel-heading"></div>
 
+					<div class="progress" style="margin-top: 2%;">
+						<div class="progress-bar progress-bar-success" style="width: ${certo}%">
+							<span class="sr-only">certo</span>
+						</div>
+						<div class="progress-bar progress-bar-warning progress-bar-striped"
+							style="width: ${erro}%">
+							<span class="sr-only">erro</span>
+						</div>
+						<div class="progress-bar progress-bar-warning" style="width: ${pulo}%">
+							<span class="sr-only">pulo</span>
+						</div>
+					</div>
+		<p>Legenda</p>
+		<span class="label label-success">Correto</span>
+		<span class="label label-warning">Erradas</span>
+		<span class="label label-danger">Pulou</span>
+		<br>
+		<br>
+					<!-- Default panel contents -->
+					<div class="panel-heading"></div>
+
+					<!-- Table FASE 1 -->
+					<table class="table">
+						<thead>
+							<tr>
+								<th class="col-md-1">FASE</th>
+								<th class="col-md-4">Correto</th>
+								<th class="col-md-4">Erradas</th>
+								<th class="col-md-4">Pulou</th>
+							</tr>
+
+						</thead>
+						<tbody>
+							<tr>
+								<td class="col-md-1">1</td>
+								<td class="col-md-4">${questoesCertasF1 }</td>
+								<td class="col-md-4">${questoesErradasF1 }</td>
+								<td class="col-md-4">${questoesPulouF1 }</td>
+							</tr>
+							<tr>
+								<td class="col-md-1">2</td>
+								<td class="col-md-4">${questoesCertasF2 }</td>
+								<td class="col-md-4">${questoesErradasF2 }</td>
+								<td class="col-md-4">${questoesPulouF2 }</td>
+							</tr>
+							<tr>
+								<td class="col-md-1">3</td>
+								<td class="col-md-4">${questoesCertasF3 }</td>
+								<td class="col-md-4">${questoesErradasF3 }</td>
+								<td class="col-md-4">${questoesPulouF3 }</td>
+							</tr>
+						</tbody>
+
+					</table>
+					<br>
+					<br>
 					<!-- Table -->
 					<table class="table">
 						<thead>
