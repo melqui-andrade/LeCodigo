@@ -5,7 +5,7 @@
 <link href="../styles/jogo/fases/questao.css" rel="stylesheet">
 
 <html>
-<body style="background-color: ${fase.colorBackground};" class="teste">
+<body style="background-color: #22214d;" class="teste">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
@@ -103,7 +103,7 @@
 			</div>
 
 			<div class="col-md-2" id="divET">
-				<img src="${fase.imgMonstro}" class="img-responsive" align="middle"
+				<img src="../images/et/et_verde_normal.png" class="img-responsive" align="middle"
 					id="et_" style="float: left;" />
 			</div>
 		</div>
