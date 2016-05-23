@@ -231,8 +231,7 @@ body {
 									</div>
 								</div>
 
-							</div>
-
+							</div>							
 						</div>
 					</div>
 				</div>
@@ -259,6 +258,42 @@ body {
 		var errosF3 = '${questoesErradasF3}';
 		var pulosF3 = '${questoesPulouF3}';
 
+		var acertosTiposVariaveis = '${tiposVariaveisCerto}';
+		var errosTiposVariaveis = '${tiposVariaveisErrado}';
+		var pulosTiposVariaveis = '${tiposVariaveisPulo}';
+		
+		var acertosIF_ELSE = '${ifElseCerto}';
+		var errosIF_ELSE = '${ifElseErrado}';
+		var pulosIF_ELSE = '${ifElsePulo}';
+		
+		var acertosSWITCH = '${switchCerto}';
+		var erroosSWITCH = '${switchErrado}';
+		var pulosSWITCH = '${switchPulo}';
+		
+		var acertosFOR = '${forCerto}';
+		var erroosFOR = '${forErrado}';
+		var pulosFOR = '${forPulo}';
+		
+		var acertosWHILE = '${whileCerto}';
+		var errosWHILE = '${whileErrado}';
+		var pulosWHILE = '${whilePulo}';
+		
+		var acertosDO_WHILE = '${doWhileCerto}';
+		var erroosDO_WHILE = '${doWhileErrado}';
+		var pulosDO_WHILE = '${doWhilePulo}';
+
+		var acertosTROCA_VARIAVEIS = '${troca_variaveisCerto}';
+		var erroosTROCA_VARIAVEIS = '${troca_variaveisErrado}';
+		var pulosTROCA_VARIAVEIS = '${troca_variaveisPulo}';
+
+		var acertosORDENACAO_SIMPLES = '${ordenacaoCerto}';
+		var erroosORDENACAO_SIMPLES = '${ordenacaoErrado}';
+		var pulosORDENACAO_SIMPLES = '${ordenacaoPulo}';
+		
+		var acertosFUNCOES = '${funcoesCerto}';
+		var erroosFUNCOES = '${funcoesErrado}';
+		var pulosFUNCOES = '${funcoesPulo}';
+		
 		carregaVariaveisHistoricoGeral(acertos, erros, pulos);
 		carregaVariaveisHistoricoF1(acertosF1, errosF1, pulosF1);
 		carregaVariaveisHistoricoF2(acertosF2, errosF2, pulosF2);
