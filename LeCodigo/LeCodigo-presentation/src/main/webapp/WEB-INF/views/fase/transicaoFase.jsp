@@ -30,7 +30,7 @@ body {
 		</h4>
 		<div class="col-md-4">
 
-			<img src="${fase.imgMonstro}" class="img-responsive" id="et_"
+			<img src="../images/et/et_verde_normal.png" class="img-responsive" id="et_"
 				style="float: left;" />
 
 		</div>
