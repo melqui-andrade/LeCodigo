@@ -1,11 +1,13 @@
 package com.br.uepb.business;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.dao.PartidaDAO;
+import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Partida;
 import com.br.uepb.domain.Questao;
@@ -20,7 +22,7 @@ public class SessaoBusiness {
 	private int vidas = 3;
 	private int pontuacao = 0;
 	private SessaoBusiness instance;
-	private List<Questao> questoesQueSairam;
+	private String questoesQueSairam = "";
 	private Jogador jogador;
 	private Partida partida;
 	private RespostaDoAluno respostaDoAluno;
@@ -126,21 +128,35 @@ public class SessaoBusiness {
 	}
 
 	public List<Questao> getQuestoesQueSairam() {
-		if(questoesQueSairam==null){
-			questoesQueSairam = new ArrayList<Questao>();
+		if(questoesQueSairam==null || questoesQueSairam.isEmpty()){
+			return new ArrayList<>();
 		}
-		return questoesQueSairam;
+		List<Questao> questoes = new ArrayList<>();
+		String ids[] = questoesQueSairam.split("_");
+		for (int i = 0; i < ids.length; i++) {
+			questoes.add(QuestaoDAO.getInstance().buscarQuestao(Integer.parseInt(ids[i])));
+		}
+		return questoes;
 	}
 	
-	public void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
-		this.questoesQueSairam = questoesQueSairam;
+	public Questao ultimaQuestao(){
+		if(questoesQueSairam==null || questoesQueSairam.isEmpty()){
+			return null;
+		}
+		String ids[] = questoesQueSairam.split("_");
+		String id = ids[ids.length-1];
+		return QuestaoDAO.getInstance().buscarQuestao(Integer.parseInt(id));
 	}
 
 	public void addQuestaoQueSaiu(Questao questaoQueSaiu) {
 		if(questoesQueSairam==null){
-			questoesQueSairam = new ArrayList<Questao>();
+			questoesQueSairam = "";
 		}
-		questoesQueSairam.add(questaoQueSaiu);
+		if(questoesQueSairam.isEmpty()){
+			questoesQueSairam += questaoQueSaiu.getId();
+		}else{
+			questoesQueSairam+="_"+questaoQueSaiu.getId();
+		}
 	}
 	
 	public void atualizarPartidaDoJogador(int id_questao, String resposta){
@@ -168,10 +184,16 @@ public class SessaoBusiness {
 		partida.setQuestoesQueSairam(questoesQueSairam);
 		int index = jogador.getPartidas().size()-1;
 		jogador.getPartidas().set(index, partida);
-		jogadorDAO.atualizarJogador(jogador);
-		
-		
+		jogadorDAO.atualizarJogador(jogador);	
 	}
+	
+	public void salvarQuestoesDaPartida() {
+		partida.setQuestoesQueSairam(questoesQueSairam);
+		int index = jogador.getPartidas().size()-1;
+		jogador.getPartidas().set(index, partida);
+		jogadorDAO.atualizarJogador(jogador);	
+	}
+	
 	public void iniciarPartidaDoJogador(int idJogador){
 		this.jogador = jogadorDAO.buscarJogador(idJogador);
 		//TODO remover essa verificação depois que o cadastro de jogadores tiver feito
@@ -193,7 +215,7 @@ public class SessaoBusiness {
 		partida.setPartidaEncerrada(true);
 		jogadorDAO.atualizarJogador(jogador);
 		this.partida = null;
-		questoesQueSairam.clear();
+		questoesQueSairam = "";
 		
 	}
 	
@@ -203,6 +225,11 @@ public class SessaoBusiness {
 	
 	public void setPartida(Partida partida) {
 		this.partida = partida;
+	}
+
+	public void setQuestoesQueSairam(String questoesQueSairam) {
+		this.questoesQueSairam = questoesQueSairam;
+		
 	}
 
 	/*public void encerraSessao(){

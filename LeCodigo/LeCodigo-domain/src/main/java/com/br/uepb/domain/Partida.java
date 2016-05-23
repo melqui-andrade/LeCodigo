@@ -32,8 +32,8 @@ public class Partida {
 	private int valorDaQuestao = 3;
 	private int vidas = 3;
 	
-	@OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch=FetchType.EAGER)
-	private List<Questao> questoesQueSairam;
+	//@OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch=FetchType.EAGER)
+	private String questoesQueSairam;
 
 	public Partida() {
 		
@@ -128,11 +128,11 @@ public class Partida {
 		this.vidas = vidas;
 	}
 
-	public List<Questao> getQuestoesQueSairam() {
+	public String getQuestoesQueSairam() {
 		return questoesQueSairam;
 	}
 
-	public void setQuestoesQueSairam(List<Questao> questoesQueSairam) {
+	public void setQuestoesQueSairam(String questoesQueSairam) {
 		this.questoesQueSairam = questoesQueSairam;
 	}
 	
