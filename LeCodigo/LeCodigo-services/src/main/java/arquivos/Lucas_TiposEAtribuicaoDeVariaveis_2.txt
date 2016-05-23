@@ -1,0 +1,25 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre Tipos e Atribuição de variáveis
+
+*Q
+A seguir são listados alguns nomes de variáveis. Selecione os blocos cujos nomes são válidos. Note que você deve selecionar os blocos de acordo com a ordem que são apresentados.Obs: Repeite as boas praticas de programação.
+*F
+*B
+1_salário
+2_1ano
+3_media
+4_ _nota
+5_t3e4
+6_xxx
+7_O nome do aluno
+8_Sabão
+9_phone
+10_&rsq
+11_nome_do_aluno
+*F
+*R
+3-4-5-6-9-11
+*F
+*I
+1_1
+*F

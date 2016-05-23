@@ -1,0 +1,20 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre Do While
+
+*Q
+A instução ______ difere dos outros laço porque o teste da condição é realizado no fim do corpo do laço e não antes, como acontecia com os laços _____ e _____. Desta forma o corpo do laço _____ é executado pelo menos uma vez, enquanto nos laços _____ o corpo do laço pode nunca ser executado.
+*F
+*B
+1_while
+2_for
+3_while e for
+4_if
+5_do ... while 
+6_switch
+*F
+*R
+5-1-2-5-3 | 5-2-1-5-3
+*F
+*I
+2_3
+*F

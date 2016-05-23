@@ -1,0 +1,25 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre Ordenação simples
+
+*Q
+"Maria, uma estudante de estatística, recebeu uma lista de números aleatórios. Ela quer saber qual a mediana da lista. Para saber isso ela deverá ordenar os números e depois pegar o elemento do meio. Mas como Maria não quer fazer a ordenação manualmente, ela chamou um amigo de computação. E agora, se fosse você como faria? Ordene a lista com o método de Insertion Sort.<br>Lista: 4 | 6 | 9 | 0 | 3 | 1 | 10 | 2 | 5 | 7 | 8"
+*F
+*B
+1_for (int i = 1; i < lista.length; i++) {
+2_j = i;        
+3_lista[j] = lista[j - 1];
+4_}
+5_}
+6_lista[j] = auxiliar;
+7_int lista[] = { 4, 6, 9, 0, 3, 1, 10, 2, 5, 7, 8};
+8_auxiliar = lista[i];                                
+9_while ((j > 0) && (lista[j - 1] > auxiliar)) {
+10_j = j - 1;                
+11_int j, auxiliar = 0;
+*F
+*R
+7-11-1-8-2-9-3-10-4-6-5 | 7-11-1-8-2-9-3-10-5-6-4
+*F
+*I
+3_3
+*F

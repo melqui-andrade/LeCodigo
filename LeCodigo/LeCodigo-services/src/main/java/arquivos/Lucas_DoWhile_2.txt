@@ -1,0 +1,23 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre Do While
+
+*Q
+Preencha os campos no texto a seguir: Nos dois laços _______, o teste da condição é realizado antes de qualquer instrução, permitindo assim que o laço seja executado ____ . No caso do laço _______, a condição só é testada depois de executada a instrução correspondente pelo menos uma vez.
+*F
+*B
+1_if e else
+2_while e do ... while
+3_for e while
+4_zero ou mais vezes
+5_nenhuma vez
+6_do ... while
+7_while
+8_for
+9_switch
+*F
+*R
+3 - 4 - 6
+*F
+*I
+2_3
+*F

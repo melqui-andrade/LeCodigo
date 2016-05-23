@@ -1,0 +1,29 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre Troca de variáveis
+
+*Q
+O algoritmo a seguir procura o menor e o maior número que estão em uma lista e coloca o menor no inicio da lista e o maior no fim. Os números da lista podem variar de -30 a 30. Para que o algoritmo funcione ordene.
+*F
+*B
+1_A[0] = menor;
+2_}}
+3_n = i;
+4_menor = A[i];
+5_maior = A[i];
+6_int A[] = {-3, 9 ,-20, 20, 10, 0}; 
+7_int m = 0, n = 0, maior = -31, menor = 31;
+8_for (int i = 0; i <= 5; i++) {
+9_}
+10_if(A[i] < menor) {
+11_A[n] = A[0];
+12_A[5] = maior;
+13_A[m] = A[5];
+14_if(A[i] > maior) {
+15_m = i;
+*F
+*R
+6-7-8-14-5-15-9-10-4-3-2-1-11-1-13-12 | 6-7-8-14-5-15-9-10-4-3-2-1-13-12-11-1 | 7-6-8-14-5-15-9-10-4-3-2-1-11-1-13-12 | 7-6-8-14-5-15-9-10-4-3-2-1-13-12-11-1
+*F
+*I
+3_3
+*F

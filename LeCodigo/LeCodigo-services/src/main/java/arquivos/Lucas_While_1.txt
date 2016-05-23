@@ -1,0 +1,24 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre WHILE
+
+*Q
+A instrução ____ executa uma instrução ou bloco de instrução enquanto uma determinada condição for ______. O seu funcionamento se resume aos seguintes passos. (i) A condição é avaliada; (ii) Se o resultado da avaliação for Falso, o laço termina e o programa continua na instrução imediatamente após o _____. (iii) Se o resultado for verdadeiro, é executada a instrução associada ao _____. (iv) Volta-se ao passo ___.
+*F
+*B
+1_for
+2_while
+3_if
+4_falso
+5_verdadeira
+6_switch
+7_(i)
+8_while
+9_(ii)
+10_while
+*F
+*R
+2-5-10-8-7 | 2-5-8-10-7 | 8-5-2-10-7 | 8-5-10-2-7 | 10-5-2-8-7 | 10-5-8-2-7
+*F
+*I
+2_2
+*F

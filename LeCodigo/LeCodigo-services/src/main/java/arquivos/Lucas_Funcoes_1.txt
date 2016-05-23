@@ -1,0 +1,19 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre WHILE
+
+*Q
+Jussara sempre vai ao EUA, todas as vezes ela faz comprinhas. Mas com o dóllar alto ela quer um aplicativo que faça a transformação do dollar para o real. A atual contação do dóllar está valendo 3.50. Crie uma função que faça a transformar.
+*F
+*B
+1_return real;}
+2_int real = dollar / 3.50;  
+3_float transformarDollarReal(float dollar) {  
+4_float real = dollar / 3.50;  
+5_float real;
+*F
+*R
+3-4-1 
+*F
+*I
+3_1
+*F
