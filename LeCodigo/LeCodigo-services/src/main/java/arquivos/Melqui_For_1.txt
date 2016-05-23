@@ -1,0 +1,21 @@
+*Q
+A empresa Space Inc cobra juros de 6% ao mês por atraso no pagamento. Etvaldo deve R$ 100,00 a Space Inc. Escreva um programa que imprima o valor que Etvaldo vai estar devendo a empresa ao fim de cada mês por 8 meses.
+(Utilize a seguinte fórmula para o cálculo de juros: 
+total = valor * ( (1 + juros) ^ meses)
+*F
+*B
+1 - int juros = 5;
+2 - float juros = 0.05;
+3 - float divida = 100;
+4 - for( int mes = 1; mes < 8; mes++){
+5 - for( int mes = 0; mes < 8; mes++){
+6 - for( int mes = 1; mes <= 8; mes++){
+7 - float total = divida * ( (1.0 + juros) ^ mes );
+8 - print(total);}
+*F
+*R
+1-2-3-6-7-8 | 1-3-2-6-7-8 | 2-1-3-6-7-8 | 2-3-1-6-7-8 | 3-1-2-6-7-8 | 3-2-1-6-7-8 | 2-3-6-1-7-8 | 3-2-6-1-7-8 | 1-3-6-2-7-8 | 3-1-6-2-7-8 | 1-2-6-3-7-8 | 2-1-6-3-7-8 | 2-3-6-1-7-8 | 3-2-6-1-7-8 | 1-3-6-2-7-8 | 3-1-6-2-7-8 | 1-3-6-2-7-8 | 3-1-6-2-7-8 | 1-2-6-3-7-8 | 2-1-6-3-7-8 | 2-3-6-1-7-8 | 3-2-6-1-7-8 | 1-3-6-2-7-8 | 3-1-6-2-7-8 | 1-2-6-3-7-8 | 2-1-6-3-7-8
+*F
+*I
+2_4
+*F

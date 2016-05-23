@@ -1,0 +1,22 @@
+*Q
+Escreva um programa que diga se o aluno passou por média ou vai para final na disciplina. O programa deve ler a nota da primeira e segunda unidade, calcular a média e caso a nota seja menor que 7, imprimir a mensagem "vai pra final", caso contrário, imprimir a mensagem "aee passou!"
+Obs1: Formula para calcular a média: média = (nota1 + nota2) / 2
+Obs2: As notas podem ter valores decimais
+*F
+*B
+1 - int nota1, nota2;
+2 - else{
+3 - if((nota1 + nota2) / 2 < 7){
+4 - print("vai pra final");}
+5 - input(nota1);
+6 - float nota1, nota2;
+7 - input(nota2);
+8 - if((nota1 + nota2) / 2 > 7){
+9 - print("aee passou!");}
+*F
+*R
+6-5-7-3-4-2-9 | 6-7-5-3-4-2-9
+*F
+*I
+1_2
+*F
