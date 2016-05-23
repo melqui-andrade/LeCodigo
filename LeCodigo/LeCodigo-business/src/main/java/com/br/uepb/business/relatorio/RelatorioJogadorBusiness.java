@@ -135,20 +135,21 @@ public class RelatorioJogadorBusiness {
 			toke.nextToken(); // tipo_questao
 
 			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
-			System.out.println("Gabarito: " + respostaToke.countTokens());
+//			System.out.println("Quantidade de resposta do Aluno: " + respostaToke.countTokens());
 		
 			while (respostaToke.hasMoreTokens()) {
 				String res = respostaToke.nextElement().toString();				
-				System.out.print(gabarito+"\t\t"+res.trim());
+//				System.out.print(gabarito+"\t\t"+res.trim());
 				if (gabarito.trim().contains(res.trim())) {
-					qtdRespostaCorreta++; System.out.println(" OK");					
+					qtdRespostaCorreta++;  ///System.out.println(" OK");					
 				} else {
-					qtdRespostaErrada++; System.out.println(" X");
+					qtdRespostaErrada++;  //System.out.println(" X");
 				}
 				
 			}
 		}
 		qtdRespostaErrada-=qtdRespostaPulou;
+//		System.out.println("Certas: "+getQtdRespostaCorreta()+ " Erradas: "+ getQtdRespostaErrada()+" Pulos: "+getQtdRespostaPulou());
 	}
 
 	public void estatisticaTipoQuestao(int arg) throws NumberFormatException, Exception {

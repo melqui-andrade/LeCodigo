@@ -1,0 +1,19 @@
+*Q
+"A estrutura switch/case é uma estrutura para problemas de 1______. Quando uma 2 ______ possui várias condições a serem testadas, o uso do 3 ______ torna o código mais legível. Decidir que mensagem mostrar após o usuário 4 ______ um valor no programa, é um exemplo comum de problema que pode ser 5 ______ com switch/case. Já decidir qual o maior valor em uma lista de tamanho variável é um problema em que a estrutura 6 ______ fica melhor empregada.
+*F
+*B
+1- ordenação
+2 - decisão
+3 - if/else
+4 - resolvido
+5 - inserir
+6 - resolvido
+7 - switch/case
+8 - variável
+*F
+*R
+2-8-7-5-4-3
+*F
+*I
+1_3
+*F

@@ -53,6 +53,7 @@ public class RelatorioTurmaController {
 			int questoesCertasF2 = relatorio.getQtdRespostaCorreta();
 			int questoesErradasF2 = relatorio.getQtdRespostaErrada();
 			int questoesPulouF2 = relatorio.getQtdRespostaPulou();
+			
 			request.setAttribute("questoesCertasF2", questoesCertasF2);
 			request.setAttribute("questoesErradasF2", questoesErradasF2);
 			request.setAttribute("questoesPulouF2", questoesPulouF2);		
@@ -67,13 +68,13 @@ public class RelatorioTurmaController {
 			request.setAttribute("questoesErradasF3", questoesErradasF3);
 			request.setAttribute("questoesPulouF3", questoesPulouF3);
 			
-			float soma = questoesCertasF1+questoesCertasF2+questoesCertasF3+
-					questoesErradasF1+questoesErradasF2+questoesErradasF3+
-					questoesPulouF1+questoesPulouF2+questoesPulouF3;
 			
 			float porcentagemAcerto = (questoesCertasF1+questoesCertasF2+questoesCertasF3);
 			float porcentagemErros = (questoesErradasF1+questoesErradasF2+questoesErradasF3);
 			float porcentagemPulos = (questoesPulouF1+questoesPulouF2+questoesPulouF3);
+			
+			float soma = porcentagemAcerto + porcentagemErros + porcentagemPulos;
+			
 			
 			porcentagemAcerto = (porcentagemAcerto*100)/soma;
 			porcentagemErros = (porcentagemErros*100)/soma;

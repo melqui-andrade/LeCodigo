@@ -1,0 +1,21 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre For
+
+*Q
+O algoritmo a seguir ler 18 inteiros de uma lista e ao final imprime a quantidade de números que estão entre 20 a 35. Ordene os blocos que segue para que o algoritmo funcione.
+*F
+*B
+1_int[] vetor = {7,2,56,78,54,2,0,99,8,5,23,34,43,28,12,23,9,21};
+2_for (int i = 0; i < 18; i++) {
+3_quantidade++;}
+4_int quantidade = 0;
+5_if(vetor[i] >= 10 and vetor[i] < 35 ){
+6_print(quantidade);
+7_}
+*F
+*R
+1-4-2-5-3-7-6 | 4-1-2-5-3-7-6
+*F
+*I
+2_1
+*F

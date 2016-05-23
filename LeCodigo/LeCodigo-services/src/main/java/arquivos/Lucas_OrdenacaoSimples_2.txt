@@ -1,0 +1,25 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre Ordenação simples
+
+*Q
+Os blocos a seguir trata-se de um algoritmo de ordenação Insertion Sort. Ordene os blocos a seguir.
+*F
+*B
+1_}
+2_A[j] = auxiliar;
+3_while ((j > 0) && (A[j - 1] > auxiliar)) {
+4_j = i;        
+5_auxiliar = A[i];
+6_for (int i = 1; i < A.length; i++) {                                
+7_A[j] = A[j - 1];
+8_}
+9_j = j - 1;                
+10_int j, auxiliar = 0;
+11_int A[] = { 3, 5, 2, 1, 9, 7, 4, 6, 8 };
+*F
+*R
+11-10-6-5-4-3-7-9-8-2-1 | 11-10-6-5-4-3-7-9-1-2-8
+*F
+*I
+3_3
+*F

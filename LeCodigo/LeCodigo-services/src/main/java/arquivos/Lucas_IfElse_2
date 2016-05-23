@@ -1,0 +1,28 @@
+#Autor: Lucas Miranda Dourado
+#Questão sobre IF e Else
+
+*Q
+Uma pequena empresa está querendo um software que calcule a quantidade do imposto de renda dos seus funcionários. No Brasil, a taxa de impostos são as seguintes: Se o salário for abaixo de R$ 1.903,98 não será cobrado imposto. Se o salário estiver entre R$ 1.903,99 até R$ 2.826,65 será cobrado 7,5% do salário. Se estiver entre 2.826,66 até 3.751,05 será cobrado 15%. Se estiver entre R$ 3.751,06 até R$ 4.664,68 será cobrado 22,5% e finalmente se o salário for maior que R$ 4.664,69 será cobrado 27,5%. Crie o algoritmo com as sequências apresentadas no texto.
+*F
+*B
+1_input(salario);
+2_print("Você pagará nada ao leão.");
+3_taxaPagar = salario * 0.075;
+4_taxaPagar = salario * 0.225;
+5_} else {
+6_taxaPagar = salario * 0.15;
+7_float salario = 0, taxaPagar = 0;
+8_if (salario <= 1903,98) {
+9_print(""Você pagará "" + taxaPagar);
+10_} else if(salario >= 3751,06 && salario <= 466,,68) {
+11_taxaPagar = salario * 0.275;}
+12_} else if(salario >= 2826,66 && salario <= 3751,05) {
+13_print("Você pagará " + taxaPagar);
+14_} else if (salario >= 1903.99 && salario <= 2826,65){
+*F
+*R
+7-1-8-2-14-3-13-12-6-9-10-4-15-5-11 | 7-1-8-2-14-3-13-10-6-9-12-4-15-5-11 | 7-1-8-2-12-3-13-14-6-9-10-4-15-5-11 | 7-1-8-2-12-3-13-10-6-9-14-4-15-5-11 | 7-1-8-2-10-3-13-14-6-9-12-4-15-5-11 | 7-1-8-2-10-3-13-12-6-9-14-4-15-5-11
+*F
+*I
+1_2
+*F

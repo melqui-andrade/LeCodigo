@@ -1,0 +1,21 @@
+*Q
+Para cada valor a seguir declare uma variável que melhor armazene os valores a seguir:
+
+a) false
+b) 3,1415
+c) -1.000.000
+*F
+*B
+1 - int a
+2 - double b
+3 - boolean c
+4 - = false;
+5 - = 3,1415;
+6 - = -1000000;
+*F
+*R
+1-6-2-5-3-4 | 1-6-3-4-2-5 | 2-5-1-6-3-4 | 2-5-3-4-1-6 | 3-4-1-6-2-5 | 3-4-2-5-1-6
+*F
+*I
+1_1
+*F
