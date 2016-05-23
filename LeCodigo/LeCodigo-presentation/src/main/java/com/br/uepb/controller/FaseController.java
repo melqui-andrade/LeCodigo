@@ -16,6 +16,7 @@ import com.br.uepb.business.PartidaBusiness;
 import com.br.uepb.business.QuestaoBusiness;
 import com.br.uepb.business.SessaoBusiness;
 import com.br.uepb.domain.Questao;
+import com.br.uepb.domain.RespostaDoAluno;
 import com.br.uepb.model.FaseModel;
 
 @Controller
@@ -56,11 +57,11 @@ public class FaseController {
 		int fase = sessaoBusiness.getFase();
 		int etapa = sessaoBusiness.getEtapa();
 
-		if(ehNovaPartida){
+		/*if(ehNovaPartida){
 			popularQuestoesNovas(login);
 		}else{
 			popularQuestoesDaSessao(login);
-		}
+		}*/
 
 		faseModel = new FaseModel(fase);
 
@@ -112,19 +113,6 @@ public class FaseController {
 //				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
 //			}
 		}
-		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
-		System.out.println(listaQuestoesFase2);
-		System.out.println(listaQuestoesFase3);
-	}
-	
-	String getLista(List<Questao> list){
-		String r = "";
-		
-		for (Questao questao : list) {
-			if(questao!=null)
-			r+=questao.getDescricao()+"\n\n";
-		}
-		return r;
 	}
 
 	private void popularQuestoesNovas(String login) {
@@ -142,10 +130,6 @@ public class FaseController {
 				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, i));
 			}
 		}
-
-		System.out.println("Partida antiga: "+login+"\n"+getLista(listaQuestoesFase1));
-		System.out.println(listaQuestoesFase2);
-		System.out.println(listaQuestoesFase3);
 	}
 
 	// id é etapa
@@ -160,7 +144,7 @@ public class FaseController {
 		int fase = sessaoBusiness.getFase();
 		int etapa = sessaoBusiness.getEtapa();
 		
-		Questao questao = getQuestao(fase, etapa);
+		Questao questao = sessaoBusiness.ultimaQuestao();
 
 		resposta = (String) request.getParameter("resposta");
 		if (resposta != null) {
@@ -197,6 +181,8 @@ public class FaseController {
 			
 			
 
+		}else{
+			questao = getQuestao(fase, etapa);
 		}
 			
 			int bits = sessaoBusiness.getBits();
@@ -217,9 +203,24 @@ public class FaseController {
 	}
 
 	private Questao getQuestao(int fase, int etapa) {
-		Questao questao = null;
 		String login = sessaoBusiness.getJogador().getLogin();
-		if (fase == 1) {
+		List<Questao> questoes = GerenciarSessaoBusiness.getSessaoBusiness(login).getQuestoesQueSairam();
+		Questao questao = null;
+		if(questoes.size()>0){
+			questao = questoes.get(questoes.size()-1);
+			try {
+				//Se ocorrer erro é porque ele ainda não respndeu, então será retornado a questão anterior
+				if(jaRespondeu(questao)){
+					questao = questaoBusiness.buscarQuestao(login, fase, etapa);
+				}
+			} catch (Exception e) {}
+			
+		}
+		else{
+			questao = questaoBusiness.buscarQuestao(login, fase, etapa);
+		}
+		
+		/*if (fase == 1) {
 			if(listaQuestoesFase1.size() < etapa){
 				listaQuestoesFase1.add(questaoBusiness.buscarQuestao(login, fase, etapa));
 			}
@@ -240,8 +241,29 @@ public class FaseController {
 				listaQuestoesFase3.add(questaoBusiness.buscarQuestao(login, fase, etapa));
 			}
 			questao = listaQuestoesFase3.get(etapa - 1);
-		}
+		}*/
 		return questao;
+	}
+
+	private boolean jaRespondeu(Questao questao) {
+		int index = sessaoBusiness.getPartida().getRespostas_aluno().size();
+		RespostaDoAluno resposta = sessaoBusiness.getPartida().getRespostas_aluno().get(index - 1);
+		
+		if(resposta.getId_questao()==questao.getId()){
+		
+			String [] possiveisRespostasCorretas = questao.getResposta().split(" | ");
+			String respostasDoAluno[] = resposta.getRespostas().split(" | ");
+			String ultimaRespostaDoaluno = respostasDoAluno[respostasDoAluno.length-1];
+			if(ultimaRespostaDoaluno.equals("pulou")){
+				return true;
+			}
+			for (int i = 0; i < possiveisRespostasCorretas.length; i++) {
+				if(ultimaRespostaDoaluno.equals(possiveisRespostasCorretas[i])){
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	@RequestMapping(value = "/fase/transicaoFase.html", method = RequestMethod.GET)
@@ -253,10 +275,10 @@ public class FaseController {
 		idJogador = sessaoBusiness.getJogador().getId();
 		
 		if(partidaBusiness.ahPartidaPendente(idJogador)){
-			ehNovaPartida = false;
+			//ehNovaPartida = false;
 			partidaBusiness.continuarPartida(login, idJogador);
 		}else{
-			ehNovaPartida = true;
+			//ehNovaPartida = true;
 			partidaBusiness.iniciarPartida(login, idJogador);
 		}
 		

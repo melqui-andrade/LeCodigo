@@ -62,7 +62,7 @@ body {
 		setInterval(et_feliz, 200);
 		setInterval(et_normal, 500);
 
-		window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'", 5000);
+		window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'", 500);
 	</script>
 
 
