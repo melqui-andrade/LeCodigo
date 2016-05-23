@@ -1,0 +1,17 @@
+*Q
+Use os blocos a seguir para que a variável "classe" receba a classe correta em que o passageiro vai viajar (admita que a variável bilhete que será analisada para decidir em que classe o cliente está e, que ela já possui um valor)
+*F
+*B
+1- print(classe);
+2- case 1: classe = "primeira classe"; break;
+3- switch(bilhete){
+4- case 2: classe = "segunda classe"; break;
+5- case 3 classe = "terceira classe";} break; //estudante =(
+6- string classe;
+*F
+*R
+5-1-4-2-7-6-3-8
+*F
+*I
+1_3
+*F

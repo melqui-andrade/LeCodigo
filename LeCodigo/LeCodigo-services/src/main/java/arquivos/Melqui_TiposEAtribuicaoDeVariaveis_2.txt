@@ -1,0 +1,18 @@
+*Q
+Organize os blocos a seguir para que a variável "variasPossibilidades" receba o valor 9
+*F
+*B
+1 - int variasPossibilidades;
+2 - boolean variasPossibilidades;
+3 - char variasPossibilidades;
+4 - float variasPossibilidades;
+5 - variasPossibilidades = '9';
+6 - variasPossibilidades = 9;
+7 - variasPossibilidades =  "9";
+*F
+*R
+1-6 | 3-5 | 4-6
+*F
+*I
+1_1
+*F
