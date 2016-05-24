@@ -16,12 +16,11 @@ body {
 	background-size: cover;
 }
 
-.tab-content{
+.tab-content {
 	border-color: #fff;
 	border-style: solid;
-    border-width: 2px;
+	border-width: 2px;
 }
-
 </style>
 <html>
 <body>
@@ -231,7 +230,7 @@ body {
 									</div>
 								</div>
 
-							</div>							
+							</div>
 						</div>
 					</div>
 				</div>
@@ -261,23 +260,23 @@ body {
 		var acertosTiposVariaveis = '${tiposVariaveisCerto}';
 		var errosTiposVariaveis = '${tiposVariaveisErrado}';
 		var pulosTiposVariaveis = '${tiposVariaveisPulo}';
-		
+
 		var acertosIF_ELSE = '${ifElseCerto}';
 		var errosIF_ELSE = '${ifElseErrado}';
 		var pulosIF_ELSE = '${ifElsePulo}';
-		
+
 		var acertosSWITCH = '${switchCerto}';
 		var erroosSWITCH = '${switchErrado}';
 		var pulosSWITCH = '${switchPulo}';
-		
+
 		var acertosFOR = '${forCerto}';
 		var erroosFOR = '${forErrado}';
 		var pulosFOR = '${forPulo}';
-		
+
 		var acertosWHILE = '${whileCerto}';
 		var errosWHILE = '${whileErrado}';
 		var pulosWHILE = '${whilePulo}';
-		
+
 		var acertosDO_WHILE = '${doWhileCerto}';
 		var erroosDO_WHILE = '${doWhileErrado}';
 		var pulosDO_WHILE = '${doWhilePulo}';
@@ -289,15 +288,25 @@ body {
 		var acertosORDENACAO_SIMPLES = '${ordenacaoCerto}';
 		var erroosORDENACAO_SIMPLES = '${ordenacaoErrado}';
 		var pulosORDENACAO_SIMPLES = '${ordenacaoPulo}';
-		
+
 		var acertosFUNCOES = '${funcoesCerto}';
 		var erroosFUNCOES = '${funcoesErrado}';
 		var pulosFUNCOES = '${funcoesPulo}';
-		
+
 		carregaVariaveisHistoricoGeral(acertos, erros, pulos);
 		carregaVariaveisHistoricoF1(acertosF1, errosF1, pulosF1);
 		carregaVariaveisHistoricoF2(acertosF2, errosF2, pulosF2);
 		carregaVariaveisHistoricoF3(acertosF3, errosF3, pulosF3);
+
+		carregaVariaveisHistorico_if_else(acertosIF_ELSE, errosIF_ELSE,	pulosIF_ELSE);
+		carregaVariaveisHistorico_tipo_atribuicao(acertosTiposVariaveis, errosTiposVariaveis, pulosTiposVariaveis);
+		carregaVariaveisHistorico_switch_case(acertosSWITCH, erroosSWITCH,	pulosSWITCH);
+		carregaVariaveisHistorico_for(acertosFOR, erroosFOR, pulosFOR);
+		carregaVariaveisHistorico_while(acertosWHILE, errosWHILE, pulosWHILE);
+		carregaVariaveisHistorico_do_While(acertosDO_WHILE, erroosDO_WHILE,	pulosDO_WHILE);
+		carregaVariaveisHistorico_troca_de_variaveis(acertosTROCA_VARIAVEIS, erroosTROCA_VARIAVEIS, pulosTROCA_VARIAVEIS);
+		carregaVariaveisHistorico_ordenacao(acertosORDENACAO_SIMPLES, erroosORDENACAO_SIMPLES, pulosORDENACAO_SIMPLES);
+		carregaVariaveisHistorico_funcoes(acertosFUNCOES, erroosFUNCOES, pulosFUNCOES);
 	</script>
 
 </body>

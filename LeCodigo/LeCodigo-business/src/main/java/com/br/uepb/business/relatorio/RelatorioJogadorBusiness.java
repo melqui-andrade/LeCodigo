@@ -143,7 +143,7 @@ public class RelatorioJogadorBusiness {
 			while (respostaToke.hasMoreTokens()) {
 				String res = respostaToke.nextElement().toString();
 				// System.out.print(gabarito+"\t\t"+res.trim());
-				if (gabarito.trim().contains(res.trim())) {
+				if (gabarito.trim().equals(res.trim())) {
 					qtdRespostaCorreta++; /// System.out.println(" OK");
 				} else {
 					qtdRespostaErrada++; // System.out.println(" X");
