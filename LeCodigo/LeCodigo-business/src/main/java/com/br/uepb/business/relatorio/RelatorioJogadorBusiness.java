@@ -12,6 +12,7 @@ import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Partida;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.RespostaDoAluno;
+import com.br.uepb.domain.TipoQuestao_Enum;
 
 public class RelatorioJogadorBusiness {
 
@@ -29,7 +30,7 @@ public class RelatorioJogadorBusiness {
 	public RelatorioJogadorBusiness() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public RelatorioJogadorBusiness(String login) {
 		this.login = login;
 		this.jogador = jogadorDAO.buscarJogador(login);
@@ -124,10 +125,11 @@ public class RelatorioJogadorBusiness {
 		qtdRespostaPulou = 0;
 
 		for (String string : lista) {
-			StringTokenizer toke = new StringTokenizer(string, "@");			 		
-				
-			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno			
-			if (respostaDoAluno.contains("pulou")) qtdRespostaPulou++;
+			StringTokenizer toke = new StringTokenizer(string, "@");
+
+			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno
+			if (respostaDoAluno.contains("pulou"))
+				qtdRespostaPulou++;
 			toke.nextToken(); // id_questao
 			toke.nextToken(); // id
 			toke.nextToken(); // fase
@@ -135,21 +137,23 @@ public class RelatorioJogadorBusiness {
 			toke.nextToken(); // tipo_questao
 
 			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
-//			System.out.println("Quantidade de resposta do Aluno: " + respostaToke.countTokens());
-		
+			// System.out.println("Quantidade de resposta do Aluno: " +
+			// respostaToke.countTokens());
+
 			while (respostaToke.hasMoreTokens()) {
-				String res = respostaToke.nextElement().toString();				
-//				System.out.print(gabarito+"\t\t"+res.trim());
-				if (gabarito.trim().contains(res.trim())) {
-					qtdRespostaCorreta++;  ///System.out.println(" OK");					
+				String res = respostaToke.nextElement().toString();
+				// System.out.print(gabarito+"\t\t"+res.trim());
+				if (gabarito.trim().equals(res.trim())) {
+					qtdRespostaCorreta++; /// System.out.println(" OK");
 				} else {
-					qtdRespostaErrada++;  //System.out.println(" X");
+					qtdRespostaErrada++; // System.out.println(" X");
 				}
-				
+
 			}
 		}
-		qtdRespostaErrada-=qtdRespostaPulou;
-//		System.out.println("Certas: "+getQtdRespostaCorreta()+ " Erradas: "+ getQtdRespostaErrada()+" Pulos: "+getQtdRespostaPulou());
+		qtdRespostaErrada -= qtdRespostaPulou;
+		// System.out.println("Certas: "+getQtdRespostaCorreta()+ " Erradas: "+
+		// getQtdRespostaErrada()+" Pulos: "+getQtdRespostaPulou());
 	}
 
 	public void estatisticaTipoQuestao(int arg) throws NumberFormatException, Exception {
@@ -160,10 +164,11 @@ public class RelatorioJogadorBusiness {
 		qtdRespostaPulou = 0;
 
 		for (String string : lista) {
-			StringTokenizer toke = new StringTokenizer(string, "@");			 		
-				
-			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno			
-			if (respostaDoAluno.contains("pulou")) qtdRespostaPulou++;
+			StringTokenizer toke = new StringTokenizer(string, "@");
+
+			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno
+			if (respostaDoAluno.contains("pulou"))
+				qtdRespostaPulou++;
 			toke.nextToken(); // id_questao
 			toke.nextToken(); // id
 			toke.nextToken(); // fase
@@ -172,18 +177,61 @@ public class RelatorioJogadorBusiness {
 
 			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
 			System.out.println("Gabarito: " + respostaToke.countTokens());
-		
+
 			while (respostaToke.hasMoreTokens()) {
-				String res = respostaToke.nextElement().toString();				
-				System.out.print(gabarito+"\t\t"+res.trim());
+				String res = respostaToke.nextElement().toString();
+				System.out.print(gabarito + "\t\t" + res.trim());
 				if (gabarito.trim().contains(res.trim())) {
-					qtdRespostaCorreta++; System.out.println(" OK");					
+					qtdRespostaCorreta++;
+					System.out.println(" OK");
 				} else {
-					qtdRespostaErrada++; System.out.println(" X");
+					qtdRespostaErrada++;
+					System.out.println(" X");
 				}
-				
+
 			}
 		}
+		qtdRespostaErrada -= qtdRespostaPulou;
+	}
+
+	public void estatisticaIndividual(int numerofase, TipoQuestao_Enum tipo) {
+
+		List<String> lista = QuestaoDAO.getInstance().viewIndividual(numerofase, tipo, login);
+
+		qtdRespostaCorreta = 0;
+		qtdRespostaErrada = 0;
+		qtdRespostaPulou = 0;
+
+		for (String string : lista) {
+			StringTokenizer toke = new StringTokenizer(string, "@");
+
+			toke.nextToken(); // id
+			toke.nextToken(); // login
+			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno
+			if (respostaDoAluno.contains("pulou"))
+				qtdRespostaPulou++;
+			toke.nextToken(); // id QUestao
+			String fase = toke.nextToken(); // fase
+			String etapa = toke.nextToken(); // etapa
+			String gabarito = toke.nextToken(); // Resposta
+			String tipoQuestao = toke.nextToken(); // tipo_questao
+
+			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
+			System.out.println("Gabarito: " + respostaToke.countTokens());
+
+			while (respostaToke.hasMoreTokens()) {
+				String res = respostaToke.nextElement().toString();
+				System.out.print(gabarito + "\t\t" + res.trim());
+				if (gabarito.trim().contains(res.trim())) {
+					qtdRespostaCorreta++;
+					System.out.println(" OK");
+				} else {
+					qtdRespostaErrada++;
+					System.out.println(" X");
+				}
+			}
+		}
+		qtdRespostaErrada -= qtdRespostaPulou;
 	}
 
 	public String getLogin() {

@@ -76,7 +76,7 @@ body {
 											</c:if>
 											<c:if test="${etapa - loop.index + 1 >= etapa}">
 												<img class="events-object img-rounded"
-													src="${fase.imgPerfilMonstro}">
+													src="../images/et/et_verde_normal.png">
 											</c:if>
 										</div>
 										<div class="events-body">
@@ -111,7 +111,7 @@ body {
 											</c:if>
 											<c:if test="${etapa - loop.index + 1 >= etapa}">
 												<img class="events-object img-rounded"
-													src="${fase.imgPerfilMonstro}">
+													src="../images/et/et_verde_little.png">
 											</c:if>
 										</div>
 										<div class="events-body">

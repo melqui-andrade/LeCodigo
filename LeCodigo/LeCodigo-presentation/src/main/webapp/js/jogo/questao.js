@@ -77,7 +77,7 @@ function feedbackQuestaoErrada(){
 	document.getElementById("modalTitulo").innerHTML = "Owww terráqueo...";
 	document.getElementById("modalMensagem").innerHTML = "Infelizmente você errou a questão, reveja seu código, você pode encontrar a solução ! :)";
 	document.getElementById("et_status").src = "../images/et/et_verde_triste.png";
-	$('#myModal').modal('toggle');
+
 	resposta="";
 }
 

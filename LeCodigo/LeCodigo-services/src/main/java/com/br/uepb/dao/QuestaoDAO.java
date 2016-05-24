@@ -112,8 +112,8 @@ public class QuestaoDAO {
 	/**
 	 * Retorna uma lista com resultados concatenados. o promeiro valor
 	 * corresponde a resposta do Aluno, a segunda ao ID da questao, a terceira
-	 * posição Resposta da questao e a ultima ao tipo da questao.
-	 * O que separa as posições é um espaço.
+	 * posição Resposta da questao e a ultima ao tipo da questao. O que separa
+	 * as posições é um espaço.
 	 * 
 	 * @param fase
 	 * @return
@@ -125,16 +125,51 @@ public class QuestaoDAO {
 		List<String> lista = new ArrayList<String>();
 		Transaction tx = session.beginTransaction();
 		String parametro = "";
-		if(filtro.trim().equals("fase")) {
+		if (filtro.trim().equals("fase")) {
 			parametro = " WHERE fase = " + arg;
 		} else if (filtro.trim().equals("tipo_questao")) {
 			parametro = " WHERE tipo_questao = " + arg;
-		}		
-		SQLQuery query = session.createSQLQuery("SELECT * FROM respostasDoAlunoVW "+ parametro);
+		}
+		SQLQuery query = session.createSQLQuery("SELECT * FROM respostasDoAlunoVW " + parametro);
 		List<Object[]> rows = query.list();
 		for (Object[] objects : rows) {
-			lista.add(objects[0] + "@" + objects[1] + "@" +objects[2] 
-					+ "@" + objects[3]+ "@" + objects[4] + "@" + objects[5]);
+			lista.add(objects[0] + "@" + objects[1] + "@" + objects[2] + "@" + objects[3] + "@" + objects[4] + "@"
+					+ objects[5]);
+		}
+		session.flush();
+		tx.commit();
+		session.close();
+
+		return lista;
+	}
+
+	public List<String> viewIndividual(int valorFase, TipoQuestao_Enum tipo, String login) {
+ 		if (!session.isOpen()) {
+			session = HibernateUtil.getSessionFactory().openSession();
+		}
+		List<String> lista = new ArrayList<String>();
+		Transaction tx = session.beginTransaction();
+		String parametroFase = " WHERE login = '" + login+"'" ;
+		
+		if (valorFase != 0) {
+			parametroFase = " AND fase = " + valorFase;
+		}
+
+		try {
+			if (!tipo.equals(null)) {
+				if (valorFase == 0) {
+					parametroFase += " AND tipo_questao = " + tipo.getTipos();
+				} else
+					parametroFase += " AND tipo_questao = " + tipo.getTipos();
+			}
+		} catch (Exception e) {}
+		
+		
+		SQLQuery query = session.createSQLQuery("SELECT * FROM respostasvw " + parametroFase);
+		List<Object[]> rows = query.list();
+		for (Object[] objects : rows) {
+			lista.add(objects[0] + "@" + objects[1] + "@" + objects[2] + "@" + objects[3] + "@" + objects[4] + "@"
+					+ objects[5] + "@" + objects[6] + "@" + objects[7]);
 		}
 		session.flush();
 		tx.commit();
