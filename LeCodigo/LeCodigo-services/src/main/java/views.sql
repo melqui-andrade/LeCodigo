@@ -9,8 +9,8 @@ VIEW `lecodigo`.`respostasdoalunovw` AS
         `q`.`resposta` AS `resportaQuestao`,
         `q`.`tipo_questao` AS `tipo_questao`
     FROM
-        (`lecodigo`.`respostadoaluno` `r`
-        JOIN `lecodigo`.`questao` `q` ON ((`r`.`id_questao` = `q`.`id`)))
+        (`lecodigo`.`RespostaDoAluno` `r`
+        JOIN `lecodigo`.`Questao` `q` ON ((`r`.`id_questao` = `q`.`id`)))
     ORDER BY `r`.`id_questao` , `q`.`fase`;
 	
 	
@@ -27,10 +27,10 @@ VIEW `lecodigo`.`respostasvw` AS
         `q`.`resposta` AS `resportaQuestao`,
         `q`.`tipo_questao` AS `tipo_questao`
     FROM
-        (((`lecodigo`.`jogador` `j`
-        LEFT JOIN `lecodigo`.`partida` `p` ON ((`p`.`id_jogador` = `j`.`id`)))
-        LEFT JOIN `lecodigo`.`respostadoaluno` `r` ON ((`r`.`id_partida` = `p`.`id`)))
-        LEFT JOIN `lecodigo`.`questao` `q` ON ((`r`.`id_questao` = `q`.`id`)))
+        (((`lecodigo`.`Jogador` `j`
+        LEFT JOIN `lecodigo`.`Partida` `p` ON ((`p`.`id_jogador` = `j`.`id`)))
+        LEFT JOIN `lecodigo`.`RespostaDoAluno` `r` ON ((`r`.`id_partida` = `p`.`id`)))
+        LEFT JOIN `lecodigo`.`Questao` `q` ON ((`r`.`id_questao` = `q`.`id`)))
     WHERE
         ((`q`.`resposta` IS NOT NULL)
             AND (`q`.`tipo_questao` <> 0))
