@@ -2,18 +2,18 @@
 Escreva um algoritmo que ordene a lista com os valores {1,2,3,4,5} em ordem decrescente
 *F
 *B
-1 - max = i;
-2 - if (i != max) {
-3 - int[] lista = {1,2,3,4,5};
-4 - for (int i = 0; i < (tam-1); i++){
-5 - if(lista[j] > lista[max]){
-6 - aux = num[i];
-7 - int max, aux, tam = 5;
-8 - lista[i] = lista[max];
-9 - for (int j = (i+1); j < tam; j++){
-10 - max = j;}
-11 - lista[max] = aux;}}}
-12 - if(lista[j] < lista[max]){
+1_max = i;
+2_if (i != max) {
+3_int[] lista = {1,2,3,4,5};
+4_for (int i = 0; i < (tam-1); i++){
+5_if(lista[j] > lista[max]){
+6_aux = num[i];
+7_int max, aux, tam = 5;
+8_lista[i] = lista[max];
+9_for (int j = (i+1); j < tam; j++){
+10_max = j;}
+11_lista[max] = aux;}}}
+12_if(lista[j] < lista[max]){
 *F
 *R
 3-7-4-1-9-5-10-2-6-8-11 | 7-3-4-1-9-5-10-2-6-8-11

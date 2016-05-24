@@ -4,15 +4,15 @@ Obs1: Formula para calcular a média: média = (nota1 + nota2) / 2
 Obs2: As notas podem ter valores decimais
 *F
 *B
-1 - int nota1, nota2;
-2 - else{
-3 - if((nota1 + nota2) / 2 < 7){
-4 - print("vai pra final");}
-5 - input(nota1);
-6 - float nota1, nota2;
-7 - input(nota2);
-8 - if((nota1 + nota2) / 2 > 7){
-9 - print("aee passou!");}
+1_int nota1, nota2;
+2_else{
+3_if((nota1 + nota2) / 2 < 7){
+4_print("vai pra final");}
+5_input(nota1);
+6_float nota1, nota2;
+7_input(nota2);
+8_if((nota1 + nota2) / 2 > 7){
+9_print("aee passou!");}
 *F
 *R
 6-5-7-3-4-2-9 | 6-7-5-3-4-2-9

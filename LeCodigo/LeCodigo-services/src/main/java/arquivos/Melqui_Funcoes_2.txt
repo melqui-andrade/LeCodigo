@@ -2,17 +2,17 @@
 Existem várias maneiras de se calcular a raiz quadrada de um número. Uma das mais simples, a equação de Pell, permite encontrar a parte inteira de uma raiz quadrada simplesmente subtraindo inteiros ímpares. A ideia consistem em ir subtraindo valores ímpares do valor iterativamente, até que o número impar seja maior que o valor. Quando isso ocorre o algoritmo para e conta quantas subtrações efetuou, esse total é a parte inteira da raiz quadrada. Implemente uma função que calcule a raiz quadrada de um número utilizando a equação de Pell.
 *F
 *B
-1 - int raizQuadrada(int valor){
-2 - int iteracoes = 0;
-3 - int i = 1;
-4 - for(int i = 1; valor >= i; i+=2){
-5 - while(valor >= i){
-6 - valor = valor - i;
-7 - i = i + 2;
-8 - iteracoes = iteracoes + 1;}
-9 - return i;
-10 - return iteracoes;}
-11 - return valor;}
+1_int raizQuadrada(int valor){
+2_int iteracoes = 0;
+3_int i = 1;
+4_for(int i = 1; valor >= i; i+=2){
+5_while(valor >= i){
+6_valor = valor_i;
+7_i = i + 2;
+8_iteracoes = iteracoes + 1;}
+9_return i;
+10_return iteracoes;}
+11_return valor;}
 *F
 *R
 1-2-3-5-6-7-8-10 | 1-3-2-5-6-7-8-10 | 1-2-4-6-8-10
