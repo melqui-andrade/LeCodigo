@@ -60,7 +60,7 @@ public class RelatorioTurmaController {
 			relatorio.estatisticaFase(2);
 			rel_f2.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_f2.setErrada(relatorio.getQtdRespostaErrada());
-			rel_f3.setPulo(relatorio.getQtdRespostaPulou());
+			rel_f2.setPulo(relatorio.getQtdRespostaPulou());
 
 			request.setAttribute("questoesCertasF2", rel_f2.getCerta());
 			request.setAttribute("questoesErradasF2", rel_f2.getErrada());
@@ -90,7 +90,7 @@ public class RelatorioTurmaController {
 			// Relatorio GERAL
 			rel.setCerta(rel_f1.getCerta()+rel_f2.getCerta()+rel_f3.getCerta());
 			rel.setErrada(rel_f1.getErrada()+rel_f2.getErrada()+rel_f3.getErrada());
-			rel.setCerta(rel_f1.getPulo()+rel_f2.getPulo()+rel_f3.getPulo());			
+			rel.setPulo(rel_f1.getPulo()+rel_f2.getPulo()+rel_f3.getPulo());			
 			
 			request.setAttribute("certo", porcentagemAcerto);
 			request.setAttribute("erro", porcentagemErros);
@@ -127,7 +127,7 @@ public class RelatorioTurmaController {
 				request.setAttribute("switchPulo", rel_SWICTH_CASE.getPulo());
 
 				// FASE 2
-			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.FOR);
+			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.FOR);
 			rel_FOR.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_FOR.setErrada(relatorio.getQtdRespostaErrada());
 			rel_FOR.setPulo(relatorio.getQtdRespostaPulou());
@@ -136,7 +136,7 @@ public class RelatorioTurmaController {
 				request.setAttribute("forErrado", rel_FOR.getErrada());
 				request.setAttribute("forPulo", rel_FOR.getPulo());
 			
-			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.WHILE);
+			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.WHILE);
 			rel_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_WHILE.setErrada(relatorio.getQtdRespostaErrada());
 			rel_WHILE.setPulo(relatorio.getQtdRespostaPulou());
@@ -145,7 +145,7 @@ public class RelatorioTurmaController {
 				request.setAttribute("whileErrado", rel_WHILE.getErrada());
 				request.setAttribute("whilePulo", rel_WHILE.getPulo());
 			
-			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.DO_WHILE);
+			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.DO_WHILE);
 			rel_DO_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_DO_WHILE.setErrada(relatorio.getQtdRespostaErrada());
 			rel_DO_WHILE.setPulo(relatorio.getQtdRespostaPulou());
@@ -155,7 +155,7 @@ public class RelatorioTurmaController {
 				request.setAttribute("doWhilePulo", rel_DO_WHILE.getPulo());
 			
 				// FASE 3
-			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.TROCA_VARIAVEIS);
+			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.TROCA_VARIAVEIS);
 			rel_TROCA_DE_VARIAVEIS.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_TROCA_DE_VARIAVEIS.setErrada(relatorio.getQtdRespostaErrada());
 			rel_TROCA_DE_VARIAVEIS.setPulo(relatorio.getQtdRespostaPulou());
@@ -164,7 +164,7 @@ public class RelatorioTurmaController {
 				request.setAttribute("troca_variaveisErrado", rel_TROCA_DE_VARIAVEIS.getErrada());
 				request.setAttribute("troca_variaveisPulo", rel_TROCA_DE_VARIAVEIS.getPulo());
 				
-			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.ORDENACAO_SIMPLES);
+			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.ORDENACAO_SIMPLES);
 			rel_ORDENACAO_SIMPLES.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_ORDENACAO_SIMPLES.setErrada(relatorio.getQtdRespostaErrada());
 			rel_ORDENACAO_SIMPLES.setPulo(relatorio.getQtdRespostaPulou());
@@ -173,7 +173,7 @@ public class RelatorioTurmaController {
 				request.setAttribute("ordenacaoErrado", rel_ORDENACAO_SIMPLES.getErrada());
 				request.setAttribute("ordenacaoPulo", rel_ORDENACAO_SIMPLES.getPulo());
 				
-			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.FUNCOES);
+			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.FUNCOES);
 			rel_FUNCOES.setCerta(relatorio.getQtdRespostaCorreta());
 			rel_FUNCOES.setErrada(relatorio.getQtdRespostaErrada());
 			rel_FUNCOES.setPulo(relatorio.getQtdRespostaPulou());
@@ -182,21 +182,10 @@ public class RelatorioTurmaController {
 				request.setAttribute("funcoesErrado", rel_FUNCOES.getErrada());
 				request.setAttribute("funcoesPulo", rel_FUNCOES.getPulo());
 				
-		
-			// RESUMO DAS FASES
-			rel.setCerta(rel_f1.getCerta()+rel_f2.getCerta()+rel_f3.getCerta());
-			rel.setErrada(rel_f1.getErrada()+rel_f2.getErrada()+rel_f3.getErrada());
-			rel.setPulo(rel_f1.getPulo()+rel_f2.getPulo()+rel_f3.getPulo());
-			
-				request.setAttribute("faseCerto", rel.getCerta());
-				request.setAttribute("faseErro", rel.getErrada());
-				request.setAttribute("fasePulo", rel.getPulo());
-			
+	
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

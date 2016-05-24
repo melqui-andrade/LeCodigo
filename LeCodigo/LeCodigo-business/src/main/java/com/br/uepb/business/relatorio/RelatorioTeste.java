@@ -8,8 +8,8 @@ public class RelatorioTeste {
 		RelatorioJogadorBusiness rel = new RelatorioJogadorBusiness("lucas");
 		try {
 //			rel.estatisticaFase(1);
-//			rel.estatisticaIndividual(0, null);
-			rel.estatisticaIndividual(1, null);
+			rel.estatisticaIndividual(0, null);
+//			rel.estatisticaIndividual(1, null);
 			System.out.println("Corretas: "+rel.getQtdRespostaCorreta());
 			System.out.println("Erradas: "+rel.getQtdRespostaErrada());
 			System.out.println("Pulou: "+rel.getQtdRespostaPulou());

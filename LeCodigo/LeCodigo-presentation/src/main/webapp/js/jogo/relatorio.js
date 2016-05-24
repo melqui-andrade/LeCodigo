@@ -100,10 +100,7 @@ function carregaVariaveisHistoricoF2(acertos,erros,pulo) {
 	var myPieChart = new Chart(ctx,{
 	    type: 'bar',
 	    data: data,	  	    
-	    
-	});	
-	
-	
+	});		
 }
 
 function carregaVariaveisHistoricoF3(acertos,erros,pulo) {

@@ -241,72 +241,90 @@ body {
 	<script src="../js/jogo/relatorio.js"></script>
 
 	<script language="javascript">
+		// Dados GLOBAl
 		var acertos = '${certo}';
 		var erros = '${erro}';
 		var pulos = '${pulo}';
-
+		// DADOS DA FASE 1
 		var acertosF1 = '${questoesCertasF1}';
 		var errosF1 = '${questoesErradasF1}';
 		var pulosF1 = '${questoesPulouF1}';
-
+		// DADOS DA FASE 2
 		var acertosF2 = '${questoesCertasF2}';
 		var errosF2 = '${questoesErradasF2}';
 		var pulosF2 = '${questoesPulouF2}';
-
+		// DADOS DA FASE 3
 		var acertosF3 = '${questoesCertasF3}';
 		var errosF3 = '${questoesErradasF3}';
 		var pulosF3 = '${questoesPulouF3}';
 
+		// DADOS DA QUESTOES TIPO DE VARIAVEIS
 		var acertosTiposVariaveis = '${tiposVariaveisCerto}';
 		var errosTiposVariaveis = '${tiposVariaveisErrado}';
 		var pulosTiposVariaveis = '${tiposVariaveisPulo}';
-
+		
+		// DADOS DA QUESTOES IF E ELSE 
 		var acertosIF_ELSE = '${ifElseCerto}';
 		var errosIF_ELSE = '${ifElseErrado}';
-		var pulosIF_ELSE = '${ifElsePulo}';
-
+		var pulosIF_ELSE = '${ifElseErrado}';
+		
+		// DADOS DA QUESTOES SWITCH E CASE 
 		var acertosSWITCH = '${switchCerto}';
-		var erroosSWITCH = '${switchErrado}';
+		var errosSWITCH = '${switchErrado}';
 		var pulosSWITCH = '${switchPulo}';
-
+		// DADOS DA QUESTOES FOR 
+		
 		var acertosFOR = '${forCerto}';
-		var erroosFOR = '${forErrado}';
+		var errosFOR = '${forErrado}';
 		var pulosFOR = '${forPulo}';
-
+		
+		// DADOS DA QUESTOES WHILE 
 		var acertosWHILE = '${whileCerto}';
 		var errosWHILE = '${whileErrado}';
 		var pulosWHILE = '${whilePulo}';
-
+		
+		// DADOS DA QUESTOES DO WHILE 
 		var acertosDO_WHILE = '${doWhileCerto}';
-		var erroosDO_WHILE = '${doWhileErrado}';
+		var errosDO_WHILE = '${doWhileErrado}';
 		var pulosDO_WHILE = '${doWhilePulo}';
-
+		
+		// DADOS DA QUESTOES TROCA DE VARIAVEIS 
 		var acertosTROCA_VARIAVEIS = '${troca_variaveisCerto}';
-		var erroosTROCA_VARIAVEIS = '${troca_variaveisErrado}';
+		var errosTROCA_VARIAVEIS = '${troca_variaveisErrado}';
 		var pulosTROCA_VARIAVEIS = '${troca_variaveisPulo}';
-
+		
+		// DADOS DA QUESTOES ORDENACAO SIMPLES 
 		var acertosORDENACAO_SIMPLES = '${ordenacaoCerto}';
-		var erroosORDENACAO_SIMPLES = '${ordenacaoErrado}';
+		var errosORDENACAO_SIMPLES = '${ordenacaoErrado}';
 		var pulosORDENACAO_SIMPLES = '${ordenacaoPulo}';
-
+		
+		// DADOS DA QUESTOES FUNCOES 
 		var acertosFUNCOES = '${funcoesCerto}';
-		var erroosFUNCOES = '${funcoesErrado}';
+		var errosFUNCOES = '${funcoesErrado}';
 		var pulosFUNCOES = '${funcoesPulo}';
 
+		// GERAL
 		carregaVariaveisHistoricoGeral(acertos, erros, pulos);
+		
+		// RESUMO DAS FASES
 		carregaVariaveisHistoricoF1(acertosF1, errosF1, pulosF1);
 		carregaVariaveisHistoricoF2(acertosF2, errosF2, pulosF2);
 		carregaVariaveisHistoricoF3(acertosF3, errosF3, pulosF3);
 
-		carregaVariaveisHistorico_if_else(acertosIF_ELSE, errosIF_ELSE,	pulosIF_ELSE);
+		// RESUMO DA FASE 1 
+		carregaVariaveisHistorico_if_else(acertosIF_ELSE, errosIF_ELSE, pulosIF_ELSE);
 		carregaVariaveisHistorico_tipo_atribuicao(acertosTiposVariaveis, errosTiposVariaveis, pulosTiposVariaveis);
-		carregaVariaveisHistorico_switch_case(acertosSWITCH, erroosSWITCH,	pulosSWITCH);
-		carregaVariaveisHistorico_for(acertosFOR, erroosFOR, pulosFOR);
+		carregaVariaveisHistorico_switch_case(acertosSWITCH, errosSWITCH, pulosSWITCH);
+		
+		// RESUMO DA FASE 2
+		carregaVariaveisHistorico_for(acertosFOR, errosFOR, pulosFOR);
 		carregaVariaveisHistorico_while(acertosWHILE, errosWHILE, pulosWHILE);
-		carregaVariaveisHistorico_do_While(acertosDO_WHILE, erroosDO_WHILE,	pulosDO_WHILE);
-		carregaVariaveisHistorico_troca_de_variaveis(acertosTROCA_VARIAVEIS, erroosTROCA_VARIAVEIS, pulosTROCA_VARIAVEIS);
-		carregaVariaveisHistorico_ordenacao(acertosORDENACAO_SIMPLES, erroosORDENACAO_SIMPLES, pulosORDENACAO_SIMPLES);
-		carregaVariaveisHistorico_funcoes(acertosFUNCOES, erroosFUNCOES, pulosFUNCOES);
+		carregaVariaveisHistorico_do_While(acertosDO_WHILE, errosDO_WHILE,pulosDO_WHILE);
+		
+		// RESUMO DA FASE 3
+		carregaVariaveisHistorico_troca_de_variaveis(acertosTROCA_VARIAVEIS, errosTROCA_VARIAVEIS, pulosTROCA_VARIAVEIS);
+		carregaVariaveisHistorico_ordenacao(acertosORDENACAO_SIMPLES, errosORDENACAO_SIMPLES, pulosORDENACAO_SIMPLES);
+		carregaVariaveisHistorico_funcoes(acertosFUNCOES, errosFUNCOES,	pulosFUNCOES);
 	</script>
 
 </body>

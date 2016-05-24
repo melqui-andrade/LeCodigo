@@ -149,8 +149,10 @@ public class QuestaoDAO {
 		}
 		List<String> lista = new ArrayList<String>();
 		Transaction tx = session.beginTransaction();
-		String parametroFase = " WHERE login = '" + login + "'";
-
+		String parametroFase = "";
+		if (login!=null) {
+			parametroFase = " WHERE login = '" + login + "'";
+		} else parametroFase = " WHERE login IS NOT NULL ";
 		if (valorFase > 0) {
 			parametroFase += " AND fase = " + valorFase;
 		}
