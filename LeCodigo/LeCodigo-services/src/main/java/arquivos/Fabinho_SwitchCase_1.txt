@@ -31,8 +31,7 @@ Enumere os "Cases" em ordem crescente e siga a seguinte ordem: <br>
 15_case 1:
 16_print("Sexta-feira"); break;
 17_print("Quinta-feira"); break;                                
-18_print("Segunda-feira"); break;
-                        
+18_print("Segunda-feira"); break;                      
 *F
 *R
 14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11
