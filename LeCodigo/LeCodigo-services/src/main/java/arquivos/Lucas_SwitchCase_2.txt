@@ -6,13 +6,13 @@ Ordene os blocos que indicam o estado civil que tem como entrada caractere maiú
 *F
 *B
 1_input(estado_civil);
-2_case 'D': print("Divorciado"); break;
-3_case 'S': print("Solteiro"); break;
+2_case &quot;D&quot;: print(&quot;Divorciado&quot;); break;
+3_case &quot;S&quot;: print(&quot;Solteiro&quot;); break;
 4_switch(estado_civil) {
 5_char estado_civil;
-6_case 'C': print("Casado"); break;
-7_case 'V': print("Viúvo"); break;
-8_default: print("Estado cívil incorreto!");}
+6_case &quot;C&quot;: print(&quot;Casado&quot;); break;
+7_case &quot;V&quot;: print(&quot;Viúvo&quot;); break;
+8_default: print(&quot;Estado cívil incorreto!&quot;);}
 *F
 *R
 5-1-4-6-3-7-2-8 | 5-1-4-6-3-2-7-8 | 5-1-4-6-7-3-2-8 | 5-1-4-6-7-2-3-8 | 5-1-4-6-2-3-7-8 | 5-1-4-6-2-7-3-8 | 5-1-4-3-6-2-7-8 | 5-1-4-3-6-7-2-8 |  5-1-4-3-7-2-6-8 | 5-1-4-3-7-6-2-8 | 5-1-4-3-2-7-6-8 | 5-1-4-3-2-6-7-8 | 5-1-4-7-6-3-2-8 | 5-1-4-7-6-2-3-8 | 5-1-4-7-3-6-2-8 | 5-1-4-7-3-2-6-8 | 5-1-4-7-2-6-3-8 | 5-1-4-7-2-3-6-8 | 5-1-4-2-6-7-3-8 | 5-1-4-2-6-3-7-8 | 5-1-4-2-3-7-6-8 | 5-1-4-2-3-6-7-8 | 5-1-4-2-7-3-6-8 | 5-1-4-2-7-6-3-8
