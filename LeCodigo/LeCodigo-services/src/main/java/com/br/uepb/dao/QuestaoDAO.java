@@ -144,28 +144,19 @@ public class QuestaoDAO {
 	}
 
 	public List<String> viewIndividual(int valorFase, TipoQuestao_Enum tipo, String login) {
- 		if (!session.isOpen()) {
+		if (!session.isOpen()) {
 			session = HibernateUtil.getSessionFactory().openSession();
 		}
 		List<String> lista = new ArrayList<String>();
 		Transaction tx = session.beginTransaction();
-		String parametroFase = " WHERE login = '" + login+"'" ;
-		
-		if (valorFase != 0) {
-			parametroFase = " AND fase = " + valorFase;
-		}
+		String parametroFase = " WHERE login = '" + login + "'";
 
-		try {
-			if (!tipo.equals(null)) {
-				if (valorFase == 0) {
-					parametroFase += " AND tipo_questao = " + tipo.getTipos();
-				} else
-					parametroFase += " AND tipo_questao = " + tipo.getTipos();
-			}
-		} catch (Exception e) {}
-		
-		
-		SQLQuery query = session.createSQLQuery("SELECT * FROM respostasvw " + parametroFase);
+		if (valorFase > 0) {
+			parametroFase += " AND fase = " + valorFase;
+		}
+		if (tipo!=null)parametroFase += " AND tipo_questao = " + tipo.getTipos();
+
+		SQLQuery query = session.createSQLQuery("SELECT * FROM lecodigo.respostasvw " + parametroFase);
 		List<Object[]> rows = query.list();
 		for (Object[] objects : rows) {
 			lista.add(objects[0] + "@" + objects[1] + "@" + objects[2] + "@" + objects[3] + "@" + objects[4] + "@"

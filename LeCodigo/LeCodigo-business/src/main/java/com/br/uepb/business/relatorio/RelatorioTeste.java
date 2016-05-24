@@ -1,5 +1,6 @@
 package com.br.uepb.business.relatorio;
 
+import com.br.uepb.domain.TipoQuestao_Enum;
 
 public class RelatorioTeste {
 
@@ -7,10 +8,11 @@ public class RelatorioTeste {
 		RelatorioJogadorBusiness rel = new RelatorioJogadorBusiness("lucas");
 		try {
 //			rel.estatisticaFase(1);
-			rel.estatisticaIndividual(0, null);
-			System.out.println(rel.getQtdRespostaCorreta());
-			System.out.println(rel.getQtdRespostaErrada());
-			System.out.println(rel.getQtdRespostaPulou());
+//			rel.estatisticaIndividual(0, null);
+			rel.estatisticaIndividual(1, null);
+			System.out.println("Corretas: "+rel.getQtdRespostaCorreta());
+			System.out.println("Erradas: "+rel.getQtdRespostaErrada());
+			System.out.println("Pulou: "+rel.getQtdRespostaPulou());
 			
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block

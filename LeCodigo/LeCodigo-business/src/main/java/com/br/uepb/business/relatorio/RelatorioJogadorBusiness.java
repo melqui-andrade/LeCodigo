@@ -137,23 +137,27 @@ public class RelatorioJogadorBusiness {
 			toke.nextToken(); // tipo_questao
 
 			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
-			// System.out.println("Quantidade de resposta do Aluno: " +
-			// respostaToke.countTokens());
 
-			while (respostaToke.hasMoreTokens()) {
-				String res = respostaToke.nextElement().toString();
-				// System.out.print(gabarito+"\t\t"+res.trim());
-				if (gabarito.trim().equals(res.trim())) {
-					qtdRespostaCorreta++; /// System.out.println(" OK");
-				} else {
-					qtdRespostaErrada++; // System.out.println(" X");
+			System.out.println("Quantidade de resposta do Aluno: " + respostaToke.countTokens());
+			System.out.println("GABARITO \t\tALUNO");
+			String gab = "";
+			qtdRespostaErrada++;
+
+			for (int i = 0; i <= respostaToke.countTokens(); i++) {
+				String res = respostaToke.nextToken();
+				System.out.println(gab + "\t\t" + res.trim());
+				StringTokenizer gabaritoToke = new StringTokenizer(gabarito, "|");
+				while (gabaritoToke.hasMoreTokens()) {
+					gab = gabaritoToke.nextToken();
+					if (gab.trim().equals(res.trim())) {
+						qtdRespostaCorreta++;
+						System.out.print(" OK");
+					} 
 				}
-
+			
 			}
 		}
-		qtdRespostaErrada -= qtdRespostaPulou;
-		// System.out.println("Certas: "+getQtdRespostaCorreta()+ " Erradas: "+
-		// getQtdRespostaErrada()+" Pulos: "+getQtdRespostaPulou());
+//		qtdRespostaErrada -= qtdRespostaPulou;
 	}
 
 	public void estatisticaTipoQuestao(int arg) throws NumberFormatException, Exception {
@@ -177,18 +181,19 @@ public class RelatorioJogadorBusiness {
 
 			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
 			System.out.println("Gabarito: " + respostaToke.countTokens());
+			String gab = "";
 
-			while (respostaToke.hasMoreTokens()) {
-				String res = respostaToke.nextElement().toString();
-				System.out.print(gabarito + "\t\t" + res.trim());
-				if (gabarito.trim().contains(res.trim())) {
-					qtdRespostaCorreta++;
-					System.out.println(" OK");
-				} else {
-					qtdRespostaErrada++;
-					System.out.println(" X");
+			for (int i = 0; i < respostaToke.countTokens() + 1; i++) {
+				String res = respostaToke.nextToken();
+				System.out.println(gab + "\t\t" + res.trim());
+				StringTokenizer gabaritoToke = new StringTokenizer(gabarito, "|");
+				for (int j = 0; j < gabaritoToke.countTokens() + 1; j++) { 
+					gab = gabaritoToke.nextToken();
+					if (gab.trim().equals(res.trim())) {
+						qtdRespostaCorreta++;
+						System.out.print(" OK");
+					}// else qtdRespostaErrada++;
 				}
-
 			}
 		}
 		qtdRespostaErrada -= qtdRespostaPulou;
@@ -204,30 +209,33 @@ public class RelatorioJogadorBusiness {
 
 		for (String string : lista) {
 			StringTokenizer toke = new StringTokenizer(string, "@");
-
+			
 			toke.nextToken(); // id
-			toke.nextToken(); // login
+			toke.nextToken(); // Login
 			String respostaDoAluno = toke.nextToken(); // Resposta do Aluno
 			if (respostaDoAluno.contains("pulou"))
 				qtdRespostaPulou++;
-			toke.nextToken(); // id QUestao
-			String fase = toke.nextToken(); // fase
-			String etapa = toke.nextToken(); // etapa
+			toke.nextToken(); // id_questao
+			toke.nextToken(); // fase				
+			toke.nextToken(); // Etapa
 			String gabarito = toke.nextToken(); // Resposta
-			String tipoQuestao = toke.nextToken(); // tipo_questao
+			toke.nextToken(); // tipo_questao
 
 			StringTokenizer respostaToke = new StringTokenizer(respostaDoAluno, "|");
 			System.out.println("Gabarito: " + respostaToke.countTokens());
+			qtdRespostaErrada++;
+			String gab = "";
 
-			while (respostaToke.hasMoreTokens()) {
-				String res = respostaToke.nextElement().toString();
-				System.out.print(gabarito + "\t\t" + res.trim());
-				if (gabarito.trim().contains(res.trim())) {
-					qtdRespostaCorreta++;
-					System.out.println(" OK");
-				} else {
-					qtdRespostaErrada++;
-					System.out.println(" X");
+			for (int i = 0; i < respostaToke.countTokens() + 1; i++) {
+				String res = respostaToke.nextToken();
+				System.out.println(gab + "\t\t" + res.trim());
+				StringTokenizer gabaritoToke = new StringTokenizer(gabarito, "|");
+				while (gabaritoToke.hasMoreTokens()) {
+					gab = gabaritoToke.nextToken();
+					if (gab.trim().equals(res.trim())) {
+						qtdRespostaCorreta++;
+						System.out.print(" OK");
+					} // else qtdRespostaErrada++;
 				}
 			}
 		}
