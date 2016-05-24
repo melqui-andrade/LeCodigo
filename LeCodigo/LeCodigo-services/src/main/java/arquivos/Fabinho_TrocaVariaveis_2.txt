@@ -1,0 +1,20 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre Troca variaveis
+
+*Q
+Troque o valor da variavel "A" pelo valor da variavel "B" sem usar uma terceira variavel, após a troca imprima o valor das duas variaveis
+*B
+1_B = A / B;
+2_A = A / B;
+3_int A, B;
+4_input(B);
+5_print("A depois da troca = " + A + "\nB depois da troca = " + B);
+6_input(A);
+7_A = A * B;
+*F
+*R
+3-6-4-7-1-2-5 | 3-4-6-7-1-2-5
+*F
+*I
+3_1
+*F

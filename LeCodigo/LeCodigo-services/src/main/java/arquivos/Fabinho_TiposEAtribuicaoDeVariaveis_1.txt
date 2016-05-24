@@ -1,0 +1,19 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre Tipos e atribuição de variaveis 
+
+*Q
+Imprima a idade e o nome, logo em seguida imprima a idade após 5 anos junto com o sobrenome.
+*F
+*B
+1_print(idade + " - " + nome);
+2_String nome = "Leandro";
+3_print((idade + 5) + " - " + sobrenome);
+4_int idade = 20;
+5_String sobrenome = "Gomes";
+*F
+*R
+4-2-5-1-3 | 5-4-2-1-3 | 2-4-5-1-3 | 2-5-4-1-3 | 4-5-2-1-3 | 5-2-4-1-3 | 2-4-1-5-3 | 4-2-1-5-3
+*F
+*I
+1_1
+*F

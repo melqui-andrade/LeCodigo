@@ -1,0 +1,28 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre Ordenação Simples
+
+*Q
+Ordene os numeros pares do array em ordem crescente e depois imprima o array ordenado.
+*B
+1_index = j;}}
+2_int index = i;
+3_if (array[j] < array[index]) {
+4_int n = 0;
+5_for (int j = i + 1; j < array.length; j++) {
+6_while (n < array.length) {
+7_n++;
+8_print(array[n]);
+9_array[i] = numeroMenor;
+10_for (int i = 0; i < array.length - 1; i++) {
+11_}
+12_array[index] = array[i];
+13_}
+14_int[] array = {8, 16, 24, 66, 2, 12, 4, 18};
+15_int numeroMenor = array[index];
+*F
+*R
+14-10-2-5-3-1-15-12-9-11-4-6-8-7-13 | 14-10-2-5-3-1-15-12-9-13-4-6-8-7-11 | 14-4-10-2-5-3-1-15-12-9-11-6-8-7-13 | 14-4-10-2-5-3-1-15-12-9-13-6-8-7-11 | 4-14-10-2-5-3-1-15-12-9-11-6-8-7-13 | 4-14-10-2-5-3-1-15-12-9-13-6-8-7-11
+*F
+*I
+3_2
+*F

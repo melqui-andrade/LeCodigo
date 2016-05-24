@@ -1,0 +1,25 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre If-Else
+
+*Q
+Faça um programa que leia 3 números inteiros e imprima um (e apenas um) dos seguintes números: <br>
+ 
+1 - (Se todos os números são iguais) <br>
+2 - (Se todos os números são diferentes) <br>
+3 - (Se apenas dois números são iguais) <br>
+*F
+*B
+1_print(3);}
+2_if (n1 == n2 && n1 == n3) {
+3_print(2); 
+4_print(1);
+5_} else {
+6_input(n1); input(n2); input(n3);
+7_} else if (n1 != n2 && n1 != n3 && n2 != n3) {
+*F
+*R
+6-2-4-7-3-5-1
+*F
+*I
+1_2
+*F

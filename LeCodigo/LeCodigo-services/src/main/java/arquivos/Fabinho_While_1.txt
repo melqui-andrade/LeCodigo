@@ -1,0 +1,23 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre While
+
+*Q
+Imprima o maior número dentre os 10 números digitados pelo usuário 
+*F
+*B
+1_while (count <= 10) {
+2_maior = num;
+3_print("O maior numero digitado é: " + maior);
+4_input(num);
+5_int count = 2;
+6_maior = num;}
+7_if (num > maior) {
+8_float maior, num;
+9_count++;}
+*F
+*R
+8-5-4-2-1-4-7-6-9-3 | 5-8-4-2-1-4-7-6-9-3
+*F
+*I
+2_2
+*F

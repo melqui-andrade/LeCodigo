@@ -1,0 +1,18 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre DoWhile
+
+*Q
+Imprima a tabuada de 8 de multiplicação
+*B
+1_print("8 x " + n + " = " + (8 * n) + "\n");
+2_do {
+3_} while (n <= 10);
+4_int n = 1;
+5_n++;
+*F
+*R
+4-2-1-5-3
+*F
+*I
+2_3
+*F

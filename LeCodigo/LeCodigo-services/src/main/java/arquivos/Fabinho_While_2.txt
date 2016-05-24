@@ -1,0 +1,21 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre While
+
+*Q
+Faça um programa que imprima todos os números ímpares entre dois números dados pelo usuário. (OBS.: "n1" deve ser menor que "n2")
+*F
+*B
+1_if (n1 % 2 != 0)
+2_n1++;}
+3_input(n2);
+4_print(n1);
+5_while (n1 <= n2) {
+6_input(n1);
+7_int n1; int n2;
+*F
+*R
+7-6-3-5-1-4-2 | 7-3-6-5-1-4-2
+*F
+*I
+2_2
+*F

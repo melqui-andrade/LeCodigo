@@ -1,0 +1,26 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre Ordenação Simples
+
+*Q
+Ordene os numeros impares do array em ordem crescente e depois imprima o array ordenado.
+*B
+1_auxiliar = array[j];
+2_int auxiliar, n = 0;
+3_}}}
+4_print(array[n]);
+5_if(array[j] < array[j-1]) {
+6_n++;
+7_array[j-1] = auxiliar;
+8_array[j] = array[j-1];
+9_for(int j = i ; j > 0 ; j--){
+10_while (n < array.length) {
+11_int[] array = {9, 17, 25, 67, 3, 13, 5, 19};
+12_for (int i = 1; i < array.length; i++) {
+13_}
+*F
+*R
+11-2-12-9-5-1-8-7-3-10-4-6-13 | 2-11-12-9-5-1-8-7-3-10-4-6-13
+*F
+*I
+3_2
+*F

@@ -1,0 +1,20 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre Funcoes
+
+*Q
+Faça uma função que resolva o fatorial de um numero passado como parametro e imprima o resultado
+*B
+1_print(numero + "! = " + fator);
+2_for (int i = numero; i > 1; i--) {
+3_fator *= i;
+4_int fator = 1;
+5_}
+6_void fatorar(int numero) {
+7_}
+*F
+*R
+6-4-2-3-5-1-7 | 6-4-2-3-7-1-5
+*F
+*I
+3_3
+*F

@@ -1,0 +1,21 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre Troca variaveis
+
+*Q
+Ler dois valores para as variáveis A e B, efetuar a troca dos valores de forma que a variável A passe a possuir o valor da variável B e que a variável B passe a possuir o valor da variável A. Apresentar os valores trocados.
+*B
+1_print("Valor de A depois da troca: " + A);
+2_input(A);
+3_print("Valor de B depois da troca: " + B);
+4_A = B;
+5_int A, B, aux;
+6_aux = A;
+7_input(B);
+8_B = aux;
+*F
+*R
+5-2-7-6-4-8-1-3 | 5-2-7-6-4-8-3-1 | 5-7-2-6-4-8-1-3 | 5-7-2-6-4-8-3-1
+*F
+*I
+3_1
+*F

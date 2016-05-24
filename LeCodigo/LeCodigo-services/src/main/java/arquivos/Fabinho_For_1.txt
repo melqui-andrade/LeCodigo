@@ -1,0 +1,19 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre For
+
+*Q
+Faça um programa que imprima os números inteiros que inicia em 1 e termina em 1000.
+*F
+*B
+1_print(i + 1); }
+2_print(i);}
+3_for (int i = 0; i < 1000; i++) {
+4_for (int i = 0; i < 1000; i--) {
+5_for (int i = 0; i <= 1000; i++) {
+*F
+*R
+3-1
+*F
+*I
+2_1
+*F

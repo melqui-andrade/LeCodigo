@@ -1,0 +1,42 @@
+#Autor: José Fábio Dias de Souza
+#Questão sobre SwitchCase
+
+*Q
+Organize os dias da semana usando um Switch Case e depois imprima a quinta-feira. <br>
+
+Enumere os "Cases" em ordem crescente e siga a seguinte ordem: <br>
+1 - Domingo <br>
+2 - Segunda <br>
+3 - Terça <br>
+4 - Quarta <br>
+5 - Quinta <br>
+6 - Sexta <br>
+7 - Sabado <br>
+*F
+*B
+1_print("Quarta-feira"); break;
+2_case 7:
+3_print("Sábado"); break;
+4_case 2:
+5_print("Terça-feira"); break;
+6_case 6:
+7_case 4:
+8_print("Domingo"); break;
+9_default:
+10_switch (diaDaSemana) {
+11_print("Este não é um dia válido!");}
+12_case 3:
+13_case 5:
+14_int diaDaSemana = 5;
+15_case 1:
+16_print("Sexta-feira"); break;
+17_print("Quinta-feira"); break;                                
+18_print("Segunda-feira"); break;
+                        
+*F
+*R
+14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11
+*F
+*I
+1_3
+*F
