@@ -45,25 +45,25 @@ public class RelatorioAlunoController {
 		
 		// FASE 1
 		relatorio.estatisticaIndividual(1, TipoQuestao_Enum.IF_ELSE);
-			rel_IF_ELSE.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_IF_ELSE.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_IF_ELSE.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_IF_ELSE.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_IF_ELSE.setErrada(relatorio.getQtdRespostaErrada());
+			rel_IF_ELSE.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("ifElse_certo", rel_IF_ELSE.getCerta());
 			request.setAttribute("ifElse_errado", rel_IF_ELSE.getErrada());
 			request.setAttribute("ifElse_pulo", rel_IF_ELSE.getPulo());
 			
 		relatorio.estatisticaIndividual(1, TipoQuestao_Enum.ATRIBUICAO);
-			rel_TiposVariaveis.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_TiposVariaveis.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_TiposVariaveis.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_TiposVariaveis.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_TiposVariaveis.setErrada(relatorio.getQtdRespostaErrada());
+			rel_TiposVariaveis.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("atribuicao_certo", rel_TiposVariaveis.getCerta());
 			request.setAttribute("atribuicao_errado", rel_TiposVariaveis.getErrada());
 			request.setAttribute("atribuicao_pulo", rel_TiposVariaveis.getPulo());
 			
 		relatorio.estatisticaIndividual(1, TipoQuestao_Enum.SWITCH_CASE);
-			rel_SWICTH_CASE.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_SWICTH_CASE.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_SWICTH_CASE.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_SWICTH_CASE.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_SWICTH_CASE.setErrada(relatorio.getQtdRespostaErrada());
+			rel_SWICTH_CASE.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("switch_certo", rel_SWICTH_CASE.getCerta());
 			request.setAttribute("switch_errado", rel_SWICTH_CASE.getErrada());
 			request.setAttribute("switch_pulo", rel_SWICTH_CASE.getPulo());
@@ -78,25 +78,25 @@ public class RelatorioAlunoController {
 			
 		// FASE 2
 		relatorio.estatisticaIndividual(2, TipoQuestao_Enum.DO_WHILE);
-			rel_DO_WHILE.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_DO_WHILE.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_DO_WHILE.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_DO_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_DO_WHILE.setErrada(relatorio.getQtdRespostaErrada());
+			rel_DO_WHILE.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("doWhile_certo", rel_DO_WHILE.getCerta());
 			request.setAttribute("doWhile_errado", rel_DO_WHILE.getErrada());
 			request.setAttribute("doWhile_pulo", rel_DO_WHILE.getPulo());
 			
 		relatorio.estatisticaIndividual(2, TipoQuestao_Enum.WHILE);
-			rel_WHILE.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_WHILE.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_WHILE.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_WHILE.setErrada(relatorio.getQtdRespostaErrada());
+			rel_WHILE.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("while_certo", rel_WHILE.getCerta());
 			request.setAttribute("while_errado", rel_WHILE.getErrada());
 			request.setAttribute("while_pulo", rel_WHILE.getPulo());
 			
 		relatorio.estatisticaIndividual(2, TipoQuestao_Enum.FOR);
-			rel_FOR.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_FOR.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_FOR.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_FOR.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_FOR.setErrada(relatorio.getQtdRespostaErrada());
+			rel_FOR.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("for_certo", rel_FOR.getCerta());
 			request.setAttribute("for_errado", rel_FOR.getErrada());
 			request.setAttribute("for_pulo", rel_FOR.getPulo());
@@ -111,25 +111,25 @@ public class RelatorioAlunoController {
 		
 		// FASE 3
 		relatorio.estatisticaIndividual(1, TipoQuestao_Enum.ATRIBUICAO);
-			rel_TROCA_DE_VARIAVEIS.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_TROCA_DE_VARIAVEIS.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_TROCA_DE_VARIAVEIS.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_TROCA_DE_VARIAVEIS.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_TROCA_DE_VARIAVEIS.setErrada(relatorio.getQtdRespostaErrada());
+			rel_TROCA_DE_VARIAVEIS.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("atribuicao_certo", rel_TROCA_DE_VARIAVEIS.getCerta());
 			request.setAttribute("atribuicao_errado", rel_TROCA_DE_VARIAVEIS.getErrada());
 			request.setAttribute("atribuicao_pulo", rel_TROCA_DE_VARIAVEIS.getPulo());
 			
 		relatorio.estatisticaIndividual(2, TipoQuestao_Enum.ORDENACAO_SIMPLES);
-			rel_ORDENACAO_SIMPLES.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_ORDENACAO_SIMPLES.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_ORDENACAO_SIMPLES.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_ORDENACAO_SIMPLES.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_ORDENACAO_SIMPLES.setErrada(relatorio.getQtdRespostaErrada());
+			rel_ORDENACAO_SIMPLES.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("ordenacao_certo", rel_ORDENACAO_SIMPLES.getCerta());
 			request.setAttribute("ordenacao_errado", rel_ORDENACAO_SIMPLES.getErrada());
 			request.setAttribute("ordenacao_pulo", rel_ORDENACAO_SIMPLES.getPulo());
 			
 		relatorio.estatisticaIndividual(3, TipoQuestao_Enum.FUNCOES);
-			rel_FUNCOES.setCerta(relatorio.getQtdRespostaCorreta()+"");
-			rel_FUNCOES.setErrada(relatorio.getQtdRespostaErrada()+"");
-			rel_FUNCOES.setPulo(relatorio.getQtdRespostaPulou()+"");
+			rel_FUNCOES.setCerta(relatorio.getQtdRespostaCorreta());
+			rel_FUNCOES.setErrada(relatorio.getQtdRespostaErrada());
+			rel_FUNCOES.setPulo(relatorio.getQtdRespostaPulou());
 			request.setAttribute("funcoes_certo", rel_FUNCOES.getCerta());
 			request.setAttribute("funcoes_errado", rel_FUNCOES.getErrada());
 			request.setAttribute("funcoes_pulo", rel_FUNCOES.getPulo());
