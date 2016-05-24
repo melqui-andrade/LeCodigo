@@ -6,7 +6,7 @@ Seguindo uma frase conhecida do cavalheirismo, "mulheres primeiro", faça um alg
 *F
 
 *B
-1_int entrada[] = {"H, Bruno", "M, Ana", "H, Sidney", "M, Luana", "H, Lucas", "M, Fabiana"};
+1_int entrada[] = {&ldquo;H, Bruno&rdquo;, &ldquo;M, Ana&rdquo;, &ldquo;H, Sidney&rdquo;, &ldquo;M, Luana&rdquo;, &ldquo;H, Lucas&rdquo;, &ldquo;M, Fabiana&rdquo;};
 2_int saida = new int[6];
 3_int contM = 0, contH = 5;
 4_for(int i=0; i<6; i++){

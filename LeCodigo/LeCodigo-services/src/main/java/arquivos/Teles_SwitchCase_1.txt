@@ -8,12 +8,12 @@ Faça com que o código leia um número de 1 à 3, e escreva este número por ex
 *B
 1_}
 2_case 3:
-3_print("dois");break;
+3_print(&quot;dois&quot;);break;
 4_int n;
 5_case 1:
 6_input(n);
-7_print("três");break;
-8_print("um");break;
+7_print(&quot;três&quot;);break;
+8_print(&quot;um&quot;);break;
 9_case 2:
 10_witch(n){
 *F

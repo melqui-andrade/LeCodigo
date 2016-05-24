@@ -12,7 +12,7 @@ Organize o algoritmo para que a palavra "Hello Word!" seja escrita 5 vezes
 4_while(x > 10){
 5_while(x <= 11){
 6_while(x <= 5){
-7_print("Hello Word!");
+7_print(&quot;Hello Word!&quot;);
 8_x = x + 2;
 9_int x = 1; 
 *F

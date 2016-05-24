@@ -12,7 +12,7 @@ Organize o algoritmo para que a palavra "GO HORSE!" seja escrita 4 vezes
 4_y++;
 5_}while(y <10);
 6_}while( x > 48);
-7_print("GO HORSE!");
+7_print(&ldquo;GO HORSE!&rdquo;);
 8_do{
 9_do{
 *F

@@ -6,7 +6,7 @@ As variáveis a seguir tem os seguintes valores X = 2 e Y = 5. Organize o algori
 *F
 
 *B
-1_print("x = "+x+"- y = "+y);
+1_print(&quot;x = &quot;+x+&quot;- y = &quot;+y);
 2_int x = 2; y = 5;
 3_x = y - x;
 4_y = y - x;

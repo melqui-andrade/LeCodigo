@@ -11,7 +11,7 @@ Organize os blocos e monte um algoritmo em que seja impresso a palavra "xau"
 3_letra1 = letra2;
 4_letra2 = letra3;
 5_letra3 = aux;
-6_print(""+letra3+letra1+letra2);
+6_print(&quot;&quot;+letra3+letra1+letra2);
 *F
 
 *R

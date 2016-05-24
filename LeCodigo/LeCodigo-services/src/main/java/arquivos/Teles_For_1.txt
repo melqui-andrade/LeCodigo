@@ -10,7 +10,7 @@ Faça um algoritmo que calcule e escreva o valor correspondente a temperatura em
 2_float c = 0;
 3_c = (f - 32) * 5 / 9;
 4_for(int f=0; f<=100; f++){
-5_print(f+"ºF é igual a "+c+"ºC");
+5_print(f+&ldquo;ºF é igual a &rdquo;+c+&ldquo;ºC&rdquo;);
 *F
 
 *R

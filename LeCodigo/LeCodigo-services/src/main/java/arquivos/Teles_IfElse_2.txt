@@ -6,9 +6,9 @@ Um campeonato de vôlei têm 3 categorias infantil: de 10 à 14 anos, juvenil:  
 *F
 
 *B
-1_print("Infantil");
-2_print("Juvenil");
-3_print("Adulto");
+1_print(&ldquo;Infantil&rdquo;);
+2_print(&ldquo;Juvenil&rdquo;);
+3_print(&ldquo;Adulto&rdquo;);
 4_}
 5_} else if (idade >=15 && idade <=17){
 6_} else if (idade >=18 && idade <=25){
