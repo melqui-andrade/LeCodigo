@@ -2,26 +2,28 @@ package com.br.uepb.model;
 
 public class RelatorioModel {
 
-	private String certa;
-	private String errada;
-	private String pulo;
+	private int certa;
+	private int errada;
+	private int pulo;
 	
-	public String getCerta() {
+	public int getCerta() {
 		return certa;
 	}
-	public void setCerta(String certa) {
+	public void setCerta(int certa) {
 		this.certa = certa;
 	}
-	public String getErrada() {
+	public int getErrada() {
 		return errada;
 	}
-	public void setErrada(String errada) {
+	public void setErrada(int errada) {
 		this.errada = errada;
 	}
-	public String getPulo() {
+	public int getPulo() {
 		return pulo;
 	}
-	public void setPulo(String pulo) {
+	public void setPulo(int pulo) {
 		this.pulo = pulo;
 	}
+	
+	
 }
