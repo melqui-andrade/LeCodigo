@@ -93,7 +93,7 @@ public class HomeController {
 			Jogador jog = sessaoBusiness.getJogador();
 			int tipo_usuario = sessaoBusiness.getJogador().getTipo().ordinal();
 			if ( tipo_usuario == 1) { // aluno
-				modelAndView.setViewName("fase/transicaoFase");
+				return new ModelAndView("redirect:/fase/transicaoFase.html");
 			}
 			if (tipo_usuario == 2) { // professor
 				modelAndView.setViewName("professor/home");
