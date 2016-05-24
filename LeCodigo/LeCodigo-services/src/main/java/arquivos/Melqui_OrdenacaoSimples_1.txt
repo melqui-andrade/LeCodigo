@@ -19,5 +19,5 @@ Escreva um algoritmo que ordene a lista com os valores {1,2,3,4,5} em ordem decr
 3-7-4-1-9-5-10-2-6-8-11 | 7-3-4-1-9-5-10-2-6-8-11
 *F
 *I
-2_8
+3_2
 *F

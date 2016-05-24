@@ -1,0 +1,23 @@
+*Q
+Escreva um algoritmo que leia 3 números e imprima todos os números em ordem crescente. Assuma que a função troca(x[m], x[n]), troca o valor dos elementos m e n, que ficam com os valores trocados (n e m).
+*F
+*B
+1_input(numeros[2]);
+2_int min = i;
+3_int numeros[3];
+4_input(numeros[0]);
+5_for(int j = i + 1; j < 3; j++){
+6_min = j;}}
+7_troca(numeros[i], numeros[min]);}}
+8_for(int i = 0; i < 3_1; i++){
+9_if( i != min){
+10_input(numeros[1]);
+11_if(numeros[j] < numeros[min]){
+*F
+*R
+
+3-4-10-1-8-2-5-11-6-9-7 | 3-4-1-10-8-2-5-11-6-9-7 | 3-10-4-1-8-2-5-11-6-9-7 | 3-10-1-4-8-2-5-11-6-9-7 | 3-1-4-10-8-2-5-11-6-9-7 | 3-1-10-4-8-2-5-11-6-9-7
+*F
+*I
+3_2
+*F

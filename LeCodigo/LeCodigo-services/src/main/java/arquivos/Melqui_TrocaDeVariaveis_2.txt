@@ -1,0 +1,22 @@
+*Q
+Escreva um algoritmo que leia uma palavra qualquer e o seu tamanho. Depois o algoritmo imprime a palavra invertida. Veja os exemplos: caixa -> axiac; carro -> orrac; ovo -> ovo
+*F
+*B
+1_char aux = palavra[direita];
+2_print(palavra);
+3_input(tamanho);
+4_int direita = tamanho_1;
+5_for(int esquerda = 0; esquerda < tamanho; esquerda++){
+6_palavra[direita] = palavra[esquerda];
+7_input(palavra);
+8_String palavra;
+9_if(esquerda != direita){
+10_palavra[esquerda] = aux;}}
+11_int tamanho;
+*F
+*R
+8-11-7-3-4-5-9-1-6-10-2 | 8-11-3-7-4-5-9-1-6-10-2 |  8-7-11-3-4-5-9-1-9-10-2 | 8-11-3-4-7-5-9-1-9-10-2 | 11-8-7-3-4-5-9-1-9-10-2 | 11-8-3-7-4-5-9-1-6-10-2 | 11-8-3-4-7-5-9-1-9-10-2 | 11-3-8-7-4-5-9-1-6-10-2 | 11-3-4-8-7-5-9-1-6-10-2 | 11-3-8-4-7-5-9-1-6-10-2
+*F
+*I
+3_7
+*F
