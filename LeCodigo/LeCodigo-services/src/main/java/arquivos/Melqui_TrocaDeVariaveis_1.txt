@@ -2,11 +2,11 @@
 Escreva um algoritmo para inverter a ordem dos elementos da lista: ["casa", "macaco", "cachorro"]
 *F
 *B
-1 - lista[0] = lista[2];
-2 - troca = lista[0];
-3 - String[] lista = {"casa", "macaco", "cachorro"};
-4 - String troca = "";
-5 - lista[2] = troca;
+1_lista[0] = lista[2];
+2_troca = lista[0];
+3_String[] lista = {"casa", "macaco", "cachorro"};
+4_String troca = "";
+5_lista[2] = troca;
 *F
 *R
 3-4-2-1-5 | 4-3-2-1-5

@@ -2,14 +2,14 @@
 Faça um programa que imprima uma contagem enquanto o usuário não digitar "Fogo!". Após o usuário digitar "Fogo!" o programa deve exibir a mensagem: "Lançar!!!"
 *F
 *B
-1 - do{
-2 - print("Lançar!!!");
-3 - input(mensagem);
-4 - string mensagem;
-5 - contador++;
-6 - int contador = 1;
-7 - }while (mensagem != "Fogo!");
-8 - print(contador);
+1_do{
+2_print("Lançar!!!");
+3_input(mensagem);
+4_string mensagem;
+5_contador++;
+6_int contador = 1;
+7_}while (mensagem != "Fogo!");
+8_print(contador);
 *F
 *R
 4-6-1-3-8-5-7-2 | 4-6-1-5-8-3-7-2 | 6-4-1-3-8-5-7-2 | 6-4-1-5-8-3-7-2 | 4-6-1-3-5-8-7-2 | 4-6-1-8-3-5-7-2 | 4-6-1-3-5-8-7-2 | 4-6-1-5-8-3-7-2 | 6-4-1-3-5-8-7-2 | 6-4-1-8-3-5-7-2 | 6-4-1-3-5-8-7-2 | 6-4-1-5-8-3-7-2

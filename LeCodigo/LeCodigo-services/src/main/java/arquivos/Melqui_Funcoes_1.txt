@@ -2,15 +2,15 @@
 Escreva a função imprime4x(), que imprime na tela a frase "com função é de boas" quatro vezes
 *F
 *B
-1 - int imprime4x(){
-2 - void imprime4x(){
-3 - void imprime4x(4){
-4 - print("com função é de boas");
-5 - print("com função é de boas");
-6 - print("com função é de boas");
-7 - print("com função é de boas");
-8 - return "com função é de boas";
-9 - }
+1_int imprime4x(){
+2_void imprime4x(){
+3_void imprime4x(4){
+4_print("com função é de boas");
+5_print("com função é de boas");
+6_print("com função é de boas");
+7_print("com função é de boas");
+8_return "com função é de boas";
+9_}
 *F
 *R
 2-4-5-6-7-9 | 2-4-5-7-6-9 | 2-4-6-5-7-9 | 2-4-6-7-5-9 | 2-4-7-5-6-9 | 2-4-7-6-5-9 | 2-5-4-7-6-9 | 2-5-4-6-7-9 | 2-5-6-7-4-9 | 2-5-6-4-7-9 | 2-5-7-6-4-9 | 2-5-7-4-6-9 | 2-6-4-5-7-9 | 2-6-4-7-5-9 | 2-6-5-4-7-9 | 2-6-5-7-4-9 | 2-6-7-4-5-9 | 2-6-7-5-4-9 | 2-7-4-6-5-9 | 2-7-4-5-6-9 | 2-7-5-6-4-9 | 2-7-5-4-6-9 | 2-7-6-5-4-9 | 2-7-6-4-5-9
