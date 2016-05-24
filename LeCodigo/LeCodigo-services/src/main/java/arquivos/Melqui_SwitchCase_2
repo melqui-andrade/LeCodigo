@@ -3,10 +3,10 @@ Use os blocos a seguir para que a variável "classe" receba a classe correta em 
 *F
 *B
 1_print(classe);
-2_case 1: classe = "primeira classe"; break;
+2_case 1: classe = &quotprimeira classe&quot; break;
 3_switch(bilhete){
-4_case 2: classe = "segunda classe"; break;
-5_case 3 classe = "terceira classe";} break; //estudante =(
+4_case 2: classe = &quotsegunda classe&quot; break;
+5_case 3 classe = &quotterceira classe&quot;} break; //estudante =(
 6_string classe;
 *F
 *R

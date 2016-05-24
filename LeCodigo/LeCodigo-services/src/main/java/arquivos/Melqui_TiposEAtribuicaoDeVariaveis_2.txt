@@ -8,7 +8,7 @@ Organize os blocos a seguir para que a variável "variasPossibilidades" receba o
 4_float variasPossibilidades;
 5_variasPossibilidades = '9';
 6_variasPossibilidades = 9;
-7_variasPossibilidades =  "9";
+7_variasPossibilidades =  &quot9&quot;
 *F
 *R
 1-6 | 3-5 | 4-6

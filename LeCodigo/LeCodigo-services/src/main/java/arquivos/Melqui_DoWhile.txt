@@ -3,12 +3,12 @@ Faça um programa que imprima uma contagem enquanto o usuário não digitar "Fog
 *F
 *B
 1_do{
-2_print("Lançar!!!");
+2_print(&quotLançar!!!&quot);
 3_input(mensagem);
 4_string mensagem;
 5_contador++;
 6_int contador = 1;
-7_}while (mensagem != "Fogo!");
+7_}while (mensagem != &quotFogo!&quot);
 8_print(contador);
 *F
 *R
