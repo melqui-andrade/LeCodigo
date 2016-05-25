@@ -1,0 +1,24 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre While
+
+*Q
+Faça um algoritmo para ler vários números inteiros e imprimir o seu antecessor e sucessor respectivamente, até que seja informado o número 0. Quando for informado o número 0 nada será impresso e o algoritmo termina.
+*F
+*B
+1_while (numero <= 0) {
+2_print(&quot;antecessor &quot;+ (numero-1) );
+3_input(numero);
+4_while (numero != 0) {
+5_print(&quot;antecessor&quot;);
+6_int numero = 0; 
+7_print(&quot;sucessor&quot;);
+8_}
+9_print(&quot;sucessor &quot;+ (numero+1) );                        
+10_input(numero);
+*F
+*R
+6-3-4-2-9-10-8 | 6-10-4-2-9-3-8
+*F
+*I
+2_2
+*F

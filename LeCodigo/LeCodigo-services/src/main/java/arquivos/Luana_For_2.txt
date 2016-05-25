@@ -1,0 +1,24 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre For
+
+*Q
+Faça um algoritmo que leia 20 números inteiros e imprima a media aritmética deles.
+*F
+*B
+1_divisao = soma+20;
+2_for (int i = 0; i<20; i++) {
+3_float divisao = 0;
+4_soma = soma+numero;
+5_}
+6_int soma = 0, numero = 0;
+7_for (int i = 0; i<20; i--) {
+8_print(&quot;A media é &quot;+divisao);
+9_divisao = soma/20;
+10- input(numero);
+*F
+*R
+6-3-2-10-4-5-9-8 | 3-6-2-10-4-5-9-8 | 6-2-10-4-5-3-9-8
+*F
+*I
+2_1
+*F

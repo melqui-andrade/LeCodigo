@@ -1,0 +1,22 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre For
+
+*Q
+Faça um algoritmo para somar apenas os números pares entre 20 e 40 e depois que somar todos os números imprimir o seguinte texto &quot;O resultado da soma é: X&quot;, onde &quot;X&quot; é resultado final do somatório.
+*F
+*B
+1_int soma = 0;
+2_for (int i = 20; i < 40; i= i + 2) {
+3_print(&quot;O resultado da soma é: &quot;+soma);
+4_}
+5_for(int i = 20; i <= 40; i= i + 2) {
+6_soma = soma + i;
+7_for(int i = 0; i <= 40; i++) {
+8_print(&quot;O resultado da soma é: &quot;) + soma;
+*F
+*R
+1-5-6-4-3
+*F
+*I
+2_1
+*F
