@@ -4,20 +4,20 @@
 *Q
 Usando DoWhile ordene o codigo a seguir para formar um menu de visualização
 *B
-1_println("\t0. Sair");
-2_println("\t2. Ler o menu");
+1_println(&quot;\t0. Sair&quot;);
+2_println(&quot;\t2. Ler o menu&quot;);
 3_do {
 4_if (opcao == 0) {
-5_println("\t1. Ver o menu");
+5_println(&quot;\t1. Ver o menu&quot;);
 6_input(opcao);
-7_println("\t\tMenu de opções:");
-8_println("\n\n\n\n\n\n");}
-9_println("\t5. Não li, pode repetir?");
-10_println("\t3. Repetir o menu");
+7_println(&quot;\t\tMenu de opções:&quot;);
+8_println(&quot;\n\n\n\n\n\n&quot;);}
+9_println(&quot;\t5. Não li, pode repetir?&quot;);
+10_println(&quot;\t3. Repetir o menu&quot;);
 11_} else {
 12_} while (continuar);
-13_println("Programa finalizado.");
-14_println("\t4. Tudo de novo");
+13_println(&quot;Programa finalizado.&quot;);
+14_println(&quot;\t4. Tudo de novo&quot;);
 15_boolean continuar = true; int opcao;
 16_continuar = false;
 *F

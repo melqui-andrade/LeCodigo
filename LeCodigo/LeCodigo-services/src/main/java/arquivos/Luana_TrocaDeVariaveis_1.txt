@@ -1,0 +1,31 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre Troca de Variáveis
+
+*Q
+Descobriram que as notas de três alunos de uma determinada turma foram trocadas. As notas alteradas dos alunos são as seguintes: aluno1=9, aluno2=5, aluno3=7. Faça um algoritmo para trocar as notas dos alunos utilizando o seguinte critério: aluno1=aluno3, aluno2=aluno1 e aluno3=aluno2. Ao final do algoritmo imprima as notas dos alunos da seguinte forma: &quot;Aluno1 = X | Aluno2 = Y | Aluno3 = Z&quot;. Onde X, Y e Z são as respetivas notas dos alunos. Observação: utilize a variavel auxiliar &quot;troca&quot; para alterar os valores entre as variáveis. 
+*F
+*B
+1_troca = aluno1;
+2_troca = aluno3;
+3_aluno2 = aluno1;
+4_int troca = 0;
+5_aluno2 = aluno3;
+6_int aluno1, aluno2, aluno3;
+7_print(&quot;Aluno1 = &quot;+aluno1+&quot; | Aluno2 = &quot;+aluno2+&quot; | Aluno3 = &quot;+aluno3);
+8_print(&quot;Aluno1 = &quot;+aluno2+&quot; | Aluno2 = &quot;+&quot; | Aluno3 = &quot;+aluno3);
+9_aluno3 = aluno1;
+10_int troca = aluno1 + aluno2 + aluno3;
+11_aluno1 = aluno3;
+12_int aluno1 = 9, aluno2 = 5, aluno3 = 7;
+13_aluno1 = aluno2;
+14_aluno1 = troca;
+15_troca = aluno2;
+16_aluno3 = troca;
+17_aluno2 = troca;
+*F
+*R
+4-12-1-13-5-16-7 | 12-4-1-13-5-16-7 | 4-12-15-5-9-14-7 | 12-4-15-5-9-14-7 | 4-12-2-9-13-17-7 | 12-4-2-9-13-17-7
+*F
+*I
+3_1
+*F

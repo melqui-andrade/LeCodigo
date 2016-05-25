@@ -1,0 +1,23 @@
+#Autor: Luana Janaina de Sousa
+#Quest�o sobre While
+
+*Q
+Organize o c�digo abaixo para receber v�rios n�meros e imprimi-los enquanto o n�mero 0 n�o for informado. Se o n�mero 0 for informado, ele n�o ser� impresso e o programa termina.
+*F
+*B
+1_while (true) {
+2_}
+3_while (numero != 0) {
+4_input(numero);
+5_if (numero == 0) {
+6_int numero = 0;
+7_print(&quot;O numero �: &quot;+numero);
+8_int x = 1;
+9_input(numero);
+*F
+*R
+6-9-3-7-4-2 | 6-4-3-7-9-2
+*F
+*I
+2_2
+*F

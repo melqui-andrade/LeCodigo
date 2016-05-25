@@ -4,9 +4,9 @@
 *Q
 Ler dois valores para as variáveis A e B, efetuar a troca dos valores de forma que a variável A passe a possuir o valor da variável B e que a variável B passe a possuir o valor da variável A. Apresentar os valores trocados.
 *B
-1_print("Valor de A depois da troca: " + A);
+1_print(&quot;Valor de A depois da troca: &quot; + A);
 2_input(A);
-3_print("Valor de B depois da troca: " + B);
+3_print(&quot;Valor de B depois da troca: &quot; + B);
 4_A = B;
 5_int A, B, aux;
 6_aux = A;

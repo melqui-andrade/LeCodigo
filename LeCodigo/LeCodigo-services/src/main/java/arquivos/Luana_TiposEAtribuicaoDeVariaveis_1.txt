@@ -1,0 +1,22 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre Tipos e atribuição de variáveis
+
+*Q
+Maurício, deseja calcular sua média final utilizando a fórmula MEDIA = (Nota1 + Nota 2) / 2. Organize os códigos abaixo para calcular a média final de Maurício e depois imprima a frase = &quot;A média final é X&quot;, onde X é o resultado da média final.
+*F
+*B
+1_input (nota1);
+2_media = (nota1 + nota2) / 2;
+3_print(&quot;A media final é &quot;+media);
+4_media = nota1 + nota2;
+5_print(&quot;A media final é &quot;)+media;
+6_float nota1 = 0, nota2 = 0, media = 0;
+7_string media = &quot;;0&quot;;
+8_input (nota2);
+*F
+*R
+6-1-8-2-3 | 6-8-1-2-3
+*F
+*I
+1_1
+*F

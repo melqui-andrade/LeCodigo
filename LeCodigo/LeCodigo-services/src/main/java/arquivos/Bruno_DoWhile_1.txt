@@ -8,7 +8,7 @@ Arranje as linhas de um loop finito para que seja impresso o valor da variável 
 1_int x = 0;
 2_do{
 3_if(x%2 != 0){
-4_print(x+"\n");}
+4_print(x+&quot;\n&quot;);}
 5_x++;
 6_}while(x<=10);
 7_if(x%2 == 0){

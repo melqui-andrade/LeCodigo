@@ -2,17 +2,17 @@
 #Questão sobre Troca de variáveis
 
 *Q
-Elaborar um programa para receber valores, do usuário, utilizando as variáveis "A" e "B". Após isto, o programa, utilizando-se de uma 3ª variável "C", deverá trocar o conteúdo das variáveis "A" e "B". Depois imprima o seguinte texto com o valor das variáveis "O valor de A é 'ValorA' e o valor de B é 'ValorB'"
+Elaborar um programa para receber valores, do usuário, utilizando as variáveis &quot;A&quot; e &quot;B&quot;. Após isto, o programa, utilizando-se de uma 3ª variável &quot;C&quot;, deverá trocar o conteúdo das variáveis &quot;A&quot; e &quot;B&quot;. Depois imprima o seguinte texto com o valor das variáveis &quot;&quot;O valor de A é &quot;ValorA&quot; e o valor de B é &quot;ValorB&quot;&quot;&quot;
 *F
 *B
 1_float A;
 2_C=A;
-3_print("Inserir número B: ");
+3_print(&quot;Inserir número B: &quot;);
 4_float C; 
 5_input(B);
 6_A=B; 
 7_input(A);
-8_print("Inserir número A: ");
+8_print(&quot;Inserir número A: &quot;);
 9_B=C;
 10_input(B);
 *F

@@ -7,8 +7,8 @@ Como deve-se verificar se um número qualquer é par ou impar? Organize blocos p
 *B
 1_int numero; String resposta;
 2_if(numero){
-3_resposta = “O número é par”;}
-4_else{ resposta = “O número é impar”;}
+3_resposta = &quot;O número é par&quot;;}
+4_else{ resposta = &quot;O número é impar&quot;;}
 5_if(numero%3==0){
 6_if(numero%2==0){
 *F

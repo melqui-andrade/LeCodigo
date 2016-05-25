@@ -13,14 +13,14 @@ Mostre também como ficaria criptografado o nome “Computação”.
 Assuma que o comando tamanho(palavra) retorna o tamanho da palavra.
 *F
 *B
-1_String nome = "Computação";
+1_String nome = &quot;Computação&quot;;
 2_String criptografar(String palavraCriptografar){
-3_String palavraCriptografada = "";
+3_String palavraCriptografada = &quot;&quot;;
 4_for(int i = 0; i<tamanho(palavraCriptografar); i++){
 5_palavraCriptografada += (palavraCriptografar[i+3]);}
 6_return palavraCriptografada ;}
 7_String descriptografar(String palavraDescriptografar){
-8_String palavraDescriptografada = "";
+8_String palavraDescriptografada = &quot;&quot;;
 9_for(int i = 0; i<tamanho(palavra); i++){
 10_palavraDesriptografada+= (palavraDescriptografar[i-3]);}
 11_return palavraDescriptografada;}

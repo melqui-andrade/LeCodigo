@@ -1,0 +1,24 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre Funções
+
+*Q
+Ana Maria precisa comparar dois valores para saber qual é o maior. Faça uma função que recebe por parâmetro dois valores e informa se o primeiro valor é maior ou igual que o segundo. Se o primeiro valor for maior ou igual do que o segundo a função retorna &quot;true&quot; caso contrário retorna &quot;false&quot;.
+*F
+*B
+1_return false;
+2_void verificarValores(int valor1, int valor2) {
+3_if (valor1 < valor2) {
+4_return true;
+5_return valor1;
+6_if (valor1 >= valor2) {
+7_} else {
+8_boolean verificarValores(int valor1, int valor2) {
+9_}
+10_}
+*F
+*R
+8-6-4-7-1-9-10 | 8-6-4-7-1-10-9 | 8-3-1-7-4-9-10 | 8-3-1-7-4-10-9
+*F
+*I
+3_3
+*F

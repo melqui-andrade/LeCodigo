@@ -8,8 +8,8 @@ Para doar sangue é necessário ter entre 18 e 67 anos. Faça um código que per
 *B
 1_input(idade);
 2_}
-3_print("Você pode doar sangue");
-4_print("Você não pode doar sangue");
+3_print(&ldquo;Você pode doar sangue&rdquo;);
+4_print(&ldquo;Você não pode doar sangue&rdquo;);
 5_if( (idade >= 18) && (idade <=67)){
 6_else{
 7_int idade;

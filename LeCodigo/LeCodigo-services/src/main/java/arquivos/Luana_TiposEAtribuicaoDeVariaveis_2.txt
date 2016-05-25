@@ -1,0 +1,22 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre Tipos e atribuição de variáveis
+
+*Q
+O código abaixo foi desenvolvido por João, que por não ter aprendido algoritmos corretamente o fez errado. Organize os blocos abaixo para que as informações sejam apresentadas de forma correta:<br>#### Código de João ###<br>int valor1= &quot;10&quot;;<br>string valor2= &quot;4&quot;;<br>int multiplica = valor1 * valor2<br>print (valor1+&quot; * &quot;+valor2+&quot; = &quot;) + multiplica;
+*F
+*B
+1_int valor1 = &quot;10&quot;;
+2_int valor1 = 10;
+3_boolean valor1 = &quot;4&quot;;
+4_int valor2 = 4;
+5_int multiplica = valor1 * valor2;
+6_int multiplica = (valor1, valor2);
+7_print (valor1 +&quot; * &quot;+ valor2+&quot; = &quot;+ multiplica);
+8_print (valor1 +&quot; * &quot;+ valor2+&quot; = &quot;) + multiplica;
+*F
+*R
+2-4-5-7 | 4-2-5-7
+*F
+*I
+1_1
+*F

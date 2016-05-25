@@ -17,8 +17,9 @@ public class Questao {
 	@Id
 	@GeneratedValue
 	private int id;
-	@Column (length=500)
+	@Column (length=1000)
 	private String descricao;
+	@Column (length=1000)
 	private String resposta;
 	private int fase;
 	private TipoQuestao_Enum tipo_questao;

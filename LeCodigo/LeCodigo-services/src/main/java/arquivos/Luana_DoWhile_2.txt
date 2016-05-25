@@ -1,0 +1,26 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre DoWhile
+
+*Q
+Faça um programa que lê vários números inteiros e imprime o valor correspondente a 5% desse número enquanto o numero for diferente de 0. Quando for informado o número 0 nada será impresso e o algoritmo termina (utilize do-while)
+*F
+*B
+1_do 
+2_porcentagem = (numero * 0.05);
+3_input(numero);
+4_double porcentagem = 0;
+5_int numero = 0; 
+6_do {                        
+7_} while (numero != 0);
+8_print(&quot;5% de &quot;+numero+&quot; é &quot;+ porcentagem);
+9_}
+10_input(numero);
+11_while (numero == 0)
+12_if (numero != 0) {
+*F
+*R
+5-4-10-6-12-2-8-9-3-7 | 5-4-3-6-12-2-8-9-10-7 | 4-5-10-6-12-2-8-9-3-7 | 4-5-3-6-12-2-8-9-10-7 | 5-10-4-6-12-2-8-9-3-7 | 5-3-4-6-12-2-8-9-10-7 | 5-10-6-4-12-2-8-9-3-7 | 5-3-6-4-12-2-8-9-10-7 | 5-10-6-12-4-2-8-9-3-7 | 5-3-6-12-4-2-8-9-10-7 | 5-4-10-12-6-2-8-3-7-9 | 5-4-3-12-6-2-8-10-7-9 | 4-5-10-12-6-2-8-3-7-9 | 4-5-3-12-6-2-8-10-7-9 | 5-10-4-12-6-2-8-3-7-9 | 5-3-4-12-6-2-8-10-7-9 | 5-10-12-6-4-2-8-3-7-9 | 5-3-12-6-4-2-8-10-7-9 | 5-10-12-4-6-2-8-3-7-9 | 5-3-12-4-6-2-8-10-7-9 | 5-4-6-3-12-2-8-9-7 | 5-4-6-10-12-2-8-9-7 | 4-5-6-3-12-2-8-9-7 | 4-5-6-10-12-2-8-9-7 | 5-6-4-3-12-2-8-9-7 | 5-6-4-10-12-2-8-9-7 | 5-6-3-4-12-2-8-9-7 | 5-6-10-4-12-2-8-9-7 | 5-6-3-12-4-2-8-9-7 | 5-6-10-12-4-2-8-9-7
+*F
+*I
+2_3
+*F

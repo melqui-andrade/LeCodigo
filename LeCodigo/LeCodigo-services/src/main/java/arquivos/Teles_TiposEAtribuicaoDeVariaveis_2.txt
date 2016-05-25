@@ -8,7 +8,7 @@ Organize os blocos para imprimir o nome "hahahaha" (use apenas 4 blocos)
 *B
 1_print(risos[c]);
 2_int a = 3, b = 2, c = 4;
-3_String risos[] = {"kkkkkkkkjk", "hahahaha", "aushahushaush", "rsrsrsrsrs"};
+3_String risos[] = {&quot;kkkkkkkkjk&quot;, &quot;hahahaha&quot;, &quot;aushahushaush&quot;, &quot;rsrsrsrsrs&quot;};
 4_c = a - c + b;
 5_c = c - b;
 6_c = a + b + c;

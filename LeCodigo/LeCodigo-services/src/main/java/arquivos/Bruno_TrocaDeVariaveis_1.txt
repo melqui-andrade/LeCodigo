@@ -9,16 +9,16 @@ A lista que ele pede é: Biscoito, Pão, Manteiga, Açúcar e Café.
 Organize o código a seguir para que sua lista de compras seja alterada para atender o desejo de seu amigo, e mostre a lista com os itens alterados.
 *F
 *B
-1_String minhaLista[] = {“Biscoito”, “Pão”, “Café”, “Açúcar”, “Manteiga”};
+1_String minhaLista[] = {&quot;Biscoito&quot;, &quot;Pão&quot;, &quot;Café&quot;, &quot;Açúcar&quot;, &quot;Manteiga&quot;};
 2_String acumuladorDeItem;
 3_int indice = 2;
 4_acumuladorDeItem = minhaLista[indice];
 5_minhaLista[indice] = minhaLista[4];
 6_minhaLista[4] = acumuadorDeItem;
 7_for(int contador = 0; contador<5; contador+=1){
-8_print(minhaLista[contador]+” “);
+8_print(minhaLista[contador]+&quot; &quot;);
 9_}
-10_print(minhaLista[indice]+” “);
+10_print(minhaLista[indice]+&quot; &quot;);
 11_for(int contador = 1; contador<6; contador++){
 *F
 *R
