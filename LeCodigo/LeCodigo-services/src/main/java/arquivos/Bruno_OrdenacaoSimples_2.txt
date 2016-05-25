@@ -13,8 +13,8 @@ OBS: Considere que a variável numeros não precisa ter seus valores inicializad
 5_estaEmOrdem = false; }
 6_}
 7_if(estaEmOrdem==true) {
-8_print("Está ordenado");
-9_} else { print("Está desordenado"); }
+8_print(&quot;Está ordenado&quot;);
+9_} else { print(&quot;Está desordenado&quot;); }
 10_for (int i = 0; i < 100; i++) {
 *F
 *R

@@ -1,14 +1,14 @@
 *Q
-Organize os blocos a seguir para que a variável "variasPossibilidades" receba o valor 9
+Organize os blocos a seguir para que a variável &quot;variasPossibilidades&quot; receba o valor 9
 *F
 *B
 1_int variasPossibilidades;
 2_boolean variasPossibilidades;
 3_char variasPossibilidades;
 4_float variasPossibilidades;
-5_variasPossibilidades = '9';
+5_variasPossibilidades = &rsquo;9&rsquo;;
 6_variasPossibilidades = 9;
-7_variasPossibilidades =  "9";
+7_variasPossibilidades =  &quot;9&quot;;
 *F
 *R
 1-6 | 3-5 | 4-6

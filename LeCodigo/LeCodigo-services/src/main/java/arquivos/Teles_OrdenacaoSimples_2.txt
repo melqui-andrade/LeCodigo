@@ -11,7 +11,7 @@ Seguindo uma frase conhecida do cavalheirismo, "mulheres primeiro", faça um alg
 3_int contM = 0, contH = 5;
 4_for(int i=0; i<6; i++){
 5_String nome = entrada[i]
-6_if(nome[0] == 'M'){
+6_if(nome[0] == &rsquo;M&rsquo;){
 7_saida[contM] = numeros[i];
 8_contM++;
 9_}else{

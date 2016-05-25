@@ -13,8 +13,8 @@ O programa escrito abaixo está embralhado. Sua missão é por o código na orde
 6_int soma = 0;
 7_soma = soma + i; }
 8_for (i; i >= n; i++){
-9_print("A soma é " + soma); 
-10_print("A soma é " + i);
+9_print(&quot;A soma é &quot; + soma); 
+10_print(&quot;A soma é &quot; + i);
 *F
 *R
 6-1-3-7-9 | 1-6-3-7-9

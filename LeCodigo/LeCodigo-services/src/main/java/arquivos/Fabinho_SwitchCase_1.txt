@@ -14,24 +14,24 @@ Enumere os "Cases" em ordem crescente e siga a seguinte ordem: <br>
 7 - Sabado <br>
 *F
 *B
-1_print("Quarta-feira"); break;
+1_print(&quot;Quarta-feira&quot;); break;
 2_case 7:
-3_print("Sábado"); break;
+3_print(&quot;Sábado&quot;); break;
 4_case 2:
-5_print("Terça-feira"); break;
+5_print(&quot;Terça-feira&quot;); break;
 6_case 6:
 7_case 4:
-8_print("Domingo"); break;
+8_print(&quot;Domingo&quot;); break;
 9_default:
 10_switch (diaDaSemana) {
-11_print("Este não é um dia válido!");}
+11_print(&quot;Este não é um dia válido!&quot;);}
 12_case 3:
 13_case 5:
 14_int diaDaSemana = 5;
 15_case 1:
-16_print("Sexta-feira"); break;
-17_print("Quinta-feira"); break;                                
-18_print("Segunda-feira"); break;                      
+16_print(&quot;Sexta-feira&quot;); break;
+17_print(&quot;Quinta-feira&quot;); break;                                
+18_print(&quot;Segunda-feira&quot;); break;                      
 *F
 *R
 14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11

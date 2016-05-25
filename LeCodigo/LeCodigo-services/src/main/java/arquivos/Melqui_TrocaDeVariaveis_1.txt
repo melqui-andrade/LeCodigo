@@ -4,8 +4,8 @@ Escreva um algoritmo para inverter a ordem dos elementos da lista: ["casa", "mac
 *B
 1_lista[0] = lista[2];
 2_troca = lista[0];
-3_String[] lista = {"casa", "macaco", "cachorro"};
-4_String troca = "";
+3_String[] lista = {&quot;casa&quot;, &quot;macaco&quot;, &quot;cachorro&quot;};
+4_String troca = &quot;&quot;;
 5_lista[2] = troca;
 *F
 *R

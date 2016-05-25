@@ -13,8 +13,8 @@ OBS: O ano é bissexto se for múltiplo de quatro e não for múltiplo de 100, o
 5_int ano;
 6_input(ano);
 7_if(ehBissexto(ano)==true){
-8_print(“O ano “+ano+” é bissexto”);}
-9_else{ print(“O ano “+ano+” não bissexto”);}
+8_print(&quot;O ano &quot;+ano+&quot; é bissexto&quot;);}
+9_else{ print(&quot;O ano &quot;+ano+&quot; não bissexto&quot;);}
 *F
 *R
 1-2-3-4-5-6-7-8-9

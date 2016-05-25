@@ -7,20 +7,20 @@ A variável “lugar” pode possuir os valores “Brasil”, “Nordeste” ou 
 *B
 1_String lugar; String sigla;
 2_switch(lugar){
-3_case “Brasil” : 
-4_sigla = “BR”;
-5_case “Nordeste” : 
-6_sigla = “NE”;
-7_case “Paraíba” : 
-8_sigla = “PB”;
+3_case &quot;Brasil&quot; : 
+4_sigla = &quot;BR&quot;;
+5_case &quot;Nordeste&quot; : 
+6_sigla = &quot;NE&quot;;
+7_case &quot;Paraíba&quot; : 
+8_sigla = &quot;PB&quot;;
 9_}
 10_switch(sigla){
-11_case “PB” : 
-12_lugar = “Paraíba”;
-13_case “BR” : 
-14_lugar = “Brasil”;
-15_case “NE” : 
-16_lugar = “Nordeste”;
+11_case &quot;PB&quot; : 
+12_lugar = &quot;Paraíba&quot;;
+13_case &quot;BR&quot; : 
+14_lugar = &quot;Brasil&quot;;
+15_case &quot;NE&quot; : 
+16_lugar = &quot;Nordeste&quot;;
 
 *F
 *R

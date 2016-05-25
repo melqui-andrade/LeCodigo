@@ -7,12 +7,12 @@ Obs2: As notas podem ter valores decimais
 1_int nota1, nota2;
 2_else{
 3_if((nota1 + nota2) / 2 < 7){
-4_print("vai pra final");}
+4_print(&quot;vai pra final&quot;);}
 5_input(nota1);
 6_float nota1, nota2;
 7_input(nota2);
 8_if((nota1 + nota2) / 2 > 7){
-9_print("aee passou!");}
+9_print(&quot;aee passou!&quot;);}
 *F
 *R
 6-5-7-3-4-2-9 | 6-7-5-3-4-2-9

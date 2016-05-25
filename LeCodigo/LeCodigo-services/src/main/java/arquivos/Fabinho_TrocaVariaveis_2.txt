@@ -8,7 +8,7 @@ Troque o valor da variavel "A" pelo valor da variavel "B" sem usar uma terceira 
 2_A = A / B;
 3_int A, B;
 4_input(B);
-5_print("A depois da troca = " + A + "\nB depois da troca = " + B);
+5_print(&quot;A depois da troca = &quot; + A + &quot;\nB depois da troca = &quot; + B);
 6_input(A);
 7_A = A * B;
 *F

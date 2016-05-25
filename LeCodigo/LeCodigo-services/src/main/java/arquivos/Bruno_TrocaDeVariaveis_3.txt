@@ -7,15 +7,15 @@ Faça o algoritmo que faz essa distribuição. No final diga qual algoritmo o pr
 A variável “algoritmos” representa a ordem dos algoritmos feitos por cada dupla.
 *F
 *B
-1_String algoritmos[] = {“Criptografia”, “FIBONACCI”, “Fatorial”, “Ordenação”, “Calculadora”, “Classificador”, “Palíndromo”};
-2_String professor = “Girafales”, auxiliar;
+1_String algoritmos[] = {&quot;Criptografia&quot;, &quot;FIBONACCI&quot;, &quot;Fatorial&quot;, &quot;Ordenação&quot;, &quot;Calculadora&quot;, &quot;Classificador&quot;, &quot;Palíndromo&quot;};
+2_String professor = &quot;Girafales&quot;, auxiliar;
 3_int inicio = 0, fim = 6;
 4_while(inicio<3){
 5_auxiliar = algoritmos[inicio];
 6_algoritmos[inicio] = algoritmos[fim];
 7_algoritmos[fim] = auxiliar;
 8_inicio+=1; fim -= 1;}
-9_print(“O professor “+professor+” corrigiu o algoritmo ”+algoritmos[inicio]);
+9_print(&quot;O professor &quot;+professor+&quot; corrigiu o algoritmo &quot;+algoritmos[inicio]);
 *F
 *R
 1-2-3-4-5-6-7-8-9 | 1-3-2-4-5-6-7-8-9 | 2-1-3-4-5-6-7-8-9 | 2-3-1-4-5-6-7-8-9 | 3-1-2-4-5-6-7-8-9 | 3-2-1-4-5-6-7-8-9

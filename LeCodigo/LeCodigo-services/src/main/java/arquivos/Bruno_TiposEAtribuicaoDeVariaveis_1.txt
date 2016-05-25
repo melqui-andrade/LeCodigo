@@ -5,7 +5,7 @@
 Utilizando os blocos a seguir, atribua a frase “Seja bem-vindo ao universo dos algoritmos” para a variável “frase”
 *F
 *B
-1_String palavras [] = {“Seja bem-vindo”, “universo dos algoritmos”, “ao”, “ “};
+1_String palavras [] = {&quot;Seja bem-vindo&quot;, &quot;universo dos algoritmos&quot;, &quot;ao&quot;, &quot; &quot;};
 2_int a = 3;
 3_int b = a-1;
 4_String frase = palavras[0] + palavras[a];
