@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Questão sobre Do While
+#QuestÃ£o sobre Do While
 
 *Q
-Faça um programa que dê a ação de andar, enquanto a condição de ter energia for verdadeira, sabendo que a primeira ação é andar (utilize do while)
+FaÃ§a um programa que dÃª a aÃ§Ã£o de andar, enquanto a condiÃ§Ã£o de ter energia for verdadeira, sabendo que a primeira aÃ§Ã£o Ã© andar (utilize do while)
 *F
 *B
 1_do{
@@ -11,7 +11,7 @@ Faça um programa que dê a ação de andar, enquanto a condição de ter energia for 
 4_string acao;
 5_boolean temEnergia=true;
 6_input(temEnergia);
-7_acao=&quot;´parado&quot;;
+7_acao=&quot;parado&quot;;
 *F
 *R
 4-5-1-6-3-2 | 5-4-1-6-3-2 | 5-4-1-3-6-2 | 4-5-1-3-6-2

@@ -1,15 +1,15 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre Tipos e atribuiÁ„o de vari·veis
+#Quest√£o sobre Tipos e atribui√ß√£o de vari√°veis
 
 *Q
-MaurÌcio, deseja calcular sua mÈdia final utilizando a fÛrmula MEDIA = (Nota1 + Nota 2) / 2. Organize os cÛdigos abaixo para calcular a mÈdia final de MaurÌcio e depois imprima a frase = &quot;A mÈdia final È X&quot;, onde X È o resultado da mÈdia final.
+Maur√≠cio, deseja calcular sua m√©dia final utilizando a f√≥rmula MEDIA = (Nota1 + Nota 2) / 2. Organize os c√≥digos abaixo para calcular a m√©dia final de Maur√≠cio e depois imprima a frase = &quot;A m√©dia final √© X&quot;, onde X √© o resultado da m√©dia final.
 *F
 *B
 1_input (nota1);
 2_media = (nota1 + nota2) / 2;
-3_print(&quot;A media final È &quot;+media);
+3_print(&quot;A media final √© &quot;+media);
 4_media = nota1 + nota2;
-5_print(&quot;A media final È &quot;)+media;
+5_print(&quot;A media final √© &quot;)+media;
 6_float nota1 = 0, nota2 = 0, media = 0;
 7_string media = &quot;;0&quot;;
 8_input (nota2);

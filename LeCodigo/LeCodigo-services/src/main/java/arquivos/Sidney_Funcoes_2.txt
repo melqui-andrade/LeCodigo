@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre Funcoes
+#Quest√£o sobre Funcoes
 
 *Q
-FaÁa uma funÁ„o que informe a quantidade de caracteres que h· em uma string, observaÁ„o: sabemos que uma string termina quando seu ultimo elemento È um caractere &rsquo;\0&rsquo;
+Fa√ßa uma fun√ß√£o que informe a quantidade de caracteres que h√° em uma string, observa√ß√£o: sabemos que uma string termina quando seu ultimo elemento √© um caractere &rsquo;\0&rsquo;
 *F
 *B
 1_tamanho++;

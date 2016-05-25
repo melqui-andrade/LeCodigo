@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre DoWhile
+#Quest√£o sobre DoWhile
 
 *Q
-Roberto est· trabalhando em um algoritmo para uma loja que utiliza apenas teclado numerico. O algoritmo deve multiplicar 2 n˙meros e imprimir o resultado da multiplicacao. ApÛs informar o resultado da multiplicaÁ„o, deve ser apresentada a seguinte pergunta: &quot;Deseja realizar uma nova multiplicacao?&quot;. Se o usu·rio informar o n˙mero 1 ser· realizada uma nova multiplicacao. Caso contrario, o programa ser· encerrado. Uma observaÁ„o: Utilize a variavel &quot;resultado&quot; para armazenar o retorno da pergunta.
+Roberto est√° trabalhando em um algoritmo para uma loja que utiliza apenas teclado numerico. O algoritmo deve multiplicar 2 n√∫meros e imprimir o resultado da multiplicacao. Ap√≥s informar o resultado da multiplica√ß√£o, deve ser apresentada a seguinte pergunta: &quot;Deseja realizar uma nova multiplicacao?&quot;. Se o usu√°rio informar o n√∫mero 1 ser√° realizada uma nova multiplicacao. Caso contrario, o programa ser√° encerrado. Uma observa√ß√£o: Utilize a variavel &quot;resultado&quot; para armazenar o retorno da pergunta.
 *F
 *B
 1_do {
@@ -13,7 +13,7 @@ Roberto est· trabalhando em um algoritmo para uma loja que utiliza apenas teclad
 6_input(numero2);
 7_}
 8_} while(resultado == 1);
-9_print (&quot;O resultado da multiplicacao È: &quot; + multiplicacao);
+9_print (&quot;O resultado da multiplicacao √©: &quot; + multiplicacao);
 10_multiplicacao = numero1 * numero2;
 11_multiplicacao = numero1 . numero2;
 12_do (resultado = 1) {

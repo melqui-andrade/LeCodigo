@@ -1,5 +1,5 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre OrdenaÁ„o
+#Quest√£o sobre Ordena√ß√£o
 
 *Q
 Imagine um array de bolas (duas vermelhas, uma preta). Ordene as bolas a fim de que as cores iguais fiquem proximas. Ex: vermelha,preta,preta ao final, imprima o resultado.

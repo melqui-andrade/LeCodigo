@@ -1,5 +1,5 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre OrdenaÁ„o
+#Quest√£o sobre Ordena√ß√£o
 
 *Q
 Crie um algoritmo para ordenar uma lista de 3 elementos

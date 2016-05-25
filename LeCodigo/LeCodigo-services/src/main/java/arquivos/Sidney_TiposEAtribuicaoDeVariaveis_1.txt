@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Questão sobre Tipos e atribuição de variáveis
+#QuestÃ£o sobre Tipos e atribuiÃ§Ã£o de variÃ¡veis
 
 *Q
-Imprima a palavra &quot;own&quot; utilizando o mínimo de instruções possíveis.
+Imprima a palavra &quot;own&quot; utilizando o mÃ­nimo de instruÃ§Ãµes possÃ­veis.
 *F
 *B
 1_char a= &rsquo;o&rsquo;;

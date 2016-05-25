@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Questão sobre Troca de Variáveis
+#QuestÃ£o sobre Troca de VariÃ¡veis
 
 *Q
-Há três copos (A,B,C) em cima de uma mesa, dos quais 2 copos possui algum conteúdo, o copo A contém uma bala, no copo B contém um chiclete, faça um algoritmo que troque o conteúdo desses copos a fim de que ao final da troca, o copo A contenha o chiclete e o copo B contenha a bala. Observação: em momento algum um copo pode conter 2 elementos.
+HÃ¡ trÃªs copos (A,B,C) em cima de uma mesa, dos quais 2 copos possui algum conteÃºdo, o copo A contÃ©m uma bala, no copo B contÃ©m um chiclete, faÃ§a um algoritmo que troque o conteÃºdo desses copos a fim de que ao final da troca, o copo A contenha o chiclete e o copo B contenha a bala. ObservaÃ§Ã£o: em momento algum um copo pode conter 2 elementos.
 *F
 *B
 1_string copoA = &quot;bala&quot;;

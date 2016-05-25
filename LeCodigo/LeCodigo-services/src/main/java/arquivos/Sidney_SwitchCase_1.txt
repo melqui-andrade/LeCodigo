@@ -1,11 +1,11 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre Switch Case
+#Quest√£o sobre Switch Case
 
 *Q
-Jo„o ir· fazer compras no supermercado, ele gostaria de comprar p„o caso seu dinheiro fosse 2 reais caso contr·rio ele compraria bolacha. faÁa um algoritmo utilizando switch case que demostre esse problema.
+Jo√£o ir√° fazer compras no supermercado, ele gostaria de comprar p√£o caso seu dinheiro fosse 2 reais caso contr√°rio ele compraria bolacha. Fa√ßa um algoritmo utilizando switch case que demostre esse problema.
 *F
 *B
-1_acao = &quot;comprar p„o&quot;;
+1_acao = &quot;comprar p√£o&quot;;
 2_switch(dinheiro){        
 3_float dinheiro;
 4_case 2:

@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre Troca de Vari·veis
+#Quest√£o sobre Troca de Vari√°veis
 
 *Q
-Descobriram que as notas de trÍs alunos de uma determinada turma foram trocadas. As notas alteradas dos alunos s„o as seguintes: aluno1=9, aluno2=5, aluno3=7. FaÁa um algoritmo para trocar as notas dos alunos utilizando o seguinte critÈrio: aluno1=aluno3, aluno2=aluno1 e aluno3=aluno2. Ao final do algoritmo imprima as notas dos alunos da seguinte forma: &quot;Aluno1 = X | Aluno2 = Y | Aluno3 = Z&quot;. Onde X, Y e Z s„o as respetivas notas dos alunos. ObservaÁ„o: utilize a variavel auxiliar &quot;troca&quot; para alterar os valores entre as vari·veis. 
+Descobriram que as notas de tr√™s alunos de uma determinada turma foram trocadas. As notas alteradas dos alunos s√£o as seguintes: aluno1=9, aluno2=5, aluno3=7. Fa√ßa um algoritmo para trocar as notas dos alunos utilizando o seguinte crit√©rio: aluno1=aluno3, aluno2=aluno1 e aluno3=aluno2. Ao final do algoritmo imprima as notas dos alunos da seguinte forma: &quot;Aluno1 = X | Aluno2 = Y | Aluno3 = Z&quot;. Onde X, Y e Z s√£o as respetivas notas dos alunos. Observa√ß√£o: utilize a variavel auxiliar &quot;troca&quot; para alterar os valores entre as vari√°veis. 
 *F
 *B
 1_troca = aluno1;

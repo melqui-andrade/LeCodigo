@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre If else
+#Quest√£o sobre If else
 
 *Q
-Vamos gerenciar as passagens de um Ùnibus coletivo...<br>Desenvolva um cÛdigo para receber a idade de uma pessoa e imprimir a mensagem &quot;Passagem gratuita!&quot;, para pessoas acima de 65 anos e abaixo de 7, ou &quot;Passagem inteira&quot; para as demais.
+Vamos gerenciar as passagens de um √¥nibus coletivo...<br>Desenvolva um c√≥digo para receber a idade de uma pessoa e imprimir a mensagem &quot;Passagem gratuita!&quot;, para pessoas acima de 65 anos e abaixo de 7, ou &quot;Passagem inteira&quot; para as demais.
 *F
 *B
 1_}

@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre Funcoes
+#Quest√£o sobre Funcoes
 
 *Q
-FaÁa uma funÁ„o que troque duas vari·veis
+Fa√ßa uma fun√ß√£o que troque duas vari√°veis
 *F
 *B
 1_ troca(int v[], int i, int j){
