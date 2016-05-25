@@ -1,0 +1,22 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Tipos e atribuição de variáveis
+
+*Q
+Imprima a palavra &quot;own&quot; utilizando o mínimo de instruções possíveis.
+*F
+*B
+1_char a= &rsquo;o&rsquo;;
+2_char d= &rsquo;f&rsquo;;
+3_char b= &rsquo;k&rsquo;;
+4_char c= &rsquo;n&rsquo;;
+5_char f= &rsquo;w&rsquo;;
+6_print(a+f+c);
+7_print(f+b+d);
+8_print(d+e+a);
+*F
+*R
+1-5-4-6 | 1-4-5-6 | 5-1-4-6 | 5-4-1-6 | 4-5-1-6 | 4-1-5-6 
+*F
+*I
+1_1
+*F

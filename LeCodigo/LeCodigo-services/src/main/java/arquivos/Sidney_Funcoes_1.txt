@@ -1,0 +1,23 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Funcoes
+
+*Q
+Faça uma função que troque duas variáveis
+*F
+*B
+1_ troca(int v[], int i, int j){
+2_ v[j]= aux;
+3_ v[i]=v[j];
+4_ aux = 'a';
+5_ int aux = v[i];
+6_ }
+7_ j=j+1;
+8_ i=i+1;
+9_ return v[];
+*F
+*R
+1-5-3-2-6-9
+*F
+*I
+3_3
+*F
