@@ -42,13 +42,22 @@ public class SessaoBusiness {
 	public void comprarVida(){
 		switch(fase){
 		case 1:
-			if(bits >= 3) vidas++;			
+			if(bits >= 3){
+				vidas++;
+				bits-=3;
+			}
 			break;
 		case 2:
-			if(bits >= 5) vidas++;
+			if(bits >= 5){
+				vidas++;
+				bits-=5;
+			}
 			break;
 		case 3:
-			if(bits >= 7) vidas++;
+			if(bits >= 7){
+				vidas++;
+				bits-=7;
+			}
 			break;
 		}
 	}

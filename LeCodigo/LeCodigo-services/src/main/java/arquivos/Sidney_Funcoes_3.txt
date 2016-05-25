@@ -1,0 +1,20 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Funcoes
+
+*Q
+Monte uma função que receba um número inteiro e caso esse número seja positivo retorne true e caso não seja retorne false.
+*F
+*B
+1_boolean ehPositivo(int numero){
+6_if(numero >= 0){
+4_return true;
+2_}
+3_return false;
+5_}
+*F
+*R
+1-6-4-2-3-5 | 1-6-4-5-3-2
+*F
+*I
+3_3
+*F

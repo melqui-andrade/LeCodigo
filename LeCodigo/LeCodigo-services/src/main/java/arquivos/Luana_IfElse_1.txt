@@ -1,0 +1,21 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre If else
+
+*Q
+Vamos gerenciar as passagens de um ônibus coletivo...<br>Desenvolva um código para receber a idade de uma pessoa e imprimir a mensagem &quot;Passagem gratuita!&quot;, para pessoas acima de 65 anos e abaixo de 7, ou &quot;Passagem inteira&quot; para as demais.
+*F
+*B
+1_}
+2_print (&quot;Passagem gratuita&quot;); 
+3_int idade = 0;
+4_print(&quot;Passagem inteira&quot;);
+5_} else {
+6_if ( (idade >= 7) && (idade <= 65) ) {
+7_input(idade);
+*F
+*R
+3-7-6-4-5-2-1
+*F
+*I
+1_2
+*F

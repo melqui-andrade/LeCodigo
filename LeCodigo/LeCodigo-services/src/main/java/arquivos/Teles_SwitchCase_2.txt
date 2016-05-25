@@ -8,8 +8,8 @@ Organize o algoritmo para que leia dois números e escolha a operação de soma 
 *B
 1_}
 2_print(c); break;
-3_case '+':
-4_case '-':
+3_case &rsquo;+&rsquo;:
+4_case &rsquo;-&rsquo;:
 5_int a, b, c; char operacao;
 6_input(a); input(b); input(operacao);
 7_switch (operacao){

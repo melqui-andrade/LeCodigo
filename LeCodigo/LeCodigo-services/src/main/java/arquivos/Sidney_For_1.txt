@@ -1,0 +1,21 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre For
+
+*Q
+Faça a tabuada de multiplicação para um número informado. A tabuada deve conter as multiplicações de 1 a 10.
+*F
+*B
+1_}
+2_input(numero);
+3_int numero;
+4_char numero;
+5_for (int i=1; i<=10; i++){
+6_for (int i=0; i<1000; i++){
+7_print(numero+&quot; * &quot;+i+&quot; = &quot;+(numero*i)+&quot;\n&quot;);
+*F
+*R
+3-2-5-7-1
+*F
+*I
+2_1
+*F

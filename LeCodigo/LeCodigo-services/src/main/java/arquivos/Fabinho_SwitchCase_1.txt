@@ -2,14 +2,16 @@
 #Questão sobre SwitchCase
 
 *Q
-Organize os dias da semana usando um Switch Case e depois imprima a quinta-feira. <br><br>Enumere os &quot;Cases&quot; em ordem crescente e siga a seguinte ordem: <br>
-1_Domingo <br>
-2_Segunda <br>
-3_Terça <br>
-4_Quarta <br>
-5_Quinta <br>
-6_Sexta <br>
-7_Sábado <br>
+Organize os dias da semana usando um Switch Case e depois imprima a quinta-feira. <br>
+
+Enumere os "Cases" em ordem crescente e siga a seguinte ordem: <br>
+1 - Domingo <br>
+2 - Segunda <br>
+3 - Terça <br>
+4 - Quarta <br>
+5 - Quinta <br>
+6 - Sexta <br>
+7 - Sabado <br>
 *F
 *B
 1_print(&quot;Quarta-feira&quot;); break;
@@ -29,7 +31,7 @@ Organize os dias da semana usando um Switch Case e depois imprima a quinta-feira
 15_case 1:
 16_print(&quot;Sexta-feira&quot;); break;
 17_print(&quot;Quinta-feira&quot;); break;                                
-18_print(&quot;Segunda-feira&quot;); break;                        
+18_print(&quot;Segunda-feira&quot;); break;                      
 *F
 *R
 14-10-15-8-4-18-12-5-7-1-13-17-6-16-2-3-9-11

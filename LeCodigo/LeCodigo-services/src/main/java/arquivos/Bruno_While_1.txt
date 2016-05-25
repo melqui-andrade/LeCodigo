@@ -6,7 +6,7 @@ Organize o código para exibir a mensagem “Ao infinito e além :P” várias v
 *F
 *B
 1_while(x<21){
-2_print(“Ao infinito e além :P”);
+2_print(&quot;Ao infinito e além :P&quot;);
 3_int x = 6;
 4_x+=1;}
 5_while(x==21){

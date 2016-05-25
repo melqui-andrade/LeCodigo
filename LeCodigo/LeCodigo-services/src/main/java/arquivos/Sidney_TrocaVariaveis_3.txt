@@ -1,0 +1,27 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Troca de Variáveis
+
+*Q
+Uma empresa está reavaliando seus funcionários de um mesmo setor, para redefinir o salario deles, a empresa decidiu utilizar a seguinte estratégia:<br>Se um funcionarioA tiver desempenho maior que o funcionarioB eles irão trocar de salarios, assim funcionarioA ter[a o salário do funcionarioB e o funcionarioB passará a ter o salário antigo do funcionarioA. Lembrando que, o valor do salário do funcionario na hora da troca deve ser maior que o valor que ele recebia anteriormente. OBS: O algoritmo necessariamente DEVE ler o funcionarioA antes do funcionarioB, seguidos da leitura do desempenhoA depois desempenhoB. Faça um algoritmo que realize essa funcionalidade e no final informe os valores atuais dos funcionários.
+*F
+*B
+1_if(funcionarioA > funcionarioB){
+2_}
+3_print(&quot;&quot;FuncionarioA = &quot;&quot;+funcionarioA+ &quot;&quot; FuncionarioB = &quot;&quot;+funcionarioB);
+4_auxiliar = funcionarioA;
+5_if(desempenhoA > desempenhoB){
+6_double funcionarioA; double funcionarioB; double desempenhoA; double desempenhoB; double auxiliar;
+7_}  
+8_funcionarioB = auxiliar;
+9_funcionarioA = funcionarioB;
+10_input(funcionarioB);
+11_input(funcionarioA);
+12_input(desempenhoA);
+13_input(desempenhoB);
+*F
+*R
+6-11-10-12-13-5-1-4-9-8-7-2-3 | 6-11-10-12-13-5-1-4-9-8-2-7-3 
+*F
+*I
+3_1
+*F

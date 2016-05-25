@@ -41,9 +41,23 @@ body {
 								<i class="fa fa-heart-o"></i>
 							</c:forEach>
 
-						</c:if> <a data-original-title="Comprar mais vidas" type="button"
+						</c:if> 
+						
+						<c:if test="${bits >= 2*idFase+1 && vidas < 3}">
+							<a data-original-title="Comprar mais vidas" type="button" onclick="comprarVida()"
+						data-toggle="modal" data-target="#myModal"
 						class="btn btn-success fa fa-btc" data-toggle="tooltip"
-						data-placement="bottom" title=""></a>
+						data-placement="bottom" title="">
+						</a>
+						</c:if>
+						<c:if test="${!(bits >= 2*idFase+1 && vidas < 3)}">
+							<a data-original-title="Comprar mais vidas" type="button" onclick="comprarVida()"
+						disabled data-toggle="modal" data-target="#myModal"
+						class="btn btn-success fa fa-btc" data-toggle="tooltip"
+						data-placement="bottom" title="">
+						</a>
+						</c:if>
+						
 						<a href="/LeCodigo-presentation/home/home.html"
 					data-original-title="Sair do jogo"
 					type="button" class="btn btn-info fa fa-sign-out  " data-toggle="tooltip"
@@ -144,12 +158,35 @@ body {
 	</div>
 
 
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="modalTitulo"></h4>
+				</div>
+				<div class="modal-body">
+					<h6 id="modalMensagem"></h6>
+					<img src="" class="img-responsive" align="middle" id="et_status"
+						style="float: left;" /> <br>
+				</div>
+				<div id="modalFooter" class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+	
+
 	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 	<div class="scroll-top page-scroll visible-xs visble-sm">
 		<a class="btn btn-primary" href="#page-top"><i
 			class="fa fa-chevron-up"></i></a>
 	</div>
 
+	<script src="../js/jogo/questao.js"></script>
 	<script src="../js/jogo/fase.js"></script>
 
 </body>

@@ -1,0 +1,30 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre Ordenação simples
+
+*Q
+Katia fez uma prova com 6 alunos e precisa apresentar um relatório dos 3 alunos com as maiores notas. A lista das notas é a seguinte: Lista: 3 | 8 | 5 | 9 | 4 | 0. Desenvolva um algoritmo para imprimir os 3 alunos com as maiores notas em ordem crescente. 
+*F
+*B
+1_}
+2_int lista[] = {3, 8, 4, 9, 1, 5};
+3_for (int i = 0; i < 6; i++) {
+4_int troca = 0;                
+5_lista[j] = lista[i];
+6_print(&quot;Resultado = &quot;+lista[0]+&quot;, &quot;+lista[1]+&quot;, &quot;+lista[2]);
+7_for (int j = i+1; j < 6; j++) {
+8_}
+9_}
+10_troca = lista[i];
+11_if (lista [j] != lista[i]) {
+12_lista[i] = lista[j];        
+13_troca = lista[j];
+14_lista[j] = troca;
+15_lista[i] = troca;                                                                        
+16_if (lista [j] > lista[i]) {
+*F
+*R
+2-4-3-7-16-10-12-14-1-9-8-6 | 2-4-3-7-16-10-12-14-1-8-9-6 | 2-4-3-7-16-10-12-14-9-1-8-6 | 2-4-3-7-16-10-12-14-9-8-1-6 | 2-4-3-7-16-10-12-14-8-9-1-6 | 2-4-3-7-16-10-12-14-8-1-9-6 | 2-3-4-7-16-10-12-14-1-9-8-6 | 2-3-4-7-16-10-12-14-1-8-9-6 | 2-3-4-7-16-10-12-14-9-1-8-6 | 2-3-4-7-16-10-12-14-9-8-1-6 | 2-3-4-7-16-10-12-14-8-9-1-6 | 2-3-4-7-16-10-12-14-8-1-9-6 | 2-3-7-4-16-10-12-14-1-9-8-6 | 2-3-7-4-16-10-12-14-1-8-9-6 | 2-3-7-4-16-10-12-14-9-1-8-6 | 2-3-7-4-16-10-12-14-9-8-1-6 | 2-3-7-4-16-10-12-14-8-9-1-6 | 2-3-7-4-16-10-12-14-8-1-9-6 | 2-3-7-16-4-10-12-14-1-9-8-6 | 2-3-7-16-4-10-12-14-1-8-9-6 | 2-3-7-16-4-10-12-14-9-1-8-6 | 2-3-7-16-4-10-12-14-9-8-1-6 | 2-3-7-16-4-10-12-14-8-9-1-6 | 2-3-7-16-4-10-12-14-8-1-9-6
+*F
+*I
+3_2
+*F

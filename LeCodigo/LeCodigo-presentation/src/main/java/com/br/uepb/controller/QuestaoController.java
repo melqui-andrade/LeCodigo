@@ -125,4 +125,12 @@ public class QuestaoController {
 		return false;
 	}
 	
+	@RequestMapping(value = "/fase/vida.html", method = RequestMethod.GET)
+	public ModelAndView comprarVida(HttpServletRequest request) {
+		String login = request.getSession().getAttribute("login").toString();
+		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
+		sessaoBusiness.comprarVida();
+		return new ModelAndView("redirect:/fase/questao.html");
+	}
+	
 }

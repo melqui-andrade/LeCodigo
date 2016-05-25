@@ -1,0 +1,23 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Funcoes
+
+*Q
+Faça uma função que informe a quantidade de caracteres que há em uma string, observação: sabemos que uma string termina quando seu ultimo elemento é um caractere &rsquo;\0&rsquo;
+*F
+*B
+1_tamanho++;
+2_int tamanhoString (string v){
+3_while(string[i]!= &rsquo;\0&rsquo;){
+4_}
+5_int i=0;
+6_i++;
+7_int tamanho=0;
+8_return tamanho;
+9_}
+*F
+*R
+2-5-7-3-1-6-4-8-9 | 2-5-7-3-6-1-4-8-9 | 2-5-7-3-6-1-9-8-4 | 2-7-5-3-1-6-4-8-9 | 2-7-5-3-6-1-4-8-9 | 2-7-5-3-6-1-9-8-4 | 2-5-7-3-1-6-9-8-4 | 2-7-5-3-1-6-9-8-4
+*F
+*I
+3_3
+*F

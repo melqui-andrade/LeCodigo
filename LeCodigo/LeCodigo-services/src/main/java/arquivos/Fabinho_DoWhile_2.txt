@@ -4,7 +4,7 @@
 *Q
 Imprima a tabuada de 8 de multiplicação
 *B
-1_print("8 x " + n + " = " + (8 * n) + "\n");
+1_print(&quot;8 x &quot; + n + &quot; = &quot; + (8 * n) + &quot;\n&quot;);
 2_do {
 3_} while (n <= 10);
 4_int n = 1;

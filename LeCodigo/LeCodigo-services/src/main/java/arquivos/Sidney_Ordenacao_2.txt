@@ -1,0 +1,23 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Ordenação
+
+*Q
+Imagine um array de bolas (duas vermelhas, uma preta). Ordene as bolas a fim de que as cores iguais fiquem proximas. Ex: vermelha,preta,preta ao final, imprima o resultado.
+*F
+*B
+1_string aux= bola[i+1];
+2_for (int i=0; i<2; i++){
+3_bola[i] = aux;
+4_bola[i+1] = bola[i];
+5_string bola[] = {&quot;vermelha&quot;, &quot;preta&quot;, &quot;vermelha&quot;};
+6_if (bola[i] != bola[i+1]){
+7_}
+8_print(bola[0]+bola[1]+bola[2]);
+9_}
+*F
+*R
+5-2-6-1-4-3-7-9-8 | 5-2-6-1-4-3-9-7-8
+*F
+*I
+3_2
+*F

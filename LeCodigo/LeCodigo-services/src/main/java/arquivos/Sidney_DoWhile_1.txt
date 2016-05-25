@@ -1,0 +1,21 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Do While
+
+*Q
+Faça um programa que dê a ação de andar, enquanto a condição de ter energia for verdadeira, sabendo que a primeira ação é andar (utilize do while)
+*F
+*B
+1_do{
+2_}while(temEnergia==true);
+3_acao=&quot;andar&quot;;
+4_string acao;
+5_boolean temEnergia=true;
+6_input(temEnergia);
+7_acao=&quot;parado&quot;;
+*F
+*R
+4-5-1-6-3-2 | 5-4-1-6-3-2 | 5-4-1-3-6-2 | 4-5-1-3-6-2
+*F
+*I
+2_3
+*F

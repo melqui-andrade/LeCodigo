@@ -1,0 +1,23 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre Switch case
+
+*Q
+Uma empresa codificou a matrícula de seus funcionarios  de forma que o primeiro numero de cada matricula representa o setor. Por exemplo o funcionário de matrícula &quot;1123&quot; é do setor de &quot;Recursos Humanos&quot; porque o primeiro numero é &rsquo;1&rsquo;.  Crie um algoritmo que leia o código do funcionario e informe o seu setor, de acordo com a lista de setores abaixo:<br><br>1- Recursos Humanos<br>2- Administraçãoo<br>3- CPD<br>Obs.: para pegar o primeiro dígito de uma string utilize a função &quot;nome_da_string[0] onde 0 representa o índice do primeiro caractere de uma string&quot;.
+*F
+*B
+1_input(codigo);
+2_string codigo = &quot;&quot;;
+3_case &rsquo;1&rsquo; : { print(&quot;Setor = Recursos Humanos&quot;); }
+4_case &rsquo;3&rsquo; : { print(&quot;Setor = CPD&quot;); }
+5_char setor = codigo[0];
+6_case &rsquo;2&rsquo; : { print(&quot;Setor = Administração&quot;); }
+7_switch (setor) {
+8_default : { print(&quot;Setor inválido&quot;); }
+9_}
+*F
+*R
+2-1-5-7-3-6-4-8-9 | 2-1-5-7-3-4-6-8-9 | 2-1-5-7-6-3-4-8-9 | 2-1-5-7-6-4-3-8-9 | 2-1-5-7-4-6-3-8-9 | 2-1-5-7-4-3-6-8-9
+*F
+*I
+1_3
+*F

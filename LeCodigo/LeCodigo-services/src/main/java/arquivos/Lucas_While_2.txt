@@ -8,7 +8,7 @@ Supondo que a população de um país A seja da ordem de 90.000.000 habitantes c
 1_int ano = 0;
 2_a = a*0.03;
 3_ano = ano + 1;}
-4_print("A quantida de anos para A chegar até B é: "+ano);
+4_print(&quot;A quantida de anos para A chegar até B é: &quot;+ano);
 5_int a = 90000000, b = 200000000;
 6_while (a <= b){
 7_b = b * 0.015;

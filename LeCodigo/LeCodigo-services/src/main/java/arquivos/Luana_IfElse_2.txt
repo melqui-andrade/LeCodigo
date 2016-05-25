@@ -1,0 +1,27 @@
+#Autor: Luana Janaina de Sousa
+#Questão sobre If else
+
+*Q
+Mateus está criando um relógio digital que recebe apenas horas fechadas (inteiras) de 1 a 24. Desenvolva um algoritmo que recebe uma determinada hora e imprime:<br><br>- &quot;MANHA&quot;_se estiver entre 1 e 12 horas<br>- &quot;TARDE&quot;_se estiver entre 13 e 17 horas<br>- &quot;NOITE&quot;_se estiver entre 18 e 24 horas<br>- &quot;HORA INVALIDA&quot;_se a o valor da hora for maior que 24 ou menor que 1.
+*F
+*B
+1_if (hora <= 12) {
+2_input(hora);
+3_print(&quot;TARDE&quot;); 
+4_if ( (hora > 24) || (hora < 1) ) {
+5_} else {
+6_print(&quot;MANHA&quot;);
+7_} else if (hora >= 18) {
+8_}
+9_int hora = 0;
+10_print(&quot;NOITE&quot;);
+11_} else {
+12_}
+13_print(&quot;HORA INVALIDA&quot;);
+*F
+*R
+9-2-4-13-11-1-6-7-10-5-3-8-12 | 9-2-4-13-5-1-6-7-10-11-3-8-12 | 9-2-4-13-11-1-6-7-10-5-3-12-8 | 9-2-4-13-5-1-6-7-10-11-3-12-8
+*F
+*I
+1_2
+*F

@@ -5,11 +5,11 @@ Escreva a função imprime4x(), que imprime na tela a frase "com função é de 
 1_int imprime4x(){
 2_void imprime4x(){
 3_void imprime4x(4){
-4_print("com função é de boas");
-5_print("com função é de boas");
-6_print("com função é de boas");
-7_print("com função é de boas");
-8_return "com função é de boas";
+4_print(&quotcom função é de boas&quot);
+5_print(&quotcom função é de boas&quot);
+6_print(&quotcom função é de boas&quot);
+7_print(&quotcom função é de boas&quot);
+8_return &quotcom função é de boas&quot;
 9_}
 *F
 *R
