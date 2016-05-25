@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Questão sobre While
+#Questï¿½o sobre While
 
 *Q
-Organize o código abaixo para receber vários números e imprimi-los enquanto o número 0 não for informado. Se o número 0 for informado, ele não será impresso e o programa termina.
+Organize o cï¿½digo abaixo para receber vï¿½rios nï¿½meros e imprimi-los enquanto o nï¿½mero 0 nï¿½o for informado. Se o nï¿½mero 0 for informado, ele nï¿½o serï¿½ impresso e o programa termina.
 *F
 *B
 1_while (true) {
@@ -11,8 +11,8 @@ Organize o código abaixo para receber vários números e imprimi-los enquanto o nú
 4_input(numero);
 5_if (numero == 0) {
 6_int numero = 0;
-7_print(&quot;O numero é: &quot;+numero);
-8- int x = 1;
+7_print(&quot;O numero ï¿½: &quot;+numero);
+8_int x = 1;
 9_input(numero);
 *F
 *R

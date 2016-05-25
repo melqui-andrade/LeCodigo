@@ -1,19 +1,19 @@
 #Autor: Luana Janaina de Sousa
-#Questão sobre Switch case
+#Questï¿½o sobre Switch case
 
 *Q
-Crie um algoritmo para ler o código de um comando abaixo e imprimir o que ele significa. <br><br>Comandos: <br>A_&quot;Ajuda&quot;<br>S_&quot;Sair&quot;<br>V_&quot;Voltar&quot;<br>
+Crie um algoritmo para ler o cï¿½digo de um comando abaixo e imprimir o que ele significa. <br><br>Comandos: <br>A_&quot;Ajuda&quot;<br>S_&quot;Sair&quot;<br>V_&quot;Voltar&quot;<br>
 *F
 *B
-1_case &rsquo;A&rsquo; : print(&quot;Ajuda&quot;); break;
-2_char codigo;
-3_int codigo;
-4_case &rsquo;V&rsquo; : print(&quot;Voltar&quot;); break;
-5_input(codigo);
-6_case &rsquo;S&rsquo; : print(&quot;Sair&quot;); break;
-7_case(codigo) {
-8_}
-9_switch(codigo) {
+1_case &rsquo;A&rsquo; : print(&quot;Ajuda&quot;); break;
+2_char codigo;
+3_int codigo;
+4_case &rsquo;V&rsquo; : print(&quot;Voltar&quot;); break;
+5_input(codigo);
+6_case &rsquo;S&rsquo; : print(&quot;Sair&quot;); break;
+7_case(codigo) {
+8_}
+9_switch(codigo) {
 *F
 *R
 2-5-9-1-6-4-8 | 2-5-9-1-4-6-8 | 2-5-9-6-1-4-8 | 2-5-9-6-4-1-8 | 2-5-9-4-1-6-8 | 2-5-9-4-6-1-8
