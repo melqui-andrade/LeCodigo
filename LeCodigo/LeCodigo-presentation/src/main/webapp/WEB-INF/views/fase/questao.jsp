@@ -31,9 +31,22 @@
 								<span class="fa fa-heart-o"></span>
 							</c:forEach>
 
-						</c:if> <a data-original-title="Comprar mais vidas" type="button"
+						</c:if>
+						<c:if test="${bits >= 2*idFase+1 && vidas < 3}">
+							<a data-original-title="Comprar mais vidas" type="button" onclick="comprarVida()"
+						data-toggle="modal" data-target="#myModal"
 						class="btn btn-success fa fa-btc" data-toggle="tooltip"
-						data-placement="bottom" title=""></a>
+						data-placement="bottom" title="">
+						</a>
+						</c:if>
+						<c:if test="${!(bits >= 2*idFase+1 && vidas < 3)}">
+							<a data-original-title="Comprar mais vidas" type="button" onclick="comprarVida()"
+						disabled data-toggle="modal" data-target="#myModal"
+						class="btn btn-success fa fa-btc" data-toggle="tooltip"
+						data-placement="bottom" title="">
+						</a>
+						</c:if>
+						
 						<a href="/LeCodigo-presentation/home/home.html"
 					data-original-title="Sair do jogo"
 					type="button" class="btn btn-info fa fa-sign-out  " data-toggle="tooltip"

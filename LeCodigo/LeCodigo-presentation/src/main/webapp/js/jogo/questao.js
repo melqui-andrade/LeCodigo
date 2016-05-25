@@ -165,3 +165,18 @@ function confirmarPulo(){
 	window.location = "questao.html?resposta=pulou";
 	resposta="";
 }
+
+function comprarVida() {
+	document.getElementById("modalFooter").innerHTML ="";
+	document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-info'"+ "data-dismiss='modal'"+"'>Voltar</button>";		
+	document.getElementById("modalFooter").innerHTML +="<button type='button' class='btn btn-primary' onclick='confirmarVida()' id='btnConfirmar'>Comprar Vida</span></button>";
+	document.getElementById("modalMensagem").innerHTML ="";
+	document.getElementById("modalTitulo").innerHTML = "Olá terráqueo... Deseja comprar uma vida?";
+	document.getElementById("modalMensagem").innerHTML = "</span><br<br>";
+	document.getElementById("et_status").src = "../images/et/et_verde_pensativo.png";
+}
+
+function confirmarVida(){
+	window.location = "vida.html?";
+	resposta="";
+}
