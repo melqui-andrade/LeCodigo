@@ -1,0 +1,25 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Ordenação
+
+*Q
+Crie um algoritmo para ordenar uma lista de 3 elementos
+*F
+*B
+1_ int v[3];
+2_ for(int j=0; j<3_1; j++){
+3_ int i, j, auxiliar;
+4_ if(v[j]>v[j+1]){
+5_ for(int i=0; i<3; i++){
+6_ v[j] = v[j+1];
+7_ auxiliar = v[j];
+8_ v[j+1] = auxiliar;
+9_ }
+10_ }
+11_ }
+*F
+*R
+1-3-5-2-4-7-6-8-9-10-11 | 1-3-5-2-4-7-6-8-9-11-10 | 1-3-5-2-4-7-6-8-10-9-11 | 1-3-5-2-4-7-6-8-10-11-9 | 1-3-5-2-4-7-6-8-11-9-10 | 1-3-5-2-4-7-6-8-11-10-9
+*F
+*I
+3_2
+*F

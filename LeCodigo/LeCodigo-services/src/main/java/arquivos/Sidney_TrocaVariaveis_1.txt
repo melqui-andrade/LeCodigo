@@ -1,0 +1,19 @@
+#Autor: Sidney pimentel Eleuterio
+#Questão sobre Troca de Variáveis
+
+*Q
+As variáveis a seguir tem os seguintes valores x = a e y =b. Organize o algoritmos para trocar o valor dessas variáveis imprimindo &quot;ba&quot; de forma que x=b e y=a
+*F
+*B
+1_ print(x+y);
+2_ char x = 'a', y = 'b';
+3_ y = c;
+4_ char c = x;
+5_ x = y;
+*F
+*R
+2-4-5-3-1
+*F
+*I
+3_1
+*F
