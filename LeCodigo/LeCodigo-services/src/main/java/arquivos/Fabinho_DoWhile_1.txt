@@ -1,28 +1,17 @@
-#Autor: José Fábio Dias de Souza
+#Autor: José Fábio Dias de Souza & Lukas Teles =p
 #Questão sobre DoWhile
 
 *Q
-Usando DoWhile ordene o codigo a seguir para formar um menu de visualização
+Usando DoWhile ordene o codigo a seguir para imprimir a frase a sequencia 12345
 *B
-1_println(&quot;\t0. Sair&quot;);
-2_println(&quot;\t2. Ler o menu&quot;);
-3_do {
-4_if (opcao == 0) {
-5_println(&quot;\t1. Ver o menu&quot;);
-6_input(opcao);
-7_println(&quot;\t\tMenu de opções:&quot;);
-8_println(&quot;\n\n\n\n\n\n&quot;);}
-9_println(&quot;\t5. Não li, pode repetir?&quot;);
-10_println(&quot;\t3. Repetir o menu&quot;);
-11_} else {
-12_} while (continuar);
-13_println(&quot;Programa finalizado.&quot;);
-14_println(&quot;\t4. Tudo de novo&quot;);
-15_boolean continuar = true; int opcao;
-16_continuar = false;
+1_int i = 0;
+2_do {
+3_i = i + 1;
+4_print(i);
+5_} while (i < 5);
 *F
 *R
-15-3-7-5-2-10-14-9-1-6-4-16-13-11-8-12
+1-2-3-4-5
 *F
 *I
 2_3
