@@ -9,7 +9,7 @@ Escreva um algoritmo para determinar qual o maior valor em uma lista que contém
 5_int numeros[3];
 6_input(numeros[0]);
 7_print(maior);
-8_maior = numeros[1]; 
+8_maior = numeros[1];}
 9_if(numero[2] > maior){
 10_if(numero[2] > maior){
 11_maior = numero[2];}

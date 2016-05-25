@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre OrdenaÁ„o simples
+#Quest√£o sobre Ordena√ß√£o simples
 
 *Q
-Katia fez uma prova com 6 alunos e precisa apresentar um relatÛrio dos 3 alunos com as maiores notas. A lista das notas È a seguinte: Lista: 3 | 8 | 5 | 9 | 4 | 0. Desenvolva um algoritmo para imprimir os 3 alunos com as maiores notas em ordem crescente. 
+Katia fez uma prova com 6 alunos e precisa apresentar um relat√≥rio dos 3 alunos com as maiores notas. A lista das notas √© a seguinte: Lista: 3 | 8 | 5 | 9 | 4 | 0. Desenvolva um algoritmo para imprimir os 3 alunos com as maiores notas em ordem crescente. 
 *F
 *B
 1_}

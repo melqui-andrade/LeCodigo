@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre Tipos e atribuiÁ„o de vari·veis
+#Quest√£o sobre Tipos e atribui√ß√£o de vari√°veis
 
 *Q
-O cÛdigo abaixo foi desenvolvido por Jo„o, que por n„o ter aprendido algoritmos corretamente o fez errado. Organize os blocos abaixo para que as informaÁıes sejam apresentadas de forma correta:<br>#### CÛdigo de Jo„o ###<br>int valor1= &quot;10&quot;;<br>string valor2= &quot;4&quot;;<br>int multiplica = valor1 * valor2<br>print (valor1+&quot; * &quot;+valor2+&quot; = &quot;) + multiplica;
+O c√≥digo abaixo foi desenvolvido por Jo√£o, que por n√£o ter aprendido algoritmos corretamente o fez errado. Organize os blocos abaixo para que as informa√ß√µes sejam apresentadas de forma correta:<br>#### C√≥digo de Jo√£o ###<br>int valor1= &quot;10&quot;;<br>string valor2= &quot;4&quot;;<br>int multiplica = valor1 * valor2<br>print (valor1+&quot; * &quot;+valor2+&quot; = &quot;) + multiplica;
 *F
 *B
 1_int valor1 = &quot;10&quot;;

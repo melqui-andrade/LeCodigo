@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Questão sobre While
+#QuestÃ£o sobre While
 
 *Q
-Faça um algoritmo que dê a ação de um carro andar enquanto o status da estrada seja diferente de &quot;esburacada&quot;
+FaÃ§a um algoritmo que dÃª a aÃ§Ã£o de um carro andar enquanto o status da estrada seja diferente de &quot;esburacada&quot;
 *F
 *B
 1_while(estrada!=&quot;esburacada&quot;){
@@ -10,7 +10,7 @@ Faça um algoritmo que dê a ação de um carro andar enquanto o status da estrada s
 3_acao=&quot;andar&quot;;
 4_input(estrada);
 5_}
-6_string  estrada = &quot;em boas condições&quot;;
+6_string  estrada = &quot;em boas condiÃ§Ãµes&quot;;
 7_while(estrada==&quot;esburacada&quot;){
 *F
 *R

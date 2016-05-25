@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Questão sobre For
+#QuestÃ£o sobre For
 
 *Q
-Faça a tabuada de multiplicação para um número informado. A tabuada deve conter as multiplicações de 1 a 10.
+FaÃ§a a tabuada de multiplicaÃ§Ã£o para um nÃºmero informado. A tabuada deve conter as multiplicaÃ§Ãµes de 1 a 10.
 *F
 *B
 1_}

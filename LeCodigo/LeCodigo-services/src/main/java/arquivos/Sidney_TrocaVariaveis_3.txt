@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre Troca de Vari·veis
+#Quest√£o sobre Troca de Vari√°veis
 
 *Q
-Uma empresa est· reavaliando seus funcion·rios de um mesmo setor, para redefinir o salario deles, a empresa decidiu utilizar a seguinte estratÈgia:<br>Se um funcionarioA tiver desempenho maior que o funcionarioB eles ir„o trocar de salarios, assim funcionarioA ter· o sal·rio do funcionarioB e o funcionarioB passar· a ter o sal·rio antigo do funcionarioA. Lembrando que, o valor do sal·rio do funcionario na hora da troca deve ser maior que o valor que ele recebia anteriormente. OBS: O algoritmo necess·riamente DEVE ler o funcionarioA antes do funcionarioB, seguidos da leitura do desempenhoA depois desempenhoB. FaÁa um algoritmo que realize essa funcionalidade e no final informe os valores atuais dos funcion·rios.
+Uma empresa est√° reavaliando seus funcion√°rios de um mesmo setor, para redefinir o salario deles, a empresa decidiu utilizar a seguinte estrat√©gia:<br>Se um funcionarioA tiver desempenho maior que o funcionarioB eles ir√£o trocar de salarios, assim funcionarioA ter[a o sal√°rio do funcionarioB e o funcionarioB passar√° a ter o sal√°rio antigo do funcionarioA. Lembrando que, o valor do sal√°rio do funcionario na hora da troca deve ser maior que o valor que ele recebia anteriormente. OBS: O algoritmo necessariamente DEVE ler o funcionarioA antes do funcionarioB, seguidos da leitura do desempenhoA depois desempenhoB. Fa√ßa um algoritmo que realize essa funcionalidade e no final informe os valores atuais dos funcion√°rios.
 *F
 *B
 1_if(funcionarioA > funcionarioB){

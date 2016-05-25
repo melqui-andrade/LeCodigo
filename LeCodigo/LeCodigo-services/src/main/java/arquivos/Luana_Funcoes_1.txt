@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre FunÁıes
+#Quest√£o sobre Fun√ß√µes
 
 *Q
-Ana Maria precisa comparar dois valores para saber qual È o maior. FaÁa uma funÁ„o que recebe por par‚metro dois valores e informa se o primeiro valor È maior ou igual que o segundo. Se o primeiro valor for maior ou igual do que o segundo a funÁ„o retorna &quot;true&quot; caso contr·rio retorna &quot;false&quot;.
+Ana Maria precisa comparar dois valores para saber qual √© o maior. Fa√ßa uma fun√ß√£o que recebe por par√¢metro dois valores e informa se o primeiro valor √© maior ou igual que o segundo. Se o primeiro valor for maior ou igual do que o segundo a fun√ß√£oo retorna &quot;true&quot; caso contr√°rio retorna &quot;false&quot;.
 *F
 *B
 1_return false;

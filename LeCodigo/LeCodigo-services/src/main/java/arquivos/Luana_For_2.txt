@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest�o sobre For
+#Questão sobre For
 
 *Q
-Fa�a um algoritmo que leia 20 n�meros inteiros e imprima a media aritm�tica deles.
+Faça um algoritmo que leia 20 numeros inteiros e imprima a media aritmética deles.
 *F
 *B
 1_divisao = soma+20;
@@ -12,7 +12,7 @@ Fa�a um algoritmo que leia 20 n�meros inteiros e imprima a media aritm�tic
 5_}
 6_int soma = 0, numero = 0;
 7_for (int i = 0; i<20; i--) {
-8_print(&quot;A media � &quot;+divisao);
+8_print(&quot;A media é &quot;+divisao);
 9_divisao = soma/20;
 10_input(numero);
 *F

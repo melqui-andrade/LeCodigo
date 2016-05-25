@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Questão sobre Funcoes
+#QuestÃ£o sobre Funcoes
 
 *Q
-Monte uma função que receba um número inteiro e caso esse número seja positivo retorne true e caso não seja retorne false.
+Monte uma funÃ§Ã£o que receba um nÃºmero inteiro e caso esse nÃºmero seja positivo retorne true e caso nÃ£o seja retorne false.
 *F
 *B
 1_boolean ehPositivo(int numero){

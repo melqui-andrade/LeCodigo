@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest„o sobre Switch case
+#Quest√£o sobre Switch case
 
 *Q
-Uma empresa codificou a matricula de seus funcionarios  de forma que o primeiro numero de cada matricula representa o setor. Por exemplo o funcionario de matricula &quot;1123&quot; È do setor de &quot;Recursos Humanos&quot; porque o primeiro numero È &rsquo;1&rsquo;.  Crie um algoritmo que leia o cÛdigo do funcionario e informe o seu setor, de acordo com a lista de setores abaixo:<br><br>1- Recursos Humanos<br>2- AdministraÁ„o<br>3- CPD<br>Obs.: para pegar o primeiro dÌgito de uma string utilize a funÁ„o &quot;nome_da_string[0] onde 0 representa o Ìndice do primeiro caractere de uma string&quot;.
+Uma empresa codificou a matr√≠cula de seus funcionarios  de forma que o primeiro numero de cada matricula representa o setor. Por exemplo o funcion√°rio de matr√≠cula &quot;1123&quot; √© do setor de &quot;Recursos Humanos&quot; porque o primeiro numero √© &rsquo;1&rsquo;.  Crie um algoritmo que leia o c√≥digo do funcionario e informe o seu setor, de acordo com a lista de setores abaixo:<br><br>1- Recursos Humanos<br>2- Administra√ß√£oo<br>3- CPD<br>Obs.: para pegar o primeiro d√≠gito de uma string utilize a fun√ß√£o &quot;nome_da_string[0] onde 0 representa o √≠ndice do primeiro caractere de uma string&quot;.
 *F
 *B
 1_input(codigo);
@@ -10,9 +10,9 @@ Uma empresa codificou a matricula de seus funcionarios  de forma que o primeiro 
 3_case &rsquo;1&rsquo; : { print(&quot;Setor = Recursos Humanos&quot;); }
 4_case &rsquo;3&rsquo; : { print(&quot;Setor = CPD&quot;); }
 5_char setor = codigo[0];
-6_case &rsquo;2&rsquo; : { print(&quot;Setor = AdministraÁ„o&quot;); }
+6_case &rsquo;2&rsquo; : { print(&quot;Setor = Administra√ß√£o&quot;); }
 7_switch (setor) {
-8_default : { print(&quot;Setor inv·lido&quot;); }
+8_default : { print(&quot;Setor inv√°lido&quot;); }
 9_}
 *F
 *R

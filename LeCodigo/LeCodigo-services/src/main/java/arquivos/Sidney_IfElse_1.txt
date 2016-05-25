@@ -1,8 +1,8 @@
 #Autor: Sidney pimentel Eleuterio
-#Quest„o sobre If Else
+#Quest√£o sobre If Else
 
 *Q
-Jo„o mora longe da escola e est· indisposto para ir assistir aula porque o clima est· frio. Ele estabeleceu que se chover antes das sete horas n„o ir· ‡ escola, caso n„o chova antes das sete, ent„o ir·. Monte um algoritmo que exemplifique essa ideia.
+Jo√£o mora longe da escola e est√° indisposto para ir assistir aula porque o clima est√° frio. Ele estabeleceu que se chover antes das sete horas n√£o ir√° √† escola, caso n√£o chova antes das sete, ent√£o ir√°. Monte um algoritmo que exemplifique essa ideia.
 *F
 *B
 1_}
@@ -11,7 +11,7 @@ Jo„o mora longe da escola e est· indisposto para ir assistir aula porque o clima
 4_acao = &quot;ir a escola&quot;;
 5_if(clima == &quot;frio&quot; && horario>7){
 6_string acao;
-7_acao = &quot;n„o ir para escola&quot;;
+7_acao = &quot;n√£o ir para escola&quot;;
 8_string clima;
 9_double horario;
 *F

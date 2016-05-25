@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Questão sobre DoWhile
+#QuestÃ£o sobre DoWhile
 
 *Q
-Faça um programa que lê vários números inteiros e imprime o valor correspondente a 5% desse número enquanto o numero for diferente de 0. Quando for informado o número 0 nada será impresso e o algoritmo termina (utilize do-while)
+FaÃ§a um programa que lÃª vÃ¡rios nÃºmeros inteiros e imprime o valor correspondente a 5% desse nÃºmero enquanto o nÃºmero for diferente de 0. Quando for informado o nÃºmero 0 nada serÃ¡ impresso e o algoritmo termina (utilize do-while)
 *F
 *B
 1_do 
@@ -12,7 +12,7 @@ Faça um programa que lê vários números inteiros e imprime o valor correspondente
 5_int numero = 0; 
 6_do {                        
 7_} while (numero != 0);
-8_print(&quot;5% de &quot;+numero+&quot; é &quot;+ porcentagem);
+8_print(&quot;5% de &quot;+numero+&quot; Ã© &quot;+ porcentagem);
 9_}
 10_input(numero);
 11_while (numero == 0)

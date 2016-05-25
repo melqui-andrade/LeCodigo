@@ -1,8 +1,8 @@
 #Autor: Luana Janaina de Sousa
-#Quest�o sobre Switch case
+#Questão sobre Switch case
 
 *Q
-Crie um algoritmo para ler o c�digo de um comando abaixo e imprimir o que ele significa. <br><br>Comandos: <br>A_&quot;Ajuda&quot;<br>S_&quot;Sair&quot;<br>V_&quot;Voltar&quot;<br>
+Crie um algoritmo para ler o código de um comando abaixo e imprimir o que ele significa. <br><br>Comandos: <br>A_&quot;Ajuda&quot;<br>S_&quot;Sair&quot;<br>V_&quot;Voltar&quot;<br>
 *F
 *B
 1_case &rsquo;A&rsquo; : print(&quot;Ajuda&quot;); break;
