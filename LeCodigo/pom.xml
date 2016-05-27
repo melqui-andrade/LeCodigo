@@ -148,8 +148,8 @@
 		                    <includes>
 		                        <include>**/*Spec.*</include>
 		                        <include>**/*Test.*</include>
-		                        <include>*testesDeUnidade*</include>
 		                        <include>*TestJogadorBusiness*</include>
+		                        <include>*TestQuestoesService*</include>
 		                        <include>*test*</include>
 		                    </includes>
 		                </configuration>				    
