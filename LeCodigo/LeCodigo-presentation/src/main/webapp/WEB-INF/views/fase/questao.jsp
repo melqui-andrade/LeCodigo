@@ -1,6 +1,7 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 <link href="../styles/questao.css" rel="stylesheet">
 
+<div style="padding-bottom: 6%;">
 <div class="panel">
 	<div class="panel-body" style="border-color: #fff;">
 		${questao.descricao}</div>
@@ -122,8 +123,8 @@
 </div>
 
 <!-- QUESTAO -->
-<script src="../js/jogo/questao.js"></script>
-<script src="../js/jogo/fase.js"></script>
+<script src="../js/questao.js"></script>
+<script src="../js/fase.js"></script>
 
 <c:if test="${status_resposta == true}">
 	<button onclick="feedbackQuestaoCerta()" data-toggle="modal"
@@ -140,7 +141,7 @@
 		</script>
 </c:if>
 
-
+</div>
 <script>
 function voltar() {
 	window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'",
