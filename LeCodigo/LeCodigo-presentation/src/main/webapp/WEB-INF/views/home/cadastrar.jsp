@@ -79,9 +79,9 @@
 		document.getElementById("tipoValor").value = tipoSelecionado;
 
 	}
+
+	function voltar() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/professor/home.html'", 500);
+	}
 </script>
-
-
-</body>
-
-</html>

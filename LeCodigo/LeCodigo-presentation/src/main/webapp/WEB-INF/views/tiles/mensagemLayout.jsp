@@ -26,7 +26,7 @@ body {
 		<div class="container-fluid" style="padding-top: 10px;">
 			<div class="row">
 				<div class="col-xs-4 col-sm-4">
-					<h4 class="texto-negrito cor-branco" id="botaoVoltar">
+					<h4 class="texto-negrito cor-branco" >
 						<a class="cor-branco" onclick="voltar()"> <span
 							class="fa fa-chevron-left"></span>
 						</a>
@@ -44,11 +44,7 @@ body {
 	<div class="espaco-toolbar">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-2 col-sm-4">&nbsp;</div>
-				<div class="col-xs-8 col-sm-4">
-					<tiles:insertAttribute name="body" />
-				</div>
-				<div class="col-xs-2 col-sm-4">&nbsp;</div>
+				<tiles:insertAttribute name="body" />
 			</div>
 		</div>
 	</div>
@@ -57,7 +53,8 @@ body {
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 		});
-
+		
+		
 		
 	</script>
 </body>

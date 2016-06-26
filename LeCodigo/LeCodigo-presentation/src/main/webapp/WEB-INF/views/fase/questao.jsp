@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
-<link href="../styles/jogo/fases/questao.css" rel="stylesheet">
+<link href="../styles/questao.css" rel="stylesheet">
 
 <div class="panel">
 	<div class="panel-body" style="border-color: #fff;">
@@ -139,3 +139,11 @@
 			$('#status_false').click();
 		</script>
 </c:if>
+
+
+<script>
+function voltar() {
+	window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'",
+			500);
+}
+</script>

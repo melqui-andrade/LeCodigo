@@ -107,5 +107,12 @@
 		</div>
 	</div>
 </div>
-<script src="../js/jogo/questao.js"></script>
-<script src="../js/jogo/fase.js"></script>
+<script src="../js/questao.js"></script>
+<script src="../js/fase.js"></script>
+
+<script>
+function voltar() {
+	window.setTimeout("location.href='/LeCodigo-presentation/home/login.html'",
+			500);
+}
+</script>

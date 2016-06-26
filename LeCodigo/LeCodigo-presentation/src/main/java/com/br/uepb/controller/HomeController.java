@@ -110,6 +110,7 @@ public class HomeController {
 	public ModelAndView instrucoesGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home/instrucoes");
 		return modelAndView;
 	}
 
@@ -120,6 +121,7 @@ public class HomeController {
 		List<Jogador> jogadores = partidaBusiness.visualizarRanking();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("jogadores", jogadores);
+		modelAndView.setViewName("home/ranking");
 		return modelAndView;
 	}
 }

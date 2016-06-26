@@ -22,4 +22,8 @@
 	setInterval(et_normal, 500);
 	window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'",
 			5000);
+	function voltar() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/login.html'", 500);
+	}
 </script>

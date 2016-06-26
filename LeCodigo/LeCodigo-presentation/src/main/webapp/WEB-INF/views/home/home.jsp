@@ -12,3 +12,11 @@
 		class="btn btn-info  btn-block btn-lg" data-toggle="tooltip"
 		data-placement="top" title=""><span>Ranking</span></a> <br>
 </div>
+
+<script>
+	document.getElementById("botaoVoltar").innerHTML = "";
+	function voltar() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/login.html'", 500);
+	}
+</script>

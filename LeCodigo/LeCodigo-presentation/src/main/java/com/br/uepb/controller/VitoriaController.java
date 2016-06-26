@@ -14,6 +14,7 @@ public class VitoriaController {
 	public ModelAndView homeGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("fase/vitoria");
 		return modelAndView;
 	}
 }

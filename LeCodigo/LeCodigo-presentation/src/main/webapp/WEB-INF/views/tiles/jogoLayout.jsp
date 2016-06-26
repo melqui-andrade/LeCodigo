@@ -21,34 +21,44 @@ body {
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div style="padding: 5px; ">
-			<div class="row"
-				style="color: #eee; text-align: center; font-size: 14px;">
-				<div class="col-xs-3 col-sm-3 span-header">
-					<span class="texto-negrito cor-branco">Fase <br>${idFase}</span>
-					<br>
-				</div>
+		<div style="padding: 5px;">
+			<div class="row texto-centralizado">
 				<div class="col-xs-3 col-sm-3">
-					<span class="texto-negrito cor-branco">Bits:<br>
-						${bits}
-					</span>
-				</div>
-				<div class="col-xs-3 col-sm-3">
-					<span class="texto-negrito cor-branco">Pontuação:<br>
-						${pontuacao}
-					</span>
-				</div>
-				<div class="col-xs-3 col-sm-3">
-					<span class="texto-negrito cor-branco"> Vida:<br> <c:forEach
-							begin="1" end="${vidas}" varStatus="loop">
-							<i class="fa fa-heart cor-vermelha"></i>
-						</c:forEach> <c:if test="${vidas <3}">
+					<h4 class="texto-negrito cor-branco">
+						<a class="cor-branco" onclick="voltar()"> <span
+							class="fa fa-chevron-left"></span>
+						</a> <span class="texto-negrito cor-branco">Fase <br>${idFase}</span>
 
-							<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
-								<i class="fa fa-heart-o"></i>
-							</c:forEach>
+					</h4>
 
-						</c:if> <!-- 
+				</div>
+				<div class="col-xs-3 col-sm-3">
+					<h4 class="texto-negrito cor-branco">
+						<span>Bits:<br> ${bits}
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-3 col-sm-3">
+					<h4 class="texto-negrito cor-branco">
+						<span>Pontuação:<br> ${pontuacao}
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-3 col-sm-3">
+					<h4 class="texto-negrito cor-branco">
+						<span> Vida:<br> <c:forEach begin="1" end="${vidas}"
+								varStatus="loop">
+								<i class="fa fa-heart cor-vermelha" style="font-size: 10pt;"></i>
+							</c:forEach> <c:if test="${vidas <3}">
+
+								<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
+									<i class="fa fa-heart-o" style="font-size: 10pt;"></i>
+								</c:forEach>
+
+							</c:if>
+						</span>
+					</h4>
+					<!-- 
 						 <c:if test="${bits >= 2*idFase+1 && vidas < 3}">
 							<a data-original-title="Comprar mais vidas" type="button"
 								onclick="comprarVida()" data-toggle="modal"
@@ -65,13 +75,13 @@ body {
 						class="btn btn-info fa fa-sign-out  " data-toggle="tooltip"
 						data-placement="bottom" title=""></a>
 						 -->
-					</span>
+
 				</div>
 			</div>
 		</div>
 	</nav>
 
-	<div class="espaco-toolbar">
+	<div class="espaco-toolbar-jogo">
 		<div class="container">
 			<div class="">
 				<tiles:insertAttribute name="body" />
@@ -82,7 +92,7 @@ body {
 	<script>
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
-		});
+		});	
 	</script>
 </body>
 </html>

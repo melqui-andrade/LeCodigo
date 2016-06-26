@@ -174,6 +174,7 @@ public class RelatorioTurmaController {
 			e.printStackTrace();
 		}
 
+		modelAndView.setViewName("relatorio/relatorioTurma");
 		return modelAndView;
 	}
 

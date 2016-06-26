@@ -14,6 +14,7 @@ public class DerrotaController {
 	public ModelAndView perdeuGet(HttpServletRequest request) {
 		
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("fase/perdeu");
 		return modelAndView;
 	}
 

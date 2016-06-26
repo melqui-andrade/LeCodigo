@@ -18,3 +18,10 @@
 		<button class="btn btn-info btn-block">Login</button>
 	</form:form>
 </div>
+
+<script>
+function voltar() {
+	window.setTimeout("location.href='/LeCodigo-presentation/home/home.html'",
+			500);
+}
+</script>

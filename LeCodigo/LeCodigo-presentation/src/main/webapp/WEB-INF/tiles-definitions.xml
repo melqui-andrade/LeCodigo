@@ -16,6 +16,8 @@
 	<definition name="jogo.layout" template="/WEB-INF/views/tiles/jogoLayout.jsp">
 	</definition>
 
+	<definition name="mensagem.layout" template="/WEB-INF/views/tiles/mensagemLayout.jsp">
+	</definition>
 
 
 	<definition name="home/home" extends="menu.layout">
@@ -28,6 +30,16 @@
 		<put-attribute name="body" value="/WEB-INF/views/home/login.jsp" />
 	</definition>
 
+	<definition name="home/ranking" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/home/ranking.jsp" />
+	</definition>
+
+	<definition name="home/instrucoes" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/home/instrucoes.jsp" />
+	</definition>
+
 	<definition name="home/cadastrar" extends="menu.layout">
 		<put-attribute name="titulo" value="LeCodigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/cadastrar.jsp" />
@@ -35,7 +47,18 @@
 
 	<definition name="fase/transicaoFase" extends="menu.layout">
 		<put-attribute name="titulo" value="LeCodigo" />
-		<put-attribute name="body" value="/WEB-INF/views/fase/transicaoFase.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/fase/transicaoFase.jsp" />
+	</definition>
+
+	<definition name="fase/perdeu" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/fase/perdeu.jsp" />
+	</definition>
+
+	<definition name="fase/vitoria" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/fase/vitoria.jsp" />
 	</definition>
 
 	<definition name="fase/fase" extends="jogo.layout">
@@ -57,6 +80,12 @@
 		<put-attribute name="titulo" value="LeCodigo" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/relatorio/relatorio.jsp" />
+	</definition>
+
+	<definition name="relatorio/relatorioTurma" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/relatorio/relatorioTurma.jsp" />
 	</definition>
 
 
