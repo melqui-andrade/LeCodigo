@@ -13,7 +13,7 @@ import com.br.uepb.business.relatorio.RelatorioJogadorBusiness;
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.TipoQuestao_Enum;
-import com.br.uepb.model.RelatorioModel;
+import com.br.uepb.model.EstatisticaModel;
 
 @Controller
 public class RelatorioAlunoController {
@@ -24,23 +24,23 @@ public class RelatorioAlunoController {
 		String login = request.getSession().getAttribute("login").toString();
 		RelatorioJogadorBusiness relatorio = new RelatorioJogadorBusiness(request.getParameter(login));
 		// Geral
-		RelatorioModel rel = new RelatorioModel();
+		EstatisticaModel rel = new EstatisticaModel();
 
-		RelatorioModel rel_f1 = new RelatorioModel();
-		RelatorioModel rel_f2 = new RelatorioModel();
-		RelatorioModel rel_f3 = new RelatorioModel();
+		EstatisticaModel rel_f1 = new EstatisticaModel();
+		EstatisticaModel rel_f2 = new EstatisticaModel();
+		EstatisticaModel rel_f3 = new EstatisticaModel();
 
-		RelatorioModel rel_IF_ELSE = new RelatorioModel();
-		RelatorioModel rel_TiposVariaveis = new RelatorioModel();
-		RelatorioModel rel_SWICTH_CASE = new RelatorioModel();
+		EstatisticaModel rel_IF_ELSE = new EstatisticaModel();
+		EstatisticaModel rel_TiposVariaveis = new EstatisticaModel();
+		EstatisticaModel rel_SWICTH_CASE = new EstatisticaModel();
 
-		RelatorioModel rel_DO_WHILE = new RelatorioModel();
-		RelatorioModel rel_WHILE = new RelatorioModel();
-		RelatorioModel rel_FOR = new RelatorioModel();
+		EstatisticaModel rel_DO_WHILE = new EstatisticaModel();
+		EstatisticaModel rel_WHILE = new EstatisticaModel();
+		EstatisticaModel rel_FOR = new EstatisticaModel();
 
-		RelatorioModel rel_TROCA_DE_VARIAVEIS = new RelatorioModel();
-		RelatorioModel rel_ORDENACAO_SIMPLES = new RelatorioModel();
-		RelatorioModel rel_FUNCOES = new RelatorioModel();
+		EstatisticaModel rel_TROCA_DE_VARIAVEIS = new EstatisticaModel();
+		EstatisticaModel rel_ORDENACAO_SIMPLES = new EstatisticaModel();
+		EstatisticaModel rel_FUNCOES = new EstatisticaModel();
 		
 		
 		// FASE 1

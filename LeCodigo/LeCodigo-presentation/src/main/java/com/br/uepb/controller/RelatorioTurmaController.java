@@ -15,6 +15,7 @@ import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
+import com.br.uepb.model.EstatisticaModel;
 import com.br.uepb.model.RelatorioModel;
 
 @Controller
@@ -28,57 +29,41 @@ public class RelatorioTurmaController {
 		RelatorioJogadorBusiness relatorio = new RelatorioJogadorBusiness();
 		try {
 			// Geral
-			RelatorioModel rel = new RelatorioModel();
-
-			RelatorioModel rel_f1 = new RelatorioModel();
-			RelatorioModel rel_f2 = new RelatorioModel();
-			RelatorioModel rel_f3 = new RelatorioModel();
-
-			RelatorioModel rel_IF_ELSE = new RelatorioModel();
-			RelatorioModel rel_TiposVariaveis = new RelatorioModel();
-			RelatorioModel rel_SWICTH_CASE = new RelatorioModel();
-
-			RelatorioModel rel_DO_WHILE = new RelatorioModel();
-			RelatorioModel rel_WHILE = new RelatorioModel();
-			RelatorioModel rel_FOR = new RelatorioModel();
-
-			RelatorioModel rel_TROCA_DE_VARIAVEIS = new RelatorioModel();
-			RelatorioModel rel_ORDENACAO_SIMPLES = new RelatorioModel();
-			RelatorioModel rel_FUNCOES = new RelatorioModel();
+			RelatorioModel estatistica = new RelatorioModel();
 
 			// Relatorio da FASE 1
 			relatorio.estatisticaFase(1);
-			rel_f1.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_f1.setErrada(relatorio.getQtdRespostaErrada());
-			rel_f1.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._FASE1.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._FASE1.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._FASE1.setPulo(relatorio.getQtdRespostaPulou());
 
-			request.setAttribute("questoesCertasF1", rel_f1.getCerta());
-			request.setAttribute("questoesErradasF1", rel_f1.getErrada());
-			request.setAttribute("questoesPulouF1", rel_f1.getPulo());
+			request.setAttribute("questoesCertasF1", estatistica._FASE1.getCerta());
+			request.setAttribute("questoesErradasF1", estatistica._FASE1.getErrada());
+			request.setAttribute("questoesPulouF1", estatistica._FASE1.getPulo());
 
 			// Relatorio da FASE 2
 			relatorio.estatisticaFase(2);
-			rel_f2.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_f2.setErrada(relatorio.getQtdRespostaErrada());
-			rel_f2.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._FASE2.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._FASE2.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._FASE2.setPulo(relatorio.getQtdRespostaPulou());
 
-			request.setAttribute("questoesCertasF2", rel_f2.getCerta());
-			request.setAttribute("questoesErradasF2", rel_f2.getErrada());
-			request.setAttribute("questoesPulouF2", rel_f2.getPulo());
+			request.setAttribute("questoesCertasF2", estatistica._FASE2.getCerta());
+			request.setAttribute("questoesErradasF2", estatistica._FASE2.getErrada());
+			request.setAttribute("questoesPulouF2", estatistica._FASE2.getPulo());
 
 			// Relatorio da FASE 3
 			relatorio.estatisticaFase(3);
-			rel_f3.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_f3.setErrada(relatorio.getQtdRespostaErrada());
-			rel_f3.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._FASE3.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._FASE3.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._FASE3.setPulo(relatorio.getQtdRespostaPulou());
 
-			request.setAttribute("questoesCertasF3", rel_f2.getCerta());
-			request.setAttribute("questoesErradasF3", rel_f2.getErrada());
-			request.setAttribute("questoesPulouF3", rel_f2.getPulo());
+			request.setAttribute("questoesCertasF3", estatistica._FASE3.getCerta());
+			request.setAttribute("questoesErradasF3", estatistica._FASE3.getErrada());
+			request.setAttribute("questoesPulouF3", estatistica._FASE3.getPulo());
 
-			float porcentagemAcerto = (rel_f1.getCerta() + rel_f2.getCerta() + rel_f3.getCerta());
-			float porcentagemErros = (rel_f1.getErrada() + rel_f2.getErrada() + rel_f3.getErrada());
-			float porcentagemPulos = (rel_f1.getPulo() + rel_f2.getPulo() + rel_f3.getPulo());
+			float porcentagemAcerto = (estatistica._FASE1.getCerta() + estatistica._FASE2.getCerta() + estatistica._FASE3.getCerta());
+			float porcentagemErros = (estatistica._FASE1.getErrada() + estatistica._FASE2.getErrada() + estatistica._FASE3.getErrada());
+			float porcentagemPulos = (estatistica._FASE1.getPulo() + estatistica._FASE2.getPulo() + estatistica._FASE3.getPulo());
 
 			float soma = porcentagemAcerto + porcentagemErros + porcentagemPulos;
 
@@ -88,9 +73,9 @@ public class RelatorioTurmaController {
 
 			
 			// Relatorio GERAL
-			rel.setCerta(rel_f1.getCerta()+rel_f2.getCerta()+rel_f3.getCerta());
-			rel.setErrada(rel_f1.getErrada()+rel_f2.getErrada()+rel_f3.getErrada());
-			rel.setPulo(rel_f1.getPulo()+rel_f2.getPulo()+rel_f3.getPulo());			
+			estatistica._PORCENTAGEM_GERAL.setCerta(estatistica._FASE1.getCerta()+estatistica._FASE2.getCerta()+estatistica._FASE3.getCerta());
+			estatistica._PORCENTAGEM_GERAL.setErrada(estatistica._FASE1.getErrada()+estatistica._FASE2.getErrada()+estatistica._FASE3.getErrada());
+			estatistica._PORCENTAGEM_GERAL.setPulo(estatistica._FASE1.getPulo()+estatistica._FASE2.getPulo()+estatistica._FASE3.getPulo());			
 			
 			request.setAttribute("certo", porcentagemAcerto);
 			request.setAttribute("erro", porcentagemErros);
@@ -100,87 +85,87 @@ public class RelatorioTurmaController {
 			// Resultados do relatório dos tipos de Questão.
 			// FASE 1
 			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.ATRIBUICAO);
-			rel_TiposVariaveis.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_TiposVariaveis.setErrada(relatorio.getQtdRespostaErrada());
-			rel_TiposVariaveis.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._TIPOS_DE_VARIAVEIS.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._TIPOS_DE_VARIAVEIS.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._TIPOS_DE_VARIAVEIS.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("tiposVariaveisCerto", rel_TiposVariaveis.getCerta());
-				request.setAttribute("tiposVariaveisErrado", rel_TiposVariaveis.getErrada());
-				request.setAttribute("tiposVariaveisPulo", rel_TiposVariaveis.getPulo());
+				request.setAttribute("tiposVariaveisCerto", estatistica._TIPOS_DE_VARIAVEIS.getCerta());
+				request.setAttribute("tiposVariaveisErrado", estatistica._TIPOS_DE_VARIAVEIS.getErrada());
+				request.setAttribute("tiposVariaveisPulo", estatistica._TIPOS_DE_VARIAVEIS.getPulo());
 				
 			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.IF_ELSE);
-			rel_IF_ELSE.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_IF_ELSE.setErrada(relatorio.getQtdRespostaErrada());
-			rel_IF_ELSE.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._IF_ELSE.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._IF_ELSE.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._IF_ELSE.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("ifElseCerto", rel_IF_ELSE.getCerta());
-				request.setAttribute("ifElseErrado", rel_IF_ELSE.getErrada());
-				request.setAttribute("ifElsePulo", rel_IF_ELSE.getPulo());
+				request.setAttribute("ifElseCerto", estatistica._IF_ELSE.getCerta());
+				request.setAttribute("ifElseErrado", estatistica._IF_ELSE.getErrada());
+				request.setAttribute("ifElsePulo", estatistica._IF_ELSE.getPulo());
 				
 			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.SWITCH_CASE);
-			rel_SWICTH_CASE.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_SWICTH_CASE.setErrada(relatorio.getQtdRespostaErrada());
-			rel_SWICTH_CASE.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._SWITCH_CASE.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._SWITCH_CASE.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._SWITCH_CASE.setPulo(relatorio.getQtdRespostaPulou());
 				
-				request.setAttribute("switchCerto", rel_SWICTH_CASE.getCerta());
-				request.setAttribute("switchErrado", rel_SWICTH_CASE.getErrada());
-				request.setAttribute("switchPulo", rel_SWICTH_CASE.getPulo());
+				request.setAttribute("switchCerto", estatistica._SWITCH_CASE.getCerta());
+				request.setAttribute("switchErrado", estatistica._SWITCH_CASE.getErrada());
+				request.setAttribute("switchPulo", estatistica._SWITCH_CASE.getPulo());
 
 				// FASE 2
 			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.FOR);
-			rel_FOR.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_FOR.setErrada(relatorio.getQtdRespostaErrada());
-			rel_FOR.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._FOR.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._FOR.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._FOR.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("forCerto", rel_FOR.getCerta());
-				request.setAttribute("forErrado", rel_FOR.getErrada());
-				request.setAttribute("forPulo", rel_FOR.getPulo());
+				request.setAttribute("forCerto", estatistica._FOR.getCerta());
+				request.setAttribute("forErrado", estatistica._FOR.getErrada());
+				request.setAttribute("forPulo", estatistica._FOR.getPulo());
 			
 			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.WHILE);
-			rel_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_WHILE.setErrada(relatorio.getQtdRespostaErrada());
-			rel_WHILE.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._WHILE.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._WHILE.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._WHILE.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("whileCerto", rel_WHILE.getCerta());
-				request.setAttribute("whileErrado", rel_WHILE.getErrada());
-				request.setAttribute("whilePulo", rel_WHILE.getPulo());
+				request.setAttribute("whileCerto", estatistica._WHILE.getCerta());
+				request.setAttribute("whileErrado", estatistica._WHILE.getErrada());
+				request.setAttribute("whilePulo", estatistica._WHILE.getPulo());
 			
 			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.DO_WHILE);
-			rel_DO_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_DO_WHILE.setErrada(relatorio.getQtdRespostaErrada());
-			rel_DO_WHILE.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._DO_WHILE.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._DO_WHILE.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._DO_WHILE.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("doWhileCerto", rel_DO_WHILE.getCerta());
-				request.setAttribute("doWhileErrado", rel_DO_WHILE.getErrada());
-				request.setAttribute("doWhilePulo", rel_DO_WHILE.getPulo());
+				request.setAttribute("doWhileCerto", estatistica._DO_WHILE.getCerta());
+				request.setAttribute("doWhileErrado", estatistica._DO_WHILE.getErrada());
+				request.setAttribute("doWhilePulo", estatistica._DO_WHILE.getPulo());
 			
 				// FASE 3
 			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.TROCA_VARIAVEIS);
-			rel_TROCA_DE_VARIAVEIS.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_TROCA_DE_VARIAVEIS.setErrada(relatorio.getQtdRespostaErrada());
-			rel_TROCA_DE_VARIAVEIS.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._TROCA_DE_VARIAVEIS.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._TROCA_DE_VARIAVEIS.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._TROCA_DE_VARIAVEIS.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("troca_variaveisCerto", rel_TROCA_DE_VARIAVEIS.getCerta());
-				request.setAttribute("troca_variaveisErrado", rel_TROCA_DE_VARIAVEIS.getErrada());
-				request.setAttribute("troca_variaveisPulo", rel_TROCA_DE_VARIAVEIS.getPulo());
+				request.setAttribute("troca_variaveisCerto", estatistica._TROCA_DE_VARIAVEIS.getCerta());
+				request.setAttribute("troca_variaveisErrado", estatistica._TROCA_DE_VARIAVEIS.getErrada());
+				request.setAttribute("troca_variaveisPulo", estatistica._TROCA_DE_VARIAVEIS.getPulo());
 				
 			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.ORDENACAO_SIMPLES);
-			rel_ORDENACAO_SIMPLES.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_ORDENACAO_SIMPLES.setErrada(relatorio.getQtdRespostaErrada());
-			rel_ORDENACAO_SIMPLES.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._ORDENACAO_SIMPLES.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._ORDENACAO_SIMPLES.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._ORDENACAO_SIMPLES.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("ordenacaoCerto", rel_ORDENACAO_SIMPLES.getCerta());
-				request.setAttribute("ordenacaoErrado", rel_ORDENACAO_SIMPLES.getErrada());
-				request.setAttribute("ordenacaoPulo", rel_ORDENACAO_SIMPLES.getPulo());
+				request.setAttribute("ordenacaoCerto", estatistica._ORDENACAO_SIMPLES.getCerta());
+				request.setAttribute("ordenacaoErrado", estatistica._ORDENACAO_SIMPLES.getErrada());
+				request.setAttribute("ordenacaoPulo", estatistica._ORDENACAO_SIMPLES.getPulo());
 				
 			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.FUNCOES);
-			rel_FUNCOES.setCerta(relatorio.getQtdRespostaCorreta());
-			rel_FUNCOES.setErrada(relatorio.getQtdRespostaErrada());
-			rel_FUNCOES.setPulo(relatorio.getQtdRespostaPulou());
+			estatistica._FUNCOES.setCerta(relatorio.getQtdRespostaCorreta());
+			estatistica._FUNCOES.setErrada(relatorio.getQtdRespostaErrada());
+			estatistica._FUNCOES.setPulo(relatorio.getQtdRespostaPulou());
 			
-				request.setAttribute("funcoesCerto", rel_FUNCOES.getCerta());
-				request.setAttribute("funcoesErrado", rel_FUNCOES.getErrada());
-				request.setAttribute("funcoesPulo", rel_FUNCOES.getPulo());
+				request.setAttribute("funcoesCerto", estatistica._FUNCOES.getCerta());
+				request.setAttribute("funcoesErrado", estatistica._FUNCOES.getErrada());
+				request.setAttribute("funcoesPulo", estatistica._FUNCOES.getPulo());
 				
 	
 		} catch (NumberFormatException e) {
