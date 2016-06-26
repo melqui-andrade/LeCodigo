@@ -22,43 +22,60 @@ body {
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div style="padding: 5px;">
-			<div class="row texto-centralizado">
-				<div class="col-xs-3 col-sm-3">
-					<h4 class="texto-negrito cor-branco">
-						<a class="cor-branco" onclick="voltar()"> <span
-							class="fa fa-chevron-left"></span>
-						</a> <span class="texto-negrito cor-branco">Fase <br>${idFase}</span>
+			<div class="texto-centralizado">
 
-					</h4>
+				<div class="row">
+					<div class="col-xs-4 col-sm-4">
+						<h4 class="texto-negrito cor-branco">
+							<a class="cor-branco" onclick="voltar()"> <span
+								class="fa fa-chevron-left"></span>
+							</a>
+						</h4>
+					</div>
+					<div class="col-xs-4 col-sm-4">
+						<h4 class="texto-negrito texto-centralizado cor-branco">
+							<tiles:insertAttribute name="titulo" />
+						</h4>
+					</div>
+					<div class="col-xs-4 col-sm-4">
+						&nbsp;<br>
+					</div>
 
 				</div>
-				<div class="col-xs-3 col-sm-3">
-					<h4 class="texto-negrito cor-branco">
-						<span>Bits:<br> ${bits}
-						</span>
-					</h4>
-				</div>
-				<div class="col-xs-3 col-sm-3">
-					<h4 class="texto-negrito cor-branco">
-						<span>Pontuação:<br> ${pontuacao}
-						</span>
-					</h4>
-				</div>
-				<div class="col-xs-3 col-sm-3">
-					<h4 class="texto-negrito cor-branco">
-						<span> Vida:<br> <c:forEach begin="1" end="${vidas}"
-								varStatus="loop">
-								<i class="fa fa-heart cor-vermelha" style="font-size: 10pt;"></i>
-							</c:forEach> <c:if test="${vidas <3}">
+				<div class="row">
+					<div class="col-xs-3 col-sm-3">
+						<h6 class="texto-negrito cor-branco">
+							<span>Fase: <br>${idFase}</span>
+						</h6>
 
-								<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
-									<i class="fa fa-heart-o" style="font-size: 10pt;"></i>
-								</c:forEach>
+					</div>
+					<div class="col-xs-3 col-sm-3">
+						<h6 class="texto-negrito cor-branco">
+							<span>Bits:<br> ${bits}
+							</span>
+						</h6>
+					</div>
+					<div class="col-xs-3 col-sm-3">
+						<h6 class="texto-negrito cor-branco">
+							<span>Pontuação:<br> ${pontuacao}
+							</span>
+						</h6>
+					</div>
+					<div class="col-xs-3 col-sm-3">
+						<h6 class="texto-negrito cor-branco">
+							<span> Vida:<br> <c:forEach begin="1" end="${vidas}"
+									varStatus="loop">
+									<i class="fa fa-heart cor-vermelha" style="font-size: 10pt;"></i>
+								</c:forEach> <c:if test="${vidas <3}">
 
-							</c:if>
-						</span>
-					</h4>
-					<!-- 
+									<c:forEach begin="1" end="${3-vidas}" varStatus="loop">
+										<i class="fa fa-heart-o" style="font-size: 10pt;"></i>
+									</c:forEach>
+
+								</c:if>
+							</span>
+						</h6>
+						<!-- 
 						 <c:if test="${bits >= 2*idFase+1 && vidas < 3}">
 							<a data-original-title="Comprar mais vidas" type="button"
 								onclick="comprarVida()" data-toggle="modal"
@@ -75,7 +92,7 @@ body {
 						class="btn btn-info fa fa-sign-out  " data-toggle="tooltip"
 						data-placement="bottom" title=""></a>
 						 -->
-
+					</div>
 				</div>
 			</div>
 		</div>
@@ -92,7 +109,7 @@ body {
 	<script>
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
-		});	
+		});
 	</script>
 </body>
 </html>
