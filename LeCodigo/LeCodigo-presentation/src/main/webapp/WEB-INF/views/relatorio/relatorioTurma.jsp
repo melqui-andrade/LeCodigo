@@ -61,11 +61,11 @@ body {
 												Acertos, Erros e Pulos das questões</div>
 											<div class="panel-body" style="border-color: #fff;">
 
-												<div class="col-md-4">&nbsp;</div>
-												<div class="col-md-4">
+												<div class="col-xs-6 col-sm-4">&nbsp;</div>
+												<div class="col-xs-6 col-sm-4">
 													<canvas id="chartHistorico" width="100" height="100"></canvas>
 												</div>
-												<div class="col-md-4">&nbsp;</div>
+												<div class="col-xs-6 col-sm-4">&nbsp;</div>
 											</div>
 										</div>
 									</div>
@@ -75,7 +75,7 @@ body {
 							<div class="tab-pane fade" id="fase">
 
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -86,7 +86,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -97,7 +97,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -114,7 +114,7 @@ body {
 							<div class="tab-pane fade" id="fase1">
 
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -126,7 +126,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -137,7 +137,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -154,7 +154,7 @@ body {
 							<div class="tab-pane fade" id="fase2">
 
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -165,7 +165,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -176,7 +176,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -193,7 +193,7 @@ body {
 							<div class="tab-pane fade" id="fase3">
 
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -205,7 +205,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">
@@ -217,7 +217,7 @@ body {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
+									<div class="col-xs-6 col-sm-4">
 										<div class="panel">
 											<div class="panel-heading"
 												style="background: #FAE6B3; color: #34495E;">

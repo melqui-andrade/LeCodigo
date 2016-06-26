@@ -29,13 +29,11 @@ public class HomeController {
 		try {
 			String login = request.getSession().getAttribute("login").toString();
 			GerenciarSessaoBusiness.removeSessao(login);
-			//String login = request.getSession().getAttribute("login").toString();
-			//SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
-			//sessaoBusiness.encerraSessao();
 		} catch (Exception e) {
 		}
-		
+
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home/home");
 		return modelAndView;
 	}
 
@@ -77,12 +75,14 @@ public class HomeController {
 	public ModelAndView loginGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home/login");
 		modelAndView.addObject("jogadorModel", new JogadorModel());
 		return modelAndView;
 	}
 
 	@RequestMapping(value = "/home/login.html", method = RequestMethod.POST)
-	public ModelAndView loginPost(@ModelAttribute("jogadorModel") JogadorModel jogadorModel, HttpSession session, Model model) {
+	public ModelAndView loginPost(@ModelAttribute("jogadorModel") JogadorModel jogadorModel, HttpSession session,
+			Model model) {
 		JogadorBusiness jogadorBusiness = new JogadorBusiness();
 
 		ModelAndView modelAndView = new ModelAndView();
@@ -92,7 +92,7 @@ public class HomeController {
 			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(jogadorModel.getLogin());
 			Jogador jog = sessaoBusiness.getJogador();
 			int tipo_usuario = sessaoBusiness.getJogador().getTipo().ordinal();
-			if ( tipo_usuario == 1) { // aluno
+			if (tipo_usuario == 1) { // aluno
 				return new ModelAndView("redirect:/fase/transicaoFase.html");
 			}
 			if (tipo_usuario == 2) { // professor

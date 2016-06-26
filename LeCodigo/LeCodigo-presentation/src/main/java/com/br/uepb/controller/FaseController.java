@@ -13,22 +13,21 @@ import com.br.uepb.business.SessaoBusiness;
 @Controller
 public class FaseController {
 
-	
 	SessaoBusiness sessaoBusiness;
 	private int fase = 1;
-	
+
 	@RequestMapping(value = "/fase/fase.html", method = RequestMethod.GET)
 	public ModelAndView faseGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
 		String login = request.getSession().getAttribute("login").toString();
 		sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
-		
-		if(fase < sessaoBusiness.getFase()){
+
+		if (fase < sessaoBusiness.getFase()) {
 			fase = sessaoBusiness.getFase();
-            return new ModelAndView("redirect:/fase/transicaoFase.html");
+			return new ModelAndView("redirect:/fase/transicaoFase.html");
 		}
-		
+
 		int bits = sessaoBusiness.getBits();
 		int pontuacao = sessaoBusiness.getPontuacao();
 		int vidas = sessaoBusiness.getVidas();
@@ -41,6 +40,7 @@ public class FaseController {
 		modelAndView.addObject("vidas", vidas);
 		modelAndView.addObject("etapa", etapa);
 
+		modelAndView.setViewName("fase/fase");
 		return modelAndView;
 	}
 }

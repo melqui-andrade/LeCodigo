@@ -100,7 +100,7 @@ body {
 						<thead>
 							<tr>
 								<th class="col-md-8">Questao</th>
-								<th class="col-md-4">Status</th>
+								<th class="col-xs-6 col-sm-4">Status</th>
 							</tr>
 
 						</thead>
@@ -108,7 +108,7 @@ body {
 							<tbody>
 								<tr>
 									<td class="col-md-8">QOWEIU asdshd asidha sldkahsd</td>
-									<td class="col-md-4">ERROU</td>
+									<td class="col-xs-6 col-sm-4">ERROU</td>
 								</tr>
 							</tbody>
 						</c:forEach>

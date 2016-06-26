@@ -148,7 +148,7 @@ h4 {
 
 						<div id="div_timeline" class="row">
 							<div class="col-md-2">&nbsp;</div>
-							<div class="col-md-4">&nbsp;</div>
+							<div class="col-xs-6 col-sm-4">&nbsp;</div>
 							<div class="col-md-6 container ">
 								<div class="timeline" id="page-top">
 									<dl>
@@ -266,7 +266,7 @@ h4 {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-4">
+							<div class="col-xs-6 col-sm-4">
 								<div class="panel panel-default"
 									data-original-title="Opções para solucionar a questão, clique no 'bloco' para selecionar a opção e a opção selecionada irá para o campo de visualização do código "
 									data-toggle="tooltip" data-placement="top" title="">

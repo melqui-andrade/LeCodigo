@@ -18,7 +18,7 @@ public class RelatorioController {
 	public ModelAndView relatorioGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
-
+		modelAndView.setViewName("relatorio/relatorio");		
 		return modelAndView;
 	}
 

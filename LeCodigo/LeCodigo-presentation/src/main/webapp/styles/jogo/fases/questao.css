@@ -12,40 +12,6 @@ body {
 	font-family: 'Open Sans';
 }
 
-span {
-	font-family: 'Open Sans';
-	font-weight: bold;
-	font-size: 22px;
-}
-
-.span-header{
-	font-family: 'Open Sans';
-	font-weight: bold;
-	font-size: 22px;
-}
-
-h1 {
-	color: #fff;
-	text-align: left;
-	font-family: 'Montserrat', cursive;
-}
-
-h3 {
-	color: #34495E;
-	text-align: center;
-	font-family: 'Montserrat', cursive;
-}
-
-h5 {
-	color: #fff;
-	text-align: center;
-	font-family: 'Montserrat', cursive;
-}
-
-h6 {
-	color: #444;
-}
-
 a {
 	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter',
 		'Lucida Typewriter', monospace;
@@ -75,18 +41,8 @@ pre {
 	line-height: 18.5714px;
 }
 
-.fa-heart {
-	color: #DA4453;
-}
-
 a:link, a:visited { 
-  
    cursor: pointer;
-}
-
-
-.margem {
-	padding: 5%;
 }
 
 .panel-body-questao {
@@ -104,10 +60,6 @@ a:link, a:visited {
 
 .list-group-item {
 	padding: 1%;
-}
-
-.margem-acima {
-	padding-top: 5%;
 }
 
 .panel-terminal {

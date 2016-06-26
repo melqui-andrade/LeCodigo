@@ -50,7 +50,7 @@ body {
 				
 			
 			</div>
-				<div class="col-md-4" >
+				<div class="col-xs-6 col-sm-4" >
 					<img src="../images/et/et_verde_feliz.png" class="img-responsive"
 					  />
 				</div>

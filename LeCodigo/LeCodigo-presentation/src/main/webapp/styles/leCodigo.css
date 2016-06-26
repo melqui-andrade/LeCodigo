@@ -1,0 +1,136 @@
+/* Empty. Add your own CSS if you like */
+
+
+body, h1, h2, h3, h4, h5 nav, ul, p, span{
+  font-family: "Open Sans";  
+  font-style: normal;
+  font-variant: normal;  
+}
+.espaco-toolbar{ 
+  padding-top: 70px; 
+}
+
+.fundo-vermelho{
+    background-color: #C75C5C;
+}
+
+.cor-vermelha{
+    color: #C75C5C;
+}
+
+.fundo-preto{
+    background-color: #4d4b41;
+} 
+
+.cor-preto{
+    color: #4d4b41;
+}
+
+.cor-branco{
+    color: #fff;
+}
+.fundo-cinza{
+    background-color: #F1F2F7;
+}
+
+.cor-azul{
+  color: #5fa7c3;
+}
+
+.cor-azul-escuro{
+  color: #477f93;
+}
+
+.fundo-azul{
+  background-color: #5fa7c3;
+}
+
+.fundo-amarelo{
+  background-color:  #f5cf87;
+}
+.cor-amarelo{
+  color:  #f5cf87;
+}
+
+.texto-negrito{
+    font-weight:600;    
+}
+
+.texto-light{
+    font-weight:200;   
+}
+
+.texto-centralizado{
+   text-align:center
+}
+
+.centralizado{
+  margin-left: auto;
+  margin-right: auto;
+    
+}
+.margin{
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.margin-historico{
+    padding-bottom: 1%;
+}
+
+.imagem-avatar{
+     width: 125px; 
+     height: 125px;  
+     margin-left: auto;  
+     margin-right: auto;   
+     display: block;
+     
+}
+
+.imagem-avatar2{
+     width: 50px; 
+     height: 50px;  
+      margin-top: 4%;
+     margin-left: auto;  
+     margin-right: auto;   
+     display: block;
+     
+}
+
+.espaco{
+  padding-top: 2%;
+}
+
+.espaco-header{
+   padding-top: 1%;
+   padding-bottom: 1%;
+}
+
+.rodape {
+  position: absolute;
+  bottom:0;
+ }
+
+.panel-body-scroll {
+  min-height: 200px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.fabSpeedDial .text-capitalize {
+         text-transform: capitalize; 
+      }
+      .fabSpeedDial .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+         background-color: #000 !important; 
+      }
+      .fabSpeedDial p.note {
+         font-size: 1.2rem; 
+      }
+      .fabSpeedDial .lock-size {
+         min-width: 300px;
+         min-height: 300px;
+         width: 300px;
+         height: 300px;
+         margin-left: auto;
+         margin-right: auto; 
+      }	 

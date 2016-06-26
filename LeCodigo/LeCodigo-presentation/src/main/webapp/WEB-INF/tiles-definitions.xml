@@ -5,19 +5,60 @@
 
 <tiles-definitions>
 
-	<definition name="base.layout" template="/WEB-INF/views/tiles/defaultLayout.jsp">
+	<definition name="base.layout" template="/WEB-INF/views/tiles/menuLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/credits.jsp" />
 	</definition>
-	
-	<definition name="home" extends="base.layout">
+
+	<definition name="menu.layout" template="/WEB-INF/views/tiles/menuLayout.jsp">
+	</definition>
+
+	<definition name="jogo.layout" template="/WEB-INF/views/tiles/jogoLayout.jsp">
+	</definition>
+
+
+
+	<definition name="home/home" extends="menu.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/home.jsp" />
 	</definition>
 
-	<definition name="login" extends="base.layout">
-		<put-attribute name="body" value="/WEB-INF/views/login/login.jsp" />
+	<definition name="home/login" extends="menu.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/home/login.jsp" />
 	</definition>
-	
+
+	<definition name="home/cadastrar" extends="menu.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/home/cadastrar.jsp" />
+	</definition>
+
+	<definition name="fase/transicaoFase" extends="menu.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/fase/transicaoFase.jsp" />
+	</definition>
+
+	<definition name="fase/fase" extends="jogo.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/fase/fase.jsp" />
+	</definition>
+
+	<definition name="fase/questao" extends="jogo.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/fase/questao.jsp" />
+	</definition>
+
+	<definition name="professor/home" extends="menu.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body" value="/WEB-INF/views/professor/home.jsp" />
+	</definition>
+
+	<definition name="relatorio/relatorio" extends="menu.layout">
+		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/relatorio/relatorio.jsp" />
+	</definition>
+
 
 
 

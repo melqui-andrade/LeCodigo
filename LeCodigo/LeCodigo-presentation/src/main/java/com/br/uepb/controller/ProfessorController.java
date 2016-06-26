@@ -24,6 +24,7 @@ public class ProfessorController {
 	public ModelAndView homeGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("professor/home");
 		return modelAndView;
 	}
 
