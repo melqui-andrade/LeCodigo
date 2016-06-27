@@ -185,66 +185,66 @@
 	}
 
 	// Dados GLOBAl
-	var acertos = '${certo}';
-	var erros = '${erro}';
-	var pulos = '${pulo}';
+	var acertos = '${estatistica._PORCENTAGEM_GERAL.certa}';
+	var erros = '${estatistica._PORCENTAGEM_GERAL.errada}';
+	var pulos = '${estatustica._PORCENTAGEM_GERAL.pulo}';
 	// DADOS DA FASE 1
-	var acertosF1 = '${questoesCertasF1}';
-	var errosF1 = '${questoesErradasF1}';
-	var pulosF1 = '${questoesPulouF1}';
+	var acertosF1 = '${estatistica._FASE1.certa}';
+	var errosF1 = '${estatistica._FASE1.errada}';
+	var pulosF1 = '${estatistica._FASE1.pulo}';
 	// DADOS DA FASE 2
-	var acertosF2 = '${questoesCertasF2}';
-	var errosF2 = '${questoesErradasF2}';
-	var pulosF2 = '${questoesPulouF2}';
+	var acertosF2 = '${estatistica._FASE2.certa}';
+	var errosF2 = '${estatistica._FASE2.errada}';
+	var pulosF2 = '${estatistica._FASE2.pulo}';
 	// DADOS DA FASE 3
-	var acertosF3 = '${questoesCertasF3}';
-	var errosF3 = '${questoesErradasF3}';
-	var pulosF3 = '${questoesPulouF3}';
+	var acertosF3 = '${estatistica._FASE3.certa}';
+	var errosF3 = '${estatistica._FASE3.errada}';
+	var pulosF3 = '${estatistica._FASE3.pulo}';
 
 	// DADOS DA QUESTOES TIPO DE VARIAVEIS
-	var acertosTiposVariaveis = '${tiposVariaveisCerto}';
-	var errosTiposVariaveis = '${tiposVariaveisErrado}';
-	var pulosTiposVariaveis = '${tiposVariaveisPulo}';
+	var acertosTiposVariaveis = '${estatistica._TIPOS_DE_VARIAVEIS.certa}';
+	var errosTiposVariaveis = '${estatistica._TIPOS_DE_VARIAVEIS.errada}';
+	var pulosTiposVariaveis = '${estatistica._TIPOS_DE_VARIAVEIS.pulo}';
 
 	// DADOS DA QUESTOES IF E ELSE 
-	var acertosIF_ELSE = '${ifElseCerto}';
-	var errosIF_ELSE = '${ifElseErrado}';
-	var pulosIF_ELSE = '${ifElseErrado}';
+	var acertosIF_ELSE = '${estatistica._IF_ELSE.certa}';
+	var errosIF_ELSE = '${estatistica._IF_ELSE.errada}';
+	var pulosIF_ELSE = '${estatistica._IF_ELSE.pulo}';
 
 	// DADOS DA QUESTOES SWITCH E CASE 
-	var acertosSWITCH = '${switchCerto}';
-	var errosSWITCH = '${switchErrado}';
-	var pulosSWITCH = '${switchPulo}';
+	var acertosSWITCH = '${estatistica._SWITCH_CASE.certa}';
+	var errosSWITCH = '${estatistica._SWITCH_CASE.errada}';
+	var pulosSWITCH = '${estatistica._SWITCH_CASE.pulo}';
 	// DADOS DA QUESTOES FOR 
 
-	var acertosFOR = '${forCerto}';
-	var errosFOR = '${forErrado}';
-	var pulosFOR = '${forPulo}';
+	var acertosFOR = '${estatistica._FOR.certa}';
+	var errosFOR = '${estatistica._FOR.errada}';
+	var pulosFOR = '${estatistica._FOR.pulo}';
 
 	// DADOS DA QUESTOES WHILE 
-	var acertosWHILE = '${whileCerto}';
-	var errosWHILE = '${whileErrado}';
-	var pulosWHILE = '${whilePulo}';
+	var acertosWHILE = '${estatistica._WHILE.certa}';
+	var errosWHILE = '${estatistica._WHILE.errada}';
+	var pulosWHILE = '${estatistica._WHILE.pulo}';
 
 	// DADOS DA QUESTOES DO WHILE 
-	var acertosDO_WHILE = '${doWhileCerto}';
-	var errosDO_WHILE = '${doWhileErrado}';
-	var pulosDO_WHILE = '${doWhilePulo}';
+	var acertosDO_WHILE = '${estatistica._DO_WHILE.certa}';
+	var errosDO_WHILE = '${estatistica._DO_WHILE.errada}';
+	var pulosDO_WHILE = '${estatistica._DO_WHILE.pulo}';
 
 	// DADOS DA QUESTOES TROCA DE VARIAVEIS 
-	var acertosTROCA_VARIAVEIS = '${troca_variaveisCerto}';
-	var errosTROCA_VARIAVEIS = '${troca_variaveisErrado}';
-	var pulosTROCA_VARIAVEIS = '${troca_variaveisPulo}';
+	var acertosTROCA_VARIAVEIS = '${estatistica._TROCA_DE_VARIAVEIS.certa}';
+	var errosTROCA_VARIAVEIS = '${estatistica._TROCA_DE_VARIAVEIS.errada}';
+	var pulosTROCA_VARIAVEIS = '${estatistica._TROCA_DE_VARIAVEIS.pulo}';
 
 	// DADOS DA QUESTOES ORDENACAO SIMPLES 
-	var acertosORDENACAO_SIMPLES = '${ordenacaoCerto}';
-	var errosORDENACAO_SIMPLES = '${ordenacaoErrado}';
-	var pulosORDENACAO_SIMPLES = '${ordenacaoPulo}';
+	var acertosORDENACAO_SIMPLES = '${estatistica._ORDENACAO_SIMPLES.certa}';
+	var errosORDENACAO_SIMPLES = '${estatistica._ORDENACAO_SIMPLES.errada}';
+	var pulosORDENACAO_SIMPLES = '${estatistica._ORDENACAO_SIMPLES.pulo}';
 
 	// DADOS DA QUESTOES FUNCOES 
-	var acertosFUNCOES = '${funcoesCerto}';
-	var errosFUNCOES = '${funcoesErrado}';
-	var pulosFUNCOES = '${funcoesPulo}';
+	var acertosFUNCOES = '${estatistica._FUNCOES.certa}';
+	var errosFUNCOES = '${estatistica._FUNCOES.errada}';
+	var pulosFUNCOES = '${estatistica._FUNCOES.pulo}';
 
 	// GERAL
 	carregaVariaveisHistoricoGeral(acertos, erros, pulos);
