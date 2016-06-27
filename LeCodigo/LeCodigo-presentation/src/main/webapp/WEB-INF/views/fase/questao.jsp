@@ -1,15 +1,15 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 <link href="../styles/questao.css" rel="stylesheet">
 
-<div style="padding-bottom: 3%; padding-top: 3%;">
+<div style="padding-bottom: 3%; padding-top: 1%;">
 	<div class="panel">
 		<div class="panel-body" style="border-color: #fff;">
 			${questao.descricao}</div>
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12 col-sm-6" style="padding: 1%;">
-			<div class="panel panel-default">
+		<div class="col-xs-12 col-sm-6">
+			<div class="panel ">
 				<div class="panel-heading fundo-amarelo cor-preto">Linhas de
 					código</div>
 				<div id="opcoes" class="panel-body">
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-12 col-sm-6" id="divOpcoes" style="padding: 1%;">
+		<div class="col-xs-12 col-sm-6" id="divOpcoes" >
 			<div class="panel panel-default">
 				<div class="panel-heading"
 					style="background: #eee; color: #34495E; padding: -1%;">
@@ -56,65 +56,58 @@
 			style="padding-top: 5px; padding-bottom: 5px;">
 			<div class="row"
 				style="color: #eee; text-align: center; font-size: 14px;">
-				
-				<div class="col-xs-3 col-sm-3">
-				<h4 class="texto-negrito cor-branco">
-					<c:if test="${bits >= 2*idFase+1 && vidas < 3}">
-							<a style="color: #fff;" data-original-title="Comprar mais vidas" type="button"
-								onclick="comprarVida()" data-toggle="modal"
-								data-target="#myModal" class=" info fa fa-btc"
-								data-toggle="tooltip" data-placement="bottom" title=""> </a>
-						</c:if> <c:if test="${!(bits >= 2*idFase+1 && vidas < 3)}">
-							<a style="color: #fff;" data-original-title="Comprar mais vidas" type="button"
-								onclick="comprarVida()" disabled data-toggle="modal"
-								data-target="#myModal" class="info fa fa-btc"
-								data-toggle="tooltip" data-placement="bottom" title=""> </a>
-						</c:if>
-						</h4>
-				</div>
-				
+
 				<div class="col-xs-3 col-sm-3">
 					<h4 class="texto-negrito cor-branco">
-				
-					<c:if test="${bits >= 2*idFase+1}">
-						<a style="color: #EC971F;" onclick="pularQuestao()"
-							data-toggle="modal" data-target="#myModal"
-							data-original-title="Pular Questão" data-toggle="tooltip"
-							data-placement="top" title="">
-							<i class="fa fa-retweet" aria-hidden="true"></i>
-						</a>
-					</c:if>
-					<c:if test="${bits < 2*idFase+1}">
-						<a style="color: #EC971F;" click="pularQuestao()"
-							disabled data-toggle="modal" data-target="#myModal"
-							data-original-title="Pular Questão" data-toggle="tooltip"
-							data-placement="top" title="">
-							<i class="fa fa-retweet" aria-hidden="true"></i>
-						</a>
-					</c:if>
+						<c:if test="${bits >= 2*idFase+1 && vidas < 3}">
+							<a style="color: #48CFAD;" data-original-title="Comprar mais vidas"
+								type="button" onclick="comprarVida()" data-toggle="modal"
+								data-target="#myModal" class=" info fa fa-btc"
+								data-toggle="tooltip" data-placement="bottom" title=""> </a>
+						</c:if>
+						<c:if test="${!(bits >= 2*idFase+1 && vidas < 3)}">
+							<a style="color: #eee;" class="info fa fa-btc"> </a>
+						</c:if>
 					</h4>
-				</div>
-				<div class="col-xs-3 col-sm-3">
-				<h4 class="texto-negrito cor-branco">
-				
-					<a style="color: #449D44;"
-						onclick="enviarResposta()" data-toggle="modal"
-						data-target="#myModal" data-original-title="Enviar Resposta"
-						data-toggle="tooltip" data-placement="top" title="">
-						<i class="fa fa-paper-plane" aria-hidden="true"></i>
-					</a>
-				</h4>
 				</div>
 
 				<div class="col-xs-3 col-sm-3">
-				<h4 class="texto-negrito cor-branco">
-				
-					<a style="color: #C9302C;" onclick="limparReposta()"
-						data-original-title="Limpar Código" data-toggle="tooltip"
-						data-placement="top" title="">
-						<i class="fa fa-times" aria-hidden="true"></i>
-					</a>
-				</h4>
+					<h4 class="texto-negrito cor-branco">
+
+						<c:if test="${bits >= 2*idFase+1}">
+							<a style="color: #EC971F;" onclick="pularQuestao()"
+								data-toggle="modal" data-target="#myModal"
+								data-original-title="Pular Questão" data-toggle="tooltip"
+								data-placement="top" title=""> <i class="fa fa-retweet"
+								aria-hidden="true"></i>
+							</a>
+						</c:if>
+						<c:if test="${bits < 2*idFase+1}">
+							<a style="color: #eee;" class="info fa fa-retweet"> </a>
+						</c:if>
+					</h4>
+				</div>
+				<div class="col-xs-3 col-sm-3">
+					<h4 class="texto-negrito cor-branco">
+
+						<a style="color: #449D44;" onclick="enviarResposta()"
+							data-toggle="modal" data-target="#myModal"
+							data-original-title="Enviar Resposta" data-toggle="tooltip"
+							data-placement="top" title=""> <i class="fa fa-paper-plane"
+							aria-hidden="true"></i>
+						</a>
+					</h4>
+				</div>
+
+				<div class="col-xs-3 col-sm-3">
+					<h4 class="texto-negrito cor-branco">
+
+						<a style="color: #C9302C;" onclick="limparReposta()"
+							data-original-title="Limpar Código" data-toggle="tooltip"
+							data-placement="top" title=""> <i class="fa fa-times"
+							aria-hidden="true"></i>
+						</a>
+					</h4>
 				</div>
 
 			</div>

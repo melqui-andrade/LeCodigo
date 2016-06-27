@@ -1,182 +1,187 @@
-<div style="margin-top: 6%;">
+<div style="margin-top: 3%;">
 	<h4 class="cor-branco texto-centralizado ">Relatório da Turma</h4>
-	<div class="col-xs-12">
-		<div class="panel">
-			<ul id="myTab1" class="nav nav-tabs nav-justified">
-				<li class="active"><a href="#geral" data-toggle="tab">Geral</a></li>
-				<li class=""><a href="#fase" data-toggle="tab">Fases</a></li>
-				<li class=""><a href="#fase1" data-toggle="tab">Fase 1</a></li>
-				<li class=""><a href="#fase2" data-toggle="tab">Fase 2</a></li>
-				<li class=""><a href="#fase3" data-toggle="tab">Fase 3</a></li>
+	<div class="">
+		<div class="col-xs-12">
+			<div class="panel">
+				<ul id="myTab1" class="nav nav-tabs nav-justified">
+					<li class="active"><a href="#geral" data-toggle="tab">Geral</a></li>
+					<li class=""><a href="#fase" data-toggle="tab">Fases</a></li>
+					<li class=""><a href="#fase1" data-toggle="tab">Fase 1</a></li>
+					<li class=""><a href="#fase2" data-toggle="tab">Fase 2</a></li>
+					<li class=""><a href="#fase3" data-toggle="tab">Fase 3</a></li>
 
-			</ul>
-			<div id="myTabContent" class="tab-content">
+				</ul>
+				<div id="myTabContent" class="tab-content">
 
-				<div class="tab-pane fade active in" id="geral">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Relação</div>
-								<div class="panel-body" style="border-color: #fff;">
+					<div class="tab-pane fade active in" id="geral">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Relação</div>
+									<div class="panel-body" style="border-color: #fff;">
 
-									<div class="col-xs-12 col-sm-4">&nbsp;</div>
-									<div class="col-xs-12 col-sm-4">
-										<canvas id="chartHistorico" width="100" height="100"></canvas>
+										<div class="col-xs-12 col-sm-4">&nbsp;</div>
+										<div class="col-xs-12 col-sm-4">
+											<canvas id="chartHistorico" width="100" height="100"></canvas>
+										</div>
+										<div class="col-xs-12 col-sm-4">&nbsp;</div>
 									</div>
-									<div class="col-xs-12 col-sm-4">&nbsp;</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="fase">
-
-					<div class="row">
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Fase 1</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartFase1" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Fase 2</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartFase2" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Fase 3</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartFase3" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="fase1">
-
-					<div class="row">
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Tipos e
-									Atribuição de variaveis</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartTipoAtribuicao" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">if/else</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartIfElse" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Switch/case
-								</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartSwitchCase" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="fase2">
-
-					<div class="row">
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">For</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartFor" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">While</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartWhile" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">do While</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartDoWhile" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="fase3">
-
-					<div class="row">
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Troca de
-									variaveis</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartTrocaDeVariaveis" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Ordenação
-									simples</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartOrdenacao" width="100" height="100"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-4">
-							<div class="panel">
-								<div class="panel-heading"
-									style="background: #FAE6B3; color: #34495E;">Funções</div>
-								<div class="panel-body" style="border-color: #fff;">
-									<canvas id="chartFuncoes" width="100" height="100"></canvas>
 								</div>
 							</div>
 						</div>
 					</div>
 
+					<div class="tab-pane fade" id="fase">
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Fase 1</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartFase1" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Fase 2</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartFase2" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Fase 3</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartFase3" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="fase1">
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Tipos e
+										Atribuição de variaveis</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartTipoAtribuicao" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">if/else</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartIfElse" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Switch/case
+									</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartSwitchCase" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="fase2">
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">For</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartFor" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">While</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartWhile" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">do While</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartDoWhile" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="fase3">
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Troca de
+										variaveis</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartTrocaDeVariaveis" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Ordenação
+										simples</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartOrdenacao" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<div class="panel">
+									<div class="panel-heading"
+										style="background: #FAE6B3; color: #34495E;">Funções</div>
+									<div class="panel-body" style="border-color: #fff;">
+										<canvas id="chartFuncoes" width="100" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<script src="../js/jogo/relatorio.js"></script>
+<script src="../js/relatorio.js"></script>
 
 <script language="javascript">
 	function voltar() {
-		window.setTimeout("location.href='/LeCodigo-presentation/relatorio/relatorio.html'",500);
+		window
+				.setTimeout(
+						"location.href='/LeCodigo-presentation/relatorio/relatorio.html'",
+						500);
 	}
 
 	// Dados GLOBAl
