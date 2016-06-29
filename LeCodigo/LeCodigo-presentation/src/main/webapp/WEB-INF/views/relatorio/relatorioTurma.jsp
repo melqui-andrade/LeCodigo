@@ -1,20 +1,15 @@
 <div style="margin-top: 3%;">
 	<h4 class="cor-branco texto-centralizado ">Relatório da Turma</h4>
-	<div class="">
+	<div class="" style="padding-bottom: 20%;">
 		<div class="col-xs-12">
 			<div class="panel">
-				<ul id="myTab1" class="nav nav-tabs nav-justified">
-					<li class="active"><a href="#geral" data-toggle="tab">Geral</a></li>
-					<li class=""><a href="#fase" data-toggle="tab">Fases</a></li>
-					<li class=""><a href="#fase1" data-toggle="tab">Fase 1</a></li>
-					<li class=""><a href="#fase2" data-toggle="tab">Fase 2</a></li>
-					<li class=""><a href="#fase3" data-toggle="tab">Fase 3</a></li>
 
-				</ul>
 				<div id="myTabContent" class="tab-content">
-
 					<div class="tab-pane fade active in" id="geral">
 						<div class="row">
+							<div class="col-xs-12 col-sm-12">
+								<h4 class="cor-toolbar texto-centralizado">Dados gerais</h4>
+							</div>
 							<div class="col-xs-12">
 								<div class="panel">
 									<div class="panel-heading"
@@ -35,6 +30,12 @@
 					<div class="tab-pane fade" id="fase">
 
 						<div class="row">
+							<div class="col-xs-12 col-sm-12">
+								<h4 class="cor-toolbar texto-centralizado">Dados gerais de
+									cada fase</h4>
+							</div>
+
+
 							<div class="col-xs-12 col-sm-4">
 								<div class="panel">
 									<div class="panel-heading"
@@ -68,6 +69,11 @@
 					<div class="tab-pane fade" id="fase1">
 
 						<div class="row">
+							<div class="col-xs-12 col-sm-12">
+								<h4 class="cor-toolbar texto-centralizado">Dados gerais de
+									cada tema da 1ª fase</h4>
+							</div>
+
 							<div class="col-xs-12 col-sm-4">
 								<div class="panel">
 									<div class="panel-heading"
@@ -103,6 +109,11 @@
 					<div class="tab-pane fade" id="fase2">
 
 						<div class="row">
+							<div class="col-xs-12 col-sm-12">
+								<h4 class="cor-toolbar texto-centralizado">Dados gerais de
+									cada tema da 2ª fase</h4>
+							</div>
+
 							<div class="col-xs-12 col-sm-4">
 								<div class="panel">
 									<div class="panel-heading"
@@ -136,6 +147,11 @@
 					<div class="tab-pane fade" id="fase3">
 
 						<div class="row">
+							<div class="col-xs-12 col-sm-12">
+								<h4 class="cor-toolbar texto-centralizado">Dados gerais de
+									cada tema da 3ª fase</h4>
+							</div>
+
 							<div class="col-xs-12 col-sm-4">
 								<div class="panel">
 									<div class="panel-heading"
@@ -173,6 +189,64 @@
 		</div>
 	</div>
 </div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container-fluid">
+		<div class="row" style="text-align: center;">
+		
+			<div class="col-xs-1 col-sm-1">&nbsp;</div>
+
+			<div class="col-xs-2 col-sm-2">
+				<h6 class="texto-negrito cor-branco texto-centralizado">
+					<a href="#geral" data-toggle="tab"
+						class="cor-branco texto-centralizado"> <i
+						class="fa fa-pie-chart" aria-hidden="true"></i> <br>G
+					</a>
+				</h6>
+			</div>
+
+			<div class="col-xs-2 col-sm-2">
+				<h6 class="texto-negrito cor-branco">
+					<a href="#fase" data-toggle="tab"
+						class="cor-branco texto-centralizado"> <i
+						class="fa fa-bar-chart" aria-hidden="true"></i> <br>F
+					</a>
+				</h6>
+			</div>
+			<div class="col-xs-2 col-sm-2">
+				<h6 class="texto-negrito cor-branco">
+					<a href="#fase1" data-toggle="tab"
+						class="cor-branco texto-centralizado"> <i
+						class="fa fa-bar-chart" aria-hidden="true"></i> <br>F1
+					</a>
+				</h6>
+			</div>
+
+			<div class="col-xs-2 col-sm-2">
+				<h6 class="texto-negrito cor-branco">
+					<a href="#fase2" data-toggle="tab"
+						class="cor-branco texto-centralizado"> <i
+						class="fa fa-bar-chart" aria-hidden="true"></i> <br>F2
+					</a>
+				</h6>
+			</div>
+
+			<div class="col-xs-2 col-sm-2">
+				<h6 class="texto-negrito cor-branco">
+					<a href="#fase3" data-toggle="tab"
+						class="cor-branco texto-centralizado"> <i
+						class="fa fa-bar-chart" aria-hidden="true"></i> <br>F3
+					</a>
+				</h6>
+			</div>
+
+			<div class="col-xs-1 col-sm-1">&nbsp;</div>
+
+		</div>
+	</div>
+</nav>
+
 
 <script src="../js/relatorio.js"></script>
 

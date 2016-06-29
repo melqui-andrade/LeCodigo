@@ -32,6 +32,10 @@ body, h1, h2, h3, h4, h5 nav, ul, p, span {
 	color: #4d4b41;
 }
 
+.cor-toolbar{
+	cor: #34495E;
+}
+
 .cor-branco {
 	color: #fff;
 }
