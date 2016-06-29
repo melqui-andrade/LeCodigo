@@ -58,7 +58,10 @@ body {
 
 				<div class="row" style="text-align: center;">
 					<div class="col-xs-4 col-sm-4">
-						<h4 class="texto-negrito cor-branco">
+						<h4 class="texto-negrito cor-branco"
+							data-original-title="Voltar para a página anterior"
+							data-toggle="tooltip" data-placement="bottom" title=""
+							id="botaoVoltar">
 							<a class="cor-branco" onclick="voltar()"> <span
 								class="fa fa-chevron-left"></span>
 							</a>
@@ -70,7 +73,9 @@ body {
 						</h4>
 					</div>
 					<div class="col-xs-4 col-sm-4">
-						<h4 class="texto-negrito cor-branco">
+						<h4 class="texto-negrito cor-branco"
+							data-original-title="Sair do jogo, voltando para a página de login"
+							data-toggle="tooltip" data-placement="bottom" title="">
 							<a class="cor-branco" onclick="sair()"> <span
 								class="fa fa-sign-out"></span>
 							</a>
@@ -147,8 +152,6 @@ body {
 				desenhado por Freepik</a>
 		</div>
 	</div>
-
-
 
 	<script>
 		$(document).ready(function() {

@@ -56,9 +56,11 @@ body {
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
-			<div class="row">
+			<div class="row" style="text-align: center;">
 				<div class="col-xs-4 col-sm-4">
-					<h4 class="texto-negrito cor-branco">
+					<h4 class="texto-negrito cor-branco"
+						data-original-title="Voltar para a página anterior"
+						data-toggle="tooltip" data-placement="bottom" title="">
 						<a class="cor-branco" onclick="voltar()"> <span
 							class="fa fa-chevron-left"></span>
 						</a>
@@ -87,7 +89,7 @@ body {
 		</div>
 	</div>
 
-	
+
 
 	<script>
 		$(document).ready(function() {

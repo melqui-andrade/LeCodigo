@@ -18,6 +18,22 @@ public class TransicaoFaseController {
 	public ModelAndView transicaoGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		
+		try {
+			String login = request.getSession().getAttribute("login").toString();
+
+			if (login == null) {
+				modelAndView.setViewName("redirect:/home/login.html");
+			} else {
+				modelAndView.setViewName("fase/transicaoFase");
+			}
+		} catch (Exception e) {
+			modelAndView.setViewName("redirect:/home/login.html");
+			return modelAndView;
+
+		}
+
+		
 		String login = request.getSession().getAttribute("login").toString();
 		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		int idJogador = sessaoBusiness.getJogador().getId();
@@ -31,7 +47,6 @@ public class TransicaoFaseController {
 		}
 		int fase = sessaoBusiness.getFase();
 		modelAndView.addObject("idFase", fase);
-		modelAndView.setViewName("fase/transicaoFase");
 		return modelAndView;
 	}
 

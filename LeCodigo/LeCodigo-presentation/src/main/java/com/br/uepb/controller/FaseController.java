@@ -20,6 +20,21 @@ public class FaseController {
 	public ModelAndView faseGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		
+		try {
+			String login = request.getSession().getAttribute("login").toString();
+
+			if (login == null) {
+				modelAndView.setViewName("redirect:/home/login.html");
+			} else {
+				modelAndView.setViewName("fase/fase");
+			}
+		} catch (Exception e) {
+			modelAndView.setViewName("redirect:/home/login.html");
+			return modelAndView;
+
+		}
+		
 		String login = request.getSession().getAttribute("login").toString();
 		sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 
@@ -40,7 +55,6 @@ public class FaseController {
 		modelAndView.addObject("vidas", vidas);
 		modelAndView.addObject("etapa", etapa);
 
-		modelAndView.setViewName("fase/fase");
 		return modelAndView;
 	}
 }

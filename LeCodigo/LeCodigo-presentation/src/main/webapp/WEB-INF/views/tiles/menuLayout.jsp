@@ -56,9 +56,12 @@ body {
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid" style="padding-top: 10px;">
-			<div class="row">
+			<div class="row" style="text-align: center;">
 				<div class="col-xs-4 col-sm-4">
-					<h4 class="texto-negrito cor-branco" id="botaoVoltar">
+					<h4 class="texto-negrito cor-branco"
+						data-original-title="Voltar para a página anterior"
+						data-toggle="tooltip" data-placement="bottom" title=""
+						id="botaoVoltar">
 						<a class="cor-branco" onclick="voltar()"> <span
 							class="fa fa-chevron-left"></span>
 						</a>
@@ -70,12 +73,16 @@ body {
 					</h4>
 				</div>
 				<div class="col-xs-4 col-sm-4">
-					<h4 class="texto-negrito cor-branco" id="botaoSair">
+					<h4 class="texto-negrito cor-branco"
+						data-original-title="Sair do jogo, voltando para a página de login"
+						data-toggle="tooltip" data-placement="bottom" title=""
+						id="botaoSair">
 						<a class="cor-branco" onclick="sair()"> <span
 							class="fa fa-sign-out"></span>
 						</a>
 					</h4>
 				</div>
+
 			</div>
 		</div>
 	</nav>

@@ -26,6 +26,19 @@ public class RelatorioTurmaController {
 
 		ModelAndView modelAndView = new ModelAndView();
 
+		try {
+			int tipo_usuario = Integer.parseInt(request.getSession().getAttribute("tipo_usuario").toString());
+			System.out.println("tipo usuario: " + tipo_usuario);
+
+			if (tipo_usuario != 2) {
+				modelAndView.setViewName("redirect:/home/login.html");
+			} else {
+				modelAndView.setViewName("relatorio/relatorioTurma");
+			}
+		} catch (Exception e) {
+			modelAndView.setViewName("redirect:/home/login.html");
+		}
+
 		RelatorioJogadorBusiness relatorio = new RelatorioJogadorBusiness();
 		try {
 			// Geral
@@ -49,21 +62,27 @@ public class RelatorioTurmaController {
 			estatistica.get_FASE3().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_FASE3().setPulo(relatorio.getQtdRespostaPulou());
 
-			float porcentagemAcerto = (estatistica.get_FASE1().getCerta() + estatistica.get_FASE2().getCerta() + estatistica.get_FASE3().getCerta());
-			float porcentagemErros = (estatistica.get_FASE1().getErrada() + estatistica.get_FASE2().getErrada() + estatistica.get_FASE3().getErrada());
-			float porcentagemPulos = (estatistica.get_FASE1().getPulo() + estatistica.get_FASE2().getPulo() + estatistica.get_FASE3().getPulo());
+			float porcentagemAcerto = (estatistica.get_FASE1().getCerta() + estatistica.get_FASE2().getCerta()
+					+ estatistica.get_FASE3().getCerta());
+			float porcentagemErros = (estatistica.get_FASE1().getErrada() + estatistica.get_FASE2().getErrada()
+					+ estatistica.get_FASE3().getErrada());
+			float porcentagemPulos = (estatistica.get_FASE1().getPulo() + estatistica.get_FASE2().getPulo()
+					+ estatistica.get_FASE3().getPulo());
 
 			float soma = porcentagemAcerto + porcentagemErros + porcentagemPulos;
 
-			porcentagemAcerto = (porcentagemAcerto * 100)/soma;
-			porcentagemErros = (porcentagemErros * 100)/soma;
-			porcentagemPulos = (porcentagemPulos * 100)/soma;
-			
+			porcentagemAcerto = (porcentagemAcerto * 100) / soma;
+			porcentagemErros = (porcentagemErros * 100) / soma;
+			porcentagemPulos = (porcentagemPulos * 100) / soma;
+
 			// Relatorio GERAL
-			estatistica.get_PORCENTAGEM_GERAL().setCerta(estatistica.get_FASE1().getCerta()+estatistica.get_FASE2().getCerta()+estatistica.get_FASE3().getCerta());
-			estatistica.get_PORCENTAGEM_GERAL().setErrada(estatistica.get_FASE1().getErrada()+estatistica.get_FASE2().getErrada()+estatistica.get_FASE3().getErrada());
-			estatistica.get_PORCENTAGEM_GERAL().setPulo(estatistica.get_FASE1().getPulo()+estatistica.get_FASE2().getPulo()+estatistica.get_FASE3().getPulo());			
-			
+			estatistica.get_PORCENTAGEM_GERAL().setCerta(estatistica.get_FASE1().getCerta()
+					+ estatistica.get_FASE2().getCerta() + estatistica.get_FASE3().getCerta());
+			estatistica.get_PORCENTAGEM_GERAL().setErrada(estatistica.get_FASE1().getErrada()
+					+ estatistica.get_FASE2().getErrada() + estatistica.get_FASE3().getErrada());
+			estatistica.get_PORCENTAGEM_GERAL().setPulo(estatistica.get_FASE1().getPulo()
+					+ estatistica.get_FASE2().getPulo() + estatistica.get_FASE3().getPulo());
+
 			// Resultados do relatório dos tipos de Questão.
 			// FASE 1
 			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.ATRIBUICAO);
@@ -75,44 +94,44 @@ public class RelatorioTurmaController {
 			estatistica.get_IF_ELSE().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_IF_ELSE().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_IF_ELSE().setPulo(relatorio.getQtdRespostaPulou());
-			
+
 			relatorio.estatisticaIndividual(1, TipoQuestao_Enum.SWITCH_CASE);
 			estatistica.get_SWITCH_CASE().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_SWITCH_CASE().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_SWITCH_CASE().setPulo(relatorio.getQtdRespostaPulou());
-			
+
 			// FASE 2
 			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.FOR);
 			estatistica.get_FOR().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_FOR().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_FOR().setPulo(relatorio.getQtdRespostaPulou());
-			
+
 			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.WHILE);
 			estatistica.get_WHILE().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_WHILE().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_WHILE().setPulo(relatorio.getQtdRespostaPulou());
-						
+
 			relatorio.estatisticaIndividual(2, TipoQuestao_Enum.DO_WHILE);
 			estatistica.get_DO_WHILE().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_DO_WHILE().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_DO_WHILE().setPulo(relatorio.getQtdRespostaPulou());
-			
+
 			// FASE 3
 			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.TROCA_VARIAVEIS);
 			estatistica.get_TROCA_DE_VARIAVEIS().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_TROCA_DE_VARIAVEIS().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_TROCA_DE_VARIAVEIS().setPulo(relatorio.getQtdRespostaPulou());
-			
+
 			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.ORDENACAO_SIMPLES);
 			estatistica.get_ORDENACAO_SIMPLES().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_ORDENACAO_SIMPLES().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_ORDENACAO_SIMPLES().setPulo(relatorio.getQtdRespostaPulou());
-			
+
 			relatorio.estatisticaIndividual(3, TipoQuestao_Enum.FUNCOES);
 			estatistica.get_FUNCOES().setCerta(relatorio.getQtdRespostaCorreta());
 			estatistica.get_FUNCOES().setErrada(relatorio.getQtdRespostaErrada());
 			estatistica.get_FUNCOES().setPulo(relatorio.getQtdRespostaPulou());
-						
+
 			modelAndView.addObject("estatistica", estatistica);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -120,8 +139,6 @@ public class RelatorioTurmaController {
 			e.printStackTrace();
 		}
 
-		modelAndView.setViewName("relatorio/relatorioTurma");
-		
 		return modelAndView;
 	}
 

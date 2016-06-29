@@ -28,7 +28,11 @@ public class HomeController {
 
 		try {
 			String login = request.getSession().getAttribute("login").toString();
+			String tipo_usuario = request.getSession().getAttribute("tipo_usuario").toString();
 			GerenciarSessaoBusiness.removeSessao(login);
+			request.getSession().removeAttribute("login");
+			request.getSession().removeAttribute("tipo_usuario");
+
 		} catch (Exception e) {
 		}
 
@@ -42,6 +46,7 @@ public class HomeController {
 
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("home/cadastrar");
+
 		modelAndView.addObject("jogadorModel", new JogadorModel());
 
 		modelAndView.addObject("status", "3");
@@ -74,6 +79,12 @@ public class HomeController {
 	@RequestMapping(value = "/home/login.html", method = RequestMethod.GET)
 	public ModelAndView loginGet(HttpServletRequest request) {
 
+		try {
+			request.getSession().removeAttribute("login");
+			request.getSession().removeAttribute("tipo_usuario");
+		} catch (Exception e) {
+		}
+
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("home/login");
 		modelAndView.addObject("jogadorModel", new JogadorModel());
@@ -92,11 +103,13 @@ public class HomeController {
 			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(jogadorModel.getLogin());
 			Jogador jog = sessaoBusiness.getJogador();
 			int tipo_usuario = sessaoBusiness.getJogador().getTipo().ordinal();
+			session.setAttribute("tipo_usuario", tipo_usuario);
+
 			if (tipo_usuario == 1) { // aluno
 				return new ModelAndView("redirect:/fase/transicaoFase.html");
 			}
 			if (tipo_usuario == 2) { // professor
-				modelAndView.setViewName("professor/home");
+				modelAndView.setViewName("redirect:/professor/home.html");
 			}
 
 		} catch (Exception e) {
@@ -109,6 +122,12 @@ public class HomeController {
 	@RequestMapping(value = "/home/instrucoes.html", method = RequestMethod.GET)
 	public ModelAndView instrucoesGet(HttpServletRequest request) {
 
+		try {
+			request.getSession().removeAttribute("login");
+			request.getSession().removeAttribute("tipo_usuario");
+		} catch (Exception e) {
+		}
+
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("home/instrucoes");
 		return modelAndView;
@@ -116,6 +135,12 @@ public class HomeController {
 
 	@RequestMapping(value = "/home/ranking.html", method = RequestMethod.GET)
 	public ModelAndView rankingGet(HttpServletRequest request) {
+
+		try {
+			request.getSession().removeAttribute("login");
+			request.getSession().removeAttribute("tipo_usuario");
+		} catch (Exception e) {
+		}
 
 		PartidaBusiness partidaBusiness = new PartidaBusiness();
 		List<Jogador> jogadores = partidaBusiness.visualizarRanking();

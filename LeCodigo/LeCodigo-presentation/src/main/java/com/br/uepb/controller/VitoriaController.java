@@ -9,12 +9,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class VitoriaController {
-	
+
 	@RequestMapping(value = "/fase/vitoria.html", method = RequestMethod.GET)
 	public ModelAndView homeGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("fase/vitoria");
+		try {
+			String login = request.getSession().getAttribute("login").toString();
+
+			if (login == null) {
+				modelAndView.setViewName("redirect:/home/login.html");
+			} else {
+				modelAndView.setViewName("fase/vitoria");
+			}
+		} catch (Exception e) {
+			modelAndView.setViewName("redirect:/home/login.html");
+		}
+
 		return modelAndView;
 	}
 }

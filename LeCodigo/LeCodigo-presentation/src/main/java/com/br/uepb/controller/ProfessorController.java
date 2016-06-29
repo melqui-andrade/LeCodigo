@@ -24,9 +24,21 @@ public class ProfessorController {
 	public ModelAndView homeGet(HttpServletRequest request) {
 
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("professor/home");
+
+		try {
+			int tipo_usuario = Integer.parseInt(request.getSession().getAttribute("tipo_usuario").toString());
+			System.out.println("tipo usuario: " + tipo_usuario);
+
+			if (tipo_usuario != 2) {
+				modelAndView.setViewName("redirect:/home/login.html");
+			} else {
+				modelAndView.setViewName("professor/home");
+			}
+		} catch (Exception e) {
+			modelAndView.setViewName("redirect:/home/login.html");
+		}
+
 		return modelAndView;
 	}
 
-	
 }

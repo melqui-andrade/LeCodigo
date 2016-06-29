@@ -28,6 +28,21 @@ public class QuestaoController {
 
 		ModelAndView modelAndView = new ModelAndView();
 
+		try {
+			String login = request.getSession().getAttribute("login").toString();
+
+			if (login == null) {
+				modelAndView.setViewName("redirect:/home/login.html");
+			} else {
+				modelAndView.setViewName("fase/questao");
+			}
+		} catch (Exception e) {
+			modelAndView.setViewName("redirect:/home/login.html");
+			return modelAndView;
+
+		}
+		
+		
 		String login = request.getSession().getAttribute("login").toString();
 		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		int fase = sessaoBusiness.getFase();
@@ -78,7 +93,7 @@ public class QuestaoController {
 		modelAndView.addObject("questao", questao);
 		// modelAndView.addObject("fase", faseModel);
 		modelAndView.addObject("etapa", etapa);
-		modelAndView.setViewName("fase/questao");
+		
 		return modelAndView;
 	}
 

@@ -88,6 +88,11 @@
 			value="/WEB-INF/views/relatorio/relatorioTurma.jsp" />
 	</definition>
 
+<definition name="relatorio/relatorioAluno" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCódigo" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/relatorio/relatorioAluno.jsp" />
+	</definition>
 
 
 

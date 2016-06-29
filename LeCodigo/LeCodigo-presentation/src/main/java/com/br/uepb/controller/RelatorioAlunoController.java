@@ -22,6 +22,8 @@ public class RelatorioAlunoController {
 	@RequestMapping(value = "/relatorio/relatorioAluno.html", method = RequestMethod.GET)
 	public ModelAndView homeGet(HttpServletRequest request) {
 		String login = request.getSession().getAttribute("login").toString();
+		int tipo_usuario = Integer.parseInt(request.getSession().getAttribute("tipo_usuario").toString());
+		System.out.println("tipo usuario: "+tipo_usuario);
 		RelatorioJogadorBusiness relatorio = new RelatorioJogadorBusiness(request.getParameter(login));
 		// Geral
 		EstatisticaModel rel = new EstatisticaModel();
@@ -143,6 +145,8 @@ public class RelatorioAlunoController {
 		request.setAttribute("pulo_fase3", rel_f3.getPulo());
 			
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("relatorio/relatorioAluno");
+		
 		modelAndView.addObject("jogador", new Jogador());
 		modelAndView.addObject("modelViewJogador");
 		List<Jogador> lstJogador = JogadorDAO.getInstance().rankingJogadores();
