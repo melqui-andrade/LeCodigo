@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/views/includeTags.jsp"%>
 
-<div style="padding-bottom: 3%; padding-top: 1%;">
+<div style="padding-bottom: 3%; padding-top: 3%;">
 	<div id="div_timeline" class="row">
 		<div class="timeline" id="page-top">
 			<dl>
@@ -110,5 +110,10 @@
 	function voltar() {
 		window.setTimeout(
 				"location.href='/LeCodigo-presentation/home/login.html'", 500);
+	}
+	
+	function sair() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/home.html'", 500);
 	}
 </script>

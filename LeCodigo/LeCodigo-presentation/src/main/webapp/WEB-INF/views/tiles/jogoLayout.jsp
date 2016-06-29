@@ -3,7 +3,28 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LeCodigo</title>
+
+<link rel="apple-touch-icon" sizes="57x57" href="../images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+<link rel="manifest" href="../images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <style rel="stylesheet">
 body {
@@ -24,7 +45,7 @@ body {
 		<div style="padding: 5px;">
 			<div class="texto-centralizado">
 
-				<div class="row">
+				<div class="row" style="text-align: center;">
 					<div class="col-xs-4 col-sm-4">
 						<h4 class="texto-negrito cor-branco">
 							<a class="cor-branco" onclick="voltar()"> <span
@@ -38,31 +59,35 @@ body {
 						</h4>
 					</div>
 					<div class="col-xs-4 col-sm-4">
-						&nbsp;<br>
+						<h4 class="texto-negrito cor-branco">
+							<a class="cor-branco" onclick="sair()"> <span
+								class="fa fa-sign-out"></span>
+							</a>
+						</h4>
 					</div>
 
 				</div>
 				<div class="row">
 					<div class="col-xs-3 col-sm-3">
-						<h6 class="texto-negrito cor-branco">
+						<h4 class="texto-negrito cor-branco">
 							<span>Fase: <br>${idFase}</span>
-						</h6>
+						</h4>
 
 					</div>
 					<div class="col-xs-3 col-sm-3">
-						<h6 class="texto-negrito cor-branco">
+						<h4 class="texto-negrito cor-branco">
 							<span>Bits:<br> ${bits}
 							</span>
-						</h6>
+						</h4>
 					</div>
 					<div class="col-xs-3 col-sm-3">
-						<h6 class="texto-negrito cor-branco">
+						<h4 class="texto-negrito cor-branco">
 							<span>Pontuação:<br> ${pontuacao}
 							</span>
-						</h6>
+						</h4>
 					</div>
 					<div class="col-xs-3 col-sm-3">
-						<h6 class="texto-negrito cor-branco">
+						<h4 class="texto-negrito cor-branco">
 							<span> Vida:<br> <c:forEach begin="1" end="${vidas}"
 									varStatus="loop">
 									<i class="fa fa-heart cor-vermelha" style="font-size: 10pt;"></i>
@@ -74,7 +99,7 @@ body {
 
 								</c:if>
 							</span>
-						</h6>
+						</h4>
 						<!-- 
 						 <c:if test="${bits >= 2*idFase+1 && vidas < 3}">
 							<a data-original-title="Comprar mais vidas" type="button"

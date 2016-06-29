@@ -1,4 +1,4 @@
-<div style="margin-top: 6%;">
+v<div style="margin-top: 6%;">
 	<h4 class="cor-branco texto-centralizado ">
 		Fase <span class="numeroDaFase">${idFase}</span>
 	</h4>
@@ -22,6 +22,8 @@
 	setInterval(et_normal, 500);
 	window.setTimeout("location.href='/LeCodigo-presentation/fase/fase.html'",
 			5000);
+	
+	document.getElementById("botaoSair").innerHTML = "";
 	function voltar() {
 		window.setTimeout(
 				"location.href='/LeCodigo-presentation/home/login.html'", 500);

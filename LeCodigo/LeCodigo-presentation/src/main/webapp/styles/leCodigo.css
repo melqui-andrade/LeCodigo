@@ -24,6 +24,30 @@ body, h1, h2, h3, h4, h5 nav, ul, p, span {
 	color: #C75C5C;
 }
 
+.cor-warning{
+	color: #EC971F;
+}
+
+.cor-danger{
+	color: #C9302C;
+}
+
+.cor-info{
+	color: #48CFAD;
+}
+
+.cor-disable{
+	color: #eee;
+}
+
+.cor-disable:hover{
+	color: #eee;
+}
+
+.cor-success{
+	color: #449D44;
+}
+
 .fundo-preto {
 	background-color: #4d4b41;
 }

@@ -84,4 +84,8 @@
 		window.setTimeout(
 				"location.href='/LeCodigo-presentation/professor/home.html'", 500);
 	}
+	function sair() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/home.html'", 500);
+	}
 </script>

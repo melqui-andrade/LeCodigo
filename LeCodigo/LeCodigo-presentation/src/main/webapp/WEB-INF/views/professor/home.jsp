@@ -19,8 +19,12 @@
 </div>
 
 <script>
-function voltar() {
-	window.setTimeout("location.href='/LeCodigo-presentation/home/login.html'",
-			500);
-}
+	function voltar() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/login.html'", 500);
+	}
+	function sair() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/home.html'", 500);
+	}
 </script>

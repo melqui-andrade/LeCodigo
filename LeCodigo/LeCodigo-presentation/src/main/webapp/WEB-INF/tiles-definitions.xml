@@ -21,69 +21,69 @@
 
 
 	<definition name="home/home" extends="menu.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/home.jsp" />
 	</definition>
 
 	<definition name="home/login" extends="menu.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/login.jsp" />
 	</definition>
 
 	<definition name="home/ranking" extends="mensagem.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/ranking.jsp" />
 	</definition>
 
 	<definition name="home/instrucoes" extends="mensagem.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/instrucoes.jsp" />
 	</definition>
 
 	<definition name="home/cadastrar" extends="menu.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/home/cadastrar.jsp" />
 	</definition>
 
 	<definition name="fase/transicaoFase" extends="menu.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/fase/transicaoFase.jsp" />
 	</definition>
 
 	<definition name="fase/perdeu" extends="mensagem.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/fase/perdeu.jsp" />
 	</definition>
 
 	<definition name="fase/vitoria" extends="mensagem.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/fase/vitoria.jsp" />
 	</definition>
 
 	<definition name="fase/fase" extends="jogo.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/fase/fase.jsp" />
 	</definition>
 
 	<definition name="fase/questao" extends="jogo.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/fase/questao.jsp" />
 	</definition>
 
 	<definition name="professor/home" extends="menu.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body" value="/WEB-INF/views/professor/home.jsp" />
 	</definition>
 
 	<definition name="relatorio/relatorio" extends="menu.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/relatorio/relatorio.jsp" />
 	</definition>
 
 	<definition name="relatorio/relatorioTurma" extends="mensagem.layout">
-		<put-attribute name="titulo" value="LeCodigo" />
+		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/relatorio/relatorioTurma.jsp" />
 	</definition>

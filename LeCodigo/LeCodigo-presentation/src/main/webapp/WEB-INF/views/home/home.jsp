@@ -15,6 +15,7 @@
 
 <script>
 	document.getElementById("botaoVoltar").innerHTML = "";
+	document.getElementById("botaoSair").innerHTML = "";
 	function voltar() {
 		window.setTimeout(
 				"location.href='/LeCodigo-presentation/home/login.html'", 500);

@@ -20,8 +20,9 @@
 </div>
 
 <script>
-function voltar() {
-	window.setTimeout("location.href='/LeCodigo-presentation/home/home.html'",
-			500);
-}
+	document.getElementById("botaoSair").innerHTML = "";
+	function voltar() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/home.html'", 500);
+	}
 </script>

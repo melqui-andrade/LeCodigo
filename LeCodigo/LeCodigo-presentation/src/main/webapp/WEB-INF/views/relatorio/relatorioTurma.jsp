@@ -194,7 +194,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
 	<div class="container-fluid">
 		<div class="row" style="text-align: center;">
-		
+
 			<div class="col-xs-1 col-sm-1">&nbsp;</div>
 
 			<div class="col-xs-2 col-sm-2">
@@ -241,7 +241,7 @@
 				</h6>
 			</div>
 
-			<div class="col-xs-1 col-sm-1">&nbsp;</div>
+
 
 		</div>
 	</div>
@@ -256,6 +256,10 @@
 				.setTimeout(
 						"location.href='/LeCodigo-presentation/relatorio/relatorio.html'",
 						500);
+	}
+	function sair() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/home.html'", 500);
 	}
 
 	// Dados GLOBAl
