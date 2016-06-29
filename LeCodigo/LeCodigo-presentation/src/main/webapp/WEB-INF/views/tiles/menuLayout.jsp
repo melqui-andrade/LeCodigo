@@ -88,8 +88,16 @@ body {
 				</div>
 				<div class="col-xs-2 col-sm-4">&nbsp;</div>
 			</div>
+			<a class="cor-branco" style="text-align: center"
+				href="http://br.freepik.com/fotos-vetores-gratis/desenho-animado">Desenho
+				animado vetore desenhado por Freepik</a> <a class="cor-branco"
+				style="text-align: center"
+				href="http://br.freepik.com/fotos-vetores-gratis/lua">Lua vetore
+				desenhado por Freepik</a>
 		</div>
 	</div>
+
+
 
 	<script>
 		$(document).ready(function() {

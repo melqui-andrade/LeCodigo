@@ -103,8 +103,6 @@
 		</div>
 	</div>
 </div>
-<script src="../js/questao.js"></script>
-<script src="../js/fase.js"></script>
 
 <script>
 	function voltar() {
