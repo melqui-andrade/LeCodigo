@@ -263,66 +263,66 @@
 	}
 
 	// Dados GLOBAl
-	var acertos = '${estatistica._PORCENTAGEM_GERAL.certa}';
-	var erros = '${estatistica._PORCENTAGEM_GERAL.errada}';
-	var pulos = '${estatustica._PORCENTAGEM_GERAL.pulo}';
+	var acertos = '${relatorio._geral.qtdRespostaCerta}';
+	var erros = '${relatorio._geral.qtdRespostaErrada}';
+	var pulos = '${relatorio._geral.qtdRespostaPulada}';
 	// DADOS DA FASE 1
-	var acertosF1 = '${estatistica._FASE1.certa}';
-	var errosF1 = '${estatistica._FASE1.errada}';
-	var pulosF1 = '${estatistica._FASE1.pulo}';
+	var acertosF1 = '${relatorio._tipos_atribuicao_de_variaveis.qtdRespostaCerta + relatorio._if_else.qtdRespostaCerta + relatorio._switch_case.qtdRespostaCerta} ';
+	var errosF1 = '${relatorio._tipos_atribuicao_de_variaveis.qtdRespostaErrada + relatorio._if_else.qtdRespostaErrada + relatorio._switch_case.qtdRespostaErrada} ';
+	var pulosF1 = '${relatorio._tipos_atribuicao_de_variaveis.qtdRespostaPulada + relatorio._if_else.qtdRespostaPulada + relatorio._switch_case.qtdRespostaPulada} ';
 	// DADOS DA FASE 2
-	var acertosF2 = '${estatistica._FASE2.certa}';
-	var errosF2 = '${estatistica._FASE2.errada}';
-	var pulosF2 = '${estatistica._FASE2.pulo}';
+	var acertosF2 = '${relatorio._for.qtdRespostaCerta + relatorio._while.qtdRespostaCerta + relatorio._do_while.qtdRespostaCerta} ';
+	var errosF2 = '${relatorio._for.qtdRespostaErrada + relatorio._while.qtdRespostaErrada + relatorio._do_while.qtdRespostaErrada} ';
+	var pulosF2 = '${relatorio._for.qtdRespostaPulada + relatorio._while.qtdRespostaPulada + relatorio._do_while.qtdRespostaPulada} ';
 	// DADOS DA FASE 3
-	var acertosF3 = '${estatistica._FASE3.certa}';
-	var errosF3 = '${estatistica._FASE3.errada}';
-	var pulosF3 = '${estatistica._FASE3.pulo}';
+	var acertosF3 = '${relatorio._ordenacao.qtdRespostaCerta + relatorio._contadores.qtdRespostaCerta + relatorio._funcoes.qtdRespostaCerta} ';
+	var errosF3 = '${relatorio._ordenacao.qtdRespostaErrada + relatorio._contadores.qtdRespostaErrada + relatorio._funcoes.qtdRespostaErrada} ';
+	var pulosF3 = '${relatorio._ordenacao.qtdRespostaPulada + relatorio._contadores.qtdRespostaPulada + relatorio._funcoes.qtdRespostaPulada} ';
 
 	// DADOS DA QUESTOES TIPO DE VARIAVEIS
-	var acertosTiposVariaveis = '${estatistica._TIPOS_DE_VARIAVEIS.certa}';
-	var errosTiposVariaveis = '${estatistica._TIPOS_DE_VARIAVEIS.errada}';
-	var pulosTiposVariaveis = '${estatistica._TIPOS_DE_VARIAVEIS.pulo}';
+	var acertosTiposVariaveis = '${relatorio._tipos_atribuicao_de_variaveis.qtdRespostaCerta}';
+	var errosTiposVariaveis = '${relatorio._tipos_atribuicao_de_variaveis.qtdRespostaErrada}';
+	var pulosTiposVariaveis = '${relatorio._tipos_atribuicao_de_variaveis.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES IF E ELSE 
-	var acertosIF_ELSE = '${estatistica._IF_ELSE.certa}';
-	var errosIF_ELSE = '${estatistica._IF_ELSE.errada}';
-	var pulosIF_ELSE = '${estatistica._IF_ELSE.pulo}';
+	var acertosIF_ELSE = '${relatorio._if_else.qtdRespostaCerta}';
+	var errosIF_ELSE = '${relatorio._if_else.qtdRespostaErrada}';
+	var pulosIF_ELSE = '${relatorio._if_else.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES SWITCH E CASE 
-	var acertosSWITCH = '${estatistica._SWITCH_CASE.certa}';
-	var errosSWITCH = '${estatistica._SWITCH_CASE.errada}';
-	var pulosSWITCH = '${estatistica._SWITCH_CASE.pulo}';
+	var acertosSWITCH = '${relatorio._switch_case.qtdRespostaCerta}';
+	var errosSWITCH = '${relatorio._switch_case.qtdRespostaErrada}';
+	var pulosSWITCH = '${relatorio._switch_case.qtdRespostaPulada}';
 	// DADOS DA QUESTOES FOR 
 
-	var acertosFOR = '${estatistica._FOR.certa}';
-	var errosFOR = '${estatistica._FOR.errada}';
-	var pulosFOR = '${estatistica._FOR.pulo}';
+	var acertosFOR = '${relatorio._for.qtdRespostaCerta}';
+	var errosFOR = '${relatorio._for.qtdRespostaErrada}';
+	var pulosFOR = '${relatorio._for.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES WHILE 
-	var acertosWHILE = '${estatistica._WHILE.certa}';
-	var errosWHILE = '${estatistica._WHILE.errada}';
-	var pulosWHILE = '${estatistica._WHILE.pulo}';
+	var acertosWHILE = '${relatorio._while.qtdRespostaCerta}';
+	var errosWHILE = '${relatorio._while.qtdRespostaErrada}';
+	var pulosWHILE = '${relatorio._while.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES DO WHILE 
-	var acertosDO_WHILE = '${estatistica._DO_WHILE.certa}';
-	var errosDO_WHILE = '${estatistica._DO_WHILE.errada}';
-	var pulosDO_WHILE = '${estatistica._DO_WHILE.pulo}';
+	var acertosDO_WHILE = '${relatorio._do_while.qtdRespostaCerta}';
+	var errosDO_WHILE = '${relatorio._do_while.qtdRespostaErrada}';
+	var pulosDO_WHILE = '${relatorio._do_while.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES TROCA DE VARIAVEIS 
-	var acertosTROCA_VARIAVEIS = '${estatistica._TROCA_DE_VARIAVEIS.certa}';
-	var errosTROCA_VARIAVEIS = '${estatistica._TROCA_DE_VARIAVEIS.errada}';
-	var pulosTROCA_VARIAVEIS = '${estatistica._TROCA_DE_VARIAVEIS.pulo}';
+	var acertosTROCA_VARIAVEIS = '${relatorio._contadores.qtdRespostaCerta}';
+	var errosTROCA_VARIAVEIS = '${relatorio._contadores.qtdRespostaErrada}';
+	var pulosTROCA_VARIAVEIS = '${relatorio._contadores.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES ORDENACAO SIMPLES 
-	var acertosORDENACAO_SIMPLES = '${estatistica._ORDENACAO_SIMPLES.certa}';
-	var errosORDENACAO_SIMPLES = '${estatistica._ORDENACAO_SIMPLES.errada}';
-	var pulosORDENACAO_SIMPLES = '${estatistica._ORDENACAO_SIMPLES.pulo}';
+	var acertosORDENACAO_SIMPLES = '${relatorio._ordenacao.qtdRespostaCerta}';
+	var errosORDENACAO_SIMPLES = '${relatorio._ordenacao.qtdRespostaErrada}';
+	var pulosORDENACAO_SIMPLES = '${relatorio._ordenacao.qtdRespostaPulada}';
 
 	// DADOS DA QUESTOES FUNCOES 
-	var acertosFUNCOES = '${estatistica._FUNCOES.certa}';
-	var errosFUNCOES = '${estatistica._FUNCOES.errada}';
-	var pulosFUNCOES = '${estatistica._FUNCOES.pulo}';
+	var acertosFUNCOES = '${relatorio._funcoes.qtdRespostaCerta}';
+	var errosFUNCOES = '${relatorio._funcoes.qtdRespostaErrada}';
+	var pulosFUNCOES = '${relatorio._funcoes.qtdRespostaPulada}';
 
 	// GERAL
 	carregaVariaveisHistoricoGeral(acertos, erros, pulos);

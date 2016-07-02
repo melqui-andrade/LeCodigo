@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Questao;
+import com.br.uepb.domain.Relatorio;
 import com.br.uepb.domain.TipoUsuario_Enum;
 
 @Component
@@ -77,6 +78,10 @@ public class JogadorBusiness {
 		
 		default: return null;
 		}
+	}
+	
+	public Relatorio getRelatorioDaTurma(){
+		return jogadorDAO.estatisticaDaTurma();
 	}
 	
 }
