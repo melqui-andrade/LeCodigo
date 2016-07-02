@@ -74,7 +74,7 @@ body {
 				</div>
 				<div class="col-xs-4 col-sm-4">
 					<h4 class="texto-negrito cor-branco"
-						data-original-title="Sair do jogo, voltando para a página de login"
+						data-original-title="Sair do jogo, voltando para a página inicial"
 						data-toggle="tooltip" data-placement="bottom" title=""
 						id="botaoSair">
 						<a class="cor-branco" onclick="sair()"> <span

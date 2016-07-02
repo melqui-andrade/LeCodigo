@@ -5,13 +5,14 @@ body, h1, h2, h3, h4, h5 nav, ul, p, span {
 	font-variant: normal;
 }
 
-.navbar-inverse{
+.navbar-inverse {
 	background-color: #34495E;
 }
 
 .espaco-toolbar {
 	padding-top: 70px;
 }
+
 .espaco-toolbar-jogo {
 	padding-top: 120px;
 }
@@ -24,27 +25,27 @@ body, h1, h2, h3, h4, h5 nav, ul, p, span {
 	color: #C75C5C;
 }
 
-.cor-warning{
+.cor-warning {
 	color: #EC971F;
 }
 
-.cor-danger{
+.cor-danger {
 	color: #C9302C;
 }
 
-.cor-info{
+.cor-info {
 	color: #48CFAD;
 }
 
-.cor-disable{
+.cor-disable {
 	color: #eee;
 }
 
-.cor-disable:hover{
+.cor-disable:hover {
 	color: #eee;
 }
 
-.cor-success{
+.cor-success {
 	color: #449D44;
 }
 
@@ -56,7 +57,7 @@ body, h1, h2, h3, h4, h5 nav, ul, p, span {
 	color: #4d4b41;
 }
 
-.cor-toolbar{
+.cor-toolbar {
 	cor: #34495E;
 }
 
@@ -171,4 +172,14 @@ body, h1, h2, h3, h4, h5 nav, ul, p, span {
 	height: 300px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.modal-dialog {
+	width: 80%;
+	height: auto;
+	max-height: 50%;
+}
+
+a:hover{
+	cursor:pointer;
 }

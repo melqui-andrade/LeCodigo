@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.domain.Jogador;
+import com.google.gson.Gson;
 
 @Controller
 public class RelatorioAlunoController {
@@ -28,6 +29,9 @@ public class RelatorioAlunoController {
 		modelAndView.setViewName("relatorio/relatorioAluno");
 		request.setAttribute("lstJogador", lstJogador);
 		modelAndView.addObject("lstJogador",lstJogador);
+		
+		String json = new Gson().toJson(lstJogador);
+		modelAndView.addObject("lstJogadorJson",json);
 		
 		return modelAndView;
 	}

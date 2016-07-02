@@ -2,33 +2,62 @@
 
 <div style="margin-top: 3%;">
 	<h4 class="cor-branco texto-centralizado ">Relatório dos alunos</h4>
+
+
 	<div class="container">
+		<!-- 
+		<div class="" style="margin-bottom: 20px;">
+			<input type="text" class="form-control"
+				placeholder="Pesquisar por nome do aluno" />
+		</div>
+		 -->
 		<div class="panel panel-info">
 
-			<div class="panel-heading">Alunos</div>
+			<div class="panel-heading" style="padding-left: 5%;">Alunos</div>
 			<!-- Table -->
-			<table class="table">
+			<table class="table" id="pesquisaBD">
 				<thead>
-					<tr style="text-aling: center">
-						<th class="col-md-3">Id</th>
-						<th class="col-md-6">Nome</th>
-						<th class="col-md-3"></th>
+					<tr style="text-align: left">
+						<th class="col-xs-6 col-sm-6"
+							style="text-align: left; padding-left: 5%;">Nome</th>
+						<th class="col-xs-6 col-sm-6">Ação</th>
 					</tr>
 				</thead>
-				<c:forEach items="${lstJogador }" var="usuario">
+				<c:forEach items="${lstJogador }" var="usuario" varStatus="i">
 					<tbody>
-						<tr>
-							<td class="col-md-3">${usuario.id }</td>
-							<td class="col-md-6">${usuario.nome }</td>
-							<td class="col-md-3">
-								<button type="button" class="btn btn-primary btn-lg"
-									data-toggle="modal" data-target="#relatorioAluno" onclick="getJogador'${usuario.id }')">Veja
-									o relatório</button>
+						<tr style="text-align: left;">
+							<td class="col-xs-6 col-sm-6" style="padding-left: 5%;">${usuario.nome }</td>
+							<td class="col-xs-6 col-sm-6">
+								<button type="button" class="btn btn-primary btn-block"
+									data-toggle="modal" data-target="#relatorioAluno"
+									onclick="getJogador('${i.index}')">Ver o relatório</button>
 							</td>
 						</tr>
 					</tbody>
 				</c:forEach>
 			</table>
+
+			<table class="table" id="pesquisa">
+				<thead>
+					<tr style="text-align: left">
+						<th class="col-xs-6 col-sm-6"
+							style="text-align: left; padding-left: 5%;">Nome</th>
+						<th class="col-xs-6 col-sm-6">Ação</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="text-align: left;">
+						<td class="col-xs-6 col-sm-6" style="padding-left: 5%;">${usuario.nome }</td>
+						<td class="col-xs-6 col-sm-6">
+							<button type="button" class="btn btn-primary btn-block"
+								data-toggle="modal" data-target="#relatorioAluno"
+								onclick="getJogador('${i.index}')">Ver o relatório</button>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+
 		</div>
 	</div>
 </div>
@@ -43,12 +72,10 @@
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" style="color: black;" id="myModalLabel">Relatório</h4>
+				<h4 class="modal-title" style="color: black;" id="modalTitulo">Relatório</h4>
 			</div>
 			<div class="modal-body">
-
 				<div class="panel">
-
 					<ul class="nav nav-tabs nav-justified">
 						<li><a href="#geral" data-toggle="tab"
 							class="cor-branco texto-centralizado"> <i
@@ -259,149 +286,121 @@
 
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				<button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
 
 			</div>
 		</div>
 	</div>
 </div>
-<script src="../js/lstJogador[id].js"></script>
+<script src="../js/relatorio.js"></script>
 
-<script>
+
+<script language="javascript">
+	document.getElementById("pesquisa").remove();
+
 	function voltar() {
 		window
 				.setTimeout(
-						"location.href='/LeCodigo-presentation/relatorio/lstJogador[id].html'",
+						"location.href='/LeCodigo-presentation/relatorio/relatorio.html'",
 						500);
 	}
-	/*
-	// Dados GLOBAl
-	var acertos ;
-	var erros ;
-	var pulos ;
-	// DADOS DA FASE 1
-	var acertosF1 ;
-	var errosF1;
-	var pulosF1 ;
-	// DADOS DA FASE 2
-	var acertosF2 ;
-	var errosF2 ;
-	var pulosF2 ;
-	// DADOS DA FASE 3
-	var acertosF3 ;
-	var errosF3 ;
-	var pulosF3 ;
+	function sair() {
+		window.setTimeout(
+				"location.href='/LeCodigo-presentation/home/home.html'", 500);
+	}
 
-	// DADOS DA QUESTOES TIPO DE VARIAVEIS
-	var acertosTiposVariaveis ;
-	var errosTiposVariaveis;
-	var pulosTiposVariaveis;
+	var data = '${lstJogadorJson}';
+	var jogador = jQuery.parseJSON(data);
 
-	// DADOS DA QUESTOES IF E ELSE 
-	var acertosIF_ELSE;
-	var errosIF_ELSE ;
-	var pulosIF_ELSE ;
+	function getJogador(id) {
 
-	// DADOS DA QUESTOES SWITCH E CASE 
-	var acertosSWITCH ;
-	var errosSWITCH ;
-	var pulosSWITCH ;
-	// DADOS DA QUESTOES FOR 
+		var jog = jogador[id];
 
-	var acertosFOR;
-	var errosFOR;
-	var pulosFOR ;
+		var nome = jog.nome;
 
-	// DADOS DA QUESTOES WHILE 
-	var acertosWHILE;
-	var errosWHILE;
-	var pulosWHILE ;
+		document.getElementById("modalTitulo").innerHTML = "Relatório de "
+				+ nome;
 
-	// DADOS DA QUESTOES DO WHILE 
-	var acertosDO_WHILE;
-	var errosDO_WHILE ;
-	var pulosDO_WHILE ;
-
-	// DADOS DA QUESTOES TROCA DE VARIAVEIS 
-	var acertosTROCA_VARIAVEIS ;
-	var errosTROCA_VARIAVEIS ;
-	var pulosTROCA_VARIAVEIS ;
-
-	// DADOS DA QUESTOES ORDENACAO SIMPLES 
-	var acertosORDENACAO_SIMPLES ;
-	var errosORDENACAO_SIMPLES ;
-	var pulosORDENACAO_SIMPLES ;
-
-	// DADOS DA QUESTOES FUNCOES 
-	var acertosFUNCOES ;
-	var errosFUNCOES;
-	var pulosFUNCOES ;	
-	*/
-	
-	function getJogador(id){
-		
 		// Dados GLOBAl
-		var acertos = '${lstJogador[id]._geral.qtdRespostaCerta}';
-		var erros = '${lstJogador[id]._geral.qtdRespostaErrada}';
-		var pulos = '${lstJogador[id]._geral.qtdRespostaPulada}';
+		var acertos = jog.relatorio._geral.qtdRespostaCerta;
+		var erros = jog.relatorio._geral.qtdRespostaErrada;
+		var pulos = jog.relatorio._geral.qtdRespostaPulada;
 		// DADOS DA FASE 1
-		var acertosF1 = '${lstJogador[id]._tipos_atribuicao_de_variaveis.qtdRespostaCerta + lstJogador[id]._if_else.qtdRespostaCerta + lstJogador[id]._switch_case.qtdRespostaCerta} ';
-		var errosF1 = '${lstJogador[id]._tipos_atribuicao_de_variaveis.qtdRespostaErrada + lstJogador[id]._if_else.qtdRespostaErrada + lstJogador[id]._switch_case.qtdRespostaErrada} ';
-		var pulosF1 = '${lstJogador[id]._tipos_atribuicao_de_variaveis.qtdRespostaPulada + lstJogador[id]._if_else.qtdRespostaPulada + lstJogador[id]._switch_case.qtdRespostaPulada} ';
+		var acertosF1 = jog.relatorio._tipos_atribuicao_de_variaveis.qtdRespostaCerta
+				+ jog.relatorio._if_else.qtdRespostaCerta
+				+ jog.relatorio._switch_case.qtdRespostaCerta;
+		var errosF1 = jog.relatorio._tipos_atribuicao_de_variaveis.qtdRespostaErrada
+				+ jog.relatorio._if_else.qtdRespostaErrada
+				+ jog.relatorio._switch_case.qtdRespostaErrada;
+		var pulosF1 = jog.relatorio._tipos_atribuicao_de_variaveis.qtdRespostaPulada
+				+ jog.relatorio._if_else.qtdRespostaPulada
+				+ jog.relatorio._switch_case.qtdRespostaPulada;
 		// DADOS DA FASE 2
-		var acertosF2 = '${lstJogador[id]._for.qtdRespostaCerta + lstJogador[id]._while.qtdRespostaCerta + lstJogador[id]._do_while.qtdRespostaCerta} ';
-		var errosF2 = '${lstJogador[id]._for.qtdRespostaErrada + lstJogador[id]._while.qtdRespostaErrada + lstJogador[id]._do_while.qtdRespostaErrada} ';
-		var pulosF2 = '${lstJogador[id]._for.qtdRespostaPulada + lstJogador[id]._while.qtdRespostaPulada + lstJogador[id]._do_while.qtdRespostaPulada} ';
+		var acertosF2 = jog.relatorio._for.qtdRespostaCerta
+				+ jog.relatorio._while.qtdRespostaCerta
+				+ jog.relatorio._do_while.qtdRespostaCerta;
+		var errosF2 = jog.relatorio._for.qtdRespostaErrada
+				+ jog.relatorio._while.qtdRespostaErrada
+				+ jog.relatorio._do_while.qtdRespostaErrada;
+		var pulosF2 = jog.relatorio._for.qtdRespostaPulada
+				+ jog.relatorio._while.qtdRespostaPulada
+				+ jog.relatorio._do_while.qtdRespostaPulada;
 		// DADOS DA FASE 3
-		var acertosF3 = '${lstJogador[id]._ordenacao.qtdRespostaCerta + lstJogador[id]._contadores.qtdRespostaCerta + lstJogador[id]._funcoes.qtdRespostaCerta} ';
-		var errosF3 = '${lstJogador[id]._ordenacao.qtdRespostaErrada + lstJogador[id]._contadores.qtdRespostaErrada + lstJogador[id]._funcoes.qtdRespostaErrada} ';
-		var pulosF3 = '${lstJogador[id]._ordenacao.qtdRespostaPulada + lstJogador[id]._contadores.qtdRespostaPulada + lstJogador[id]._funcoes.qtdRespostaPulada} ';
+		var acertosF3 = jog.relatorio._ordenacao.qtdRespostaCerta
+				+ jog.relatorio._contadores.qtdRespostaCerta
+				+ jog.relatorio._funcoes.qtdRespostaCerta;
+		var errosF3 = jog.relatorio._ordenacao.qtdRespostaErrada
+				+ jog.relatorio._contadores.qtdRespostaErrada
+				+ jog.relatorio._funcoes.qtdRespostaErrada;
+		var pulosF3 = jog.relatorio._ordenacao.qtdRespostaPulada
+				+ jog.relatorio._contadores.qtdRespostaPulada
+				+ jog.relatorio._funcoes.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES TIPO DE VARIAVEIS
-		var acertosTiposVariaveis = '${lstJogador[id]._tipos_atribuicao_de_variaveis.qtdRespostaCerta}';
-		var errosTiposVariaveis = '${lstJogador[id]._tipos_atribuicao_de_variaveis.qtdRespostaErrada}';
-		var pulosTiposVariaveis = '${lstJogador[id]._tipos_atribuicao_de_variaveis.qtdRespostaPulada}';
+		var acertosTiposVariaveis = jog.relatorio._tipos_atribuicao_de_variaveis.qtdRespostaCerta;
+		var errosTiposVariaveis = jog.relatorio._tipos_atribuicao_de_variaveis.qtdRespostaErrada;
+		var pulosTiposVariaveis = jog.relatorio._tipos_atribuicao_de_variaveis.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES IF E ELSE 
-		var acertosIF_ELSE = '${lstJogador[id]._if_else.qtdRespostaCerta}';
-		var errosIF_ELSE = '${lstJogador[id]._if_else.qtdRespostaErrada}';
-		var pulosIF_ELSE = '${lstJogador[id]._if_else.qtdRespostaPulada}';
+		var acertosIF_ELSE = jog.relatorio._if_else.qtdRespostaCerta;
+		var errosIF_ELSE = jog.relatorio._if_else.qtdRespostaErrada;
+		var pulosIF_ELSE = jog.relatorio._if_else.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES SWITCH E CASE 
-		var acertosSWITCH = '${lstJogador[id]._switch_case.qtdRespostaCerta}';
-		var errosSWITCH = '${lstJogador[id]._switch_case.qtdRespostaErrada}';
-		var pulosSWITCH = '${lstJogador[id]._switch_case.qtdRespostaPulada}';
+		var acertosSWITCH = jog.relatorio._switch_case.qtdRespostaCerta;
+		var errosSWITCH = jog.relatorio._switch_case.qtdRespostaErrada;
+		var pulosSWITCH = jog.relatorio._switch_case.qtdRespostaPulada;
 		// DADOS DA QUESTOES FOR 
 
-		var acertosFOR = '${lstJogador[id]._for.qtdRespostaCerta}';
-		var errosFOR = '${lstJogador[id]._for.qtdRespostaErrada}';
-		var pulosFOR = '${lstJogador[id]._for.qtdRespostaPulada}';
+		var acertosFOR = jog.relatorio._for.qtdRespostaCerta;
+		var errosFOR = jog.relatorio._for.qtdRespostaErrada;
+		var pulosFOR = jog.relatorio._for.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES WHILE 
-		var acertosWHILE = '${lstJogador[id]._while.qtdRespostaCerta}';
-		var errosWHILE = '${lstJogador[id]._while.qtdRespostaErrada}';
-		var pulosWHILE = '${lstJogador[id]._while.qtdRespostaPulada}';
+		var acertosWHILE = jog.relatorio._while.qtdRespostaCerta;
+		var errosWHILE = jog.relatorio._while.qtdRespostaErrada;
+		var pulosWHILE = jog.relatorio._while.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES DO WHILE 
-		var acertosDO_WHILE = '${lstJogador[id]._do_while.qtdRespostaCerta}';
-		var errosDO_WHILE = '${lstJogador[id]._do_while.qtdRespostaErrada}';
-		var pulosDO_WHILE = '${lstJogador[id]._do_while.qtdRespostaPulada}';
+		var acertosDO_WHILE = jog.relatorio._do_while.qtdRespostaCerta;
+		var errosDO_WHILE = jog.relatorio._do_while.qtdRespostaErrada;
+		var pulosDO_WHILE = jog.relatorio._do_while.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES TROCA DE VARIAVEIS 
-		var acertosTROCA_VARIAVEIS = '${lstJogador[id]._contadores.qtdRespostaCerta}';
-		var errosTROCA_VARIAVEIS = '${lstJogador[id]._contadores.qtdRespostaErrada}';
-		var pulosTROCA_VARIAVEIS = '${lstJogador[id]._contadores.qtdRespostaPulada}';
+		var acertosTROCA_VARIAVEIS = jog.relatorio._contadores.qtdRespostaCerta;
+		var errosTROCA_VARIAVEIS = jog.relatorio._contadores.qtdRespostaErrada;
+		var pulosTROCA_VARIAVEIS = jog.relatorio._contadores.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES ORDENACAO SIMPLES 
-		var acertosORDENACAO_SIMPLES = '${lstJogador[id]._ordenacao.qtdRespostaCerta}';
-		var errosORDENACAO_SIMPLES = '${lstJogador[id]._ordenacao.qtdRespostaErrada}';
-		var pulosORDENACAO_SIMPLES = '${lstJogador[id]._ordenacao.qtdRespostaPulada}';
+		var acertosORDENACAO_SIMPLES = jog.relatorio._ordenacao.qtdRespostaCerta;
+		var errosORDENACAO_SIMPLES = jog.relatorio._ordenacao.qtdRespostaErrada;
+		var pulosORDENACAO_SIMPLES = jog.relatorio._ordenacao.qtdRespostaPulada;
 
 		// DADOS DA QUESTOES FUNCOES 
-		var acertosFUNCOES = '${lstJogador[id]._funcoes.qtdRespostaCerta}';
-		var errosFUNCOES = '${lstJogador[id]._funcoes.qtdRespostaErrada}';
-		var pulosFUNCOES = '${lstJogador[id]._funcoes.qtdRespostaPulada}';		
-		
+		var acertosFUNCOES = jog.relatorio._funcoes.qtdRespostaCerta;
+		var errosFUNCOES = jog.relatorio._funcoes.qtdRespostaErrada;
+		var pulosFUNCOES = jog.relatorio._funcoes.qtdRespostaPulada;
+
 		// GERAL
 		carregaVariaveisHistoricoGeral(acertos, erros, pulos);
 
@@ -431,10 +430,10 @@
 				errosORDENACAO_SIMPLES, pulosORDENACAO_SIMPLES);
 		carregaVariaveisHistorico_funcoes(acertosFUNCOES, errosFUNCOES,
 				pulosFUNCOES);
+
 	}
-	
-	
-	
-	
-	
+
+	function pesquisar(nome) {
+
+	}
 </script>
