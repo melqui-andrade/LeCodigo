@@ -45,6 +45,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/home/cadastrar.jsp" />
 	</definition>
 
+	<definition name="home/credito" extends="mensagem.layout">
+		<put-attribute name="titulo" value="LeCódigo" />
+		<put-attribute name="body" value="/WEB-INF/views/home/credito.jsp" />
+	</definition>
 	<definition name="fase/transicaoFase" extends="menu.layout">
 		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body"
@@ -88,7 +92,7 @@
 			value="/WEB-INF/views/relatorio/relatorioTurma.jsp" />
 	</definition>
 
-<definition name="relatorio/relatorioAluno" extends="mensagem.layout">
+	<definition name="relatorio/relatorioAluno" extends="mensagem.layout">
 		<put-attribute name="titulo" value="LeCódigo" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/relatorio/relatorioAluno.jsp" />

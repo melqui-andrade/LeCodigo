@@ -10,7 +10,11 @@
 		href="/LeCodigo-presentation/home/ranking.html"
 		data-original-title="Visualizar o Ranking do jogo" type="button"
 		class="btn btn-info  btn-block btn-lg" data-toggle="tooltip"
-		data-placement="top" title=""><span>Ranking</span></a> <br>
+		data-placement="top" title=""><span>Ranking</span></a> <br> <a
+		href="/LeCodigo-presentation/home/credito.html"
+		data-original-title="Crédito aos envolvidos no projeto" type="button"
+		class="btn btn-info  btn-block btn-lg" data-toggle="tooltip"
+		data-placement="top" title=""><span>Créditos</span></a> <br>
 </div>
 
 <script>
