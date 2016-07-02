@@ -5,12 +5,12 @@
 
 
 	<div class="container">
-		<!-- 
+
 		<div class="" style="margin-bottom: 20px;">
-			<input type="text" class="form-control"
-				placeholder="Pesquisar por nome do aluno" />
+			<input id="nomeAluno" type="text" class="form-control"
+				placeholder="Pesquisar por nome do aluno"
+				onchange="pesquisar(nomeAluno)" />
 		</div>
-		 -->
 		<div class="panel panel-info">
 
 			<div class="panel-heading" style="padding-left: 5%;">Alunos</div>
@@ -38,23 +38,7 @@
 			</table>
 
 			<table class="table" id="pesquisa">
-				<thead>
-					<tr style="text-align: left">
-						<th class="col-xs-6 col-sm-6"
-							style="text-align: left; padding-left: 5%;">Nome</th>
-						<th class="col-xs-6 col-sm-6">Ação</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr style="text-align: left;">
-						<td class="col-xs-6 col-sm-6" style="padding-left: 5%;">${usuario.nome }</td>
-						<td class="col-xs-6 col-sm-6">
-							<button type="button" class="btn btn-primary btn-block"
-								data-toggle="modal" data-target="#relatorioAluno"
-								onclick="getJogador('${i.index}')">Ver o relatório</button>
-						</td>
-					</tr>
-				</tbody>
+
 
 			</table>
 
@@ -296,8 +280,6 @@
 
 
 <script language="javascript">
-	document.getElementById("pesquisa").remove();
-
 	function voltar() {
 		window
 				.setTimeout(
@@ -432,8 +414,54 @@
 				pulosFUNCOES);
 
 	}
+	//document.getElementById( "pesquisa").style.display = 'none';
 
-	function pesquisar(nome) {
+	function pesquisar(nomeAluno) {
+
+		if (document.getElementById("pesquisaBD")) {
+			document.getElementById("pesquisaBD").remove();
+		}
+
+		var jogadorSelecionado = new Array();
+
+		if (nomeAluno == null || nomeAluno == "") {
+
+		}
+
+		for (x in jogador) {
+			if (jogador[x].nome.toLowerCase().includes(
+					nomeAluno.value.toLowerCase())) {
+				jogadorSelecionado.push(jogador[x]);
+			}
+		}
+
+		var headerr = "<thead>"
+				+ "<tr style='text-align: left'>"
+				+ "<th class='col-xs-6 col-sm-6'style='text-align: left; padding-left: 5%;'>Nome</th>"
+				+ "<th class='col-xs-6 col-sm-6'>Ação</th>" + "</tr>"
+				+ "</thead>" + "<tbody id='aluno'>" + "</tbody>";
+
+		document.getElementById("pesquisa").innerHTML = headerr;
+
+		document.getElementById("aluno").innerHTML = "";
+
+		if (jogadorSelecionado.length == 0) {
+			document.getElementById("pesquisa").innerHTML = "<div style='text-align: center; padding: 5%;'>Não foram encontrado resultados para sua pesquisa</div>";
+		}
+		for (x in jogadorSelecionado) {
+
+			var linha = "<tr style='text-align: left;' ></tr>";
+
+			var col1 = "<tr style='text-align: left;' ><td class='col-xs-6 col-sm-6' style='padding-left: 5%;''>"
+					+ jogadorSelecionado[x].nome + "</td>"
+			var col2 = "<td class='col-xs-6 col-sm-6'><button type='button' class='btn btn-primary btn-block' data-toggle='modal' data-target='#relatorioAluno'	onclick='getJogador("
+					+ (jogadorSelecionado[x].id - 1)
+					+ ")'>Ver o relatório</button></td></tr>"
+
+			document.getElementById("aluno").innerHTML += col1 + col2;
+			//			document.getElementById("aluno").innerHTML += col2;
+
+		}
 
 	}
 </script>
