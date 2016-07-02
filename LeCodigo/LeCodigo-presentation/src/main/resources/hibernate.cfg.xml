@@ -26,6 +26,9 @@
 		<mapping class="com.br.uepb.domain.Partida" />
 		<mapping class="com.br.uepb.domain.Questao" />
 		<mapping class="com.br.uepb.domain.RespostaDoAluno" />
+		<mapping class="com.br.uepb.domain.Relatorio" />
+		<mapping class="com.br.uepb.domain.Estatistica" />
+		
 
 	</session-factory>
 </hibernate-configuration>

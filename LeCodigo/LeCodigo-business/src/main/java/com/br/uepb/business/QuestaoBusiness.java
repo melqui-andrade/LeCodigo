@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Random;
 
 import com.br.uepb.dao.QuestaoDAO;
+import com.br.uepb.domain.Estatistica;
 import com.br.uepb.domain.Questao;
+import com.br.uepb.domain.Relatorio;
 import com.br.uepb.domain.RespostaDoAluno;
 import com.br.uepb.domain.TipoQuestao_Enum;
 
@@ -93,6 +95,7 @@ public class QuestaoBusiness {
 		String [] possiveisRespostas = questao.getResposta().split(" | ");
 		for (int i = 0; i < possiveisRespostas.length; i++) {
 			if(possiveisRespostas[i].trim().equals(resposta)){
+				atualizarEstatistica(login, questao.getTipo_questao(), "acerto");
 				sessao.setBits(sessao.getBits()+sessao.getValorDaQuestao());
 				sessao.setPontuacao(sessao.getPontuacao()+sessao.getValorDaQuestao());
 				new PartidaBusiness().avancarEtapa(login);
@@ -100,11 +103,133 @@ public class QuestaoBusiness {
 				return true;
 			}
 		}
+		atualizarEstatistica(login, questao.getTipo_questao(), "erro");
 		sessao.diminuirVida();
 		sessao.atualizarPartidaDoJogador(idQuestao, resposta);
 		return false;
 	}
-	
+	/**
+	 * Salva no banco de dados informações relacionadas a quantidade de acerto, erro ou pulo do jogador
+	 * @param idQuestao
+	 * @param status pode receber os valores acerto, erro ou pulo
+	 */
+	private void atualizarEstatistica(String login, TipoQuestao_Enum tipoquestao, String status) {
+		Relatorio relatorio = GerenciarSessaoBusiness.getSessaoBusiness(login).getJogador().getRelatorio();
+		Estatistica estatistica;
+		switch (tipoquestao) {
+		case ATRIBUICAO:
+			estatistica = relatorio.get_tipos_atribuicao_de_variaveis();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case IF_ELSE:
+			estatistica = relatorio.get_if_else();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case SWITCH_CASE:
+			estatistica = relatorio.get_switch_case();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case FOR:
+			estatistica = relatorio.get_for();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case WHILE:
+			estatistica = relatorio.get_while();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case DO_WHILE:
+			estatistica = relatorio.get_do_while();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case TROCA_VARIAVEIS:
+			estatistica = relatorio.get_contadores();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case ORDENACAO_SIMPLES:
+			estatistica = relatorio.get_ordenacao();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+			
+		case FUNCOES:
+			estatistica = relatorio.get_funcoes();
+			if(status.equals("acerto")){
+				estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+			}else if(status.equals("erro")){
+				estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+			}else{
+				estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+			}
+			break;
+
+		default:
+			break;
+		}
+		estatistica = relatorio.get_geral();
+		if(status.equals("acerto")){
+			estatistica.setQtdRespostaCerta(estatistica.getQtdRespostaCerta()+1);
+		}else if(status.equals("erro")){
+			estatistica.setQtdRespostaErrada(estatistica.getQtdRespostaErrada()+1);
+		}else{
+			estatistica.setQtdRespostaPulada(estatistica.getQtdRespostaPulada()+1);
+		}
+		
+	}
+
 	public Questao pularQuestao(String login, int idQuestao, int fase, int etapa){
 		SessaoBusiness sessao = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		boolean podePular = false;
@@ -130,6 +255,8 @@ public class QuestaoBusiness {
 		}
 		
 		if(podePular){
+			Questao questao = questaoDAO.buscarQuestao(idQuestao);
+			atualizarEstatistica(login, questao.getTipo_questao(), "pulou");
 			sessao.atualizarPartidaDoJogador(idQuestao, "pulou");
 			return buscarQuestao(login, fase, etapa);
 		}
