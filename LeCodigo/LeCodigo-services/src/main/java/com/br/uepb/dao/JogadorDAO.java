@@ -101,7 +101,10 @@ public class JogadorDAO {
 			Transaction tx = session.beginTransaction();
 			boolean verifica = true;
 		try {
-			session.createQuery("from Jogador where login='"+login+"' and senha='"+senha+"'").list();
+			Jogador jogador = (Jogador) session.createQuery("from Jogador where login='"+login+"' and senha='"+senha+"'").list().get(0);
+			if(jogador==null){
+				verifica =false;
+			}
 		} catch (RuntimeException e) {
 			verifica = false;
 		}finally{
