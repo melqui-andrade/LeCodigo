@@ -1,6 +1,35 @@
 <div style="margin-top: 6%;">
-	<h5 class="cor-branco texto-centralizado ">Integrantes da equipe</h5>
+
 	<div class="" style="text-align: center;">
+
+		<div class="col-xs-12 col-sm-12">
+			<div class="panel" style="padding-left: 5%;">
+				<div class="panel-body" style="border-color: #fff;">
+					<h5>LeCódigo</h5>
+					<div class="">
+						<div class="row">
+							<div class="col-xs-4 col-sm-4">&nbsp;</div>
+							<div class="col-xs-4 col-sm-4">
+								<img src="../images/integrantes/marca-uepb.png"
+									class="img-responsive img-rounded" height="100" width="100"
+									style="position: relative; top: 100%; left: 50%; margin-top: -10px; margin-left: -50px;" />
+							</div>
+							<div class="col-xs-4 col-sm-4">&nbsp;</div>
+						</div>
+						<h6>
+							Projeto desenvolvido pela turma de Computação diurno 2015.2 da
+							Universidade Estadual da Paraíba <br> <br> Em parceria
+							com as disciplinas de Produção de Material Instrucional, Software
+							Educacional, Educação a Distância e Linguagem de Programação para
+							Educação.
+						</h6>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<h5 class="cor-branco texto-centralizado ">Integrantes da equipe</h5>
 
 		<div class="col-xs-12 col-sm-4">
 			<div class="panel" style="padding-left: 5%;">
