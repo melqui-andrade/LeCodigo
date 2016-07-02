@@ -37,7 +37,6 @@ public class TransicaoFaseController {
 		String login = request.getSession().getAttribute("login").toString();
 		SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 		int idJogador = sessaoBusiness.getJogador().getId();
-
 		if (partidaBusiness.ahPartidaPendente(idJogador)) {
 			// ehNovaPartida = false;
 			partidaBusiness.continuarPartida(login, idJogador);
@@ -46,6 +45,22 @@ public class TransicaoFaseController {
 			partidaBusiness.iniciarPartida(login, idJogador);
 		}
 		int fase = sessaoBusiness.getFase();
+		try {
+			if(fase==1){
+				request.getSession().setAttribute("assunto", "Atribuição de váriaveis, "
+						+ "tipos de variáveis, "
+						+ "estrutura de condição (if-else, Switch-case)");
+			}else if(fase==2){
+				request.getSession().setAttribute("assunto", "Estruturas de repetição (for, while, do while)");
+			}else if(fase==3){
+				request.getSession().setAttribute("assunto", "Troca de variáveis, Ordenação simples e Funções");
+			} else{
+				request.getSession().setAttribute("assunto", "");
+			}
+			
+		} catch (Exception e) {}
+
+		
 		modelAndView.addObject("idFase", fase);
 		return modelAndView;
 	}

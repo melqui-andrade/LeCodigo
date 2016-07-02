@@ -72,12 +72,18 @@ public class QuestaoBusiness {
 		}
 		if(!questoes.isEmpty()){
 			int numQuestao = 0;
+			boolean questaoEhRepetida = false;
 			do{
 				Random random = new Random();
 				numQuestao = random.nextInt(questoes.size());
+				if(questaoRepetida(login, questoes.get(numQuestao).getId())){
+					questoes.remove(numQuestao);
+					questaoEhRepetida =true;
+				}else{
+					questaoEhRepetida = false;
+				}
 				
-				
-			}while(questaoRepetida(login, questoes.get(numQuestao).getId()));
+			}while(questaoEhRepetida);
 			SessaoBusiness sessaoBusiness = GerenciarSessaoBusiness.getSessaoBusiness(login);
 			sessaoBusiness.addQuestaoQueSaiu(questoes.get(numQuestao));
 			Questao questao = questoes.get(numQuestao);

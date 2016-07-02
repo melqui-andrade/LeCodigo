@@ -2,9 +2,7 @@ v<div style="margin-top: 6%;">
 	<h4 class="cor-branco texto-centralizado ">
 		Fase <span class="numeroDaFase">${idFase}</span>
 	</h4>
-	<p class="texto-centralizado texto-light cor-branco">Atribuição de
-		váriaveis, tipos de variáveis,estrutura de condição (if-else,
-		Switch-case)</p>
+	<p class="texto-centralizado texto-light cor-branco">${assunto}</p>
 	<img src="../images/et/et_verde_normal.png" class="img-responsive"
 		id="et_" style="float: left;" />
 </div>

@@ -97,6 +97,7 @@ public class HomeController {
 		JogadorBusiness jogadorBusiness = new JogadorBusiness();
 
 		ModelAndView modelAndView = new ModelAndView();
+		
 		try {
 			jogadorBusiness.autenticarJogador(jogadorModel.getLogin(), jogadorModel.getSenha());
 			session.setAttribute("login", jogadorModel.getLogin());
@@ -104,7 +105,7 @@ public class HomeController {
 			Jogador jog = sessaoBusiness.getJogador();
 			int tipo_usuario = sessaoBusiness.getJogador().getTipo().ordinal();
 			session.setAttribute("tipo_usuario", tipo_usuario);
-
+			
 			if (tipo_usuario == 1) { // aluno
 				return new ModelAndView("redirect:/fase/transicaoFase.html");
 			}

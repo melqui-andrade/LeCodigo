@@ -184,6 +184,8 @@ public class SessaoBusiness {
 		}
 			//respostaDoAluno.setRespostas(respostaDoAluno.getRespostas()+"|"+resposta);
 		partida.setData_hora(new Date().toString());
+		//Para ser usado para calcular a pontuação total do jogador. 
+		int pontuacaoAnterior = partida.getPontuacao();
 		partida.setPontuacao(pontuacao);
 		partida.setBits(bits);
 		partida.setEtapa(etapa);
@@ -192,6 +194,9 @@ public class SessaoBusiness {
 		partida.setValorDaQuestao(valorDaQuestao);
 		partida.setQuestoesQueSairam(questoesQueSairam);
 		int index = jogador.getPartidas().size()-1;
+		
+		
+		jogador.setPontuacao_total(jogador.getPontuacao_total()+pontuacao-pontuacaoAnterior);
 		jogador.getPartidas().set(index, partida);
 		jogadorDAO.atualizarJogador(jogador);	
 	}
