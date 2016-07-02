@@ -82,12 +82,17 @@ public class QuestaoDAO {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<Questao> listarQuestoes(int fase, TipoQuestao_Enum tipo_questao) {
+		int etapa = tipo_questao.ordinal();
+		int tipo = 0;
+		if(etapa ==1 || etapa==4 || etapa==7) tipo = 0;
+		if(etapa ==2 || etapa==5 || etapa==8) tipo = 1;
+		if(etapa ==3 || etapa==6 || etapa==9) tipo = 2;
 		if (!session.isOpen()) {
 			session = HibernateUtil.getSessionFactory().openSession();
 		}
 		Transaction tx = session.beginTransaction();
 		List listaQuestoes = session
-				.createQuery("from Questao where fase='" + fase + "' and tipo_questao='" + tipo_questao.ordinal() + "'")
+				.createQuery("from Questao where fase='" + fase + "' and tipo_questao='" + tipo + "'")
 				.list();
 		session.flush();
 		tx.commit();

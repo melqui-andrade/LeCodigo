@@ -12,5 +12,5 @@ Escreva um algoritmo para inverter a ordem dos elementos da lista: ["casa", "mac
 3-4-2-1-5 | 4-3-2-1-5
 *F
 *I
-3_7
+3_1
 *F
