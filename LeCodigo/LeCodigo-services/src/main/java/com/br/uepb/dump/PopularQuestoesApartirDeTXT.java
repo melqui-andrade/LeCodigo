@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Bloco;
+import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.Questao;
 import com.br.uepb.domain.TipoQuestao_Enum;
+import com.br.uepb.domain.TipoUsuario_Enum;
 
 import conexaoBD.HibernateUtil;
 
@@ -21,16 +24,23 @@ public class PopularQuestoesApartirDeTXT {
 	
 	
 	public PopularQuestoesApartirDeTXT() throws IOException {
-
-		String caminhoArquivo = "src/main/java/arquivos"; 
-		File file = new File(caminhoArquivo);
-		File arquivos[] = file.listFiles();
-		for (int i = 0; i < arquivos.length; i++) {
-			FileReader arq = new FileReader(arquivos[i]);
-			System.out.println((i+1)+" de "+arquivos.length+" - Arquivo: "+ arquivos[i].getName());
-			ler(arq);
+		JogadorDAO jogadorDAO = JogadorDAO.getInstance();
+		Jogador jogador = jogadorDAO.buscarJogador("admin");
+		if(jogador==null){
+			jogador = new Jogador("Administrador", "admin", "admin", TipoUsuario_Enum.PROFESSOR);
+			jogadorDAO.adicionarJogador(jogador);
+			String caminhoArquivo = "src/main/java/arquivos"; 
+			File file = new File(caminhoArquivo);
+			File arquivos[] = file.listFiles();
+			for (int i = 0; i < arquivos.length; i++) {
+				FileReader arq = new FileReader(arquivos[i]);
+				System.out.println((i+1)+" de "+arquivos.length+" - Arquivo: "+ arquivos[i].getName());
+				ler(arq);
+			}
+			System.out.println("Todos os arquivos foram lidos");
+		}else{
+			System.out.println("As questões já foram adicionadas.");
 		}
-		System.out.println("Todos os arquivos foram lidos");
 
 		HibernateUtil.shutdown();
 	}
