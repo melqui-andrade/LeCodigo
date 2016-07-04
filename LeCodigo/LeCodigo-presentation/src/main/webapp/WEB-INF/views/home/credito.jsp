@@ -77,7 +77,7 @@
 		<div class="col-xs-12 col-sm-4">
 			<div class="panel" style="padding-left: 5%;">
 				<div class="panel-body" style="border-color: #fff;">
-					<h5>JOSÉ FÁBIO DIAS</h5>
+					<h5>JOSÉ FÁBIO DIAS SOUZA</h5>
 					<div class="">
 						<div class="row">
 							<div class="col-xs-4 col-sm-4"></div>
