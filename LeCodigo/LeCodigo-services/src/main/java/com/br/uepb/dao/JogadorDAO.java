@@ -14,6 +14,11 @@ import java.util.*;
 
 import conexaoBD.HibernateUtil;
 
+/**
+ * Gerencia operações do banco de dados da tabela Jogador
+ * @author Pioneiros
+ *
+ */
 public class JogadorDAO {
 	
 	private static Session session;
@@ -21,6 +26,10 @@ public class JogadorDAO {
 	//singleton para o jogadorDAO
 	private static JogadorDAO jogadorDAO;
 	
+	/**
+	 * Singleton para JogadorDAO 
+	 * @return última instancia criada de JogadorDAO
+	 */
 	public static JogadorDAO getInstance(){
 		if(jogadorDAO == null){
 			jogadorDAO = new JogadorDAO();
@@ -33,6 +42,12 @@ public class JogadorDAO {
 	
 	private JogadorDAO() { }
 	
+	/**
+	 * Salva Jogador na base de dados	
+	 * @param jogador Jogador com seus atributos preenchidos corretamente
+	 * @return true, caso a operação seja efetuada com sucesso
+	 * @see Jogador
+	 */
 	public boolean adicionarJogador(Jogador jogador){
 		
 		if(!session.isOpen())
@@ -55,6 +70,12 @@ public class JogadorDAO {
 		return false;
 	}*/
 	
+	/**
+	 * Busca um jogador pelo seu ID
+	 * @param id Identificador único do Jogador
+	 * @return Jogador dono do ID passado, ou null caso não seja encontrado nenhum
+	 * jogador com o ID passado
+	 */
 	public Jogador buscarJogador(int id){
 		
 		if(!session.isOpen())
@@ -75,6 +96,12 @@ public class JogadorDAO {
 		return jogador;
 	}
 
+	/**
+	 * Busca jogador pelo login
+	 * @param login Login do jogador
+	 * @return Jogador dono do login passado, ou null caso não seja encontrado nenhum
+	 * jogador com o login passado
+	 */
 	public Jogador buscarJogador(String login) {
 		if(!session.isOpen())
 			session = HibernateUtil.getSessionFactory().openSession();
@@ -94,6 +121,12 @@ public class JogadorDAO {
 		return jogador;
 	}
 
+	/**
+	 * Faz autenticação de Jogador a partir de login e senha
+	 * @param login Login do usuário
+	 * @param senha Senha do usuário
+	 * @return true, caso login e senha correspondam a um usuário cadastrado
+	 */
 	public boolean autenticarJogador(String login, String senha) {
 		
 		if(!session.isOpen())
@@ -116,12 +149,21 @@ public class JogadorDAO {
 		return verifica;
 	}
 
+	/**
+	 * Busca pontuação de Jogador a partir do ID
+	 * @param idJogador Identificador do jogador desejado
+	 * @return valor da pontuação do jogador
+	 */
 	public int buscarPontuacao(int idJogador) {
 		Jogador jogador = buscarJogador(idJogador);
 		int pontuacao = jogador.getPontuacao_total();
 		return pontuacao;
 	}
 	
+	/**
+	 * Lista todos os jogadores cadastrados ordenados de acordo com a pontuação total
+	 * @return Lista de jogadores ordenada pela pontuação total
+	 */
 	public List<Jogador> rankingJogadores(){
 		if(!session.isOpen())
 			session = HibernateUtil.getSessionFactory().openSession();
@@ -141,6 +183,11 @@ public class JogadorDAO {
 		return null;
 	}
 	
+	/**
+	 * Altera dados de um jogador já cadastrado
+	 * @param jogador Jogador com dados atualizados
+	 * @return true, caso a operação seja realizada com sucesso
+	 */
 	public boolean atualizarJogador(Jogador jogador){
 		if(!session.isOpen())
 			session = HibernateUtil.getSessionFactory().openSession();
@@ -158,6 +205,10 @@ public class JogadorDAO {
 		return verifica;
 	}
 	
+	/**
+	 * Gera relatório da turma verificando desempenho da turma em todas as fases do jogo
+	 * @return Relatório da turma
+	 */
 	public Relatorio estatisticaDaTurma(){
 		if(!session.isOpen())
 			session = HibernateUtil.getSessionFactory().openSession();

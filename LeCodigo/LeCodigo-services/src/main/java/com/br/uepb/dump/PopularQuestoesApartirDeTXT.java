@@ -2,13 +2,10 @@ package com.br.uepb.dump;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 import com.br.uepb.dao.JogadorDAO;
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Bloco;
@@ -19,10 +16,25 @@ import com.br.uepb.domain.TipoUsuario_Enum;
 
 import conexaoBD.HibernateUtil;
 
-public class PopularQuestoesApartirDeTXT {
-
+/**
+ * Classe responsável por popular o banco de dados com as questões do jogo
+ * Cria por padrão um usuário do tipo professor cujo login e senha são: admin, admin
+ * respectivamente.
+ * A classe é chamada também a partir do teste de unidade do pacote LeCodigo-services.
+ * @see TestQuestoesService
+ * 
+ * @author Pioneiros
+ * 
+ */
+public class PopularQuestoesApartirDeTXT {	
 	
-	
+	/**
+	 * Classe responsável por cadastrar usuário padrão na base e
+	 * por ler os arquivos das questões localizados na pasta arquivos,
+	 * do pacote LeCodigo-services.
+	 * 
+	 * @throws IOException Caso não seja possível ler algum arquivo
+	 */
 	public PopularQuestoesApartirDeTXT() throws IOException {
 		JogadorDAO jogadorDAO = JogadorDAO.getInstance();
 		Jogador jogador = jogadorDAO.buscarJogador("admin");
@@ -45,6 +57,11 @@ public class PopularQuestoesApartirDeTXT {
 		HibernateUtil.shutdown();
 	}
 	
+	/**
+	 * Lê um arquivo de questão, analisa seu conteúdo e salva no banco de dados
+	 * @param arquivo Arquivo .txt contendo uma questão válida
+	 * @throws IOException Não foi possível ler o arquivo
+	 */
 	private void ler(FileReader arquivo) throws IOException{
 		BufferedReader bufferedReader = new BufferedReader(arquivo);
 		
