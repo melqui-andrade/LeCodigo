@@ -8,9 +8,6 @@ import com.br.uepb.business.JogadorBusiness;
 import com.br.uepb.dao.QuestaoDAO;
 import com.br.uepb.domain.Jogador;
 import com.br.uepb.domain.TipoUsuario_Enum;
-import com.br.uepb.dump.PopularTabelaQuestoes;
-import com.br.uepb.dump.PopularTabelaQuestoes2;
-import com.br.uepb.dump.PopularTabelaQuestoes3;
 
 import conexaoBD.HibernateUtil;
 

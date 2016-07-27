@@ -20,7 +20,8 @@ import conexaoBD.HibernateUtil;
  * Classe responsável por popular o banco de dados com as questões do jogo
  * Cria por padrão um usuário do tipo professor cujo login e senha são: admin, admin
  * respectivamente.
- * A classe é chamada também a partir do teste de unidade do pacote LeCodigo-services.
+ * A classe é chamada também a partir do teste de unidade do pacote LeCodigo-services e
+ * pode ser invocada a partir de comando maven.
  * @see TestQuestoesService
  * 
  * @author Pioneiros
